@@ -49,6 +49,7 @@
     "packages:clean": "yarn workspaces foreach -ptv --include '@armit/*' run clean",
     "nuke:node_modules": "rimraf '**/node_modules'",
     "deps:update": "yarn dlx npm-check-updates@latest --configFileName .ncurc.json -u --deep --mergeConfig",
+    "check:install": "yarn dlx @yarnpkg/doctor@3.1.4 .",
     "install:playwright": "npx playwright install",
     "postinstall": "is-ci || yarn husky install"
   },

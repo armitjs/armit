@@ -1,10 +1,9 @@
 {
   "dep": "prod,dev,bundle,peer,optional",
   "reject": [
-    "execa",
-    "@armit/module-cjs",
-    "@armit/eslint-config-bases",
-    "@armit/module-mjs",
-    "@armit/helpers"
+    "@armit/core",
+    "@armit/create",
+    "@armit/common",
+    "@armit/eslint-config-bases"
   ]
 }
