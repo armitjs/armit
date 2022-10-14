@@ -25,6 +25,10 @@ module.exports = {
     // Apply prettier and disable incompatible rules
     '@armit/eslint-config-bases/prettier',
   ],
-  rules: {},
-  overrides: [],
+  rules: {
+    // optional overrides per project
+  },
+  overrides: [
+    // optional overrides per project file match
+  ],
 };
