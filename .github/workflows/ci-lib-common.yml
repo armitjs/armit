@@ -52,21 +52,21 @@ jobs:
         uses: ./.github/actions/yarn-nm-install
 
       - name: Typecheck
-        working-directory: pacakges/common
+        working-directory: packages/common
         run: |
           yarn typecheck
 
       - name: Linter
-        working-directory: pacakges/common
+        working-directory: packages/common
         run: |
           yarn lint
 
       - name: Unit tests
-        working-directory: pacakges/common
+        working-directory: packages/common
         run: |
           yarn test-unit --runInBand --color
 
       - name: Build lib-common
-        working-directory: pacakges/common
+        working-directory: packages/common
         run: |
           yarn build
