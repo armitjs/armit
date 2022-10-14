@@ -1,0 +1,1 @@
+# @armit/eslint-config-bases
