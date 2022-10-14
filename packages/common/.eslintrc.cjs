@@ -16,7 +16,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: 'tsconfig.json',
   },
-  ignorePatterns: [...getDefaultIgnorePatterns(), '/storybook-static'],
+  ignorePatterns: [...getDefaultIgnorePatterns(), './index.js', './index.cjs'],
   extends: [
     '@armit/eslint-config-bases/typescript',
     '@armit/eslint-config-bases/sonar',
