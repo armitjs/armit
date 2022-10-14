@@ -42,7 +42,8 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "globby": "13.1.2"
+    "globby": "13.1.2",
+    "picocolors": "1.0.0"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
