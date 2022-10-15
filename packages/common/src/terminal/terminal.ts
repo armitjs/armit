@@ -48,6 +48,134 @@ export const advancedLevels: Level<
   { color: ['yellow', 'dim', 'underline'], isError: true, name: 'warn' },
 ];
 
+function ensureString(message): string {
+  return typeof message === 'string'
+    ? message
+    : JSON.stringify(message, null, 2);
+}
+
+function getColorApplier(
+  colorType: 'COLOR' | 'DECORATION',
+  levelColors: readonly Color[]
+) {
+  const colors = levelColors.filter((colorName) => {
+    const isDecoration =
+      colorName === 'strikethrough' || colorName === 'underline';
+
+    return colorType === 'DECORATION' ? isDecoration : !isDecoration;
+  });
+
+  if (!colors[0]) {
+    // Pure text output.
+    return (x: string) => x;
+  }
+  return (x) => {
+    let out = x;
+    for (let i = 0; i < colors.length; i++) {
+      out = C[colors[i]](out);
+    }
+    return out;
+  };
+}
+
+function addUnitOfTime(
+  prefix: string,
+  time: Date,
+  lastTime: Date,
+  colorFn: (s) => string,
+  unitValueInMilliseconds: number,
+  unitName: string
+) {
+  let remainder = time.getTime() - lastTime.getTime();
+  const unitCount = Math.floor(remainder / unitValueInMilliseconds);
+
+  remainder = remainder % unitValueInMilliseconds;
+  return unitCount !== 0
+    ? colorFn(prefix + unitCount + unitName) + ' '
+    : unitValueInMilliseconds === 1
+    ? colorFn(prefix + '0') + ' '
+    : '';
+}
+
+function formatChangeInTime(
+  time: Date,
+  lastTime: Date,
+  decorateColorFn: (s) => string,
+  color: (s) => string,
+  prefix: string
+) {
+  let formattedChangeInTime = ' ';
+  // YEARS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    31536000000,
+    'y'
+  );
+  // MONTHS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    2592000000,
+    'm'
+  );
+  // DAYS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    86400000,
+    'd'
+  );
+  // HOURS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    3600000,
+    'h'
+  );
+  // MINUTES
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    60000,
+    'min'
+  );
+  // SECONDS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    1000,
+    's'
+  );
+  // MILLISECONDS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    1,
+    'ms'
+  );
+  return color(formattedChangeInTime);
+}
+
+function formatMonth(time: Date, monthPositionSwitch: boolean) {
+  monthPositionSwitch = !monthPositionSwitch;
+  return monthPositionSwitch ? '' : `${time.getMonth() + 1}m/`;
+}
+
 /**
  * Represents the console.
  */
@@ -88,12 +216,12 @@ export class Terminal<L extends string> {
    */
   timeInLastLog: Date;
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention, sonarjs/cognitive-complexity
-  private _log(
+  // eslint-disable-next-line sonarjs/cognitive-complexity
+  private logMsg(
     level: Level<string>,
     message: string,
     context?: string,
-    trace?: string
+    trace?
   ) {
     const {
       capitalizeLevelName,
@@ -105,67 +233,14 @@ export class Terminal<L extends string> {
       showTimestamp,
       showTimestampRelativeToLastLog,
       use24HourClock,
+      contextColor,
     } = this.data;
 
     const time = new Date();
-    const color = getColorApplier('COLOR');
-    const decorate = getColorApplier('DECORATION');
-    let monthPositionSwitch = showMonthBeforeDay;
+    const color = getColorApplier('COLOR', level.color);
+    const decorate = getColorApplier('DECORATION', level.color);
+    const monthPositionSwitch = showMonthBeforeDay;
     let output = '';
-
-    function formatChangeInTime(from: Date, prefix: string) {
-      let formattedChangeInTime = ' ';
-      let remainder = time.getTime() - from.getTime();
-
-      function addUnitOfTime(
-        unitValueInMilliseconds: number,
-        unitName: string
-      ) {
-        const unitCount = Math.floor(remainder / unitValueInMilliseconds);
-
-        remainder = remainder % unitValueInMilliseconds;
-        formattedChangeInTime +=
-          unitCount !== 0
-            ? decorate(prefix + unitCount + unitName) + ' '
-            : unitValueInMilliseconds === 1
-            ? decorate(prefix + '0') + ' '
-            : '';
-      }
-
-      addUnitOfTime(31536000000, 'y'); // YEARS
-      addUnitOfTime(2592000000, 'm'); // MONTHS
-      addUnitOfTime(86400000, 'd'); // DAYS
-      addUnitOfTime(3600000, 'h'); // HOURS
-      addUnitOfTime(60000, 'min'); // MINUTES
-      addUnitOfTime(1000, 's'); // SECONDS
-      addUnitOfTime(1, 'ms'); // MILLISECONDS
-
-      return color(formattedChangeInTime);
-    }
-
-    function formatMonth() {
-      monthPositionSwitch = !monthPositionSwitch;
-      return monthPositionSwitch ? '' : `${time.getMonth() + 1}m/`;
-    }
-
-    function getColorApplier(colorType: 'COLOR' | 'DECORATION') {
-      const colors = level.color.filter((colorName) => {
-        const isDecoration =
-          colorName === 'strikethrough' || colorName === 'underline';
-
-        return colorType === 'DECORATION' ? isDecoration : !isDecoration;
-      });
-
-      if (!colors[0]) {
-        return (x: string) => x;
-      }
-      let colorApplier = C[colors[0]];
-      for (let i = 1; i < colors.length; i++) {
-        colorApplier = colorApplier[colors[i]];
-      }
-
-      return colorApplier;
-    }
 
     // Should look like: [ ERROR ] or [ error ]
     if (showLevelName) {
@@ -177,6 +252,7 @@ export class Terminal<L extends string> {
           ' '
       )}]\t`;
     }
+
     // Should look like: [ 12d/5m/2011y | 13:43:10.23 ] or [ 5m/12d/2011y | 1:43:10.23 PM ]
     if (showDate || showTimestamp) {
       output += '[';
@@ -185,12 +261,16 @@ export class Terminal<L extends string> {
           ' ' +
             decorate(
               `${
-                formatMonth() + time.getDate()
-              }d/${formatMonth()}${time.getFullYear()}y`
+                formatMonth(time, monthPositionSwitch) + time.getDate()
+              }d/${formatMonth(
+                time,
+                monthPositionSwitch
+              )}${time.getFullYear()}y`
             ) +
             ' '
         );
       }
+
       if (showDate && showTimestamp) {
         output += '|';
       }
@@ -226,13 +306,19 @@ export class Terminal<L extends string> {
     if (showRelativeTimestamp || showTimestampRelativeToLastLog) {
       output += '[';
       if (showRelativeTimestamp) {
-        output += formatChangeInTime(this.startTime, '');
+        output += formatChangeInTime(time, this.startTime, decorate, color, '');
       }
       if (showRelativeTimestamp && showTimestampRelativeToLastLog) {
         output += '|';
       }
       if (showTimestampRelativeToLastLog) {
-        output += formatChangeInTime(this.timeInLastLog, '+');
+        output += formatChangeInTime(
+          time,
+          this.timeInLastLog,
+          decorate,
+          color,
+          '+'
+        );
       }
       output += ']';
     }
@@ -244,11 +330,14 @@ export class Terminal<L extends string> {
 
     // Should add context if we have.
     if (context) {
-      output += ` ${context}\t`;
+      const ctxColor = getColorApplier('COLOR', contextColor);
+      output += `\t[ ${ctxColor(context.toUpperCase())} ]`;
     }
 
     // Should add trace if we have error?
-    output += `\t${message}` + (level.isError && trace ? `\n${trace}\n` : '\n');
+    output +=
+      `\t${message}` +
+      (level.isError && trace ? `\n${C.red(ensureString(trace))}\n` : '\n');
 
     (level.isError ? process.stderr : process.stdout).write(output);
     this.timeInLastLog = time;
@@ -270,6 +359,7 @@ export class Terminal<L extends string> {
       showTimestamp: true,
       showTimestampRelativeToLastLog: true,
       use24HourClock: false,
+      contextColor: ['bold', 'black'],
     };
 
     let logger: object = {};
@@ -293,7 +383,7 @@ export class Terminal<L extends string> {
           context?: string,
           trace?: string | undefined
         ) => {
-          this._log(level, message, context, trace);
+          this.logMsg(level, message, context, trace);
         },
       };
     }

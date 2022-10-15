@@ -63,6 +63,11 @@ export interface TerminalConstructorData<L extends string> {
   levels: Level<L>[];
 
   /**
+   * The colors Will be painted on `context` if have.
+   * @default ['bold', 'black']
+   */
+  contextColor?: Color[];
+  /**
    * Whether or not to show a cool arrow before a log's message.
    *
    * `>> baz`
