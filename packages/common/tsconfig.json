@@ -7,7 +7,9 @@
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
-    "paths": {}
+    "paths": {
+      "@armit/common": ["./index.js"]
+    }
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }

@@ -1,9 +1,7 @@
 import { existsSync, mkdirSync } from 'fs';
-import { ensureFixtureFiles } from '../jest/fixture.js';
-import { rmrfSync } from './file-write.js';
-import { mergeDirs } from './merge-dirs.js';
+import { rmrfSync, mergeDirs, ensureFixtureFiles } from '@armit/common';
 
-describe('merge-dirs.mts', () => {
+describe('mergeDirs', () => {
   let fixtureCwd;
   beforeAll(() => {
     fixtureCwd = ensureFixtureFiles(import.meta.url, 'mergedirs', [

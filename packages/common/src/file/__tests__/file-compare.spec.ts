@@ -1,9 +1,7 @@
 import { join } from 'path';
-import { ensureFixtureFiles } from '../jest/fixture.js';
-import { fileCompare } from './file-compare.js';
-import { rmrfSync } from './file-write.js';
+import { ensureFixtureFiles, fileCompare, rmrfSync } from '@armit/common';
 
-describe('file-compare.mts', () => {
+describe('fileCompare', () => {
   let fixtureCwd;
   beforeAll(() => {
     fixtureCwd = ensureFixtureFiles(import.meta.url, 'fileCompare', [

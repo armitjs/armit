@@ -28,12 +28,17 @@ __metadata:
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
     "@jest/types": 29.1.2
+    "@types/adm-zip": 0.5.0
     "@types/jest": 29.1.2
+    "@types/micromatch": 4.0.2
     "@types/node": 18.8.3
+    adm-zip: 0.5.9
     eslint: 8.25.0
     globby: 13.1.2
+    image-size: 1.0.2
     jest: 29.1.2
     jest-mock-process: 2.0.0
+    micromatch: 4.0.5
     npm-run-all: 4.1.5
     picocolors: 1.0.0
     prettier: 2.7.1
@@ -1552,6 +1557,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/adm-zip@npm:0.5.0":
+  version: 0.5.0
+  resolution: "@types/adm-zip@npm:0.5.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: 11dd013584e47d431bdf7c115b73cd3162c1a1eca0fbb911f691c9734e904cfe4a01ac1d2d3cbf76d0a952e01fcce8a01fd6fb1c150675a29d740a7fb15325b2
+  languageName: node
+  linkType: hard
+
 "@types/aria-query@npm:^4.2.0":
   version: 4.2.2
   resolution: "@types/aria-query@npm:4.2.2"
@@ -1597,6 +1611,13 @@ __metadata:
   dependencies:
     "@babel/types": ^7.3.0
   checksum: 05972775e21cf07753b3bec725bf76f5a9804f99f660d323040746e3c8a4fe1b4ef6df17d7a80c4e2e335382cc72c62fc5a7079af836871ff9cbf0c21804e6d9
+  languageName: node
+  linkType: hard
+
+"@types/braces@npm:*":
+  version: 3.0.1
+  resolution: "@types/braces@npm:3.0.1"
+  checksum: 3749f7673a03d498ddb2f199b222bb403e53e78ac05a599c757c2049703ece802602c78640af0ff826be0fd2ea8b03daff04ce18806ed739592302195b7a569b
   languageName: node
   linkType: hard
 
@@ -1664,6 +1685,15 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/micromatch@npm:4.0.2":
+  version: 4.0.2
+  resolution: "@types/micromatch@npm:4.0.2"
+  dependencies:
+    "@types/braces": "*"
+  checksum: 6c678e9c625d5b422c6d2c1001da1c502ecc4457248343bbd324b79fd798a6563e336a4d79630d80e8202312013dd7cf8b4440afa644d04477abd26fde6fba24
   languageName: node
   linkType: hard
 
@@ -2000,6 +2030,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 7270ca82b242eafe5687a11fea6e088c960af712683756abf0791b68855ea9cace3057bd5e998ffcef50c944810c1e0ca1da526d02b32110e13c722aa959afdc
+  languageName: node
+  linkType: hard
+
+"adm-zip@npm:0.5.9":
+  version: 0.5.9
+  resolution: "adm-zip@npm:0.5.9"
+  checksum: 4909bc04119fdd5e8f8ba43826e50623e5c427cf0a939c809d4f9456a6a03c6aa0544e82088739de9ba16b7649f71b99ccbbddc7b2c38bd6143f9c4726cc7ed9
   languageName: node
   linkType: hard
 
@@ -5076,6 +5113,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"image-size@npm:1.0.2":
+  version: 1.0.2
+  resolution: "image-size@npm:1.0.2"
+  dependencies:
+    queue: 6.0.2
+  bin:
+    image-size: bin/image-size.js
+  checksum: 01745fdb47f87cecf538e69c63f9adc5bfab30a345345c2de91105f3afbd1bfcfba1256af02bf3323077b33b0004469a837e077bf0cbb9c907e9c1e9e7547585
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.0.0, import-fresh@npm:^3.2.1":
   version: 3.3.0
   resolution: "import-fresh@npm:3.3.0"
@@ -5129,7 +5177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4":
+"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -6587,7 +6635,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
+"micromatch@npm:4.0.5, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -7600,6 +7648,15 @@ __metadata:
   version: 1.2.3
   resolution: "queue-microtask@npm:1.2.3"
   checksum: b676f8c040cdc5b12723ad2f91414d267605b26419d5c821ff03befa817ddd10e238d22b25d604920340fd73efd8ba795465a0377c4adf45a4a41e4234e42dc4
+  languageName: node
+  linkType: hard
+
+"queue@npm:6.0.2":
+  version: 6.0.2
+  resolution: "queue@npm:6.0.2"
+  dependencies:
+    inherits: ~2.0.3
+  checksum: ebc23639248e4fe40a789f713c20548e513e053b3dc4924b6cb0ad741e3f264dcff948225c8737834dd4f9ec286dbc06a1a7c13858ea382d9379f4303bcc0916
   languageName: node
   linkType: hard
 

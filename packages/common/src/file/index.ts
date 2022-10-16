@@ -4,3 +4,5 @@ export * from './file-read.js';
 export * from './file-walk.js';
 export * from './file-write.js';
 export * from './merge-dirs.js';
+export * from './path.js';
+export * from './zip.js';

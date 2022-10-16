@@ -42,15 +42,20 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "adm-zip": "0.5.9",
     "globby": "13.1.2",
+    "micromatch": "4.0.5",
     "picocolors": "1.0.0"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
     "@jest/types": "29.1.2",
+    "@types/adm-zip": "0.5.0",
     "@types/jest": "29.1.2",
+    "@types/micromatch": "4.0.2",
     "@types/node": "18.8.3",
     "eslint": "8.25.0",
+    "image-size": "1.0.2",
     "jest": "29.1.2",
     "jest-mock-process": "2.0.0",
     "npm-run-all": "4.1.5",
