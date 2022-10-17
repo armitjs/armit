@@ -58,11 +58,10 @@ const globalOptions = () => {
 };
 
 export const createYargs = (option: CliOption) => {
-  const textFormat = terminalColor(['bold', 'underline', 'cyan']);
   return (
     globalOptions()
-      .group(['help', 'version', 'logLevel'], textFormat('Globals: '))
-      .usage(`${textFormat('Usage:')} $0 <command> [options]`)
+      .group(['help', 'version', 'logLevel'], 'Globals: ')
+      .usage(`Usage: $0 <command> [options]`)
       .recommendCommands()
       .demandCommand(
         1,
