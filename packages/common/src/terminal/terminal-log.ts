@@ -1,4 +1,5 @@
 import C from 'picocolors';
+import { terminalColor } from './terminal-color.js';
 import type {
   Color,
   Level,
@@ -65,17 +66,7 @@ function getColorApplier(
     return colorType === 'DECORATION' ? isDecoration : !isDecoration;
   });
 
-  if (!colors[0]) {
-    // Pure text output.
-    return (x: string) => x;
-  }
-  return (x) => {
-    let out = x;
-    for (let i = 0; i < colors.length; i++) {
-      out = C[colors[i]](out);
-    }
-    return out;
-  };
+  return terminalColor(colors);
 }
 
 function addUnitOfTime(

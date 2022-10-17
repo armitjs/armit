@@ -1,5 +1,5 @@
 import {
-  ensureFixtureFiles,
+  createFixtureFiles,
   rmrfSync,
   fileWalkSync,
   fileWalk,
@@ -8,7 +8,7 @@ import {
 describe('fileWalk', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = ensureFixtureFiles(import.meta.url, 'filewalk', [
+    fixtureCwd = createFixtureFiles(import.meta.url, 'filewalk', [
       'a/b/c/text.txt',
       'a/b/c/image.jpg',
       'a/b/c/image.png',

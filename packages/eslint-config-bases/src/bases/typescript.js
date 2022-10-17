@@ -20,17 +20,7 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      // this loads <rootdir>/tsconfig.json to eslint
-      typescript: {
-        // use an array of glob patterns
-        project: [
-          // below is suitable for workspace mode of vscode
-          'tsconfig.json',
-          // below is suitable for normal project structure mode.
-          'packages/*/tsconfig.json',
-          'apps/*/tsconfig.json',
-        ],
-      },
+      typescript: {},
     },
   },
   extends: [

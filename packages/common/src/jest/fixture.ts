@@ -10,7 +10,7 @@ import { getDirname } from '../file/index.js';
  * @param randomContent The random file content
  * @return __dirname
  */
-export const ensureFixtureFiles = (
+export const createFixtureFiles = (
   url: string,
   dir = 'fixture',
   files: string[],

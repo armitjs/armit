@@ -2,7 +2,8 @@ import { existsSync, writeFileSync } from 'node:fs';
 import { extname, join } from 'node:path';
 import { jest } from '@jest/globals';
 import { imageSize } from 'image-size';
-import { getDirname, rmrfSync } from '@armit/common';
+import { getDirname } from '../dir-name.js';
+import { rmrfSync } from '../file-write.js';
 import { extractFileFromZip, unzip, zip } from '../zip.js';
 
 function isCorruptedJpeg(filepath) {

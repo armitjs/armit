@@ -1,4 +1,4 @@
-# @armit/module-cjs
+# @armit/common
 
 ## node modern entry points exports
 

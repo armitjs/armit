@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync } from 'fs';
-import { rmrfSync, mergeDirs, ensureFixtureFiles } from '@armit/common';
+import { rmrfSync, mergeDirs, createFixtureFiles } from '@armit/common';
 
 describe('mergeDirs', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = ensureFixtureFiles(import.meta.url, 'mergedirs', [
+    fixtureCwd = createFixtureFiles(import.meta.url, 'mergedirs', [
       'a/hello.txt',
       'b/hello.txt',
       'b/world.txt',

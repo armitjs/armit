@@ -1,10 +1,10 @@
 import { join } from 'path';
-import { ensureFixtureFiles, fileCompare, rmrfSync } from '@armit/common';
+import { createFixtureFiles, fileCompare, rmrfSync } from '@armit/common';
 
 describe('fileCompare', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = ensureFixtureFiles(import.meta.url, 'fileCompare', [
+    fixtureCwd = createFixtureFiles(import.meta.url, 'fileCompare', [
       'file1.txt',
       'file2.txt',
     ]);

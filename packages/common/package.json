@@ -43,9 +43,14 @@
   },
   "dependencies": {
     "adm-zip": "0.5.9",
+    "cfonts": "3.1.1",
+    "execa": "6.1.0",
     "globby": "13.1.2",
     "micromatch": "4.0.5",
-    "picocolors": "1.0.0"
+    "picocolors": "1.0.0",
+    "terminal-link": "3.0.0",
+    "type-fest": "3.1.0",
+    "yargs": "17.6.0"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
@@ -62,6 +67,7 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
     "ts-jest": "29.0.3",
+    "ts-node": "10.9.1",
     "tsup": "6.2.3",
     "typescript": "4.8.4"
   },
