@@ -29,7 +29,7 @@ interface CommandHandlerCtor<T extends CommandArgv> {
 export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler<T>
 {
-  private logger: DefaultLogger = new DefaultLogger({
+  protected logger: DefaultLogger = new DefaultLogger({
     level: LogLevel.Warn,
   });
 

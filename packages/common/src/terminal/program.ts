@@ -41,26 +41,28 @@ export const runProgram = (
  * Pipe the child process stdout to the parent, this method only used to `jest test` purpose
  * Please manully install `ts-node`, `tsconfig-paths`
  * @param program exec node file `join(__dirname, 'cmd-cli.ts')`
- * @param tsconfig the configuration file `join(process.cwd(), '.vscode/tsconfig.json')`
+ * @param mode esm or commonjs
+ * @param tsconfig the configuration file `join(process.cwd(), './tsconfig.json')`
  * @param options the configuration of `execa`
  * @param args parameters for program
  */
 export const runTsScript = (
   program: string,
+  mode: 'esm' | 'commonjs',
   tsconfig: string,
   options: CommonOptions<string>,
   ...args
 ): Promise<ExecaReturnValue<string>> => {
-  return execa(
-    'node',
-    ['-r', 'ts-node/register', '-r', 'tsconfig-paths/register', program].concat(
-      args
-    ),
-    {
-      env: {
-        TS_NODE_PROJECT: tsconfig,
-      },
-      ...options,
-    }
-  );
+  const commonjsArgs =
+    mode === 'commonjs'
+      ? ['-r', 'ts-node/register', '-r', 'tsconfig-paths/register']
+      : // FIXME: Add path mapping support to ESM and CJS loaders https://github.com/TypeStrong/ts-node/pull/1585
+        ['--loader', 'ts-node/esm'];
+
+  return execa('node', commonjsArgs.concat(program, ...args), {
+    env: {
+      TS_NODE_PROJECT: tsconfig,
+    },
+    ...options,
+  });
 };

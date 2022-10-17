@@ -64,8 +64,8 @@ export class DefaultLogger implements ArmitLogger {
   private defaultContext = DEFAULT_CONTEXT;
 
   private terminal = new Terminal({
-    showDate: true,
     levels: advancedLevels,
+    showLevelName: true,
   });
 
   constructor(options?: { level?: LogLevel }) {
@@ -108,15 +108,16 @@ export class DefaultLogger implements ArmitLogger {
   }
   verbose(message: string, context?: string): void {
     if (this.level >= LogLevel.Verbose) {
-      this.terminal.log.fatal(
+      this.terminal.log.trace(
         this.ensureString(message),
         this.logContext(context)
       );
     }
   }
+
   debug(message: string, context?: string): void {
     if (this.level >= LogLevel.Debug) {
-      this.terminal.log.trace(this.ensureString(message), context);
+      this.terminal.log.debug(this.ensureString(message), context);
     }
   }
 

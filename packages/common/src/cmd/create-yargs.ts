@@ -94,7 +94,7 @@ export const createYargs = (option: CliOption) => {
       .alias('l', 'logLevel')
       .alias('v', 'version')
       .epilog(
-        `Copyright 2020 ${getTerminalLink(
+        `Copyright 2022 ${getTerminalLink(
           terminalColor(['bold', 'magenta'])(option.group),
           'https://github.com/armitjs/armit'
         )} `
