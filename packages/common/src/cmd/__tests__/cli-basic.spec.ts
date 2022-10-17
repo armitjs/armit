@@ -53,4 +53,16 @@ describe('cli basic infrusture', () => {
     );
     expect(stdout).toStrictEqual(expect.stringContaining('DEBUG'));
   });
+
+  it('The output should have correct handle wrong param input', async () => {
+    const { stderr } = await runCliMock('test', '-l=Wrong');
+    expect(stderr).toStrictEqual(
+      expect.stringContaining('Error: Invalid values:')
+    );
+    expect(stderr).toStrictEqual(
+      expect.stringContaining(
+        `Given: "Wrong", Choices: "Error", "Warn", "Info", "Verbose", "Debug"`
+      )
+    );
+  });
 });

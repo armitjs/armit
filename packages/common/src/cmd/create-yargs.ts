@@ -82,12 +82,6 @@ export const createYargs = (option: CliOption) => {
       .locale('en')
       .updateStrings({
         command: terminalColor(['cyan'])('command'),
-        Examples: textFormat('Examples'),
-        Commands: textFormat('Commands'),
-        Options: textFormat('Options'),
-        InvalidValues: `${terminalColor(['bgBlack', 'red'])(
-          'ERR! '
-        )}${terminalColor(['bold'])('InvalidValues')}`,
       })
       .strict()
       .alias('h', 'help')
