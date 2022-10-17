@@ -22,9 +22,7 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
-    expect(stdout).toStrictEqual(
-      expect.stringContaining(`Copyright 2022 @armit`)
-    );
+    expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2022`));
   });
   it('Should output correct `test help` -h', async () => {
     const { stdout } = await runCliMock('test', '-h');
