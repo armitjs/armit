@@ -1,5 +1,9 @@
 {
   "folders": [
+    {
+      "name": "cli",
+      "path": "packages/cli"
+    },
     // {
     //   "name": "core",
     //   "path": "packages/core"
@@ -38,6 +42,7 @@
     "eslint.alwaysShowStatus": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
+      "./packages/cli",
       "./packages/core",
       "./packages/create",
       "./packages/common",

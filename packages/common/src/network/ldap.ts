@@ -94,10 +94,14 @@ export const ldapSHAVerify = (password: string, hash: string): boolean => {
   }
   // LDAP-SSHA Algorithm formula = {SSHA}base64_encode(sha1(A + salt)+salt)
   // The first 20 digits: C=SHA1(A+salt)
-  const shaEncrypt = bhash.slice(0, 20).toString('base64');
+  const shaEncrypt = Buffer.from(
+    Uint8Array.prototype.slice.call(bhash, 0, 20)
+  ).toString('base64');
+
   if (cipherMapping.withSalt) {
     // after 20 digits it's random plaintext salt (the length is 4 bit)
-    const salt = bhash.slice(20);
+    const salt = Buffer.from(Uint8Array.prototype.slice.call(bhash, 20));
+
     return shaEncrypt === createSHA(cipherMapping.cipher, password, salt);
   } else {
     return shaEncrypt === createSHA(cipherMapping.cipher, password);

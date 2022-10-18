@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "noImplicitAny": false,
+    "allowJs": false,
+    "noEmit": false,
+    "incremental": true,
+    "paths": {
+      "@armit/cli": ["./index.js"],
+      "@armit/common": ["../../../packages/common/src/index.js"]
+    }
+  },
+  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+}

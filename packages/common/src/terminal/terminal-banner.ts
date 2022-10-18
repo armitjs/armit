@@ -56,24 +56,20 @@ type BannerFontsOptions = {
   background: string;
   /**
    * define letter spacing
-   * @default 2
    */
-  letterSpacing?: number;
+  letterSpacing: number;
   /**
    * define the line height
-   * @default 2
    */
-  lineHeight?: number;
+  lineHeight: number;
   /**
    * define if the output text should have empty lines on top and on the bottom
-   * @default true
    */
-  space?: boolean;
+  space: boolean;
   /**
    * define how many character can be on one line
-   * @default 10
    */
-  maxLength?: number;
+  maxLength: number;
   /**
    * define your two gradient colors
    * @example `red,blue,green`

@@ -1,7 +1,8 @@
+import type { PackageJson } from 'type-fest';
 import type { Arguments, CommandModule } from 'yargs';
 import { LogLevel, DefaultLogger } from '../logger/logger.js';
 
-type ArgvPrimitive = string | number | boolean;
+type ArgvPrimitive = string | number | boolean | PackageJson;
 
 type ArgvConfig = Record<string, ArgvPrimitive | Array<ArgvPrimitive>>;
 
@@ -10,6 +11,10 @@ export type CommandArgv<T = ArgvConfig> = {
    * The name of runing command
    */
   name: string;
+  /**
+   * The cli package json parsed from `package.json`
+   */
+  packageJson: PackageJson;
   /**
    * The actived logging level
    */
@@ -20,6 +25,7 @@ interface OnCommandHandler<T extends CommandArgv> {
   handle(): void | Promise<void>;
   initialize(args: Arguments<T>): void;
   get name(): string;
+  get cliPackageJson(): PackageJson;
 }
 
 interface CommandHandlerCtor<T extends CommandArgv> {
@@ -35,14 +41,21 @@ export abstract class AbstractHandler<T extends CommandArgv>
 
   // Actived command name.
   private pluginName: string;
+  private packageJson: PackageJson;
 
   constructor(protected args: Arguments<T>) {
     this.initialize(args);
     this.pluginName = args.name;
+    this.packageJson = args.packageJson;
+    this.logger.setDefaultContext(args.name);
   }
 
   initialize(args: Arguments<T>): void {
     this.logger.setLevel(LogLevel[args.logLevel]);
+  }
+
+  get cliPackageJson(): PackageJson {
+    return this.packageJson;
   }
 
   get name(): string {

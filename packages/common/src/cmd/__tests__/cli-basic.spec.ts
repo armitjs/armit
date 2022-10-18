@@ -1,4 +1,5 @@
 import { join } from 'path';
+import type { PackageJson } from 'type-fest';
 import { readJsonFromFile } from '../../file/file-write.js';
 import { runCliMock } from './cmd-util.js';
 
@@ -7,8 +8,10 @@ describe('cli basic infrusture', () => {
 
   it('Should output correct `version` -v', async () => {
     const { stdout } = await runCliMock('-v');
-    const pkgJson = readJsonFromFile<{ version: string }>(packagePath);
-    expect(stdout).toStrictEqual(expect.stringContaining(pkgJson.version));
+    const pkgJson = readJsonFromFile<PackageJson>(packagePath);
+    expect(stdout).toStrictEqual(
+      expect.stringContaining(pkgJson.version || '')
+    );
   });
 
   it('Should output correct `help` -h', async () => {
@@ -42,6 +45,11 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(
       expect.stringContaining('this is test command handle')
     );
+  });
+
+  it('The output should have unknown command recommand', async () => {
+    const { stderr } = await runCliMock('test1');
+    expect(stderr).toStrictEqual(expect.stringContaining('Did you mean test?'));
   });
 
   it('The output should have correct global options', async () => {

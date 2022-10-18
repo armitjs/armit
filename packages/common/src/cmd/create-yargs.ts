@@ -1,6 +1,6 @@
 import type { Argv, CommandModule } from 'yargs';
 import yargs from 'yargs';
-import { DefaultLogger } from '../logger/logger.js';
+import { DefaultLogger, LogLevel } from '../logger/logger.js';
 import { terminalColor } from '../terminal/terminal-color.js';
 import { getTerminalLink } from '../terminal/terminal-link.js';
 
@@ -25,7 +25,9 @@ export interface CliOption {
   exitProcess?: boolean;
 }
 
-const logger = new DefaultLogger();
+const logger = new DefaultLogger({
+  level: LogLevel.Warn,
+});
 
 const errorHandler =
   (option: CliOption) => (msg: string, err: string | Error, yargsIns: Argv) => {

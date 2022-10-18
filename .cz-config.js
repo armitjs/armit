@@ -36,6 +36,7 @@ module.exports = {
   ],
 
   scopes: [
+    { name: 'cli' },
     { name: 'create' },
     { name: 'core' },
     { name: 'common' },
