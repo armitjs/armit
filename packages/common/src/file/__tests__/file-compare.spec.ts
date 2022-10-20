@@ -1,5 +1,6 @@
 import { join } from 'path';
-import { createFixtureFiles, fileCompare, rmrfSync } from '@armit/common';
+import { createFixtureFiles } from '../../test-utils/index.js';
+import { fileCompare, rmrfSync } from '../index.js';
 
 describe('fileCompare', () => {
   let fixtureCwd;

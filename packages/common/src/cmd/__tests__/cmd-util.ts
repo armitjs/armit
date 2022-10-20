@@ -1,5 +1,6 @@
 import { join } from 'path';
-import { getDirname, runTsScript } from '@armit/common';
+import { getDirname } from '../../index.js';
+import { runTsScript } from '../../terminal/index.js';
 
 export interface CliMockResult {
   stdout: string;

@@ -1,6 +1,5 @@
 import { existsSync, writeFileSync } from 'node:fs';
 import { extname, join } from 'node:path';
-import { jest } from '@jest/globals';
 import { imageSize } from 'image-size';
 import { getDirname } from '../dir-name.js';
 import { rmrfSync } from '../file-write.js';
@@ -20,7 +19,6 @@ function isCorruptedJpeg(filepath) {
 }
 
 describe('unzip / unzip', () => {
-  jest.setTimeout(5000000);
   const workCwd = getDirname(import.meta.url);
   const unzipCwd = join(workCwd, 'unzip');
   afterAll(() => {

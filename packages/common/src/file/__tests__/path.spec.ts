@@ -1,4 +1,4 @@
-import { ensureSlash, isPathMatch } from '@armit/common';
+import { ensureSlash, isPathMatch } from '../path.js';
 
 describe('ensureSlash', () => {
   it('Do not append a trailing slash if there is none', () => {

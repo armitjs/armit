@@ -4,13 +4,17 @@ import { globbySync } from 'globby';
 import mem, { memClear } from 'mem';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
-import { findParentDir } from '@armit/common';
+import { findParentDir } from '../index.js';
 
 const memoizedLoad = mem(load, { cacheKey: JSON.stringify });
 const memoizedSearch = mem(findPluginsInNodeModules);
 
-function uniqByKey(array, key) {
-  const result: Array<{ requirePath: string }> = [];
+type PluginItem = {
+  name: string;
+  requirePath: string;
+};
+function uniqByKey(array: PluginItem[], key: string) {
+  const result: Array<PluginItem> = [];
   const seen = new Set();
 
   for (const element of array) {
@@ -24,7 +28,7 @@ function uniqByKey(array, key) {
   return result;
 }
 
-function partition(array, predicate) {
+function partition(array: string[], predicate: (value: string) => boolean) {
   const result: [string[], string[]] = [[], []];
 
   for (const value of array) {
@@ -86,9 +90,15 @@ function load(
 
   const externalAutoLoadPluginInfos = pluginSearchDirs.flatMap(
     (pluginSearchDir: string) => {
-      const resolvedPluginSearchDir = resolve(process.cwd(), pluginSearchDir);
+      const resolvedPluginSearchDir = path.resolve(
+        process.cwd(),
+        pluginSearchDir
+      );
 
-      const nodeModulesDir = resolve(resolvedPluginSearchDir, 'node_modules');
+      const nodeModulesDir = path.resolve(
+        resolvedPluginSearchDir,
+        'node_modules'
+      );
 
       // In some fringe cases (ex: files "mounted" as virtual directories), the
       // isDirectory(resolvedPluginSearchDir) check might be false even though
@@ -128,9 +138,9 @@ function load(
   return [...externalPlugins];
 }
 /**
- * find plugins in node_mdoules
+ * Find plugins in node_mdoules
  * @param nodeModulesDir directory of search for plugin
- * @param pluginPackPattern `['armit-cli-plugin-*\/package.json', '@armit/cli-plugin-*\/package.json']`
+ * @param pluginPackPattern ['@*\/armit-cli-plugin-*\/package.json','armit-cli-plugin-*\/package.json', '@armit/cli-plugin-*\/package.json']
  * @returns
  */
 function findPluginsInNodeModules(

@@ -1,10 +1,11 @@
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { CliOption } from '@armit/common';
 import {
   createCli,
   findParentDir,
   loadPlugins,
-  updateCheck,
+  updateNotifier,
   getPackageData,
 } from '@armit/common';
 import { infoCmd } from './info/define.js';
@@ -14,14 +15,24 @@ export const bootstrap = (options?: Partial<CliOption>) => {
   // Read cli package json data.
   const packageJson = getPackageData();
 
-  // Check if newer cli version here.
-  updateCheck(packageJson);
+  if (packageJson) {
+    // Check if newer cli version here.
+    updateNotifier({
+      pkg: {
+        name: packageJson?.name || '',
+        version: packageJson?.version || '',
+      },
+    });
+  }
+
+  // __dirname
+  const curDirName = dirname(fileURLToPath(import.meta.url));
 
   // Load all available cli plugins
   const externalPlugins = loadPlugins(
     [],
     ['@armit/cli-plugin-*/package.json', 'armit-cli-plugin-*/package.json'],
-    [process.cwd(), join(findParentDir(__dirname, '@armit'), '../')]
+    [process.cwd(), join(findParentDir(curDirName, '@armit'), '../')]
   );
 
   // Register built-in commands.
@@ -39,5 +50,4 @@ export const bootstrap = (options?: Partial<CliOption>) => {
       armitCli.register(plugin);
     }
   });
-  return armitCli;
 };

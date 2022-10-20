@@ -10,7 +10,8 @@
     "paths": {
       "@armit/cli": ["./index.js"],
       "@armit/common": ["../../../packages/common/src/index.js"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }

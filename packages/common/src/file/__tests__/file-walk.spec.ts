@@ -1,9 +1,5 @@
-import {
-  createFixtureFiles,
-  rmrfSync,
-  fileWalkSync,
-  fileWalk,
-} from '@armit/common';
+import { createFixtureFiles } from '../../test-utils/index.js';
+import { rmrfSync, fileWalkSync, fileWalk } from '../index.js';
 
 describe('fileWalk', () => {
   let fixtureCwd;

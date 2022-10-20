@@ -1,5 +1,7 @@
 import { existsSync, mkdirSync } from 'fs';
-import { rmrfSync, mergeDirs, createFixtureFiles } from '@armit/common';
+import { createFixtureFiles } from '../../test-utils/fixture.js';
+import { rmrfSync } from '../file-write.js';
+import { mergeDirs } from '../merge-dirs.js';
 
 describe('mergeDirs', () => {
   let fixtureCwd;

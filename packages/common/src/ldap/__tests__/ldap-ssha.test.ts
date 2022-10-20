@@ -1,4 +1,4 @@
-import { ldapSSHACreate, ldapSHAVerify, createSalt } from '@armit/common';
+import { ldapSSHACreate, ldapSHAVerify, createSalt } from '../ldap.js';
 
 describe('ldap ssha verify', () => {
   it('ldap.createSHA', () => {

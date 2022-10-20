@@ -1,12 +1,11 @@
-import { mockProcessStdout, mockProcessStderr } from 'jest-mock-process';
 import { Terminal, advancedLevels } from '../index.js';
 
 describe('new Terminal()', () => {
   let mockStdout;
   let mockStderr;
   beforeAll(() => {
-    mockStdout = mockProcessStdout();
-    mockStderr = mockProcessStderr();
+    mockStdout = vi.spyOn(process.stdout, 'write');
+    mockStderr = vi.spyOn(process.stderr, 'write');
   });
 
   afterAll(() => {

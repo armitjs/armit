@@ -1,4 +1,4 @@
-import { getDirname } from '@armit/common';
+import { getDirname } from '../dir-name.js';
 
 describe('getDirname', () => {
   it('should correct dynamic determined __dirname', () => {

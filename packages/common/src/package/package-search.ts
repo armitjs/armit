@@ -26,7 +26,7 @@ export const getClosestPackageFile = (options?: Options) => {
  * @param clue Give file or directory we want to find.
  * @returns
  */
-export const findParentDir = (currentFullPath, clue: string) => {
+export const findParentDir = (currentFullPath: string, clue: string) => {
   function testDir(parts) {
     if (parts.length === 0) return null;
     const p = parts.join('');

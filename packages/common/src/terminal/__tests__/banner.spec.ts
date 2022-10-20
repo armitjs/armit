@@ -1,10 +1,9 @@
-import { mockConsoleLog } from 'jest-mock-process';
 import { showBanner } from '../terminal-banner.js';
 
 describe('cli banner', () => {
   let mockConsole;
   beforeAll(() => {
-    mockConsole = mockConsoleLog();
+    mockConsole = vi.spyOn(console, 'log');
   });
   afterAll(() => {
     mockConsole.mockRestore();
