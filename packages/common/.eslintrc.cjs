@@ -21,7 +21,7 @@ module.exports = {
     '@armit/eslint-config-bases/typescript',
     '@armit/eslint-config-bases/sonar',
     '@armit/eslint-config-bases/regexp',
-    '@armit/eslint-config-bases/jest',
+    '@armit/eslint-config-bases/vitest',
     // Apply prettier and disable incompatible rules
     '@armit/eslint-config-bases/prettier',
   ],

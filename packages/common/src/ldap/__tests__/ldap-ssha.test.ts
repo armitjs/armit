@@ -7,7 +7,7 @@ describe('ldap ssha verify', () => {
     const verify = ldapSHAVerify('test.lr', ssha);
     expect(verify).toBe(true);
   });
-
+  // describe('ldap ssha verify', () => {});
   it('ldap.verifySSHA', () => {
     const verify = ldapSHAVerify(
       'test.lr$',

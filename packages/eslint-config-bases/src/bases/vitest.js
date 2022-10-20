@@ -16,16 +16,17 @@ module.exports = {
     {
       // Perf: To ensure best performance enable eslint-plugin-jest for test files only.
       files: jestPatterns.files,
-      // @see https://github.com/jest-community/eslint-plugin-jest
-      extends: ['plugin:jest/recommended'],
+      // @see https://github.com/veritem/eslint-plugin-vitest
+      // extends: ['plugin:vitest/recommended'],
+      plugins: ['vitest'],
       rules: {
-        'jest/prefer-hooks-in-order': 'error',
-        'jest/prefer-hooks-on-top': 'error',
-        'jest/no-duplicate-hooks': 'error',
-        'jest/no-test-return-statement': 'error',
-        'jest/prefer-strict-equal': 'error',
-        'jest/prefer-to-have-length': 'error',
-        'jest/consistent-test-it': ['error', { fn: 'it' }],
+        'vitest/no-skipped-tests': 2,
+        'vitest/max-nested-describe': [
+          'error',
+          {
+            max: 3,
+          },
+        ],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
         '@typescript-eslint/no-empty-function': 'off',
