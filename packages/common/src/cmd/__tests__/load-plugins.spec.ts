@@ -1,4 +1,3 @@
-import { dirname, join } from 'path';
 import { createFixtureFiles, loadPlugins, rmrfSync } from '../../index.js';
 
 describe('load cli command plugins', () => {
@@ -9,17 +8,17 @@ describe('load cli command plugins', () => {
       // `@armit/cli-plugin-a`
       'node_modules/@armit/cli-plugin-a/package.json':
         '{"name":"@armit/cli-plugin-a","version":"0.0.1","main":"index.js"}',
-      'node_modules/@armit/cli-plugin-a/index.js': 'console.log()',
+      'node_modules/@armit/cli-plugin-a/index.js': 'console.log("a")',
 
       // `@armit/cli-plugin-b`
       'node_modules/@armit/cli-plugin-b/package.json':
         '{"name":"@armit/cli-plugin-b","version":"0.0.1","main":"index.js"}',
-      'node_modules/@armit/cli-plugin-b/index.js': 'console.log()',
+      'node_modules/@armit/cli-plugin-b/index.js': 'console.log("b")',
 
       // `armit-cli-plugin-a`
       'node_modules/armit-cli-plugin-a/package.json':
         '{"name":"armit-cli-plugin-a","version":"0.0.1","main":"index.js"}',
-      'node_modules/armit-cli-plugin-a/index.js': 'console.log()',
+      'node_modules/armit-cli-plugin-a/index.js': 'console.log("c")',
 
       // `armit-cli-plugin-b`
       'node_modules/armit-cli-plugin-b/package.json':
