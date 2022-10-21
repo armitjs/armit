@@ -5,10 +5,10 @@ import { fileCompare, rmrfSync } from '../index.js';
 describe('fileCompare', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = createFixtureFiles(import.meta.url, 'fileCompare', [
-      'file1.txt',
-      'file2.txt',
-    ]);
+    fixtureCwd = createFixtureFiles(import.meta.url, 'fileCompare', {
+      'file1.txt': '',
+      'file2.txt': '',
+    });
   });
 
   afterAll(() => {

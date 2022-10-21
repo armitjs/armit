@@ -29,6 +29,10 @@ module.exports = {
     // optional overrides per project
   },
   overrides: [
-    // optional overrides per project file match
+    {
+      // optional overrides per project file match
+      files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      '@typescript-eslint/naming-convention': 'off',
+    },
   ],
 };

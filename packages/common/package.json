@@ -34,7 +34,7 @@
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo",
     "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/common.eslintcache",
     "test": "run-s test-unit",
-    "test-unit": "vitest run",
+    "test-unit": "vitest run --passWithNoTests",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {

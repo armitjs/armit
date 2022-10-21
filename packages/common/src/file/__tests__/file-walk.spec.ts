@@ -4,12 +4,12 @@ import { rmrfSync, fileWalkSync, fileWalk } from '../index.js';
 describe('fileWalk', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = createFixtureFiles(import.meta.url, 'filewalk', [
-      'a/b/c/text.txt',
-      'a/b/c/image.jpg',
-      'a/b/c/image.png',
-      'a/b/c/style.css',
-    ]);
+    fixtureCwd = createFixtureFiles(import.meta.url, 'filewalk', {
+      'a/b/c/text.txt': '',
+      'a/b/c/image.jpg': '',
+      'a/b/c/image.png': '',
+      'a/b/c/style.css': '',
+    });
   });
 
   afterAll(() => {

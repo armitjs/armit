@@ -11,7 +11,7 @@ import {
 import { infoCmd } from './info/define.js';
 import { packCmd } from './pack/define.js';
 
-export const bootstrap = (options?: Partial<CliOption>) => {
+export const bootstrap = async (options?: Partial<CliOption>) => {
   // Read cli package json data.
   const packageJson = getPackageData();
 
@@ -29,7 +29,7 @@ export const bootstrap = (options?: Partial<CliOption>) => {
   const curDirName = dirname(fileURLToPath(import.meta.url));
 
   // Load all available cli plugins
-  const externalPlugins = loadPlugins(
+  const externalPlugins = await loadPlugins(
     [],
     ['@armit/cli-plugin-*/package.json', 'armit-cli-plugin-*/package.json'],
     [process.cwd(), join(findParentDir(curDirName, '@armit'), '../')]
@@ -45,9 +45,9 @@ export const bootstrap = (options?: Partial<CliOption>) => {
     .register(packCmd);
 
   // Register external plugins.
-  externalPlugins.forEach((plugin) => {
+  for (const { plugin } of externalPlugins) {
     if (plugin) {
       armitCli.register(plugin);
     }
-  });
+  }
 };

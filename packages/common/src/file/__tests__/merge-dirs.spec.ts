@@ -6,11 +6,11 @@ import { mergeDirs } from '../merge-dirs.js';
 describe('mergeDirs', () => {
   let fixtureCwd;
   beforeAll(() => {
-    fixtureCwd = createFixtureFiles(import.meta.url, 'mergedirs', [
-      'a/hello.txt',
-      'b/hello.txt',
-      'b/world.txt',
-    ]);
+    fixtureCwd = createFixtureFiles(import.meta.url, 'mergedirs', {
+      'a/hello.txt': '',
+      'b/hello.txt': '',
+      'b/world.txt': '',
+    });
   });
 
   afterAll(() => {
