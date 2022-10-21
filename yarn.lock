@@ -16,7 +16,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/cli@workspace:packages/cli"
   dependencies:
-    "@armit/common": 0.0.1
+    "@armit/common": 0.0.2
     "@armit/eslint-config-bases": "workspace:^"
     "@types/node": 18.11.3
     eslint: 8.25.0
@@ -29,11 +29,11 @@ __metadata:
     typescript: 4.8.4
     vitest: 0.24.3
   bin:
-    arm: ./bin/armit.js
+    arm: ./bin/armit.mjs
   languageName: unknown
   linkType: soft
 
-"@armit/common@0.0.1, @armit/common@workspace:packages/common":
+"@armit/common@0.0.2, @armit/common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@armit/common@workspace:packages/common"
   dependencies:
