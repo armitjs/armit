@@ -104,7 +104,13 @@ const { getPrettierConfig } = require("@armit/eslint-config-bases/helpers");
 module.exports = {
   ...prettierConfig,
   overrides: [
-    // whatever you need
+    {
+      // optional overrides per project file match
+      files: ["**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+      rules: {
+        "@typescript-eslint/naming-convention": "off",
+      },
+    },
   ],
 };
 ```
@@ -144,6 +150,12 @@ Generic typescript project, mostly based on
 | Type/Plugin                                                                            | Comment                     |
 | :------------------------------------------------------------------------------------- | :-------------------------- |
 | [eslint-plugin-jest/recommended](https://github.com/jest-community/eslint-plugin-jest) | Jest recommended practices. |
+
+### Vitest
+
+| Type/Plugin                                               | Comment                       |
+| :-------------------------------------------------------- | :---------------------------- |
+| [vitest](https://github.com/veritem/eslint-plugin-vitest) | Vitest recommended practices. |
 
 ### React Testing Library
 
