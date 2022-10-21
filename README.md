@@ -39,8 +39,11 @@ The root directory has a `package.json` which contains build-related dependencie
 
 This runs the yarn "install" command, will scan those directories and look for children `package.json`. Their content is used to define the workspace topology (core, common, dependencies...), and cross-links monorepo dependencies.
 
-### 3. Build all packages
+### 3. Build & test all packages
 
+- `yarn g:test-unit`
+- `yarn g:lint`
+- `yarn g:typecheck`
 - `yarn g:build`
 
 ### 4. Publishing
@@ -58,3 +61,21 @@ $ yarn g:changeset
 Follow the instructions... and commit the changeset file. A "Version Packages" P/R will appear after CI checks.
 When merging it, a [github action](./.github/workflows/release-or-version-pr.yml) will publish the packages
 with resulting semver version and generate CHANGELOGS for you.
+
+### 5. Maintaining deps updated
+
+The global commands `yarn deps:update` will help to maintain the same versions across the entire monorepo.
+They are based on the excellent [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
+(see [options](https://github.com/raineorshine/npm-check-updates#options), i.e: `yarn check:deps -t minor`).
+
+> After running `yarn deps:update`, a `yarn install` is required. To prevent
+> having duplicates in the yarn.lock, you can run `yarn dedupe --check` and `yarn dedupe` to
+> apply deduplication. The duplicate check is enforced in the example github actions.
+
+### 6. Editor support
+
+> 6.1 VSCode
+
+The armit have full setting for vscode workspace (`rmit.code-workspace`) that the `eslint.workingDirectories` setting is set: just open it.
+
+More info [here](https://github.com/microsoft/vscode-eslint#mono-repository-setup)
