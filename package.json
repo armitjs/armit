@@ -31,6 +31,7 @@
   ],
   "scripts": {
     "g:clean": "yarn clean:global-cache && yarn workspaces foreach -ptv run clean",
+    "g:build": "yarn workspaces foreach -p --topological-dev -v run build",
     "g:test-unit": "yarn workspaces foreach -ptv run test-unit",
     "g:test-e2e": "yarn workspaces foreach -tv run test-e2e",
     "g:lint": "yarn workspaces foreach -ptv run lint --color",
@@ -41,6 +42,7 @@
     "g:version": "changeset version",
     "g:release": "yarn g:build && changeset publish",
     "g:cz": "cz",
+    "g:publish-local": "yarn g:version && cd scripts && ./publish-to-verdaccio.sh",
     "clean:global-cache": "rimraf --no-glob ./.cache",
     "packages:build": "yarn workspaces foreach -ptv --include '@armit/*' run build",
     "packages:test:unit": "yarn workspaces foreach -ptv --include '@armit/*' run test-unit",

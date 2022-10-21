@@ -1,7 +1,6 @@
 {
   "name": "@armit/cli",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
   "homepage": "https://github.com/armitjs/armit",
   "repository": {
     "type": "git",
@@ -22,7 +21,11 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
+  "bin": {
+    "arm": "./bin/armit.mjs"
+  },
   "files": [
+    "bin/",
     "dist/",
     "index.js",
     "README.md",
@@ -38,7 +41,8 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@armit/common": "workspace:^",
+    "@armit/common": "0.0.2",
+    "import-local": "3.1.0",
     "os-name": "5.0.1"
   },
   "devDependencies": {

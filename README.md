@@ -33,12 +33,16 @@ The root directory has a `package.json` which contains build-related dependencie
 
 ### 2. Switch yarn to berry
 
-`yarn set version berry`
-`yarn plugin import workspace-tools`
-`yarn install`
+- `yarn set version berry`
+- `yarn plugin import workspace-tools`
+- `yarn install`
 
 This runs the yarn "install" command, will scan those directories and look for children `package.json`. Their content is used to define the workspace topology (core, common, dependencies...), and cross-links monorepo dependencies.
 
 ### 3. Build all packages
 
-`yarn g:build`
+- `yarn g:build`
+
+### 4. Using changeset
+
+- https://dnlytras.com/blog/using-changesets/

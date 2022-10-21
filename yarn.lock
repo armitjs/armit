@@ -16,10 +16,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/cli@workspace:packages/cli"
   dependencies:
-    "@armit/common": "workspace:^"
+    "@armit/common": 0.0.1
     "@armit/eslint-config-bases": "workspace:^"
     "@types/node": 18.11.3
     eslint: 8.25.0
+    import-local: 3.1.0
     npm-run-all: 4.1.5
     os-name: 5.0.1
     prettier: 2.7.1
@@ -27,10 +28,12 @@ __metadata:
     tsup: 6.3.0
     typescript: 4.8.4
     vitest: 0.24.3
+  bin:
+    arm: ./bin/armit.js
   languageName: unknown
   linkType: soft
 
-"@armit/common@workspace:^, @armit/common@workspace:packages/common":
+"@armit/common@0.0.1, @armit/common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@armit/common@workspace:packages/common"
   dependencies:
@@ -4405,6 +4408,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"import-local@npm:3.1.0":
+  version: 3.1.0
+  resolution: "import-local@npm:3.1.0"
+  dependencies:
+    pkg-dir: ^4.2.0
+    resolve-cwd: ^3.0.0
+  bin:
+    import-local-fixture: fixtures/cli.js
+  checksum: bfcdb63b5e3c0e245e347f3107564035b128a414c4da1172a20dc67db2504e05ede4ac2eee1252359f78b0bfd7b19ef180aec427c2fce6493ae782d73a04cddd
+  languageName: node
+  linkType: hard
+
 "imurmurhash@npm:^0.1.4":
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
@@ -6782,6 +6797,15 @@ __metadata:
   version: 1.2.0
   resolution: "requireindex@npm:1.2.0"
   checksum: 50d8b10a1ff1fdf6aea7a1870bc7bd238b0fb1917d8d7ca17fd03afc38a65dcd7a8a4eddd031f89128b5f0065833d5c92c4fef67f2c04e8624057fe626c9cf94
+  languageName: node
+  linkType: hard
+
+"resolve-cwd@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "resolve-cwd@npm:3.0.0"
+  dependencies:
+    resolve-from: ^5.0.0
+  checksum: 546e0816012d65778e580ad62b29e975a642989108d9a3c5beabfb2304192fa3c9f9146fbdfe213563c6ff51975ae41bac1d3c6e047dd9572c94863a057b4d81
   languageName: node
   linkType: hard
 
