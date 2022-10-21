@@ -43,6 +43,18 @@ This runs the yarn "install" command, will scan those directories and look for c
 
 - `yarn g:build`
 
-### 4. Using changeset
+### 4. Publishing
 
-- https://dnlytras.com/blog/using-changesets/
+> Optional
+
+If you need to share some packages outside of the monorepo, you can publish them to npm or private repositories.
+An example based on tsup is present in each package. Versioning and publishing can be done with [atlassian/changeset](https://github.com/atlassian/changesets),
+and it's simple as typing:
+
+```bash
+$ yarn g:changeset
+```
+
+Follow the instructions... and commit the changeset file. A "Version Packages" P/R will appear after CI checks.
+When merging it, a [github action](./.github/workflows/release-or-version-pr.yml) will publish the packages
+with resulting semver version and generate CHANGELOGS for you.
