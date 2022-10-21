@@ -233,15 +233,28 @@ export class Terminal<L extends string> {
     const monthPositionSwitch = showMonthBeforeDay;
     let output = '';
 
+    const levelContext: string[] = [];
+    // Should add context if we have.
+    if (context) {
+      const ctxColor = getColorApplier('COLOR', contextColor);
+      levelContext.push(' ' + ctxColor(context.toUpperCase()) + ' ');
+    }
+
     // Should look like: [ ERROR ] or [ error ]
     if (showLevelName) {
-      output += `[${color(
-        ' ' +
-          decorate(
-            capitalizeLevelName ? level.name.toUpperCase() : level.name
-          ) +
-          ' '
-      )}]\t`;
+      levelContext.push(
+        color(
+          ' ' +
+            decorate(
+              capitalizeLevelName ? level.name.toUpperCase() : level.name
+            ) +
+            ' '
+        )
+      );
+    }
+
+    if (levelContext.length) {
+      output += '[' + levelContext.join(':') + ']\t';
     }
 
     // Should look like: [ 12d/5m/2011y | 13:43:10.23 ] or [ 5m/12d/2011y | 1:43:10.23 PM ]
@@ -319,12 +332,6 @@ export class Terminal<L extends string> {
       output += ` ${C.bold('>>')}\t`;
     }
 
-    // Should add context if we have.
-    if (context) {
-      const ctxColor = getColorApplier('COLOR', contextColor);
-      output += `\t[ ${ctxColor(context.toUpperCase())} ]`;
-    }
-
     // Should add trace if we have error?
     output +=
       `\t${message}` +
@@ -350,7 +357,7 @@ export class Terminal<L extends string> {
       showTimestamp: true,
       showTimestampRelativeToLastLog: true,
       use24HourClock: false,
-      contextColor: ['bold', 'black'],
+      contextColor: ['bold', 'magenta'],
     };
 
     let logger: object = {};

@@ -75,6 +75,23 @@ describe('new Terminal()', () => {
     terminal.log.victory('The octopus has won.');
   });
 
+  it('should correct display context without level', () => {
+    const terminal = new Terminal({
+      levels: [...advancedLevels],
+      showLevelName: false,
+      showRelativeTimestamp: false,
+      showTimestampRelativeToLastLog: false,
+    });
+    terminal.log.trace('The octopus has won without level.', 'context');
+    expect(mockStdout).toHaveBeenCalledWith(expect.stringMatching('CONTEXT'));
+
+    terminal.log.error(
+      'Today will be 280°C (about the same as an oven) without level.',
+      'Context'
+    );
+    expect(mockStderr).toHaveBeenCalledWith(expect.stringMatching('CONTEXT'));
+  });
+
   it('should correct display context ', () => {
     const terminal = new Terminal({
       levels: [...advancedLevels],
