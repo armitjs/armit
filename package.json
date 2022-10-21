@@ -39,7 +39,6 @@
     "g:lint-staged-files": "lint-staged --allow-empty --config=lint-staged.config.cjs",
     "g:fix-all-files": "yarn workspaces foreach -ptv run fix-all-files",
     "g:changeset": "changeset",
-    "g:version": "changeset version",
     "g:release": "yarn g:build && changeset publish",
     "g:cz": "cz",
     "g:publish-local": "yarn g:version && cd scripts && ./publish-to-verdaccio.sh",

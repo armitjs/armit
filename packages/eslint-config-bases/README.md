@@ -77,6 +77,7 @@ You can find the bases in [./src/bases](./src/bases).
 | [regexp](./src/bases/regexp.js)                 | `*.{js,jsx,jsx,tsx}`              | Keep regexp consistent and safer.                               |
 | [react](./src/bases/react.js)                   | `*.{jsx,tsx}`                     | Recommendations for react, react-hooks and jsx projects.        |
 | [jest](./src/bases/jest.js)                     | `**/?(*.)+(test).{js,jsx,ts,tsx}` | Catch inconsistencies or error in jest tests.                   |
+| [vitest](./src/bases/vitest.js)                 | `**/?(*.)+(test).{js,jsx,ts,tsx}` | Catch inconsistencies or error in vitest tests.                 |
 | [rtl](./src/bases/rtl.js)                       | `**/?(*.)+(test).{js,jsx,ts,tsx}` | Potential errors / deprecations in react-testing-library tests. |
 | [graphql-schema](./src/bases/graphql-schema.js) | `*.graphql`                       | Ensure validity of graphql schema files.                        |
 | [storybook](./src/bases/storybook.js)           | `*.stories.{ts,tsx,mdx}`          | Potential errors / deprecations in stories.                     |
