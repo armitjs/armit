@@ -41,7 +41,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@armit/common": "0.0.2",
+    "@armit/common": "workspace:^",
     "import-local": "3.1.0",
     "os-name": "5.0.1"
   },
