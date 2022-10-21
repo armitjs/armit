@@ -7,5 +7,7 @@ import { bootstrap } from '../index.js';
 if (importLocal(getDirname(import.meta.url))) {
   console.log(`Using local version of ${terminalColor['green']('@armit/cli')}`);
 } else {
-  void bootstrap().parse(process.argv.slice(2));
+  bootstrap().then((cli) => {
+    cli.parse(process.argv.slice(2));
+  });
 }

@@ -2,7 +2,7 @@ import type { Argv, CommandModule, ParseCallback } from 'yargs';
 import type { CliOption } from './create-yargs.js';
 import { createYargs } from './create-yargs.js';
 
-class CliMain {
+export class CliMain {
   private options: CliOption;
   private commands: CommandModule[] = [];
   private program: Argv;

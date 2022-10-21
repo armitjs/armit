@@ -1,17 +1,10 @@
-import { join } from 'path';
-import type { PackageJson } from 'type-fest';
-import { readJsonFromFile } from '../../file/file-write.js';
+import semver from 'semver';
 import { runCliMock } from './cmd-util.js';
 
 describe('cli basic infrusture', () => {
-  const packagePath = join(process.cwd(), './package.json');
-
   it('Should output correct `version` -v', async () => {
     const { stdout } = await runCliMock('-v');
-    const pkgJson = readJsonFromFile<PackageJson>(packagePath);
-    expect(stdout).toStrictEqual(
-      expect.stringContaining(pkgJson.version || '')
-    );
+    expect(semver.valid(stdout)).not.toBeNull();
   });
 
   it('Should output correct `help` -h', async () => {

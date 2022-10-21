@@ -29,16 +29,6 @@ function uniqByKey(array: PluginItem[], key: string) {
   return result;
 }
 
-function partition(array: string[], predicate: (value: string) => boolean) {
-  const result: [string[], string[]] = [[], []];
-
-  for (const value of array) {
-    result[predicate(value) ? 0 : 1].push(value);
-  }
-
-  return result;
-}
-
 /**
  * Load plugin from external specificed or auto searched from `pluginSearchDirs`
  * @param plugins The manual load external plugin package names

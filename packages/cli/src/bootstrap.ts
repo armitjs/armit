@@ -50,4 +50,5 @@ export const bootstrap = async (options?: Partial<CliOption>) => {
       armitCli.register(plugin);
     }
   }
+  return armitCli;
 };
