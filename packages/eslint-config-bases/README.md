@@ -1,9 +1,6 @@
 # @armit/eslint-config-bases
 
-# About
-
-Example of composable eslint config bases that can be easily shared and fine-tuned by apps and
-packages
+The composable eslint config bases that can be easily shared and fine-tuned by apps and packages for armitjs.
 
 ## Features
 
