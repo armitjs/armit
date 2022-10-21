@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.0.4
+
+### Patch Changes
+
+- [`60a91bf`](https://github.com/armitjs/armit/commit/60a91bf0226878872933c0112f83addf79480a02) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update readme docs
+
+- Updated dependencies [[`60a91bf`](https://github.com/armitjs/armit/commit/60a91bf0226878872933c0112f83addf79480a02)]:
+  - @armit/common@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes
