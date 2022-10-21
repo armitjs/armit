@@ -64,7 +64,7 @@ jobs:
       - name: Unit tests
         working-directory: packages/common
         run: |
-          yarn test-unit --runInBand --color
+          yarn test-unit --passWithNoTests
 
       - name: Build lib-common
         working-directory: packages/common
