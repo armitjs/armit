@@ -24,11 +24,12 @@ export type PackCommandArgs = CommandArgv<{
   ignore: string[];
 
   /**
-   * the relative path will be ignore related to process.cwd()
+   * the base relative path will be ignore related to process.cwd()
    * @alias -e
    * @default `public`
    */
-  exclude: string;
+  basePath: string;
+
   /**
    * the directory where the zip will save to
    * it's relative to process.cwd()
@@ -44,7 +45,7 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
   }
 
   private async prepareZip() {
-    const fileFromCwd = join(process.cwd(), this.args.exclude);
+    const fileFromCwd = join(process.cwd(), this.args.basePath);
     const allFiles = await fileWalk(this.args.filter, {
       cwd: fileFromCwd,
       ignore: this.args.ignore,

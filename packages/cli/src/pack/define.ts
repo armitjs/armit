@@ -25,8 +25,8 @@ export const packCmd = createCommand<PackCommandArgs>(
           default: ['**/*.{png,jpg,jpeg,gif,svg}'],
           describe: 'Ignore pattern will removed matched files from `filter`',
         })
-        .option('exclude', {
-          alias: 'e',
+        .option('basePath', {
+          alias: 'b',
           type: 'string',
           default: 'public',
           describe: 'The path that will be ignored relative to `cwd()`',
