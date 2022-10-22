@@ -1,5 +1,5 @@
 import type { Options } from 'pkg-dir';
-import type { PackageJson } from 'type-fest';
+import type { PackageJson, SetRequired } from 'type-fest';
 import { readJsonFromFile } from '../file/file-write.js';
 import { getClosestPackageFile } from './package-search.js';
 
@@ -8,7 +8,7 @@ import { getClosestPackageFile } from './package-search.js';
  * @param options
  * @returns Returns the result object or undefined if no package.json was found.
  */
-export const getPackageData = (options?: Options) => {
+export const getPackageData = (options: SetRequired<Options, 'cwd'>) => {
   const packageDir = getClosestPackageFile(options);
   if (packageDir) {
     return readJsonFromFile<PackageJson>(packageDir);

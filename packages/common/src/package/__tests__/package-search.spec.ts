@@ -13,17 +13,28 @@ describe('getPackageDir', () => {
     const packageData = getPackageDir({
       cwd: currDirname,
     });
+    console.log('packageData', packageData);
     expect(packageData).toBeDefined();
     expect(packageData).toBe(process.cwd());
   });
 });
 
 describe('getClosestPackageFile', () => {
-  it('Should correct find package file path', () => {
+  it('Should correct find package file path with cwd', () => {
     const packageFilePath = getClosestPackageFile({
       cwd: currDirname,
     });
     expect(packageFilePath).toBeDefined();
+    expect(packageFilePath).toBe(join(process.cwd(), 'package.json'));
+  });
+  it('Should correct find package file path without cwd', () => {
+    const packageFilePath = getClosestPackageFile({
+      cwd: process.cwd(),
+    });
+    expect(packageFilePath).toBeDefined();
+    expect(packageFilePath).toEqual(
+      expect.stringContaining('common/package.json')
+    );
     expect(packageFilePath).toBe(join(process.cwd(), 'package.json'));
   });
 });

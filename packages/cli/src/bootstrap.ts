@@ -2,6 +2,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { CliOption } from '@armit/common';
 import {
+  getDirname,
   createCli,
   findParentDir,
   loadPlugins,
@@ -13,7 +14,9 @@ import { packCmd } from './pack/define.js';
 
 export const bootstrap = async (options?: Partial<CliOption>) => {
   // Read cli package json data.
-  const packageJson = getPackageData();
+  const packageJson = getPackageData({
+    cwd: getDirname(import.meta.url),
+  });
 
   if (packageJson) {
     // Check if newer cli version here.

@@ -3,12 +3,13 @@ import { join } from 'node:path';
 import type { Options } from 'pkg-dir';
 import { packageDirectorySync } from 'pkg-dir';
 import { pkgUpSync } from 'pkg-up';
+import type { SetRequired } from 'type-fest';
 
 /**
  * Find the root directory of a Node.js project or npm package
  * @return Returns the project root path or undefined if it could not be found.
  */
-export const getPackageDir = (options?: Options) => {
+export const getPackageDir = (options: SetRequired<Options, 'cwd'>) => {
   return packageDirectorySync(options);
 };
 
@@ -16,7 +17,7 @@ export const getPackageDir = (options?: Options) => {
  * Find the closest package.json file
  * @returns Returns the file path, or undefined if it could not be found.
  */
-export const getClosestPackageFile = (options?: Options) => {
+export const getClosestPackageFile = (options: SetRequired<Options, 'cwd'>) => {
   return pkgUpSync(options);
 };
 

@@ -48,6 +48,7 @@ export abstract class AbstractHandler<T extends CommandArgv>
     this.pluginName = args.name;
     this.packageJson = args.packageJson;
     this.logger.setDefaultContext(args.name);
+    this.logger.debug(this.cliPackageJson);
   }
 
   initialize(args: Arguments<T>): void {

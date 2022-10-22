@@ -81,7 +81,11 @@ export class DefaultLogger implements ArmitLogger {
     this.defaultContext = defaultContext;
   }
 
-  error(message: string, context?: string, trace?: string | undefined): void {
+  error(
+    message: string | object,
+    context?: string,
+    trace?: string | undefined
+  ): void {
     if (this.level >= LogLevel.Error) {
       this.terminal.log.error(
         this.ensureString(message),
@@ -90,7 +94,7 @@ export class DefaultLogger implements ArmitLogger {
       );
     }
   }
-  warn(message: string, context?: string): void {
+  warn(message: string | object, context?: string): void {
     if (this.level >= LogLevel.Warn) {
       this.terminal.log.warn(
         this.ensureString(message),
@@ -98,7 +102,7 @@ export class DefaultLogger implements ArmitLogger {
       );
     }
   }
-  info(message: string, context?: string): void {
+  info(message: string | object, context?: string): void {
     if (this.level >= LogLevel.Info) {
       this.terminal.log.info(
         this.ensureString(message),
@@ -106,7 +110,7 @@ export class DefaultLogger implements ArmitLogger {
       );
     }
   }
-  verbose(message: string, context?: string): void {
+  verbose(message: string | object, context?: string): void {
     if (this.level >= LogLevel.Verbose) {
       this.terminal.log.trace(
         this.ensureString(message),
@@ -115,7 +119,7 @@ export class DefaultLogger implements ArmitLogger {
     }
   }
 
-  debug(message: string, context?: string): void {
+  debug(message: string | object, context?: string): void {
     if (this.level >= LogLevel.Debug) {
       this.terminal.log.debug(this.ensureString(message), context);
     }
