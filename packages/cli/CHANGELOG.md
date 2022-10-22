@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.0.5
+
+### Patch Changes
+
+- [`da985a8`](https://github.com/armitjs/armit/commit/da985a82b1f69c0520df10111dfb38470c0f025f) Thanks [@tianyingchun](https://github.com/tianyingchun)! - try to @changesets/cli@2.22.0-temp.0 to try yarn publish
+
+- Updated dependencies [[`da985a8`](https://github.com/armitjs/armit/commit/da985a82b1f69c0520df10111dfb38470c0f025f)]:
+  - @armit/common@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes
