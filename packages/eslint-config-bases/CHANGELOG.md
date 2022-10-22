@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.4
+
+### Patch Changes
+
+- [`da985a8`](https://github.com/armitjs/armit/commit/da985a82b1f69c0520df10111dfb38470c0f025f) Thanks [@tianyingchun](https://github.com/tianyingchun)! - try to @changesets/cli@2.22.0-temp.0 to try yarn publish
+
 ## 0.0.3
 
 ### Patch Changes
