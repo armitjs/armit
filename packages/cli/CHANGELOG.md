@@ -1,5 +1,16 @@
 # @armit/cli
 
+## 0.0.7
+
+### Patch Changes
+
+- [`6ee7e63`](https://github.com/armitjs/armit/commit/6ee7e63c9447cd5531234774b6cee8404cb080d1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - change pack option `exclude` to `basePath`
+
+- [`4cd6b14`](https://github.com/armitjs/armit/commit/4cd6b142223e1b6de75555ebe745c4fea220e383) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve package search typing constraint
+
+- Updated dependencies [[`4cd6b14`](https://github.com/armitjs/armit/commit/4cd6b142223e1b6de75555ebe745c4fea220e383)]:
+  - @armit/common@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

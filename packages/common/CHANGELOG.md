@@ -1,5 +1,11 @@
 # @armit/common
 
+## 0.0.7
+
+### Patch Changes
+
+- [`4cd6b14`](https://github.com/armitjs/armit/commit/4cd6b142223e1b6de75555ebe745c4fea220e383) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve package search typing constraint
+
 ## 0.0.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.6
+
+### Patch Changes
+
+- [`051f958`](https://github.com/armitjs/armit/commit/051f9582354100154bb8b114526e1da6e6d58d05) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix missed publishConfig directory to changesets publish
+
 ## 0.0.5
 
 ### Patch Changes
