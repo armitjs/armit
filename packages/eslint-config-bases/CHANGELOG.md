@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.5
+
+### Patch Changes
+
+- [`802c0c4`](https://github.com/armitjs/armit/commit/802c0c424241f83e3ac28d2096319fd57bc6f3d7) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix changeset publish does not replace workspace: ranges with current version in workspace
+
 ## 0.0.4
 
 ### Patch Changes
