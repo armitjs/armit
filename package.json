@@ -31,7 +31,9 @@
   ],
   "scripts": {
     "g:clean": "yarn clean:global-cache && yarn workspaces foreach -ptv run clean",
-    "g:build": "yarn workspaces foreach -p --topological-dev -v run build",
+    "g:build": "yarn g:build-release",
+    "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
+    "g:build-release": "yarn workspaces foreach -tv run build-release",
     "g:test-unit": "yarn workspaces foreach -ptv run test-unit",
     "g:test-e2e": "yarn workspaces foreach -tv run test-e2e",
     "g:lint": "yarn workspaces foreach -ptv run lint --color",
@@ -39,7 +41,7 @@
     "g:lint-staged-files": "lint-staged --allow-empty --config=lint-staged.config.cjs",
     "g:fix-all-files": "yarn workspaces foreach -ptv run fix-all-files",
     "g:changeset": "changeset",
-    "g:release": "yarn g:build && changeset publish",
+    "g:release": "yarn g:build-release && changeset publish",
     "g:cz": "cz",
     "g:publish-local": "yarn g:version && cd scripts && ./publish-to-verdaccio.sh",
     "clean:global-cache": "rimraf --no-glob ./.cache",
@@ -65,7 +67,7 @@
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
     "@changesets/changelog-github": "0.4.7",
-    "@changesets/cli": "2.22.0-temp.0",
+    "@changesets/cli": "2.25.0",
     "@commitlint/cli": "17.1.2",
     "@types/prettier": "2.7.1",
     "@types/shell-quote": "1.7.1",

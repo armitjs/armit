@@ -3,6 +3,7 @@
 # build
 /dist
 /build
+/_release
 /storybook-static
 
 # dependencies
