@@ -1,11 +1,11 @@
-import fs from 'node:fs';
+import fs, { mkdirSync } from 'node:fs';
 import os from 'node:os';
-import path from 'node:path';
+import path, { dirname } from 'node:path';
 
 const homeDirectory = os.homedir();
 const configDir =
   process.env.XDG_CONFIG_HOME ||
-  path.join(homeDirectory, '.config', 'simple-update-notifier');
+  path.join(homeDirectory, '.config', 'armit-update-notifier');
 
 const getConfigFile = (packageName: string) => {
   return path.join(configDir, `${packageName}.json`);
@@ -33,7 +33,9 @@ export const getLastUpdate = (packageName: string) => {
 
 export const saveLastUpdate = (packageName: string) => {
   const configFile = getConfigFile(packageName);
-
+  mkdirSync(dirname(configFile), {
+    recursive: true,
+  });
   fs.writeFileSync(
     configFile,
     JSON.stringify({ lastUpdateCheck: new Date().getTime() })
