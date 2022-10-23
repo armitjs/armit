@@ -1,6 +1,7 @@
 import { join, relative } from 'path';
 import type { CommandArgv } from '@armit/common';
 import {
+  getPackageData,
   terminalColor,
   fileWalk,
   zipFiles,
@@ -75,9 +76,13 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
 
   async toZip(allFiles: string[], fileFromCwd: string): Promise<void> {
     const fileFromTo = join(this.args.cwd, this.args.to);
+    // Try to read target project package.json.
+    const targetPackageJson = getPackageData({
+      cwd: this.args.cwd,
+    });
     const zipFileName = join(
       fileFromTo,
-      `${(this.cliPackageJson?.name || 'unknow').replace(
+      `${(targetPackageJson?.name || 'unknow').replace(
         /\//g,
         '-'
       )}-${Date.now()}.zip`
