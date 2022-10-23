@@ -1,3 +1,9 @@
+/**
+ * For jest `ESM` resover, but now use vitest.
+ * @param path
+ * @param options
+ * @returns
+ */
 const mjsResolver = (path, options) => {
   const esmExtRegex = /\.m?js$/i;
   const resolver = options.defaultResolver;

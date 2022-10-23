@@ -43,7 +43,7 @@
     "g:changeset": "changeset",
     "g:release": "yarn g:build-release && changeset publish",
     "g:cz": "cz",
-    "g:publish-local": "yarn g:version && cd scripts && ./publish-to-verdaccio.sh",
+    "g:publish-local": "yarn changeset version && cd scripts && ./publish-to-verdaccio.sh",
     "clean:global-cache": "rimraf --no-glob ./.cache",
     "packages:build": "yarn workspaces foreach -ptv --include '@armit/*' run build",
     "packages:test:unit": "yarn workspaces foreach -ptv --include '@armit/*' run test-unit",

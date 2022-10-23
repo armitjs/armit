@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { getDirname, getPackageData } from '@armit/common';
-import { runCliMock } from '../../test-utils/cli-run-mock.js';
+import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli info', () => {
   const curDirName = getDirname(import.meta.url);

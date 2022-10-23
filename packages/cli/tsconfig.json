@@ -8,8 +8,9 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@armit/cli": ["./index.js"],
-      "@armit/common": ["../../../packages/common/src/index.js"]
+      "@/test-utils": ["./test-utils/index.js"],
+      "@/test-utils/*": ["./test-utils/*"],
+      "@armit/common": ["../../common/src/index.js"]
     },
     "types": ["vitest/globals"]
   },

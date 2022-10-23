@@ -7,9 +7,7 @@
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
-    "paths": {
-      "@armit/common": ["./index.js"]
-    },
+    "paths": {},
     "types": ["vitest/globals"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]

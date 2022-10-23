@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { getDirname, rmrfSync, unzip } from '@armit/common';
-import { runCliMock } from '../../test-utils/cli-run-mock.js';
+import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli pack', () => {
   const fixtureCwd = getDirname(import.meta.url);

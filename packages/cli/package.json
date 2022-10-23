@@ -41,6 +41,7 @@
     "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/cli.eslintcache",
     "test": "run-s test-unit",
     "test-unit": "vitest run --passWithNoTests",
+    "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
@@ -51,6 +52,8 @@
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
     "@types/node": "18.11.3",
+    "@vitest/coverage-istanbul": "0.24.3",
+    "@vitest/ui": "0.24.3",
     "eslint": "8.25.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
@@ -58,13 +61,15 @@
     "ts-node": "10.9.1",
     "tsup": "6.3.0",
     "typescript": "4.8.4",
+    "vite": "3.1.8",
+    "vite-tsconfig-paths": "3.5.2",
     "vitest": "0.24.3"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "publishConfig": {
-    "directory": "_release/package",
-    "access": "public"
+    "access": "public",
+    "directory": "_release/package"
   }
 }
