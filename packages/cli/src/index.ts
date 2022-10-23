@@ -1,1 +1,1 @@
-export * from './bootstrap.js';
+export * from './bootstrap/index.js';

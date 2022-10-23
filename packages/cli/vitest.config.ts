@@ -11,6 +11,8 @@ export default defineConfig({
     ],
   },
   test: {
+    // Makebe suite for local debug
+    // testTimeout: 1000 * 60 * 10,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
