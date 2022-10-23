@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.0.9
+
+### Patch Changes
+
+- [`46bdf65`](https://github.com/armitjs/armit/commit/46bdf6500a9e4f7358f2dadf3aa614986dd0603a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor cli, add e2e bootstrap testing
+
+- Updated dependencies [[`436e7bf`](https://github.com/armitjs/armit/commit/436e7bfe866125e27ad5c8f49adb7ef5492a625e), [`42d1302`](https://github.com/armitjs/armit/commit/42d13026d928e335d2c07137d27b81186cb83646)]:
+  - @armit/common@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes
