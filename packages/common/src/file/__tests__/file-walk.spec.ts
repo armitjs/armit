@@ -9,6 +9,13 @@ describe('fileWalk', () => {
       'a/b/c/image.jpg': '',
       'a/b/c/image.png': '',
       'a/b/c/style.css': '',
+      'a/b/c/.gitignore': '',
+      '__MACOSX/test/._demo-8ca86e6b.png': '',
+      '__MACOSX/test/demo-8ca86e6b.png': '',
+      '__MACOSX/test/assets/__MACOSX/test/._.DS_Store': '',
+      'abc/__MACOSX/test/._demo-8ca86e6b.png': '',
+      'abc/__MACOSX/test/demo-8ca86e6b.png': '',
+      'abc/__MACOSX/test/assets/__MACOSX/test/._.DS_Store': '',
     });
   });
 
@@ -22,7 +29,24 @@ describe('fileWalk', () => {
         cwd: fixtureCwd,
         ignore: ['**/*.{jpg,png}'],
       });
-      expect(files.length).toBe(2);
+      expect(files.length).toBe(3);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
+    });
+
+    it('should synchronously currect handle dot files', () => {
+      const files = fileWalkSync('**/*.*', {
+        cwd: fixtureCwd,
+      });
+      expect(files.length).toBe(5);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
+    });
+
+    it('should asynchronously ignore __MACOSX & .DS_Store', () => {
+      const files = fileWalkSync('**/*.*', {
+        cwd: fixtureCwd,
+      });
+      expect(files.length).toBe(5);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
   });
 
@@ -32,7 +56,24 @@ describe('fileWalk', () => {
         cwd: fixtureCwd,
         ignore: ['**/*.{jpg,png}'],
       });
-      expect(files.length).toBe(2);
+      expect(files.length).toBe(3);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
+    });
+
+    it('should asynchronously currect handle dot files', async () => {
+      const files = await fileWalk('**/*.*', {
+        cwd: fixtureCwd,
+      });
+      expect(files.length).toBe(5);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
+    });
+
+    it('should asynchronously ignore __MACOSX & .DS_Store', async () => {
+      const files = await fileWalk('**/*.*', {
+        cwd: fixtureCwd,
+      });
+      expect(files.length).toBe(5);
+      expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
   });
 });

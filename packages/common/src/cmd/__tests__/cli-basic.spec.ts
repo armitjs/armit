@@ -1,5 +1,5 @@
 import semver from 'semver';
-import { runCliMock } from './cmd-util.js';
+import { runCliMock } from './cli-run-mock.js';
 
 describe('cli basic infrusture', () => {
   it('Should output correct `version` -v', async () => {

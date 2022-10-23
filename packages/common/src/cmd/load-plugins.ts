@@ -124,6 +124,7 @@ async function load(
       'requirePath'
     ),
   ];
+
   const allPlugins: Array<{
     name: string;
     plugin: CommandModule;

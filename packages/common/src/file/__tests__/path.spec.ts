@@ -27,6 +27,9 @@ describe('isPathMatch', () => {
       isPathMatch('__MACOSX/test/._demo-8ca86e6b.png', [...excludePattern])
     ).toBe(false);
 
+    expect(isPathMatch('/test/._demo-8ca86e6b.png', [...excludePattern])).toBe(
+      true
+    );
     expect(
       isPathMatch('__MACOSX/test/demo-8ca86e6b.png', [
         ...excludePattern,

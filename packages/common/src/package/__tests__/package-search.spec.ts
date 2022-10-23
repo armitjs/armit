@@ -13,7 +13,6 @@ describe('getPackageDir', () => {
     const packageData = getPackageDir({
       cwd: currDirname,
     });
-    console.log('packageData', packageData);
     expect(packageData).toBeDefined();
     expect(packageData).toBe(process.cwd());
   });

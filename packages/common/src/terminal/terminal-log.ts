@@ -28,15 +28,15 @@ export const basicLevels: Level<'error' | 'trace'>[] = [
  *
  * ### **Levels include:**
  *
- * -   debug
  * -   error
+ * -   trace
+ * -   debug
  * -   fatal
  * -   info
- * -   trace
  * -   warn
  */
 export const advancedLevels: Level<
-  'debug' | 'error' | 'fatal' | 'info' | 'trace' | 'warn'
+  'error' | 'trace' | 'debug' | 'fatal' | 'info' | 'warn'
 >[] = [
   ...basicLevels,
   {

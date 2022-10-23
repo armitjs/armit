@@ -29,7 +29,9 @@ export const getClosestPackageFile = (options: SetRequired<Options, 'cwd'>) => {
  */
 export const findParentDir = (currentFullPath: string, clue: string) => {
   function testDir(parts) {
-    if (parts.length === 0) return null;
+    if (parts.length === 0) {
+      return null;
+    }
     const p = parts.join('');
     const itdoes = existsSync(join(p, clue));
     return itdoes ? p : testDir(parts.slice(0, -1));

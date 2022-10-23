@@ -3,7 +3,7 @@ import { cmdTest } from './cmd-test-builder.js';
 
 void createCli({
   group: '@armit',
-  exitProcess: true,
+  exitProcess: false,
 })
   .register(cmdTest)
   .parse(process.argv.slice(2));

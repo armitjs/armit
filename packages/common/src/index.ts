@@ -1,3 +1,4 @@
+export * from './array/index.js';
 export * from './cmd/index.js';
 export * from './file/index.js';
 export * from './git/index.js';
