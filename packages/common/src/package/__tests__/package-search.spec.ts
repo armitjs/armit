@@ -43,5 +43,7 @@ describe('findParentDir', () => {
     const parentDir = findParentDir(currDirname, 'common');
     expect(parentDir).toBeDefined();
     expect(parentDir).toBe(join(process.cwd(), '../'));
+    const parentDirNull = findParentDir(currDirname, 'null');
+    expect(parentDirNull).toBe(null);
   });
 });

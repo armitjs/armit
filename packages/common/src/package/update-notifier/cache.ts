@@ -1,19 +1,20 @@
-import fs, { mkdirSync } from 'node:fs';
+import { mkdirSync, existsSync, writeFileSync, readFileSync } from 'node:fs';
 import os from 'node:os';
 import path, { dirname } from 'node:path';
 
 const homeDirectory = os.homedir();
+
 const configDir =
   process.env.XDG_CONFIG_HOME ||
   path.join(homeDirectory, '.config', 'armit-update-notifier');
 
-const getConfigFile = (packageName: string) => {
+export const getConfigFile = (packageName: string) => {
   return path.join(configDir, `${packageName}.json`);
 };
 
 export const createConfigDir = () => {
-  if (!fs.existsSync(configDir)) {
-    fs.mkdirSync(configDir, { recursive: true });
+  if (!existsSync(configDir)) {
+    mkdirSync(configDir, { recursive: true });
   }
 };
 
@@ -21,10 +22,10 @@ export const getLastUpdate = (packageName: string) => {
   const configFile = getConfigFile(packageName);
 
   try {
-    if (!fs.existsSync(configFile)) {
+    if (!existsSync(configFile)) {
       return undefined;
     }
-    const file = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+    const file = JSON.parse(readFileSync(configFile, 'utf8'));
     return file.lastUpdateCheck as number;
   } catch {
     return undefined;
@@ -36,7 +37,7 @@ export const saveLastUpdate = (packageName: string) => {
   mkdirSync(dirname(configFile), {
     recursive: true,
   });
-  fs.writeFileSync(
+  writeFileSync(
     configFile,
     JSON.stringify({ lastUpdateCheck: new Date().getTime() })
   );
