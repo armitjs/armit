@@ -1,6 +1,6 @@
 ---
-"@armit/cli": major
-"@armit/common": major
+"@armit/cli": patch
+"@armit/common": patch
 ---
 
 add tsconfig-paths support for vitest
