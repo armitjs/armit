@@ -3,15 +3,15 @@ import type { CommandArgv } from '@armit/common';
 import {
   terminalColor,
   fileWalk,
-  getPackageData,
   zipFiles,
   AbstractHandler,
 } from '@armit/common';
+import { normalizeOptionSemicolonParts } from '../utils/index.js';
 
 export type PackCommandArgs = CommandArgv<{
   /**
-   * the filter pattern using globby (fast-glob)
-   * multiple pattern separated using `;`
+   * The filter pattern using globby (fast-glob)
+   * multiple pattern separated using semicolon `;`
    * @alias -f
    * @default [`**`]
    */
@@ -24,19 +24,25 @@ export type PackCommandArgs = CommandArgv<{
   ignore: string[];
 
   /**
-   * the base relative path will be ignore related to process.cwd()
+   * The base relative path will be ignore related to process.cwd()
    * @alias -e
    * @default `public`
    */
   basePath: string;
 
   /**
-   * the directory where the zip will save to
+   * The directory where the zip will save to
    * it's relative to process.cwd()
    * @alias -t
    * @default `packages`
    */
   to: string;
+
+  /**
+   * The directory to start searching from.
+   * @default process.cwd()
+   */
+  cwd: string;
 }>;
 
 export class PackCommand extends AbstractHandler<PackCommandArgs> {
@@ -45,8 +51,9 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
   }
 
   private async prepareZip() {
-    const fileFromCwd = join(process.cwd(), this.args.basePath);
-    const allFiles = await fileWalk(this.args.filter, {
+    const fileFromCwd = join(this.args.cwd, this.args.basePath);
+    const pattern = normalizeOptionSemicolonParts(this.args.filter);
+    const allFiles = await fileWalk(pattern, {
       cwd: fileFromCwd,
       ignore: this.args.ignore,
     });
@@ -67,13 +74,13 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
   }
 
   async toZip(allFiles: string[], fileFromCwd: string): Promise<void> {
-    const cwdPkgJson = getPackageData({
-      cwd: process.cwd(),
-    });
-    const fileFromTo = join(process.cwd(), this.args.to);
+    const fileFromTo = join(this.args.cwd, this.args.to);
     const zipFileName = join(
       fileFromTo,
-      `${(cwdPkgJson?.name || 'unknow').replace(/\//g, '-')}-${Date.now()}.zip`
+      `${(this.cliPackageJson?.name || 'unknow').replace(
+        /\//g,
+        '-'
+      )}-${Date.now()}.zip`
     );
     await zipFiles(allFiles, zipFileName, {
       relativePathTo: fileFromCwd,

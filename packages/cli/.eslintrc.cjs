@@ -34,6 +34,7 @@ module.exports = {
       files: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
       rules: {
         '@typescript-eslint/naming-convention': 'off',
+        'sonarjs/no-duplicate-string': 'off',
       },
     },
   ],

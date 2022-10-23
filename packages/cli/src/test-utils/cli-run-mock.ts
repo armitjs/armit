@@ -1,6 +1,5 @@
 import { join } from 'path';
-import { getDirname } from '../../index.js';
-import { runTsScript } from '../../terminal/index.js';
+import { runTsScript } from '@armit/common';
 
 export interface CliMockResult {
   stdout: string;
@@ -8,11 +7,13 @@ export interface CliMockResult {
   exitCode: number;
 }
 
-export async function runCliMock(...args): Promise<CliMockResult> {
+export async function runCliMock(
+  programPath: string,
+  ...args: string[]
+): Promise<CliMockResult> {
   try {
     const tsconfig = join(process.cwd(), './tsconfig.json');
-    const program = join(getDirname(import.meta.url), 'cli-boot.ts');
-    const result = await runTsScript(program, 'esm', tsconfig, {}, ...args);
+    const result = await runTsScript(programPath, 'esm', tsconfig, {}, ...args);
     return {
       stdout: result.stdout,
       stderr: result.stderr,

@@ -11,7 +11,7 @@ export const packCmd = createCommand<PackCommandArgs>(
       return args
         .example(
           `$0 pack -f="a;b;c" -f="a"`,
-          'Using `fast-glob` to filter files to zip'
+          'Using `globby` to filter files to zip'
         )
         .option('filter', {
           alias: 'f',
@@ -37,6 +37,12 @@ export const packCmd = createCommand<PackCommandArgs>(
           default: 'packages',
           describe:
             'The directory where zip file saved to, it relative to `cwd()`',
+        })
+        .option('cwd', {
+          alias: 'c',
+          type: 'string',
+          default: process.cwd(),
+          describe: 'The directory to start searching from.',
         });
     },
   },

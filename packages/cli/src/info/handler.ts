@@ -1,11 +1,6 @@
 import { platform, release } from 'os';
 import type { CommandArgv } from '@armit/common';
-import {
-  getPackageData,
-  terminalColor,
-  showBanner,
-  AbstractHandler,
-} from '@armit/common';
+import { terminalColor, showBanner, AbstractHandler } from '@armit/common';
 import osName from 'os-name';
 
 export type InfoCommandArgs = CommandArgv;
@@ -45,7 +40,7 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
   }
 
   private displayArmitInformation() {
-    console.info(terminalColor(['green'])('  ✔ armit Platform Information'));
+    console.info(terminalColor(['green'])('  ✔ @armit Platform Information'));
     try {
       this.displayArmitVersions();
     } catch {
@@ -58,15 +53,12 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
   }
 
   private displayArmitVersions() {
-    const packageJson = getPackageData({
-      cwd: process.cwd(),
-    });
-    if (packageJson) {
+    if (this.cliPackageJson) {
       const dependencies: Record<string, unknown> = Object.assign(
         {},
-        packageJson.dependencies,
-        packageJson.devDependencies,
-        packageJson.peerDependencies
+        this.cliPackageJson.dependencies,
+        this.cliPackageJson.devDependencies,
+        this.cliPackageJson.peerDependencies
       );
       const armitDependencies = this.collectNestDependencies(dependencies);
       this.dependencyformat(armitDependencies).forEach((dependency) =>
@@ -95,9 +87,9 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
   private displayCliVersion() {
     if (this.cliPackageJson) {
       console.info('');
-      console.info(terminalColor(['green'])('  ✔ armit CLI'));
+      console.info(terminalColor(['green'])('  ✔ @armit CLI'));
       console.info(
-        '   armit CLI Version :',
+        '   @armit CLI Version :',
         terminalColor(['magenta'])(`${this.cliPackageJson.version || ''}`),
         '\n'
       );

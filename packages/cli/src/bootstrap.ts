@@ -1,5 +1,4 @@
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import type { CliOption } from '@armit/common';
 import {
   getDirname,
@@ -13,9 +12,12 @@ import { infoCmd } from './info/define.js';
 import { packCmd } from './pack/define.js';
 
 export const bootstrap = async (options?: Partial<CliOption>) => {
+  // __dirname
+  const curDirName = getDirname(import.meta.url);
+
   // Read cli package json data.
   const packageJson = getPackageData({
-    cwd: getDirname(import.meta.url),
+    cwd: curDirName,
   });
 
   if (packageJson) {
@@ -27,9 +29,6 @@ export const bootstrap = async (options?: Partial<CliOption>) => {
       },
     });
   }
-
-  // __dirname
-  const curDirName = dirname(fileURLToPath(import.meta.url));
 
   // Load all available cli plugins
   const externalPlugins = await loadPlugins(
