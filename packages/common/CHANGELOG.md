@@ -1,5 +1,13 @@
 # @armit/common
 
+## 0.0.9
+
+### Patch Changes
+
+- [`436e7bf`](https://github.com/armitjs/armit/commit/436e7bfe866125e27ad5c8f49adb7ef5492a625e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix update notifer cache support for scoped package
+
+- [`42d1302`](https://github.com/armitjs/armit/commit/42d13026d928e335d2c07137d27b81186cb83646) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix package search findParentDir issue
+
 ## 0.0.8
 
 ### Patch Changes
