@@ -1,5 +1,16 @@
 # @armit/cli
 
+## 0.0.8
+
+### Patch Changes
+
+- [`e2e0e1f`](https://github.com/armitjs/armit/commit/e2e0e1f57192417511c66b9d525eb2c1b800e5d6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add tsconfig-paths support for vitest
+
+- [`338997c`](https://github.com/armitjs/armit/commit/338997c531514a779f031e15b1d6e1001666d026) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update cli pack,info test suites
+
+- Updated dependencies [[`1125fe5`](https://github.com/armitjs/armit/commit/1125fe59025071a26c9433c6c08678644655f627), [`e2e0e1f`](https://github.com/armitjs/armit/commit/e2e0e1f57192417511c66b9d525eb2c1b800e5d6)]:
+  - @armit/common@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
