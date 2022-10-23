@@ -1,5 +1,13 @@
 # @armit/common
 
+## 0.0.8
+
+### Patch Changes
+
+- [`1125fe5`](https://github.com/armitjs/armit/commit/1125fe59025071a26c9433c6c08678644655f627) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve some utils and add some test suites
+
+- [`e2e0e1f`](https://github.com/armitjs/armit/commit/e2e0e1f57192417511c66b9d525eb2c1b800e5d6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add tsconfig-paths support for vitest
+
 ## 0.0.7
 
 ### Patch Changes
