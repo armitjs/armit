@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
+    "@bleed-believer/path-alias": "0.10.17",
     "@types/adm-zip": "0.5.0",
     "@types/micromatch": "4.0.2",
     "@types/node": "18.11.3",
