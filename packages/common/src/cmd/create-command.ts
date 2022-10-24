@@ -50,15 +50,18 @@ export abstract class AbstractHandler<T extends CommandArgv>
   private packageJson: PackageJson;
 
   constructor(protected args: Arguments<T>) {
-    this.initialize(args);
     this.pluginName = args.name;
     this.packageJson = args.packageJson;
-    this.logger.setDefaultContext(args.name);
-    this.logger.debug(this.cliPackageJson);
+    this.initialize(args);
   }
 
   initialize(args: Arguments<T>): void {
-    this.logger.setLevel(LogLevel[args.logLevel]);
+    this.logger.setOptions({
+      level: LogLevel[args.logLevel],
+      noColor: args.noColor,
+    });
+    this.logger.debug(args);
+    this.logger.setDefaultContext(args.name);
   }
 
   get cliPackageJson(): PackageJson {

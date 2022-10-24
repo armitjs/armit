@@ -8,6 +8,8 @@ export interface ArmitLogger {
   info(message: string, context?: string): void;
   verbose(message: string, context?: string): void;
   debug(message: string, context?: string): void;
+  chalk(colors: readonly Color[], txt: string | object): string;
+  setOptions(options: LoggerOptions): void;
   setDefaultContext?(defaultContext: string): void;
 }
 
@@ -49,6 +51,7 @@ export enum LogLevel {
 
 const DEFAULT_CONTEXT = 'Armitjs';
 
+type LoggerOptions = { level?: LogLevel; noColor?: boolean };
 /**
  * The default logger, which logs to the console (stdout) with optional timestamps. Since this logger is part of the
  * default Vendure configuration, you do not need to specify it explicitly in your server config. You would only need
@@ -72,22 +75,24 @@ export class DefaultLogger implements ArmitLogger {
     noColor: false,
   });
 
-  constructor(options?: { level?: LogLevel; noColor?: boolean }) {
-    this.level =
-      options && options.level != null ? options.level : LogLevel.Info;
-    this.noColor = options?.noColor || false;
+  constructor(options?: LoggerOptions) {
+    this.setOptions(options);
+  }
 
-    if (this.noColor) {
+  setOptions(options?: LoggerOptions) {
+    this.noColor = options?.noColor || false;
+    this.level = options?.level ? options.level : LogLevel.Info;
+
+    if (options?.level) {
+      this.level = options.level;
+    }
+    if (options?.noColor) {
       this.terminal = new Terminal({
         levels: advancedLevels,
         showLevelName: true,
         noColor: true,
       });
     }
-  }
-
-  setLevel(level: LogLevel) {
-    this.level = level;
   }
 
   setDefaultContext(defaultContext: string) {
