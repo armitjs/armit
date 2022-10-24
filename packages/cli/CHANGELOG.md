@@ -1,5 +1,20 @@
 # @armit/cli
 
+## 0.0.10
+
+### Patch Changes
+
+- [`1891b32`](https://github.com/armitjs/armit/commit/1891b32a9332c9204d30713e2777f7746236191c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`f310030`](https://github.com/armitjs/armit/commit/f31003080355b31d48d2684b797edcdb0ba7e749) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix wrong pack zip to package name
+
+- [`0e3b709`](https://github.com/armitjs/armit/commit/0e3b709111307784abe982fe293784a6bbcc3711) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor terminalColor to use logger.chalk
+
+- [`0fe3895`](https://github.com/armitjs/armit/commit/0fe3895359bf72eda3a6233b8cbb525a723d7385) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix test suites use ts-paths mapping mono package issue
+
+- Updated dependencies [[`0ddabf9`](https://github.com/armitjs/armit/commit/0ddabf91e3f9ffbd28132d4ac7c18135d925d503), [`1891b32`](https://github.com/armitjs/armit/commit/1891b32a9332c9204d30713e2777f7746236191c), [`9012464`](https://github.com/armitjs/armit/commit/90124640362de899e0aed35dc7bd51ae0b2aeea1), [`9b292f0`](https://github.com/armitjs/armit/commit/9b292f04deb16655366a36297389dce8013674ae), [`012983b`](https://github.com/armitjs/armit/commit/012983b918987144290e117c7fcc7b91af7d977e)]:
+  - @armit/common@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes

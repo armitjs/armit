@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.7
+
+### Patch Changes
+
+- [`1891b32`](https://github.com/armitjs/armit/commit/1891b32a9332c9204d30713e2777f7746236191c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
 ## 0.0.6
 
 ### Patch Changes
