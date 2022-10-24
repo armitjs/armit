@@ -2,7 +2,6 @@ import { join, relative } from 'path';
 import type { CommandArgv } from '@armit/common';
 import {
   getPackageData,
-  terminalColor,
   fileWalk,
   zipFiles,
   AbstractHandler,
@@ -61,10 +60,11 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
     if (!allFiles.length) {
       this.logger.warn('No matched files found');
     } else {
-      console.info(terminalColor(['green'])('✔ All ziped files'));
+      console.info(this.logger.chalk(['green'], '✔ All ziped files'));
       allFiles.forEach((file) => {
         console.info(
-          `${terminalColor(['cyan'])(' ➩ ')}${terminalColor(['magenta'])(
+          `${this.logger.chalk(['cyan'], ' ➩ ')}${this.logger.chalk(
+            ['magenta'],
             relative(fileFromCwd, file)
           )}`
         );

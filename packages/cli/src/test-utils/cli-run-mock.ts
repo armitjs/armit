@@ -12,8 +12,16 @@ export async function runCliMock(
   ...args: string[]
 ): Promise<CliMockResult> {
   try {
+    const noColor = process.env.ArmitNoColor ? true : false;
     const tsconfig = join(process.cwd(), './tsconfig.json');
-    const result = await runTsScript(programPath, 'esm', tsconfig, {}, ...args);
+    const result = await runTsScript(
+      programPath,
+      'esm',
+      tsconfig,
+      {},
+      ...args,
+      ...(noColor ? ['--noColor'] : [])
+    );
     return {
       stdout: result.stdout,
       stderr: result.stderr,
