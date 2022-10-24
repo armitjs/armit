@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import type { CliOption } from '@armit/common';
+import type { CliMain, CliOption } from '@armit/common';
 import {
   getDirname,
   createCli,
@@ -11,7 +11,9 @@ import {
 import { infoCmd } from '../info/define.js';
 import { packCmd } from '../pack/define.js';
 
-export const bootstrap = async (options?: Partial<CliOption>) => {
+export async function bootstrap(
+  options: Partial<CliOption> = {}
+): Promise<CliMain> {
   // __dirname
   const curDirName = getDirname(import.meta.url);
 
@@ -56,4 +58,4 @@ export const bootstrap = async (options?: Partial<CliOption>) => {
     }
   }
   return armitCli;
-};
+}
