@@ -1,5 +1,19 @@
 # @armit/common
 
+## 0.0.10
+
+### Patch Changes
+
+- [`0ddabf9`](https://github.com/armitjs/armit/commit/0ddabf91e3f9ffbd28132d4ac7c18135d925d503) Thanks [@tianyingchun](https://github.com/tianyingchun)! - temp fix ts-node/esm tsconfig-paths support issue
+
+- [`1891b32`](https://github.com/armitjs/armit/commit/1891b32a9332c9204d30713e2777f7746236191c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`9012464`](https://github.com/armitjs/armit/commit/90124640362de899e0aed35dc7bd51ae0b2aeea1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add some missed test case for update-notifer
+
+- [`9b292f0`](https://github.com/armitjs/armit/commit/9b292f04deb16655366a36297389dce8013674ae) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor to add noColor for terminal formatting
+
+- [`012983b`](https://github.com/armitjs/armit/commit/012983b918987144290e117c7fcc7b91af7d977e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve commander no-color terminal support
+
 ## 0.0.9
 
 ### Patch Changes
