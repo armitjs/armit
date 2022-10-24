@@ -4,7 +4,6 @@ import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli info', () => {
   const curDirName = getDirname(import.meta.url);
-  console.log('ArmitNoColor', process.env.ArmitNoColor);
   const program = join(curDirName, 'cli-boot.ts');
 
   // Read cli package json data.
@@ -13,7 +12,7 @@ describe('@armit/cli info', () => {
   });
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runCliMock(program, '-h', '--noColor');
+    const { stdout } = await runCliMock(program, '-h');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
@@ -27,7 +26,7 @@ describe('@armit/cli info', () => {
   });
 
   it('Should correct print armit cli related information', async () => {
-    const { stdout } = await runCliMock(program, 'info', '--noColor');
+    const { stdout } = await runCliMock(program, 'info');
     const stdoutStrs: string[] = [
       'CLI tool for armitjs applications',
       '✔ System Information',
