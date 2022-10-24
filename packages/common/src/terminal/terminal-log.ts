@@ -57,7 +57,8 @@ function ensureString(message): string {
 
 function getColorApplier(
   colorType: 'COLOR' | 'DECORATION',
-  levelColors: readonly Color[]
+  levelColors: readonly Color[],
+  noColor: boolean
 ) {
   const colors = levelColors.filter((colorName) => {
     const isDecoration =
@@ -66,7 +67,7 @@ function getColorApplier(
     return colorType === 'DECORATION' ? isDecoration : !isDecoration;
   });
 
-  return terminalColor(colors);
+  return terminalColor(colors, noColor);
 }
 
 function addUnitOfTime(
@@ -225,18 +226,19 @@ export class Terminal<L extends string> {
       showTimestampRelativeToLastLog,
       use24HourClock,
       contextColor,
+      noColor,
     } = this.data;
 
     const time = new Date();
-    const color = getColorApplier('COLOR', level.color);
-    const decorate = getColorApplier('DECORATION', level.color);
+    const color = getColorApplier('COLOR', level.color, noColor);
+    const decorate = getColorApplier('DECORATION', level.color, noColor);
     const monthPositionSwitch = showMonthBeforeDay;
     let output = '';
 
     const levelContext: string[] = [];
     // Should add context if we have.
     if (context) {
-      const ctxColor = getColorApplier('COLOR', contextColor);
+      const ctxColor = getColorApplier('COLOR', contextColor, noColor);
       levelContext.push(' ' + ctxColor(context.toUpperCase()) + ' ');
     }
 
@@ -357,6 +359,7 @@ export class Terminal<L extends string> {
       showTimestamp: true,
       showTimestampRelativeToLastLog: true,
       use24HourClock: false,
+      noColor: false,
       contextColor: ['bold', 'magenta'],
     };
 

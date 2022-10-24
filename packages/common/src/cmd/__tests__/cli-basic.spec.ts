@@ -18,6 +18,7 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--noColor`));
     expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2022`));
   });
   it('Should output correct `test help` -h', async () => {
@@ -27,6 +28,7 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--noColor`));
     expect(stdout).toStrictEqual(expect.stringContaining(`Options:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-t, --test`));
     expect(stdout).toStrictEqual(expect.stringContaining(`test describe`));

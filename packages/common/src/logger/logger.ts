@@ -1,3 +1,5 @@
+import { terminalColor } from '../terminal/terminal-color.js';
+import type { Color } from '../terminal/terminal-log.js';
 import { advancedLevels, Terminal } from '../terminal/terminal-log.js';
 
 export interface ArmitLogger {
@@ -61,16 +63,27 @@ const DEFAULT_CONTEXT = 'Armitjs';
  */
 export class DefaultLogger implements ArmitLogger {
   private level: LogLevel = LogLevel.Info;
+  private noColor = false;
   private defaultContext = DEFAULT_CONTEXT;
 
   private terminal = new Terminal({
     levels: advancedLevels,
     showLevelName: true,
+    noColor: false,
   });
 
-  constructor(options?: { level?: LogLevel }) {
+  constructor(options?: { level?: LogLevel; noColor?: boolean }) {
     this.level =
       options && options.level != null ? options.level : LogLevel.Info;
+    this.noColor = options?.noColor || false;
+
+    if (this.noColor) {
+      this.terminal = new Terminal({
+        levels: advancedLevels,
+        showLevelName: true,
+        noColor: true,
+      });
+    }
   }
 
   setLevel(level: LogLevel) {
@@ -79,6 +92,14 @@ export class DefaultLogger implements ArmitLogger {
 
   setDefaultContext(defaultContext: string) {
     this.defaultContext = defaultContext;
+  }
+
+  /**
+   * Terminal output formatting with ANSI colors.
+   * @returns
+   */
+  chalk(colors: readonly Color[], txt: string | object): string {
+    return terminalColor(colors, this.noColor)(this.ensureString(txt));
   }
 
   error(
@@ -94,6 +115,7 @@ export class DefaultLogger implements ArmitLogger {
       );
     }
   }
+
   warn(message: string | object, context?: string): void {
     if (this.level >= LogLevel.Warn) {
       this.terminal.log.warn(

@@ -17,8 +17,14 @@ export type CommandArgv<T = ArgvConfig> = {
   packageJson: PackageJson;
   /**
    * The actived logging level
+   * @default 'Info'
    */
   logLevel: keyof typeof LogLevel;
+  /**
+   * Removes colors from the console output
+   * @default false
+   */
+  noColor: boolean;
 } & T;
 
 interface OnCommandHandler<T extends CommandArgv> {

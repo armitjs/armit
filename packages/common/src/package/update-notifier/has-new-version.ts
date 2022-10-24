@@ -24,6 +24,11 @@ export type PackageUpdate = {
    * @default false
    */
   alwaysRun?: boolean;
+  /**
+   * Removes colors from the console output
+   * @default false
+   */
+  noColor?: boolean;
 };
 
 export const hasNewVersion = async ({

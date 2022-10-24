@@ -56,21 +56,26 @@ const globalOptions = () => {
       choices: ['Error', 'Warn', 'Info', 'Verbose', 'Debug'],
       describe: `What level of logs to report. `,
     },
+    noColor: {
+      type: 'boolean',
+      default: false,
+      describe: `Removes colors from the console output.`,
+    },
   });
 };
 
 export const createYargs = (option: CliOption) => {
   return (
     globalOptions()
-      .group(['help', 'version', 'logLevel'], 'Globals: ')
+      .group(['help', 'version', 'logLevel', 'noColor'], 'Globals: ')
       .usage(`Usage: $0 <command> [options]`)
       .recommendCommands()
       .demandCommand(
         1,
-        `${terminalColor(['bgBlack', 'red'])('ERR!')} ${terminalColor([
-          'bold',
-          'red',
-        ])(
+        `${terminalColor(['bgBlack', 'red'], false)('ERR!')} ${terminalColor(
+          ['bold', 'red'],
+          false
+        )(
           ' A command is required. Pass --help to see all available commands and options.\n'
         )}
       `
@@ -82,7 +87,7 @@ export const createYargs = (option: CliOption) => {
       .exitProcess(option.exitProcess !== false)
       .locale('en')
       .updateStrings({
-        command: terminalColor(['cyan'])('command'),
+        command: terminalColor(['cyan'], false)('command'),
       })
       .strict()
       .alias('h', 'help')
@@ -90,7 +95,7 @@ export const createYargs = (option: CliOption) => {
       .alias('v', 'version')
       .epilog(
         `Copyright 2022 ${getTerminalLink(
-          terminalColor(['bold', 'magenta'])(option.group),
+          terminalColor(['bold', 'magenta'], false)(option.group),
           'https://github.com/armitjs/armit'
         )} `
       )
@@ -110,10 +115,10 @@ export const createYargsSubCommands = (
   program = commands.reduce((program, cmd) => program.command(cmd), program);
   return program.demandCommand(
     1,
-    `${terminalColor(['bgBlack', 'red'])('ERR!')} ${terminalColor([
-      'bold',
-      'red',
-    ])(
+    `${terminalColor(['bgBlack', 'red'], false)('ERR!')} ${terminalColor(
+      ['bold', 'red'],
+      false
+    )(
       ' A sub-command is required. Pass --help to see all available sub-commands and options.\n'
     )}
   `

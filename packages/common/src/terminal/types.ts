@@ -134,4 +134,10 @@ export interface TerminalConstructorData<L extends string> {
    * `[ 1:27:55.33 PM ] pow`
    */
   use24HourClock?: boolean;
+
+  /**
+   * Removes colors from the console output
+   * @default false
+   */
+  noColor?: boolean;
 }

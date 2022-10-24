@@ -1,13 +1,19 @@
 import C from 'picocolors';
 import type { Color } from './types.js';
 
-export function terminalColor(colors: readonly Color[]) {
-  if (!colors.length) {
+/**
+ * Terminal output formatting with ANSI colors
+ * @param colors The colors for the console output
+ * @param noColor Removes colors from the console output
+ * @returns
+ */
+export function terminalColor(colors: readonly Color[], noColor?: boolean) {
+  if (noColor || !colors.length) {
     // Pure text output.
     return (x: string) => x;
   }
-  return (x) => {
-    let out = x;
+  return (x: string) => {
+    let out: string = x;
     for (let i = 0; i < colors.length; i++) {
       out = C[colors[i]](out);
     }

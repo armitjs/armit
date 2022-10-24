@@ -23,7 +23,7 @@ describe('UpdateNotifier', () => {
       alwaysRun: true,
     });
 
-    expect(consoleSpy).toHaveBeenCalledTimes(1);
+    expect(consoleSpy).toHaveBeenCalledTimes(3);
   });
 
   it('it does not log message if update is not available', async () => {
