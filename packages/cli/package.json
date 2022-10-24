@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
-    "@types/node": "18.11.3",
+    "@types/node": "18.11.4",
     "@vitest/coverage-istanbul": "0.24.3",
     "@vitest/ui": "0.24.3",
     "eslint": "8.26.0",

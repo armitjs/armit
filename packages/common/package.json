@@ -61,7 +61,7 @@
     "@bleed-believer/path-alias": "0.10.17",
     "@types/adm-zip": "0.5.0",
     "@types/micromatch": "4.0.2",
-    "@types/node": "18.11.3",
+    "@types/node": "18.11.4",
     "@types/resolve": "1.20.2",
     "@vitest/coverage-istanbul": "0.24.3",
     "@vitest/ui": "0.24.3",
