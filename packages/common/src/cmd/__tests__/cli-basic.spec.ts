@@ -1,6 +1,25 @@
 import semver from 'semver';
 import { runCliMock } from './cli-run-mock.js';
 
+describe('cli basic infrusture with nested command', () => {
+  it('Should output correct `help` -h', async () => {
+    const { stdout } = await runCliMock('super', '-h');
+    expect(stdout).toStrictEqual(expect.stringContaining(`Commands:`));
+    expect(stdout).toStrictEqual(
+      expect.stringContaining(`cli-boot.ts super test`)
+    );
+  });
+
+  it('The output should be run handler()', async () => {
+    const { stdout } = await runCliMock('super', 'test');
+    console.log(stdout);
+
+    expect(stdout).toStrictEqual(
+      expect.stringContaining(`this is test command handle`)
+    );
+  });
+});
+
 describe('cli basic infrusture', () => {
   it('Should output correct `version` -v', async () => {
     const { stdout } = await runCliMock('-v');

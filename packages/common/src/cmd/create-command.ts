@@ -1,6 +1,7 @@
 import type { PackageJson } from 'type-fest';
-import type { Arguments, CommandModule } from 'yargs';
+import type { Arguments, Argv, CommandModule } from 'yargs';
 import { LogLevel, DefaultLogger } from '../logger/logger.js';
+import { terminalColor } from '../terminal/terminal-color.js';
 
 type ArgvPrimitive = string | number | boolean | PackageJson;
 
@@ -130,4 +131,26 @@ export const createCommand = <T extends CommandArgv>(
       return handler.handle.call(handler);
     },
   };
+};
+
+/**
+ * Provides a standard mechanism for creating subcommands
+ * @param program the main command
+ * @param commands subcommand list
+ */
+export const createSubCommands = (
+  program: Argv,
+  ...commands: CommandModule[]
+): Argv => {
+  program = commands.reduce((program, cmd) => program.command(cmd), program);
+  return program.demandCommand(
+    1,
+    `${terminalColor(['bgBlack', 'red'], false)('ERR!')} ${terminalColor(
+      ['bold', 'red'],
+      false
+    )(
+      ' A sub-command is required. Pass --help to see all available sub-commands and options.\n'
+    )}
+  `
+  );
 };

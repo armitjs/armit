@@ -1,4 +1,4 @@
-import type { Argv, CommandModule } from 'yargs';
+import type { Argv } from 'yargs';
 import yargs from 'yargs';
 import { DefaultLogger, LogLevel } from '../logger/logger.js';
 import { terminalColor } from '../terminal/terminal-color.js';
@@ -100,27 +100,5 @@ export const createYargs = (option: CliOption) => {
         )} `
       )
       .wrap(null)
-  );
-};
-
-/**
- * Provides a standard mechanism for creating subcommands
- * @param program the main command
- * @param commands subcommand list
- */
-export const createYargsSubCommands = (
-  program: Argv,
-  ...commands: CommandModule[]
-): Argv => {
-  program = commands.reduce((program, cmd) => program.command(cmd), program);
-  return program.demandCommand(
-    1,
-    `${terminalColor(['bgBlack', 'red'], false)('ERR!')} ${terminalColor(
-      ['bold', 'red'],
-      false
-    )(
-      ' A sub-command is required. Pass --help to see all available sub-commands and options.\n'
-    )}
-  `
   );
 };

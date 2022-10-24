@@ -6,9 +6,6 @@ type TestCmdArgs = CommandArgv<{
 }>;
 
 class CmdTestHandle extends AbstractHandler<TestCmdArgs> {
-  get name(): string {
-    return `test`;
-  }
   handle(): void | Promise<void> {
     console.log('this is test command handle');
     this.logger.debug('this is debug message for test command');
