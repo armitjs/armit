@@ -1,3 +1,4 @@
+import path from 'path';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
@@ -6,8 +7,13 @@ export default defineConfig({
   resolve: {
     // https://github.com/aleclarson/vite-tsconfig-paths/issues/54
     alias: [
-      // handle `@/*`
+      // handle `@/*.js`
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
+      // handle @armit/common
+      {
+        find: '@armit/common',
+        replacement: path.resolve('../common/src/index.ts'),
+      },
     ],
   },
   test: {

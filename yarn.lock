@@ -53,6 +53,7 @@ __metadata:
   resolution: "@armit/common@workspace:packages/common"
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
+    "@bleed-believer/path-alias": 0.10.17
     "@types/adm-zip": 0.5.0
     "@types/micromatch": 4.0.2
     "@types/node": 18.11.3
@@ -378,6 +379,21 @@ __metadata:
     "@babel/helper-validator-identifier": ^7.19.1
     to-fast-properties: ^2.0.0
   checksum: 4032f6407093f80dd4f4764be676f7527d2a5c0381586967cd79683cf8af01cdc16745a381b9cef045f702f0c9b0dffd880d84ee55dad59ba01bd23d5d52a8e0
+  languageName: node
+  linkType: hard
+
+"@bleed-believer/path-alias@npm:0.10.17":
+  version: 0.10.17
+  resolution: "@bleed-believer/path-alias@npm:0.10.17"
+  dependencies:
+    dotenv: ^16.0.1
+    module-alias: ^2.2.2
+    tsconfck: ^2.0.1
+    tsconfig-paths: ^4.0.0
+  peerDependencies:
+    ts-node: ^10.8.1
+    typescript: ^4.7.3
+  checksum: d04d01b430310c8a4b065f307b4bd148650b7547909a0f11f9a5dbb740e73d06ed765040f89073745eb66f6d379e0d99282cc648e94e1fc2647615477e19f09f
   languageName: node
   linkType: hard
 
@@ -3122,6 +3138,13 @@ __metadata:
   dependencies:
     is-obj: ^2.0.0
   checksum: d5775790093c234ef4bfd5fbe40884ff7e6c87573e5339432870616331189f7f5d86575c5b5af2dcf0f61172990f4f734d07844b1f23482fff09e3c4bead05ea
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.1":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
   languageName: node
   linkType: hard
 
@@ -6197,6 +6220,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"module-alias@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "module-alias@npm:2.2.2"
+  checksum: 4b5543f834b484033e5bd184096ca8276b9195e32e88883ee6ea8d3a4789d97c470d26f5fa7271bd7a26588bf67e4d27dbdb594ee327aef1c9619d855dc78342
+  languageName: node
+  linkType: hard
+
 "mrmime@npm:^1.0.0":
   version: 1.0.1
   resolution: "mrmime@npm:1.0.1"
@@ -8459,6 +8489,20 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 090adff1302ab20bd3486e6b4799e90f97726ed39e02b39e566f8ab674fd5bd5f727f43615debbfc580d33c6d9d1c6b1b3ce7d8e3cca3e20530a145ffa232c35
+  languageName: node
+  linkType: hard
+
+"tsconfck@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "tsconfck@npm:2.0.1"
+  peerDependencies:
+    typescript: ^4.3.5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  bin:
+    tsconfck: bin/tsconfck.js
+  checksum: 9d98edfea40f58bf64ee14a0cf9a28f0051c36762362ca31bd22f7a2aaf7f7fda6cad590fe5f30d9a5d22e94ae58ffdcfce5674d13f958e539ae927eb26c5f47
   languageName: node
   linkType: hard
 

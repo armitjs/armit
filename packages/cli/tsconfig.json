@@ -8,7 +8,6 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@/test-utils": ["./test-utils/index.js"],
       "@/test-utils/*": ["./test-utils/*"],
       "@armit/common": ["../../common/src/index.js"]
     },
