@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
   "changelog": ["@changesets/changelog-github", { "repo": "armitjs/armit" }],
   "privatePackages": { "version": true, "tag": true },
-  "commit": true,
+  "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
