@@ -9,16 +9,30 @@ export interface CliMockResult {
 }
 
 export async function runCliMock(...args: string[]): Promise<CliMockResult> {
+  const program = join(getDirname(import.meta.url), 'cli-boot.ts');
+  return runTsProgram(program, ...args);
+}
+
+export async function runArgvParseMock(
+  ...args: string[]
+): Promise<CliMockResult> {
+  const program = join(getDirname(import.meta.url), 'cli-argv-parse.ts');
+  return runTsProgram(program, ...args);
+}
+
+export async function runTsProgram(
+  program,
+  ...args: string[]
+): Promise<CliMockResult> {
   try {
     const tsconfig = join(process.cwd(), './tsconfig.json');
-    const program = join(getDirname(import.meta.url), 'cli-boot.ts');
     const result = await runTsScript(
       program,
       'esm',
       tsconfig,
       {},
-      '--noColor',
-      ...args
+      ...args,
+      '--noColor'
     );
     return {
       stdout: result.stdout,
