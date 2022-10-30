@@ -24,6 +24,7 @@ The following instructions are for those who want to develop the armit core fram
 ### 1. Install top-level dependencies
 
 `yarn`
+`npm install commitizen -g`
 
 The root directory has a `package.json` which contains build-related dependencies for tasks including:
 
@@ -56,6 +57,7 @@ and it's simple as typing:
 
 ```bash
 $ yarn g:changeset
+$ git cz
 ```
 
 Follow the instructions... and commit the changeset file. A "Version Packages" P/R will appear after CI checks.
@@ -76,6 +78,6 @@ They are based on the excellent [npm-check-updates](https://github.com/raineorsh
 
 > 6.1 VSCode
 
-The armit have full setting for vscode workspace (`rmit.code-workspace`) that the `eslint.workingDirectories` setting is set: just open it.
+The armit have full setting for vscode workspace (`armit.code-workspace`) that the `eslint.workingDirectories` setting is set: just open it.
 
 More info [here](https://github.com/microsoft/vscode-eslint#mono-repository-setup)

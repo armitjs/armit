@@ -4,14 +4,6 @@
       "name": "cli",
       "path": "packages/cli"
     },
-    // {
-    //   "name": "core",
-    //   "path": "packages/core"
-    // },
-    // {
-    //   "name": "create",
-    //   "path": "packages/create"
-    // },
     {
       "name": "common",
       "path": "packages/common"
@@ -19,6 +11,10 @@
     {
       "name": "eslint-config-bases",
       "path": "packages/eslint-config-bases"
+    },
+    {
+      "name": "generate-template-files",
+      "path": "packages/generate-template-files"
     },
     {
       "name": "root",
@@ -43,10 +39,9 @@
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
       "./packages/cli",
-      "./packages/core",
-      "./packages/create",
       "./packages/common",
-      "./packages/eslint-config-bases"
+      "./packages/eslint-config-bases",
+      "./packages/generate-template-files"
     ]
   }
 }
