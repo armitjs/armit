@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@armit/common": "workspace:^",
+    "@armit/generate-template-files": "workspace:^",
     "import-local": "3.1.0",
     "os-name": "5.0.1"
   },

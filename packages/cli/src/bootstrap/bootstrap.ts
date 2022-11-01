@@ -9,6 +9,7 @@ import {
   getPackageData,
 } from '@armit/common';
 import { infoCmd } from '../info/define.js';
+import { newCmd } from '../new/define.js';
 import { packCmd } from '../pack/define.js';
 
 export async function bootstrap(
@@ -48,6 +49,7 @@ export async function bootstrap(
     packageJson,
     ...options,
   })
+    .register(newCmd)
     .register(infoCmd)
     .register(packCmd);
 

@@ -9,7 +9,10 @@
     "incremental": true,
     "paths": {
       "@/test-utils/*": ["./test-utils/*"],
-      "@armit/common": ["../../common/src/index.js"]
+      "@armit/common": ["../../common/src/index.js"],
+      "@armit/generate-template-files": [
+        "../../generate-template-files/src/index.js"
+      ]
     },
     "types": ["vitest/globals"]
   },
