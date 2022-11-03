@@ -1,3 +1,4 @@
+export * from './file-recursive-copy/index.js';
 export * from './dir-name.js';
 export * from './file-compare.js';
 export * from './file-read.js';

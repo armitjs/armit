@@ -1,3 +1,4 @@
+import { isJunk, isNotJunk } from 'junk';
 import type { Options } from 'micromatch';
 import mm from 'micromatch';
 /**
@@ -30,4 +31,39 @@ export const isPathMatch = (
   }
 ) => {
   return mm.every(str, pattern, options);
+};
+
+/**
+ * Convert Windows backslash paths to slash paths: foo\\bar ➔ foo/bar
+ * Forward-slash paths can be used in Windows as long as they're not extended-length paths.
+ * This was created since the path methods in Node.js outputs \\ paths on Windows.
+ * @param path
+ * @returns
+ */
+export const slash = (path: string) => {
+  const isExtendedLengthPath = /^\\\\\?\\/.test(path);
+
+  if (isExtendedLengthPath) {
+    return path;
+  }
+
+  return path.replace(/\\/g, '/');
+};
+
+/**
+ * Returns true if filename matches a junk file.
+ * @param filename normally it should be path.basename()
+ * @returns
+ */
+export const isJunkFile = (filename: string) => {
+  return isJunk(filename);
+};
+
+/**
+ * Returns true if filename does not match a junk file.
+ * @param filename normally it should be path.basename()
+ * @returns
+ */
+export const isNotJunkFile = (filename: string) => {
+  return isNotJunk(filename);
 };
