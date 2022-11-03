@@ -35,8 +35,9 @@ describe('@armit/cli info', () => {
       '✔ @armit CLI',
       `@armit CLI Version : ${packageJson?.version || ''}`,
       `✔ @armit Platform Information`,
-      `eslint-config-bases ➞ version :`,
-      `common ➞ version              :`,
+      `generate-template-files ➞ version`,
+      `eslint-config-bases ➞ version`,
+      `common ➞ version`,
     ];
 
     for (const str of stdoutStrs) {

@@ -3,7 +3,7 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [tsConfigPaths({})],
+  plugins: [tsConfigPaths()],
   resolve: {
     // https://github.com/aleclarson/vite-tsconfig-paths/issues/54
     alias: [
