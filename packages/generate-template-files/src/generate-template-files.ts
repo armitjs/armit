@@ -1,7 +1,6 @@
 import { existsSync } from 'fs';
-import { DefaultLogger, LogLevel } from '@armit/common';
+import { DefaultLogger, LogLevel, recursiveCopy } from '@armit/common';
 import enquirer from 'enquirer';
-import recursiveCopy from 'recursive-copy';
 import replaceString from 'replace-string';
 import through from 'through2';
 import { CaseConverterEnum } from './constants/case-converter-enum.js';
