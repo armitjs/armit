@@ -106,7 +106,7 @@ module.exports = {
       },
       {
         selector: 'enumMember',
-        format: ['camelCase', 'PascalCase'],
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
       },
       {
         selector: 'variable',
