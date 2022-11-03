@@ -68,7 +68,7 @@ jobs:
         run: |
           yarn test-unit --passWithNoTests
 
-      - name: Build lib-cli
+      - name: Build lib-generate-template-files
         working-directory: packages/generate-template-files
         run: |
           yarn build
