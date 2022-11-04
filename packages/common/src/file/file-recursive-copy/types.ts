@@ -1,6 +1,5 @@
 import type { Stats } from 'node:fs';
 import type { Transform } from 'node:stream';
-import type { CopyEventType } from './constants.js';
 
 export type RecursiveCopyOptions = {
   /**
@@ -82,47 +81,47 @@ export type EmitEventFn = (eventName: string, ...args) => void;
 
 export type WithCopyEvents<T> = T & {
   on(
-    event: CopyEventType.ERROR,
+    event: 'error',
     callback: (error: Error, info: CopyErrorInfo) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.COMPLETE,
+    event: 'complete',
     callback: (info: Array<CopyOperation>) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_DIRECTORY_START,
+    event: 'createDirectoryStart',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_DIRECTORY_ERROR,
+    event: 'createDirectoryError',
     callback: (error: Error, info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_DIRECTORY_COMPLETE,
+    event: 'createDirectoryComplete',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_SYMLINK_START,
+    event: 'createSymlinkStart',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_SYMLINK_ERROR,
+    event: 'createSymlinkError',
     callback: (error: Error, info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.CREATE_SYMLINK_COMPLETE,
+    event: 'createSymlinkComplete',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.COPY_FILE_START,
+    event: 'copyFileStart',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.COPY_FILE_ERROR,
+    event: 'copyFileError',
     callback: (error: Error, info: CopyOperation) => void
   ): WithCopyEvents<T>;
   on(
-    event: CopyEventType.COPY_FILE_COMPLETE,
+    event: 'copyFileComplete',
     callback: (info: CopyOperation) => void
   ): WithCopyEvents<T>;
 };

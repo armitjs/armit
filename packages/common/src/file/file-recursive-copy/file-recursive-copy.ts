@@ -13,6 +13,7 @@ import type {
   CopyOperation,
   EmitEventFn,
   RecursiveCopyOptions,
+  WithCopyEvents,
 } from './types.js';
 
 /**
@@ -23,11 +24,11 @@ import type {
  * @param callback Callback, invoked on success/failure
  * @returns
  */
-export const recursiveCopy = async (
+export const recursiveCopy = (
   src: string,
   dest: string,
   options: RecursiveCopyOptions = {}
-): Promise<CopyOperation[] | undefined> => {
+): WithCopyEvents<Promise<CopyOperation[] | undefined>> => {
   const parentDirectory = dirname(dest);
   const shouldExpandSymlinks = Boolean(options.expand);
   const logger = new DefaultLogger({
@@ -35,61 +36,61 @@ export const recursiveCopy = async (
     context: 'file-recursive-copy',
   });
 
-  let emitter: EventEmitter;
+  let emitter;
   let hasFinished = false;
-
   logger.debug('Ensuring output directory exists…');
-  await ensureDirectoryExists(parentDirectory);
 
-  logger.debug('Fetching source paths…');
-  const filePaths = await getFilePaths(src, shouldExpandSymlinks);
-
-  logger.debug('Filtering source paths…');
-  const relativePaths = filePaths.map((filePath) => {
-    return relative(src, filePath);
-  });
-
-  const filteredPaths = getFilteredPaths(relativePaths, options.filter, {
-    dot: options.dot,
-    junk: options.junk,
-  });
-
-  const operations = filteredPaths.map((relativePath) => {
-    const inputPath = relativePath;
-    const outputPath = options.rename ? options.rename(inputPath) : inputPath;
-    return {
-      src: join(src, inputPath),
-      dest: join(dest, outputPath),
-    };
-  });
-
-  logger.debug('Copying files…');
-
-  const hasFinishedGetter = () => {
-    return hasFinished;
-  };
-
-  const emitEvent = (eventName: string, ...args) => {
-    emitter.emit(eventName, ...args);
-  };
-
-  const promise = batch(
-    operations,
-    (operation) => {
-      return copy(
-        operation.src,
-        operation.dest,
-        hasFinishedGetter,
-        emitEvent,
-        options,
-        logger
+  const promise = ensureDirectoryExists(parentDirectory)
+    .then(() => {
+      logger.debug('Fetching source paths…');
+      return getFilePaths(src, shouldExpandSymlinks);
+    })
+    .then((filePaths) => {
+      logger.debug('Filtering source paths…');
+      const relativePaths = filePaths.map((filePath) => {
+        return relative(src, filePath);
+      });
+      const filteredPaths = getFilteredPaths(relativePaths, options.filter, {
+        dot: options.dot,
+        junk: options.junk,
+      });
+      return filteredPaths.map((relativePath) => {
+        const inputPath = relativePath;
+        const outputPath = options.rename
+          ? options.rename(inputPath)
+          : inputPath;
+        return {
+          src: join(src, inputPath),
+          dest: join(dest, outputPath),
+        };
+      });
+    })
+    .then((operations) => {
+      logger.debug('Copying files…');
+      const hasFinishedGetter = () => {
+        return hasFinished;
+      };
+      const emitEvent = (eventName: string, ...args) => {
+        emitter.emit(eventName, ...args);
+      };
+      return batch(
+        operations,
+        (operation) => {
+          return copy(
+            operation.src,
+            operation.dest,
+            hasFinishedGetter,
+            emitEvent,
+            options,
+            logger
+          );
+        },
+        {
+          results: options.results !== false,
+          concurrency: options.concurrency || 255,
+        }
       );
-    },
-    {
-      results: options.results !== false,
-      concurrency: options.concurrency || 255,
-    }
-  )
+    })
     .catch((error) => {
       logger.debug('Copy failed');
       // catch throw to finnal catch() directly.
@@ -117,6 +118,7 @@ export const recursiveCopy = async (
   return (emitter = withEventEmitter(promise));
 };
 
+// Attach events to promise.
 recursiveCopy.events = CopyEventType;
 
 function batch(

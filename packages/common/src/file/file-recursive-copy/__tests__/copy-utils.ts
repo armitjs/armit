@@ -1,8 +1,7 @@
-import type EventEmitter from 'node:events';
 import { lstatSync, symlinkSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import readDirFiles from 'read-dir-files';
-import type { CopyOperation } from '../types.js';
+import type { CopyOperation, WithCopyEvents } from '../types.js';
 
 export function getSourcePath(filename: string, sourcePath: string) {
   return join(sourcePath, filename);
@@ -120,7 +119,10 @@ export function createSymbolicLink(
   }
 }
 
-export function listenTo(emitter: EventEmitter, eventNames) {
+export function listenTo(
+  emitter: WithCopyEvents<Promise<CopyOperation[] | undefined>>,
+  eventNames
+) {
   const events: Array<{ name: string; args }> = [];
   eventNames.forEach((eventName) => {
     emitter.on(eventName, createListener(eventName));
@@ -128,7 +130,7 @@ export function listenTo(emitter: EventEmitter, eventNames) {
   return events;
 
   function createListener(eventName: string) {
-    return function (...args) {
+    return (...args) => {
       events.push({
         name: eventName,
         args,
@@ -145,7 +147,7 @@ export function mockMkdirp(subject, errors) {
       callback = mode;
       mode = undefined;
     }
-    setTimeout(function () {
+    setTimeout(() => {
       if (errors && errors[path]) {
         callback(errors[path]);
       } else {
