@@ -81,6 +81,7 @@ __metadata:
     pkg-dir: 7.0.0
     pkg-up: 4.0.0
     prettier: 2.7.1
+    read-dir-files: 0.1.1
     resolve: 1.22.1
     rimraf: 3.0.2
     semver: 7.3.8
@@ -2146,6 +2147,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async@npm:0.1.x":
+  version: 0.1.22
+  resolution: "async@npm:0.1.22"
+  checksum: 0e9135551072b1f0a75b431e4d472b348d60105f2eb475b2dffc9b9f96dc771a3da750a3c1061a5f1329c205c670bb5afcaca16acc293b955de86b6c8e661bfb
+  languageName: node
+  linkType: hard
+
 "at-least-node@npm:^1.0.0":
   version: 1.0.0
   resolution: "at-least-node@npm:1.0.0"
@@ -3336,6 +3344,13 @@ __metadata:
   dependencies:
     is-arrayish: ^0.2.1
   checksum: c1c2b8b65f9c91b0f9d75f0debaa7ec5b35c266c2cac5de412c1a6de86d4cbae04ae44e510378cb14d032d0645a36925d0186f8bb7367bcc629db256b743a001
+  languageName: node
+  linkType: hard
+
+"errs@npm:0.1.x":
+  version: 0.1.1
+  resolution: "errs@npm:0.1.1"
+  checksum: ab2a7c0842ab1a3b8ef93d03a1d8e8a56ec4c7751d4232e3203afc1e1a69aab91b7ed54ddb666e27bdf25f94235fac91d3e8ae303a4646f4691a79de026777c6
   languageName: node
   linkType: hard
 
@@ -7293,6 +7308,16 @@ __metadata:
   dependencies:
     pify: ^2.3.0
   checksum: cffc728b9ede1e0667399903f9ecaf3789888b041c46ca53382fa3a06303e5132774dc0a96d0c16aa702dbac1ea0833d5a868d414f5ab2af1e1438e19e6657c6
+  languageName: node
+  linkType: hard
+
+"read-dir-files@npm:0.1.1":
+  version: 0.1.1
+  resolution: "read-dir-files@npm:0.1.1"
+  dependencies:
+    async: 0.1.x
+    errs: 0.1.x
+  checksum: 8b26fb52398fdd2a18968201400f14f517cb633e326df9a1d01132be064c14dd6fa53ce1abc20af96b9740c85b47822469f377d6417646324c5b1504c500e203
   languageName: node
   linkType: hard
 

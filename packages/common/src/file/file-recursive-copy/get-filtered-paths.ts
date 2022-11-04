@@ -14,11 +14,19 @@ export function getFilteredPaths(
     return paths;
   }
   return paths.filter((path) => {
-    return (
+    const basicFilter =
       (!useDotFilter || dotFilter(path)) &&
-      (!useJunkFilter || junkFilter(path)) &&
-      (!filter || mm.isMatch(slash(path), filter))
-    );
+      (!useJunkFilter || junkFilter(path));
+    const slashPath = slash(path);
+    const advancedFilter =
+      !filter ||
+      (typeof filter === 'function'
+        ? filter(slashPath)
+        : filter instanceof RegExp
+        ? filter.test(slashPath)
+        : mm.all(slashPath, filter, { strictSlashes: true }));
+
+    return basicFilter && advancedFilter;
   });
 }
 

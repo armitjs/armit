@@ -26,7 +26,7 @@ async function getFileListing(
     const stats = await (shouldExpandSymlinks ? stat : lstat)(filePath);
     if (stats.isDirectory()) {
       const childPaths = await getFileListing(filePath, shouldExpandSymlinks);
-      result.push(...childPaths);
+      result.push(filePath, ...childPaths);
     } else {
       result.push(filePath);
     }

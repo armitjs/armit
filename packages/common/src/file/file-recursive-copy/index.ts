@@ -1,1 +1,1 @@
-export * from './file-recursive-copy.js';
+export { recursiveCopy } from './file-recursive-copy.js';

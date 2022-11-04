@@ -27,7 +27,7 @@ export type RecursiveCopyOptions = {
   /**
    * Function that maps source paths to destination paths
    */
-  filter?: string | string[];
+  filter?: string | string[] | RegExp | ((path: string) => boolean);
   /**
    * Function that maps source paths to destination paths
    */

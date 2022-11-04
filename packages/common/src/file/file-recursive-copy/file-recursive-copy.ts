@@ -26,9 +26,8 @@ import type {
 export const recursiveCopy = async (
   src: string,
   dest: string,
-  options: RecursiveCopyOptions = {},
-  callback?: (error: Error | null, results?: Array<CopyOperation>) => void
-) => {
+  options: RecursiveCopyOptions = {}
+): Promise<CopyOperation[] | undefined> => {
   const parentDirectory = dirname(dest);
   const shouldExpandSymlinks = Boolean(options.expand);
   const logger = new DefaultLogger({
@@ -92,9 +91,8 @@ export const recursiveCopy = async (
     }
   )
     .catch((error) => {
-      if (options.debug) {
-        logger.debug('Copy failed');
-      }
+      logger.debug('Copy failed');
+      // catch throw to finnal catch() directly.
       if (error instanceof CopyError) {
         emitter.emit(CopyEventType.ERROR, error.error, error.data);
         throw error.error;
@@ -103,9 +101,7 @@ export const recursiveCopy = async (
       }
     })
     .then((results) => {
-      if (options.debug) {
-        logger.debug('Copy complete');
-      }
+      logger.debug('Copy complete');
       emitter.emit(CopyEventType.COMPLETE, results);
       return results;
     })
@@ -118,21 +114,10 @@ export const recursiveCopy = async (
       throw error;
     });
 
-  if (typeof callback === 'function') {
-    promise
-      .then((results) => {
-        callback(null, results);
-      })
-      .catch((error) => {
-        callback(error);
-      });
-    emitter = new EventEmitter();
-  } else {
-    emitter = withEventEmitter(promise);
-  }
-
-  return emitter;
+  return (emitter = withEventEmitter(promise));
 };
+
+recursiveCopy.events = CopyEventType;
 
 function batch(
   inputs: Array<{ src: string; dest: string }>,
