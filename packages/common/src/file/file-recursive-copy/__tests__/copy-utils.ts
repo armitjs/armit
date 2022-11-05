@@ -138,39 +138,3 @@ export function listenTo(
     };
   }
 }
-
-export function mockMkdirp(subject, errors) {
-  return subject.__set__('mkdirp', mkdirp);
-
-  function mkdirp(path, mode, callback) {
-    if (arguments.length === 2 && typeof mode === 'function') {
-      callback = mode;
-      mode = undefined;
-    }
-    setTimeout(() => {
-      if (errors && errors[path]) {
-        callback(errors[path]);
-      } else {
-        callback(null);
-      }
-    });
-  }
-}
-
-export function mockSymlink(subject) {
-  const originalSymlink = subject.__get__('fs').symlink;
-  subject.__get__('fs').symlink = symlink;
-  return function () {
-    subject.__get__('fs').symlink = originalSymlink;
-  };
-
-  function symlink(srcPath, dstPath, type, callback) {
-    if (arguments.length === 3 && typeof type === 'function') {
-      callback = type;
-      type = undefined;
-    }
-    setTimeout(function () {
-      callback(new Error('Test error'));
-    });
-  }
-}
