@@ -13,7 +13,10 @@ import {
 describe('recursive copy argument validation', () => {
   const testCwd = getDirname(import.meta.url);
   const SOURCE_PATH = resolve(testCwd, './fixtures/source');
-  const DESTINATION_PATH = resolve(testCwd, './fixtures/destination');
+  const DESTINATION_PATH = resolve(
+    testCwd,
+    './fixtures/destination-validation'
+  );
 
   beforeEach(async () => {
     await ensureDirectoryExists(DESTINATION_PATH);

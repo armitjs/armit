@@ -16,7 +16,7 @@ import {
 describe('recursive copy basic operation', () => {
   const testCwd = getDirname(import.meta.url);
   const SOURCE_PATH = resolve(testCwd, './fixtures/source');
-  const DESTINATION_PATH = resolve(testCwd, './fixtures/destination');
+  const DESTINATION_PATH = resolve(testCwd, './fixtures/destination-basic');
 
   beforeEach(async () => {
     await ensureDirectoryExists(DESTINATION_PATH);

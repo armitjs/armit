@@ -16,7 +16,7 @@ import {
 describe('recursive copy events', () => {
   const testCwd = getDirname(import.meta.url);
   const SOURCE_PATH = resolve(testCwd, './fixtures/source');
-  const DESTINATION_PATH = resolve(testCwd, './fixtures/destination');
+  const DESTINATION_PATH = resolve(testCwd, './fixtures/destination-events');
   const COPY_EVENTS = Object.keys(recursiveCopy.events).map((key) => {
     return recursiveCopy.events[key];
   });
