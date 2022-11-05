@@ -56,7 +56,7 @@
     "prettier": "2.7.1",
     "rimraf": "3.0.2",
     "ts-node": "10.9.1",
-    "tsup": "6.3.0",
+    "tsup": "6.4.0",
     "typescript": "4.8.4",
     "vite": "3.2.2",
     "vite-tsconfig-paths": "3.5.2",
