@@ -1,4 +1,4 @@
-import { readlinkSync, rmSync, statSync } from 'node:fs';
+import { readlinkSync, rmSync, statSync, unlinkSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { getDirname } from '../../dir-name.js';
 import { rmrfSyncByPattern } from '../../file-write.js';
@@ -279,6 +279,7 @@ describe('recursive copy basic operation', () => {
       getDestinationPath('symlink', DESTINATION_PATH)
     );
     expect(actual).toEqual('.');
+    unlinkSync(getSourcePath('symlink', SOURCE_PATH));
   });
 
   it('should return results for symlinks', async () => {
@@ -295,6 +296,7 @@ describe('recursive copy basic operation', () => {
       SOURCE_PATH,
       DESTINATION_PATH
     );
+    unlinkSync(getSourcePath('symlink', SOURCE_PATH));
   });
 
   it('should copy nested symlinks', async () => {

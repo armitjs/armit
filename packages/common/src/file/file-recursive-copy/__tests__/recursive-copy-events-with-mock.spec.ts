@@ -1,4 +1,4 @@
-import { rmSync } from 'node:fs';
+import { rmSync, unlinkSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { getDirname } from '../../dir-name.js';
 import { rmrfSyncByPattern } from '../../file-write.js';
@@ -223,9 +223,12 @@ describe('recursive copy events with mock', () => {
       })
       .then(() => {
         vi.resetAllMocks();
+        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
       })
       .catch((error) => {
         vi.resetAllMocks();
+        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
+
         throw error;
       });
   });

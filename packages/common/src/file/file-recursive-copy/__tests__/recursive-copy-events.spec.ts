@@ -1,4 +1,4 @@
-import { rmSync, writeFileSync } from 'node:fs';
+import { rmSync, unlinkSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import through from 'through2';
 import { getDirname } from '../../dir-name.js';
@@ -283,35 +283,40 @@ describe('recursive copy events', () => {
       getDestinationPath('symlink', DESTINATION_PATH)
     );
     const events = listenTo(copier, COPY_EVENTS);
-    return copier.then(() => {
-      let actual, expected;
+    return copier
+      .then(() => {
+        let actual, expected;
 
-      const eventNames = events.map((event) => {
-        return event.name;
+        const eventNames = events.map((event) => {
+          return event.name;
+        });
+
+        actual = eventNames;
+        expected = ['createSymlinkStart', 'createSymlinkComplete', 'complete'];
+        expect(actual).toEqual(expected);
+
+        const completeEvent = events.filter((event) => {
+          return event.name === 'complete';
+        })[0];
+        const eventArgs = completeEvent.args;
+
+        actual = eventArgs.length;
+        expected = 1;
+        expect(actual).toEqual(expected);
+
+        const results = eventArgs[0];
+        checkResults(
+          results,
+          {
+            symlink: 'symlink',
+          },
+          SOURCE_PATH,
+          DESTINATION_PATH
+        );
+        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
+      })
+      .catch(() => {
+        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
       });
-
-      actual = eventNames;
-      expected = ['createSymlinkStart', 'createSymlinkComplete', 'complete'];
-      expect(actual).toEqual(expected);
-
-      const completeEvent = events.filter((event) => {
-        return event.name === 'complete';
-      })[0];
-      const eventArgs = completeEvent.args;
-
-      actual = eventArgs.length;
-      expected = 1;
-      expect(actual).toEqual(expected);
-
-      const results = eventArgs[0];
-      checkResults(
-        results,
-        {
-          symlink: 'symlink',
-        },
-        SOURCE_PATH,
-        DESTINATION_PATH
-      );
-    });
   });
 });
