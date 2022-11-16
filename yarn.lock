@@ -86,6 +86,7 @@ __metadata:
     rimraf: 3.0.2
     semver: 7.3.8
     terminal-link: 3.0.0
+    through2: 4.0.2
     ts-node: 10.9.1
     tsup: 6.5.0
     type-fest: 3.2.0
