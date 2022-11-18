@@ -1,0 +1,38 @@
+{
+  "auth": {
+    "loginView": {
+      "didYou": "Did you ",
+      "forgotPwd": "Forgot Passowrd?",
+      "labelEmail": "Email",
+      "labelPassword": "Password",
+      "labelLogin": "Log In",
+      "labelSignUp": "Sign up",
+      "dontHaveAccount": "Do not have an account?",
+      "continueWith": "Or continue with"
+    },
+    "signupView": {
+      "info": "Info",
+      "labelFirstName": "First Name",
+      "labelLastName": "Last Name",
+      "labelEmail": "Email",
+      "labelPassword": "Password",
+      "labelLogin": "Log In",
+      "labelSignUp": "Sign up",
+      "doYouHaveAccount": "Do you have an account?",
+      "passwordRuleInfo": "Passwords must be longer than 7 chars and include numbers."
+    },
+    "forgotPasswordView": {
+      "headline": "Simply enter your email address here! We will email you a link to a page where you can easily create a new password.",
+      "sentMailSuccess": "We have sent you an email with a link to reset your password, Please check and follow the included instructions",
+      "labelResetPassword": "Reset Password",
+      "labelLogin": "Log In",
+      "doYouHaveAccount": "Do you have an account?"
+    },
+    "guestRegisterView": {
+      "doYouHaveAccount": "Do you have an account?",
+      "labelLogin": "Log In",
+      "labelPassword": "Password",
+      "labelPasswordConfirm": "Password Confirm"
+    }
+  }
+}

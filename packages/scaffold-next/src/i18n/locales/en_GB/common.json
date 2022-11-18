@@ -1,0 +1,11 @@
+{
+  "infoResult": {},
+  "succResult": {},
+  "errorResult": {
+    "InvalidEmailAddress": "Invalid email address.",
+    "InvalidPasswordInput": "Passwords must be at least 7 characters and contain both alphabetic and numeric characters.",
+    "PASSWORD_RESET_TOKEN_INVALID_ERROR": "The reset password link has either expired or is invalid",
+    "INVALID_CREDENTIALS_ERROR": "The provided credentials are invalid"
+  },
+  "copyright": "© 2022 ARMITJS, All rights reserved."
+}

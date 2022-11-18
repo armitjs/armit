@@ -1,3 +1,4 @@
+/* eslint-disable import/export */
 /**
  * Automatically add app-providers
  * @see https://testing-library.com/docs/react-testing-library/setup#configuring-jest-with-test-utils

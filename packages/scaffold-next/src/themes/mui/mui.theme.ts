@@ -13,3 +13,5 @@
 //     },
 //   },
 // });
+
+export const muiTheme = {};

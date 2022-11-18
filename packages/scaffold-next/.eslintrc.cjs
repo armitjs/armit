@@ -17,9 +17,10 @@ module.exports = {
     '@armit/eslint-config-bases/sonar',
     '@armit/eslint-config-bases/regexp',
     '@armit/eslint-config-bases/vitest',
+    '@armit/eslint-config-bases/react',
+    '@armit/eslint-config-bases/tailwind',
     // Apply prettier and disable incompatible rules
     '@armit/eslint-config-bases/prettier',
-    '@armit/eslint-config-bases/tailwind',
   ],
   rules: {
     // https://github.com/vercel/next.js/discussions/16832
@@ -27,25 +28,13 @@ module.exports = {
     // For the sake of example
     // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md
     'jsx-a11y/anchor-is-valid': 'off',
+    'vitest/max-nested-describe': 'off',
   },
   overrides: [
     {
       files: ['src/**/*.{ts,tsx}'],
       rules: {
         'react/display-name': 'off',
-      },
-    },
-    {
-      files: ['src/**/*.tsx'],
-      rules: {
-        'react/display-name': 'off',
-        '@typescript-eslint/naming-convention': [
-          'error',
-          {
-            selector: ['function'],
-            format: ['camelCase', 'PascalCase'],
-          },
-        ],
       },
     },
     {

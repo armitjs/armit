@@ -27,7 +27,11 @@
       "@/config/*": ["./config/*"],
       "@/features/*": ["./features/*"],
       "@/lib/*": ["./lib/*"],
+      "@/i18n": ["./i18n/index"],
+      "@/i18n/*": ["./i18n/*"],
       "@/app/*": ["./app/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/utils/*": ["./utils/*"],
       "@/styles/*": ["./styles/*"],
       "@/public/*": ["../public/*"]
     }

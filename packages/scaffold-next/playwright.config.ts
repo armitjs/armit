@@ -13,7 +13,7 @@ const isCI = ['true', '1'].includes(process.env?.CI ?? '');
 const webServerMode =
   (process.env?.E2E_WEBSERVER_MODE as WebServerMode) ?? 'NOT_SET';
 
-const webServerPort = 3000;
+const webServerPort = 3400;
 const outputDir = path.join(__dirname, 'e2e/.out');
 
 type WebServerConfig = { cmd: string; timeout: number; retries: number };

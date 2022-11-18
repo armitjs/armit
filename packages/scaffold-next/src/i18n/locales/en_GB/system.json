@@ -1,0 +1,15 @@
+{
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "headline": "This page does not exist.",
+    "subHeadline": "The page you are looking for could not be found."
+  },
+  "internalError": {
+    "title": "500 Internal Error",
+    "headline": "Server-side error occurred",
+    "subHeadline": "The page you are looking for could not be found."
+  },
+  "links": {
+    "backToHome": "Back to home"
+  }
+}

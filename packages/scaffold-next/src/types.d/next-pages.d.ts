@@ -1,5 +1,4 @@
 import 'next';
-import type { VMSettingItems, VMCategoryNavItem } from '@kzfoo/service';
 import type { GetStaticPropsResult, GetServerSidePropsResult } from 'next';
 import type { SSRConfig } from 'next-i18next';
 
@@ -13,15 +12,21 @@ declare module 'next' {
     /**
      * 当前网站的所有系统配置
      */
-    settings: VMSettingItems;
+    settings: Array<{
+      /** Place our settings */
+    }>;
     /**
      * 导航栏目的catalogs
      */
-    catalogs: VMCategoryNavItem[];
+    catalogs: Array<{
+      /** lace our settings */
+    }>;
     /**
      * Footer 链接.
      */
-    footerTopicLinks: ExpandableTreeNodeResult<TopicLinkFragment>[];
+    footerTopicLinks: Array<{
+      /** lace our settings */
+    }>;
   };
 
   export type GetStaticPagePropsResult<T extends PagePropsResultBaseData> =

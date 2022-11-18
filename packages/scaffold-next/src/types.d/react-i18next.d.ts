@@ -5,8 +5,7 @@
  * @link https://react.i18next.com/latest/typescript
  */
 import 'react-i18next';
-import type { I18nNamespaces } from '@kzfoo/i18n';
-
+import type { I18nNamespaces } from '@/i18n';
 declare module 'react-i18next' {
   interface CustomTypeOptions {
     defaultNS: 'common';

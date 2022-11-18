@@ -1,6 +1,6 @@
-import systemJsonEn from '@kzfoo/i18n/locales/en/system.json';
-import systemJsonUk from '@kzfoo/i18n/locales/en_GB/system.json';
 import { test, expect } from '@playwright/test';
+import systemJsonEn from '@/i18n/locales/en/system.json';
+import systemJsonUk from '@/i18n/locales/en_GB/system.json';
 
 const pageSlug = 'this-page-does-not-exist';
 

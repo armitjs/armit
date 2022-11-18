@@ -1,6 +1,6 @@
-import { isIsoDateString } from '@kzfoo/core/utils/type-guards';
 import { test, expect } from '@playwright/test';
 import type { HealthCheckApiPayload } from '@/pages/api/_monitor/healthcheck';
+import { isIsoDateString } from '@/utils/type-guards';
 import packageJson from '../../../package.json';
 
 test('should return a success payload', async ({ request }) => {

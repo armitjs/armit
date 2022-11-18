@@ -1,7 +1,7 @@
-import { normalizeVendureApiErrorToClient } from '@kzfoo/service';
 import { withSentry } from '@sentry/nextjs';
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { createRouter, expressWrapper } from 'next-connect';
+import { normalizeVendureApiErrorToClient } from './errors';
 import { fileUploadMiddleware } from './file-upload-middleware';
 
 /**

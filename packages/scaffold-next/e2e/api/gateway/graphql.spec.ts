@@ -1,8 +1,5 @@
-import {
-  isNonEmptyString,
-  isParsableNumeric,
-} from '@kzfoo/core/utils/type-guards';
 import { test, expect } from '@playwright/test';
+import { isNonEmptyString, isParsableNumeric } from '@/utils/type-guards';
 
 test('should call the mesh for random cats', async ({ request }) => {
   const resp = await request.post('/api/gateway/graphql', {
