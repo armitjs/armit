@@ -40,6 +40,7 @@ module.exports = {
     { name: 'common' },
     { name: 'eslint-config-bases' },
     { name: 'genereate-template-files' },
+    { name: 'scaffold-next' },
   ],
 
   // scopeOverrides is broken while using gitmoji, cause of `value` is `:bug: fix`

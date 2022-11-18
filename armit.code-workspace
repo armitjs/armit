@@ -17,6 +17,10 @@
       "path": "packages/generate-template-files"
     },
     {
+      "name": "scaffold-next",
+      "path": "packages/scaffold-next"
+    },
+    {
       "name": "root",
       "path": "."
     }
@@ -41,7 +45,8 @@
       "./packages/cli",
       "./packages/common",
       "./packages/eslint-config-bases",
-      "./packages/generate-template-files"
+      "./packages/generate-template-files",
+      "./packages/scaffold-next"
     ]
   }
 }
