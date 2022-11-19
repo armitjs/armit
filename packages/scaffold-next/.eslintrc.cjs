@@ -32,6 +32,12 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['e2e/**/*.{ts,tsx}'],
+      rules: {
+        'import/no-unresolved': 'off',
+      },
+    },
+    {
       files: ['src/**/*.{ts,tsx}'],
       rules: {
         'react/display-name': 'off',
