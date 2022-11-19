@@ -129,12 +129,12 @@ const config: PlaywrightTestConfig = {
     //  },
     // },
     // Test against mobile viewports.
-    {
-      name: 'Mobile Chrome',
-      use: {
-        ...devices['Pixel 5'],
-      },
-    },
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: {
+    //     ...devices['Pixel 5'],
+    //   },
+    // },
     // Mobile Safari is not supported on CI/Linux yet.
     // {
     //  name: 'Mobile Safari',

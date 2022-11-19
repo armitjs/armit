@@ -204,30 +204,7 @@ const nextConfig = {
         __SENTRY_TRACING__: NEXTJS_SENTRY_TRACING,
       })
     );
-    if (config.mode === 'development') {
-      config.module.rules.push({
-        test: /\.js$/,
-        enforce: 'pre',
-        use: [
-          {
-            // FIXME: 是否当使用next.js modularizeImports的能力的时候可以移除掉此配置.
-            loader: 'source-map-loader',
-            options: {
-              filterSourceMappingUrl: (url, resourcePath) => {
-                if (
-                  /@dimjs\//.test(resourcePath) ||
-                  /@wove\//.test(resourcePath) ||
-                  /@semic\//.test(resourcePath)
-                ) {
-                  return true;
-                }
-                return 'skip';
-              },
-            },
-          },
-        ],
-      });
-    }
+
     config.module.rules.push({
       test: /\.svg$/,
       issuer: /\.(js|ts)x?$/,
