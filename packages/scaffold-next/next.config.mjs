@@ -121,14 +121,6 @@ const nextConfig = {
     maxInactiveAge: (isCI ? 3600 : 25) * 1000,
   },
 
-  // @link https://nextjs.org/docs/advanced-features/compiler#minification
-  // Sometimes buggy so enable/disable when debugging.
-  swcMinify: false,
-
-  compiler: {
-    // emotion: true,
-  },
-
   // Standalone build
   // @link https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files-experimental
   output: 'standalone',

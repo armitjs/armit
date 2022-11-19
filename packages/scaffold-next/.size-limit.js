@@ -15,11 +15,12 @@ const limitCfg = {
   defaultSize: '80kb',
   pages: {
     '/': '120kb',
-    '/404': '80kb',
+    '/404': '110kb',
     '/_app': '160kb',
-    '/_error': '85kb',
-    '/_monitor/sentry/csr-page': '80kb',
-    '/_monitor/sentry/ssr-page': '80kb',
+    '/_error': '130kb',
+    '/_monitor/preview/error-page': '110kb',
+    '/_monitor/sentry/csr-page': '110kb',
+    '/_monitor/sentry/ssr-page': '100kb',
     '/home': '100kb',
   },
 };
