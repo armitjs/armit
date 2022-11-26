@@ -121,6 +121,16 @@ const nextConfig = {
     maxInactiveAge: (isCI ? 3600 : 25) * 1000,
   },
 
+  compiler: {
+    // This transform allows for removing all console.* calls in application code (not node_modules).
+    removeConsole: isProd
+      ? {
+          // Remove console.* output except console.error:
+          exclude: ['error'],
+        }
+      : false,
+  },
+
   // Standalone build
   // @link https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files-experimental
   output: 'standalone',
