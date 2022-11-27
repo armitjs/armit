@@ -25,6 +25,6 @@ module.exports = {
   debug: debugI18n,
   localePath:
     typeof window === 'undefined'
-      ? path.resolve('../../packages/i18n/src/locales')
+      ? path.resolve('./src/i18n/locales')
       : undefined,
 };

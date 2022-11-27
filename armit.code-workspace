@@ -34,6 +34,9 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
     // Disable vscode formatting for js,jsx,ts,tsx files
     // to allow dbaeumer.vscode-eslint to format them
     "[javascript]": {

@@ -121,6 +121,10 @@ const nextConfig = {
     maxInactiveAge: (isCI ? 3600 : 25) * 1000,
   },
 
+  // @link https://nextjs.org/docs/advanced-features/compiler#minification
+  // Sometimes buggy so enable/disable when debugging.
+  swcMinify: true,
+
   compiler: {
     // This transform allows for removing all console.* calls in application code (not node_modules).
     removeConsole: isProd

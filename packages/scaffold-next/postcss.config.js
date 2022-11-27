@@ -8,6 +8,7 @@ const enableCssGrid = false;
 
 module.exports = {
   plugins: {
+    // 'tailwindcss/nesting': {},
     tailwindcss: {},
     ...(isProd
       ? {
@@ -25,6 +26,7 @@ module.exports = {
             stage: 3,
             features: {
               'custom-properties': supportsIE11,
+              // 'nesting-rules': false,
             },
           },
         }

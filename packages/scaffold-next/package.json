@@ -58,6 +58,8 @@
     "@dimjs/utils": "1.2.23",
     "@sentry/nextjs": "7.21.1",
     "@sentry/react": "7.21.1",
+    "@tanstack/react-query": "4.17.1",
+    "@tanstack/react-query-devtools": "4.17.1",
     "@wove/react": "1.2.22",
     "i18next": "22.0.6",
     "multiparty": "4.2.3",
