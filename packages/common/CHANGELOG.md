@@ -1,5 +1,35 @@
 # @armit/common
 
+## 0.0.11
+
+### Patch Changes
+
+- [`c078e90`](https://github.com/armitjs/armit/commit/c078e9027d3555cbcfa4bf1018eab7a7ffc964b8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update comments & test case
+
+- [`a43779d`](https://github.com/armitjs/armit/commit/a43779ddd871471d40d7a1677ff884df50956ab9) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add some file utilities and path utilities
+
+- [`2d7934c`](https://github.com/armitjs/armit/commit/2d7934c0bb70a4acc27f7ee346c259bb73e79e7a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve update-notifer and expose some utilities for yarn-npm
+
+- [`b16c135`](https://github.com/armitjs/armit/commit/b16c1355feb29e64d22d84066f39a93f35c8ca65) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`6fc18f1`](https://github.com/armitjs/armit/commit/6fc18f1908ee307c9a3c390db7a1177eeba9a16b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor unit-tests for file-recursive-copy
+
+- [`2c1f06b`](https://github.com/armitjs/armit/commit/2c1f06bc8de10ee63744f88138e7fed8e8d596b1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade deps
+
+- [`1153545`](https://github.com/armitjs/armit/commit/11535454cbce9c7cf4e07eec814f3436e3e73385) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`519c72e`](https://github.com/armitjs/armit/commit/519c72e5c41460a38340622c5b6d9edb05d71c72) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add file recursive tests fixtures
+
+- [`e6f4dac`](https://github.com/armitjs/armit/commit/e6f4dac2c390f212f4264c1be188525707c23c7c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add cli argv parser
+
+- [`d573988`](https://github.com/armitjs/armit/commit/d57398849529b1a5d114e64f03d9dc82e6100da8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - improve test cases for recursive copy
+
+- [`2840c33`](https://github.com/armitjs/armit/commit/2840c331b1fc484aee3a86b8adb490fb240e8884) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix file-copy-recursive testcase issue
+
+- [`93f90d0`](https://github.com/armitjs/armit/commit/93f90d0fdb71a4c7e6567e1317ab940d6cd49299) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor to support sub command chain
+
+- [`fa97ab9`](https://github.com/armitjs/armit/commit/fa97ab9d8dbfd4f42ed8feb9b3edbd636b3ba2a9) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix test case issue
+
 ## 0.0.10
 
 ### Patch Changes
