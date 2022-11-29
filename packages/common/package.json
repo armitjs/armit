@@ -60,7 +60,7 @@
     "resolve": "1.22.1",
     "semver": "7.3.8",
     "terminal-link": "3.0.0",
-    "type-fest": "3.2.0",
+    "type-fest": "3.3.0",
     "yargs": "17.6.2"
   },
   "devDependencies": {
