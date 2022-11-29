@@ -23,6 +23,8 @@ export default defineConfig({
     }),
   ],
   test: {
+    // Makebe suite for local debug
+    testTimeout: 1000 * 30,
     globals: true,
     environment: 'happy-dom',
     passWithNoTests: false,
