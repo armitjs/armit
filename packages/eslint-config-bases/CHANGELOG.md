@@ -1,5 +1,17 @@
 # @armit/eslint-config-bases
 
+## 0.0.8
+
+### Patch Changes
+
+- [`b16c135`](https://github.com/armitjs/armit/commit/b16c1355feb29e64d22d84066f39a93f35c8ca65) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`2c1f06b`](https://github.com/armitjs/armit/commit/2c1f06bc8de10ee63744f88138e7fed8e8d596b1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade deps
+
+- [`1153545`](https://github.com/armitjs/armit/commit/11535454cbce9c7cf4e07eec814f3436e3e73385) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`0438938`](https://github.com/armitjs/armit/commit/0438938f8d84bfc08dea1e22c51f9bf821e17070) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add UPPER_CASE rule for enumMember
+
 ## 0.0.7
 
 ### Patch Changes
