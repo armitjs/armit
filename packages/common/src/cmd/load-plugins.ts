@@ -107,6 +107,7 @@ async function load(
 
       return memoizedSearch(nodeModulesDir, pluginPackPattern).map(
         (pluginName) => {
+          // pluginName : `armit-cli-plugin-a`, `@armit/cli-plugin-b`
           return {
             name: pluginName,
             requirePath: resolve.sync(pluginName, {

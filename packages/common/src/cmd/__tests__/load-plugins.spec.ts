@@ -58,6 +58,9 @@ describe('load cli command plugins', () => {
     );
     expect(result.length).toBe(8);
     expect(
+      result.find((s) => !!~s.name.indexOf('@armit/cli-plugin-a'))
+    ).not.toBeUndefined();
+    expect(
       result.find((s) => !!~s.name.indexOf('armit-cli-plugin-b'))
     ).not.toBeUndefined();
     const esm2 = result.find((s) => !!~s.name.indexOf('esm-2'));
