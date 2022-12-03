@@ -1,19 +1,46 @@
 {
   "name": "@armit/docs",
   "version": "0.0.1",
+  "homepage": "https://github.com/armitjs/armit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armitjs/armit",
+    "directory": "packages/docs"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Yingchun Tian",
+    "url": "https://github.com/tianyingchun"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
   "scripts": {
     "build": "docusaurus build",
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo",
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
+    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/docs.eslintcache",
     "serve": "docusaurus start",
     "start": "docusaurus serve",
     "swizzle": "docusaurus swizzle",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "write-translations": "docusaurus write-translations",
-    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/docs.eslintcache"
+    "write-translations": "docusaurus write-translations"
   },
   "browserslist": {
     "production": [
