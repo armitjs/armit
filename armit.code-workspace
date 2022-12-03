@@ -9,6 +9,10 @@
       "path": "packages/common"
     },
     {
+      "name": "docs",
+      "path": "packages/docs"
+    },
+    {
       "name": "eslint-config-bases",
       "path": "packages/eslint-config-bases"
     },

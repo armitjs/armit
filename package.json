@@ -74,7 +74,7 @@
     "commitizen": "4.2.5",
     "commitlint-config-gitmoji": "2.2.6",
     "cz-customizable": "7.0.0",
-    "eslint": "8.28.0",
+    "eslint": "8.29.0",
     "husky": "8.0.2",
     "is-ci": "3.0.1",
     "lint-staged": "13.0.4",

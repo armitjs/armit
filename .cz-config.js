@@ -38,6 +38,7 @@ module.exports = {
   scopes: [
     { name: 'cli' },
     { name: 'common' },
+    { name: 'docs' },
     { name: 'eslint-config-bases' },
     { name: 'genereate-template-files' },
     { name: 'scaffold-next' },
