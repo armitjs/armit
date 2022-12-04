@@ -31,7 +31,33 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: [
+    // ... Your other plugins.
+    [
+      require.resolve('docusaurus-plugin-search-local'),
+      /** @type {import('docusaurus-plugin-search-local').Options} */
+      ({
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        highlightSearchTermsOnTargetPage: true,
+        externalSearchSources: [
+          {
+            heading: 'Dummy External Source 1',
+            uri: '/docusaurus-plugin-search-local/fixtures/index-1/',
+          },
+          {
+            heading: 'Dummy External Source 2',
+            uri: '/docusaurus-plugin-search-local/fixtures/index-2/',
+          },
+        ],
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+        // When applying `zh` in language, please install `nodejieba` in your project.
+      }),
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -56,7 +82,13 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
+        hideOnScroll: false,
         title: 'MUI color input',
         logo: {
           alt: 'MUI color input',

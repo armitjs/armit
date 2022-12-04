@@ -14,20 +14,18 @@
   --ifm-menu-color-active: #000000;
   --ifm-background-color: #ffffff;
   --ifm-link-color: #0072e5;
-
   --custom-ifm-heading-1: #007fff;
 }
 
 html[data-theme='dark'] {
   --ifm-navbar-background-color: #081a2e;
-  --ifm-color-primary: #ffffff;
+  --ifm-color-primary: #0072e5;
   --ifm-toc-link-color: rgba(255, 255, 255, 0.6);
   --ifm-navbar-link-hover-color: #f0f0f0;
   --ifm-breadcrumb-color-active: #ffffff;
   --ifm-menu-color-active: #ffffff;
   --ifm-background-color: #011e3c;
   --ifm-link-color: #66b2ff;
-
   --custom-ifm-heading-1: #ffffff;
 }
 
