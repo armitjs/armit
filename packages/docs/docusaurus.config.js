@@ -34,6 +34,30 @@ const config = {
   plugins: [
     // ... Your other plugins.
     [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-cli',
+        entryPoints: ['../cli/src/index.ts'],
+        tsconfig: '../cli/tsconfig.json',
+        out: 'api-cli',
+        sidebar: {
+          categoryLabel: 'API CLI',
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-typedoc',
+      {
+        id: 'api-common',
+        entryPoints: ['../common/src/index.ts'],
+        tsconfig: '../common/tsconfig.json',
+        out: 'api-common',
+        sidebar: {
+          categoryLabel: 'API Common',
+        },
+      },
+    ],
+    [
       require.resolve('docusaurus-plugin-search-local'),
       /** @type {import('docusaurus-plugin-search-local').Options} */
       ({
@@ -100,6 +124,18 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            to: 'docs/api-cli/', // 'api' is the 'out' directory
+            activeBasePath: 'docs',
+            position: 'left',
+            label: 'API CLI',
+          },
+          {
+            to: 'docs/api-common/', // 'api' is the 'out' directory
+            activeBasePath: 'docs',
+            position: 'left',
+            label: 'API Common',
           },
           {
             href: 'https://github.com/viclafouch/mui-color-input',

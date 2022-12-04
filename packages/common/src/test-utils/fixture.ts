@@ -6,7 +6,7 @@ import { getDirname } from '../file/index.js';
  * Method for dynamic creating fixture workspace dir for jest
  * @param url The default should be dynamic `import.meta.url`
  * @param dir The default fixture workspace dir is default: `fixture`
- * @param files {'a/hello.txt': 'hello', 'b/hello.txt': 'hello', 'b/world.txt': 'hello'}
+ * @param files `{'a/hello.txt': 'hello', 'b/hello.txt': 'hello', 'b/world.txt': 'hello'}`
  * @return __dirname
  */
 export const createFixtureFiles = (
