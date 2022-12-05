@@ -7,7 +7,6 @@ import { MuiColorInput } from 'mui-color-input';
 import React, { useState } from 'react';
 import DocusaurusImageUrl from '@site/static/img/logo.jpg';
 import styles from './index.module.css';
-import '../css/index.css';
 
 const HomepageHeader = () => {
   const { siteConfig } = useDocusaurusContext();
@@ -40,7 +39,24 @@ const HomepageHeader = () => {
           </Link>
           .
         </p>
-        <MuiColorInput value={color} onChange={handleChangeColor} />
+        <MuiColorInput
+          value={color}
+          onChange={handleChangeColor}
+          sx={{
+            '&.MuiColorInput-TextField input': {
+              color: `var(--ifm-color-black)`,
+            },
+            "[data-theme='dark'] &.MuiColorInput-TextField input": {
+              color: `var(--ifm-color-white)`,
+            },
+            "[data-theme='dark'] &.MuiColorInput-TextField fieldset": {
+              borderColor: `var(--ifm-color-white) !important`,
+            },
+            '&.MuiColorInput-TextField fieldset': {
+              borderColor: `var(--ifm-color-black) !important`,
+            },
+          }}
+        />
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"

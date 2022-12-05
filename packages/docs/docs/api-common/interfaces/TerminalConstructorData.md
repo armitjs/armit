@@ -32,7 +32,7 @@ Whether or not to capitalize the name of a log's corresponding level when it's a
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:58](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L58)
+[packages/common/src/terminal/types.ts:58](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L58)
 
 ---
 
@@ -48,7 +48,7 @@ The colors Will be painted on `context` if have.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:69](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L69)
+[packages/common/src/terminal/types.ts:69](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L69)
 
 ---
 
@@ -60,7 +60,7 @@ A list of categories which you can log to.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:63](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L63)
+[packages/common/src/terminal/types.ts:63](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L63)
 
 ---
 
@@ -76,7 +76,7 @@ false
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:142](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L142)
+[packages/common/src/terminal/types.ts:142](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L142)
 
 ---
 
@@ -90,7 +90,7 @@ Whether or not to show a cool arrow before a log's message.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:75](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L75)
+[packages/common/src/terminal/types.ts:75](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L75)
 
 ---
 
@@ -104,7 +104,7 @@ If true, each message logged to the terminal will have a date corresponding to w
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:82](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L82)
+[packages/common/src/terminal/types.ts:82](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L82)
 
 ---
 
@@ -118,7 +118,7 @@ If true, each message logged to the terminal will have the name of the level of 
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:89](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L89)
+[packages/common/src/terminal/types.ts:89](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L89)
 
 ---
 
@@ -138,7 +138,7 @@ If true, the date displayed on each message logged to the console will have the 
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:102](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L102)
+[packages/common/src/terminal/types.ts:102](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L102)
 
 ---
 
@@ -152,7 +152,7 @@ If true, each message logged to the terminal will have a timestamp relative to t
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:109](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L109)
+[packages/common/src/terminal/types.ts:109](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L109)
 
 ---
 
@@ -166,7 +166,7 @@ If true, each message logged to the terminal will have a timestamp corresponding
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:116](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L116)
+[packages/common/src/terminal/types.ts:116](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L116)
 
 ---
 
@@ -180,7 +180,7 @@ If true, each message logged to the terminal will have a timestamp relative to w
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:123](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L123)
+[packages/common/src/terminal/types.ts:123](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L123)
 
 ---
 
@@ -200,4 +200,4 @@ If true, the timestamp on each message logged to the console will be displayed u
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:136](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L136)
+[packages/common/src/terminal/types.ts:136](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L136)

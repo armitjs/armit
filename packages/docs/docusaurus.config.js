@@ -19,7 +19,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'viclafouch', // Usually your GitHub org/user name.
+  organizationName: 'armitjs', // Usually your GitHub org/user name.
   projectName: 'mui-color-input', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: true,
@@ -32,7 +32,6 @@ const config = {
     locales: ['en'],
   },
   plugins: [
-    // ... Your other plugins.
     [
       'docusaurus-plugin-typedoc',
       {
@@ -61,8 +60,7 @@ const config = {
       require.resolve('docusaurus-plugin-search-local'),
       /** @type {import('docusaurus-plugin-search-local').Options} */
       ({
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
         highlightSearchTermsOnTargetPage: true,
         externalSearchSources: [
           {
@@ -88,12 +86,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         theme: {
-          customCss: [require.resolve('./src/css/custom.css')],
+          customCss: [require.resolve('./src/theme/armit.css')],
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
         },
-        blog: false, // Optional: disable the blog plugin
+        // Optional: disable the blog plugin
+        blog: false,
       }),
     ],
   ],
@@ -126,13 +125,15 @@ const config = {
             label: 'Documentation',
           },
           {
-            to: 'docs/api-cli/', // 'api' is the 'out' directory
+            // 'api' is the 'out' directory
+            to: 'docs/api-cli/',
             activeBasePath: 'docs',
             position: 'left',
             label: 'API CLI',
           },
           {
-            to: 'docs/api-common/', // 'api' is the 'out' directory
+            // 'api' is the 'out' directory
+            to: 'docs/api-common/',
             activeBasePath: 'docs',
             position: 'left',
             label: 'API Common',
@@ -151,7 +152,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} by Victor de la Fouchardiere`,
+        copyright: `Copyright © ${new Date().getFullYear()} by armitjs`,
       },
       prism: {
         theme: lightCodeTheme,

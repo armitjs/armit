@@ -20,7 +20,7 @@ Calling .exitProcess(false) disables this behavior, enabling further actions aft
 
 #### Defined in
 
-[packages/common/src/cmd/create-yargs.ts:25](https://github.com/armitjs/armit/blob/224552a/packages/common/src/cmd/create-yargs.ts#L25)
+[packages/common/src/cmd/create-yargs.ts:25](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-yargs.ts#L25)
 
 ---
 
@@ -36,7 +36,7 @@ The group name
 
 #### Defined in
 
-[packages/common/src/cmd/create-yargs.ts:16](https://github.com/armitjs/armit/blob/224552a/packages/common/src/cmd/create-yargs.ts#L16)
+[packages/common/src/cmd/create-yargs.ts:16](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-yargs.ts#L16)
 
 ---
 
@@ -48,4 +48,4 @@ the json parsed from `package.json`
 
 #### Defined in
 
-[packages/common/src/cmd/create-yargs.ts:20](https://github.com/armitjs/armit/blob/224552a/packages/common/src/cmd/create-yargs.ts#L20)
+[packages/common/src/cmd/create-yargs.ts:20](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-yargs.ts#L20)

@@ -36,7 +36,7 @@ Represents the console.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:351](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L351)
+[packages/common/src/terminal/terminal-log.ts:351](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L351)
 
 ## Properties
 
@@ -48,7 +48,7 @@ Customization options that were inputted when this terminal instance was created
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:178](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L178)
+[packages/common/src/terminal/terminal-log.ts:178](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L178)
 
 ---
 
@@ -73,7 +73,7 @@ Logs "faz" to the `error` level if such a level even exists.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:196](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L196)
+[packages/common/src/terminal/terminal-log.ts:196](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L196)
 
 ---
 
@@ -85,7 +85,7 @@ The time when this terminal instance was created.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:204](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L204)
+[packages/common/src/terminal/terminal-log.ts:204](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L204)
 
 ---
 
@@ -97,7 +97,7 @@ The time when the last message was logged to the terminal.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:209](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L209)
+[packages/common/src/terminal/terminal-log.ts:209](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L209)
 
 ## Methods
 
@@ -120,4 +120,4 @@ The time when the last message was logged to the terminal.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:212](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/terminal-log.ts#L212)
+[packages/common/src/terminal/terminal-log.ts:212](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L212)

@@ -23,12 +23,9 @@ We have completed installing the package.
 
 Here is a simple usage for using the component:
 
-```jsx
-import React from "react";
-import { MuiColorInput } from "mui-color-input";
-
+```jsx import React from 'react'; import {MuiColorInput} from 'mui-color-input';
 const MyComponent = () => {
-  const [color, setColor] = React.useState("#ffffff");
+  const [color, setColor] = React.useState('#ffffff');
 
   const handleChange = (color) => {
     setColor(color);
@@ -37,6 +34,13 @@ const MyComponent = () => {
   return <MuiColorInput value={color} onChange={handleChange} />;
 };
 ```
+
+:::info Note
+
+While the high level concepts are the same, there are large implementation differences between the offered React, Angular and Vue renderer sets.
+This tutorial describes how to add custom renderers for React-based renderer sets.
+
+:::
 
 ## Congratulations !
 

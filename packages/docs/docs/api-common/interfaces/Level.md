@@ -24,7 +24,7 @@ Any ANSI colors/formats which you want any messages logged to this level to have
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:30](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L30)
+[packages/common/src/terminal/types.ts:30](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L30)
 
 ---
 
@@ -36,7 +36,7 @@ If true, each message logged to this level will be sent to `process.stderr` (sta
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:35](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L35)
+[packages/common/src/terminal/types.ts:35](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L35)
 
 ---
 
@@ -48,4 +48,4 @@ The name of this level.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:40](https://github.com/armitjs/armit/blob/224552a/packages/common/src/terminal/types.ts#L40)
+[packages/common/src/terminal/types.ts:40](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L40)
