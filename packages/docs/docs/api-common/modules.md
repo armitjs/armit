@@ -37,7 +37,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/ldap/ldap.ts:3](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/ldap/ldap.ts#L3)
+[packages/common/src/ldap/ldap.ts:3](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/ldap/ldap.ts#L3)
 
 ---
 
@@ -49,7 +49,7 @@ Represents an ANSI color.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:6](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L6)
+[packages/common/src/terminal/types.ts:6](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/types.ts#L6)
 
 ---
 
@@ -65,7 +65,7 @@ Represents an ANSI color.
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:10](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-command.ts#L10)
+[packages/common/src/cmd/create-command.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/create-command.ts#L10)
 
 ---
 
@@ -83,7 +83,7 @@ Make every property and sub-property read-only.
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:14](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L14)
+[packages/common/src/terminal/types.ts:14](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/types.ts#L14)
 
 ---
 
@@ -95,7 +95,7 @@ Same as `TerminalConstructorData<string>`, but all properties are required and r
 
 #### Defined in
 
-[packages/common/src/terminal/types.ts:21](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/types.ts#L21)
+[packages/common/src/terminal/types.ts:21](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/types.ts#L21)
 
 ## Variables
 
@@ -116,7 +116,7 @@ A list of preset levels that you can use to log messages of various levels of im
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:38](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L38)
+[packages/common/src/terminal/terminal-log.ts:38](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/terminal-log.ts#L38)
 
 ---
 
@@ -133,7 +133,7 @@ A couple of preset levels. This is useful for a basic application.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-log.ts:21](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-log.ts#L21)
+[packages/common/src/terminal/terminal-log.ts:21](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/terminal-log.ts#L21)
 
 ## Functions
 
@@ -164,7 +164,7 @@ A new array with the sub-array elements concatenated into it.
 
 #### Defined in
 
-[packages/common/src/array/array-flatten.ts:7](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/array/array-flatten.ts#L7)
+[packages/common/src/array/array-flatten.ts:7](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/array/array-flatten.ts#L7)
 
 ---
 
@@ -195,7 +195,7 @@ be used to check duplicates
 
 #### Defined in
 
-[packages/common/src/array/array-unique.ts:7](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/array/array-unique.ts#L7)
+[packages/common/src/array/array-unique.ts:7](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/array/array-unique.ts#L7)
 
 ---
 
@@ -209,7 +209,7 @@ be used to check duplicates
 
 #### Defined in
 
-[packages/common/src/cmd/load-plugins.ts:169](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/load-plugins.ts#L169)
+[packages/common/src/cmd/load-plugins.ts:169](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/load-plugins.ts#L169)
 
 ---
 
@@ -231,7 +231,7 @@ Create cli program
 
 #### Defined in
 
-[packages/common/src/cmd/create-cli.ts:68](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-cli.ts#L68)
+[packages/common/src/cmd/create-cli.ts:68](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/create-cli.ts#L68)
 
 ---
 
@@ -298,7 +298,7 @@ export const cmdTest = createCommand(
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:122](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-command.ts#L122)
+[packages/common/src/cmd/create-command.ts:122](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/create-command.ts#L122)
 
 ---
 
@@ -324,7 +324,7 @@ Method for dynamic creating fixture workspace dir for jest
 
 #### Defined in
 
-[packages/common/src/test-utils/fixture.ts:12](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/test-utils/fixture.ts#L12)
+[packages/common/src/test-utils/fixture.ts:12](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/test-utils/fixture.ts#L12)
 
 ---
 
@@ -340,7 +340,7 @@ A cryptographic salt is made up of random bits added to each password instance b
 
 #### Defined in
 
-[packages/common/src/ldap/ldap.ts:55](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/ldap/ldap.ts#L55)
+[packages/common/src/ldap/ldap.ts:55](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/ldap/ldap.ts#L55)
 
 ---
 
@@ -363,7 +363,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:141](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-command.ts#L141)
+[packages/common/src/cmd/create-command.ts:141](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/create-command.ts#L141)
 
 ---
 
@@ -383,7 +383,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/common/src/cmd/create-yargs.ts:67](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/create-yargs.ts#L67)
+[packages/common/src/cmd/create-yargs.ts:67](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/create-yargs.ts#L67)
 
 ---
 
@@ -406,7 +406,7 @@ Ensure your string ends with a slash.
 
 #### Defined in
 
-[packages/common/src/file/path.ts:10](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/path.ts#L10)
+[packages/common/src/file/path.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/path.ts#L10)
 
 ---
 
@@ -429,7 +429,7 @@ Orgnization execa configuration
 
 #### Defined in
 
-[packages/common/src/terminal/program.ts:10](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/program.ts#L10)
+[packages/common/src/terminal/program.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/program.ts#L10)
 
 ---
 
@@ -454,7 +454,7 @@ Buffer
 
 #### Defined in
 
-[packages/common/src/file/zip.ts:81](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/zip.ts#L81)
+[packages/common/src/file/zip.ts:81](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/zip.ts#L81)
 
 ---
 
@@ -480,7 +480,7 @@ boolean indicating if compare succeeded
 
 #### Defined in
 
-[packages/common/src/file/file-compare.ts:32](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-compare.ts#L32)
+[packages/common/src/file/file-compare.ts:32](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-compare.ts#L32)
 
 ---
 
@@ -513,7 +513,7 @@ const files = await fileWalk("**/*.*", {
 
 #### Defined in
 
-[packages/common/src/file/file-walk.ts:43](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-walk.ts#L43)
+[packages/common/src/file/file-walk.ts:43](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-walk.ts#L43)
 
 ---
 
@@ -547,7 +547,7 @@ const files = fileWalkSync("**/*.*", {
 
 #### Defined in
 
-[packages/common/src/file/file-walk.ts:17](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-walk.ts#L17)
+[packages/common/src/file/file-walk.ts:17](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-walk.ts#L17)
 
 ---
 
@@ -570,7 +570,7 @@ Finds the first parent directory that contains a given file or directory.
 
 #### Defined in
 
-[packages/common/src/package/package-search.ts:30](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/package-search.ts#L30)
+[packages/common/src/package/package-search.ts:30](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/package-search.ts#L30)
 
 ---
 
@@ -594,7 +594,7 @@ Returns the file path, or undefined if it could not be found.
 
 #### Defined in
 
-[packages/common/src/package/package-search.ts:20](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/package-search.ts#L20)
+[packages/common/src/package/package-search.ts:20](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/package-search.ts#L20)
 
 ---
 
@@ -619,7 +619,7 @@ Provider method to simulate \_\_dirname veriable.
 
 #### Defined in
 
-[packages/common/src/file/dir-name.ts:10](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/dir-name.ts#L10)
+[packages/common/src/file/dir-name.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/dir-name.ts#L10)
 
 ---
 
@@ -633,7 +633,7 @@ Provider method to simulate \_\_dirname veriable.
 
 #### Defined in
 
-[packages/common/src/git/commit-hash.ts:3](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/git/commit-hash.ts#L3)
+[packages/common/src/git/commit-hash.ts:3](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/git/commit-hash.ts#L3)
 
 ---
 
@@ -657,7 +657,7 @@ Returns the result object or undefined if no package.json was found.
 
 #### Defined in
 
-[packages/common/src/package/package-data.ts:11](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/package-data.ts#L11)
+[packages/common/src/package/package-data.ts:11](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/package-data.ts#L11)
 
 ---
 
@@ -681,7 +681,7 @@ Returns the project root path or undefined if it could not be found.
 
 #### Defined in
 
-[packages/common/src/package/package-search.ts:12](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/package-search.ts#L12)
+[packages/common/src/package/package-search.ts:12](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/package-search.ts#L12)
 
 ---
 
@@ -704,7 +704,7 @@ Create a link for use in stdout.
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-link.ts:7](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-link.ts#L7)
+[packages/common/src/terminal/terminal-link.ts:7](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/terminal-link.ts#L7)
 
 ---
 
@@ -726,7 +726,7 @@ Sync Returns true if a filepath exists on the file system and it's directory.
 
 #### Defined in
 
-[packages/common/src/file/file-read.ts:6](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-read.ts#L6)
+[packages/common/src/file/file-read.ts:6](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-read.ts#L6)
 
 ---
 
@@ -742,7 +742,7 @@ Check if your package was installed globally, npm / yarn
 
 #### Defined in
 
-[packages/common/src/package/npm-yarn.ts:17](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/npm-yarn.ts#L17)
+[packages/common/src/package/npm-yarn.ts:17](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/npm-yarn.ts#L17)
 
 ---
 
@@ -764,7 +764,7 @@ Returns true if filename matches a junk file.
 
 #### Defined in
 
-[packages/common/src/file/path.ts:58](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/path.ts#L58)
+[packages/common/src/file/path.ts:58](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/path.ts#L58)
 
 ---
 
@@ -786,7 +786,7 @@ Returns true if filename does not match a junk file.
 
 #### Defined in
 
-[packages/common/src/file/path.ts:67](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/path.ts#L67)
+[packages/common/src/file/path.ts:67](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/path.ts#L67)
 
 ---
 
@@ -810,7 +810,7 @@ Returns true if every string in the given list matches any of the given glob pat
 
 #### Defined in
 
-[packages/common/src/file/path.ts:26](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/path.ts#L26)
+[packages/common/src/file/path.ts:26](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/path.ts#L26)
 
 ---
 
@@ -826,7 +826,7 @@ Check if installed by yarn globally without any `fs` calls
 
 #### Defined in
 
-[packages/common/src/package/npm-yarn.ts:9](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/npm-yarn.ts#L9)
+[packages/common/src/package/npm-yarn.ts:9](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/npm-yarn.ts#L9)
 
 ---
 
@@ -849,7 +849,7 @@ Using LDAP to validating user
 
 #### Defined in
 
-[packages/common/src/ldap/ldap.ts:83](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/ldap/ldap.ts#L83)
+[packages/common/src/ldap/ldap.ts:83](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/ldap/ldap.ts#L83)
 
 ---
 
@@ -874,7 +874,7 @@ Crypto ldap hash string
 
 #### Defined in
 
-[packages/common/src/ldap/ldap.ts:65](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/ldap/ldap.ts#L65)
+[packages/common/src/ldap/ldap.ts:65](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/ldap/ldap.ts#L65)
 
 ---
 
@@ -899,7 +899,7 @@ Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
 #### Defined in
 
-[packages/common/src/cmd/load-plugins.ts:40](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/load-plugins.ts#L40)
+[packages/common/src/cmd/load-plugins.ts:40](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/load-plugins.ts#L40)
 
 ---
 
@@ -921,7 +921,7 @@ Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
 #### Defined in
 
-[packages/common/src/file/merge-dirs.ts:18](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/merge-dirs.ts#L18)
+[packages/common/src/file/merge-dirs.ts:18](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/merge-dirs.ts#L18)
 
 ---
 
@@ -959,7 +959,7 @@ Parse command line script
 
 #### Defined in
 
-[packages/common/src/cmd/parse-argv.ts:22](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/cmd/parse-argv.ts#L22)
+[packages/common/src/cmd/parse-argv.ts:22](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/cmd/parse-argv.ts#L22)
 
 ---
 
@@ -976,7 +976,7 @@ Useful for tools that needs to know whether to use yarn or npm to install depend
 
 #### Defined in
 
-[packages/common/src/package/npm-yarn.ts:26](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/npm-yarn.ts#L26)
+[packages/common/src/package/npm-yarn.ts:26](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/npm-yarn.ts#L26)
 
 ---
 
@@ -1002,7 +1002,7 @@ Useful for tools that needs to know whether to use yarn or npm to install depend
 
 #### Defined in
 
-[packages/common/src/file/file-write.ts:37](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-write.ts#L37)
+[packages/common/src/file/file-write.ts:37](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-write.ts#L37)
 
 ---
 
@@ -1026,7 +1026,7 @@ Recursively copy files and folders from src to dest
 
 #### Defined in
 
-[packages/common/src/file/file-recursive-copy/file-recursive-copy.ts:27](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-recursive-copy/file-recursive-copy.ts#L27)
+[packages/common/src/file/file-recursive-copy/file-recursive-copy.ts:27](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-recursive-copy/file-recursive-copy.ts#L27)
 
 ---
 
@@ -1048,7 +1048,7 @@ Synchronously removes files and directories (modeled on the standard POSIX `rm`u
 
 #### Defined in
 
-[packages/common/src/file/file-write.ts:9](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-write.ts#L9)
+[packages/common/src/file/file-write.ts:9](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-write.ts#L9)
 
 ---
 
@@ -1071,7 +1071,7 @@ Similar to rimraf, but looking files and directories using glob patterns.
 
 #### Defined in
 
-[packages/common/src/file/file-write.ts:21](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-write.ts#L21)
+[packages/common/src/file/file-write.ts:21](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-write.ts#L21)
 
 ---
 
@@ -1096,7 +1096,7 @@ Execute cli program
 
 #### Defined in
 
-[packages/common/src/terminal/program.ts:31](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/program.ts#L31)
+[packages/common/src/terminal/program.ts:31](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/program.ts#L31)
 
 ---
 
@@ -1123,7 +1123,7 @@ Please manully install `ts-node`, `tsconfig-paths`
 
 #### Defined in
 
-[packages/common/src/terminal/program.ts:49](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/program.ts#L49)
+[packages/common/src/terminal/program.ts:49](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/program.ts#L49)
 
 ---
 
@@ -1174,7 +1174,7 @@ $ yarn run foo
 
 #### Defined in
 
-[packages/common/src/package/npm-yarn.ts:61](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/npm-yarn.ts#L61)
+[packages/common/src/package/npm-yarn.ts:61](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/npm-yarn.ts#L61)
 
 ---
 
@@ -1196,7 +1196,7 @@ $ yarn run foo
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-banner.ts:89](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-banner.ts#L89)
+[packages/common/src/terminal/terminal-banner.ts:89](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/terminal-banner.ts#L89)
 
 ---
 
@@ -1220,7 +1220,7 @@ This was created since the path methods in Node.js outputs \\ paths on Windows.
 
 #### Defined in
 
-[packages/common/src/file/path.ts:43](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/path.ts#L43)
+[packages/common/src/file/path.ts:43](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/path.ts#L43)
 
 ---
 
@@ -1255,7 +1255,7 @@ Terminal output formatting with ANSI colors
 
 #### Defined in
 
-[packages/common/src/terminal/terminal-color.ts:10](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/terminal/terminal-color.ts#L10)
+[packages/common/src/terminal/terminal-color.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/terminal/terminal-color.ts#L10)
 
 ---
 
@@ -1279,7 +1279,7 @@ Decompress zip files directly to disk
 
 #### Defined in
 
-[packages/common/src/file/zip.ts:57](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/zip.ts#L57)
+[packages/common/src/file/zip.ts:57](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/zip.ts#L57)
 
 ---
 
@@ -1301,7 +1301,7 @@ Simple update notifier to check for npm updates for cli applications.
 
 #### Defined in
 
-[packages/common/src/package/update-notifier/index.ts:15](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/package/update-notifier/index.ts#L15)
+[packages/common/src/package/update-notifier/index.ts:15](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/package/update-notifier/index.ts#L15)
 
 ---
 
@@ -1321,7 +1321,7 @@ Simple update notifier to check for npm updates for cli applications.
 
 #### Defined in
 
-[packages/common/src/file/file-write.ts:48](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-write.ts#L48)
+[packages/common/src/file/file-write.ts:48](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-write.ts#L48)
 
 ---
 
@@ -1342,7 +1342,7 @@ Simple update notifier to check for npm updates for cli applications.
 
 #### Defined in
 
-[packages/common/src/file/file-write.ts:42](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-write.ts#L42)
+[packages/common/src/file/file-write.ts:42](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-write.ts#L42)
 
 ---
 
@@ -1366,7 +1366,7 @@ Zip matched files into .zip file
 
 #### Defined in
 
-[packages/common/src/file/zip.ts:42](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/zip.ts#L42)
+[packages/common/src/file/zip.ts:42](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/zip.ts#L42)
 
 ---
 
@@ -1391,4 +1391,4 @@ Note the jszip depends `dom` to load `lib.dom.d.ts`
 
 #### Defined in
 
-[packages/common/src/file/zip.ts:21](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/zip.ts#L21)
+[packages/common/src/file/zip.ts:21](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/zip.ts#L21)

@@ -14,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/file/file-recursive-copy/file-recursive-copy.ts:122](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/file/file-recursive-copy/file-recursive-copy.ts#L122)
+[packages/common/src/file/file-recursive-copy/file-recursive-copy.ts:122](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/file-recursive-copy/file-recursive-copy.ts#L122)

@@ -23,7 +23,7 @@ all errors. In production this would probably generate too much noise.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:49](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L49)
+[packages/common/src/logger/logger.ts:49](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L49)
 
 ---
 
@@ -38,7 +38,7 @@ serious issue, so should be acted upon.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:27](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L27)
+[packages/common/src/logger/logger.ts:27](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L27)
 
 ---
 
@@ -52,7 +52,7 @@ Logs general information such as startup messages.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:38](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L38)
+[packages/common/src/logger/logger.ts:38](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L38)
 
 ---
 
@@ -66,7 +66,7 @@ Logs additional information
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:43](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L43)
+[packages/common/src/logger/logger.ts:43](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L43)
 
 ---
 
@@ -81,4 +81,4 @@ and handling. But not as serious as an Error.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:33](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L33)
+[packages/common/src/logger/logger.ts:33](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L33)

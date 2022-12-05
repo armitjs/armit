@@ -36,7 +36,7 @@ export const logger = new DefaultLogger({ level: LogLevel.Debug });
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:78](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L78)
+[packages/common/src/logger/logger.ts:78](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L78)
 
 ## Properties
 
@@ -46,7 +46,7 @@ export const logger = new DefaultLogger({ level: LogLevel.Debug });
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:70](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L70)
+[packages/common/src/logger/logger.ts:70](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L70)
 
 ---
 
@@ -56,7 +56,7 @@ export const logger = new DefaultLogger({ level: LogLevel.Debug });
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:68](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L68)
+[packages/common/src/logger/logger.ts:68](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L68)
 
 ---
 
@@ -66,7 +66,7 @@ export const logger = new DefaultLogger({ level: LogLevel.Debug });
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:69](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L69)
+[packages/common/src/logger/logger.ts:69](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L69)
 
 ---
 
@@ -76,7 +76,7 @@ export const logger = new DefaultLogger({ level: LogLevel.Debug });
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:72](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L72)
+[packages/common/src/logger/logger.ts:72](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L72)
 
 ## Methods
 
@@ -103,7 +103,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:109](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L109)
+[packages/common/src/logger/logger.ts:109](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L109)
 
 ---
 
@@ -128,7 +128,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:152](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L152)
+[packages/common/src/logger/logger.ts:152](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L152)
 
 ---
 
@@ -148,7 +148,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:162](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L162)
+[packages/common/src/logger/logger.ts:162](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L162)
 
 ---
 
@@ -174,7 +174,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:113](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L113)
+[packages/common/src/logger/logger.ts:113](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L113)
 
 ---
 
@@ -199,7 +199,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:135](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L135)
+[packages/common/src/logger/logger.ts:135](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L135)
 
 ---
 
@@ -219,7 +219,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:158](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L158)
+[packages/common/src/logger/logger.ts:158](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L158)
 
 ---
 
@@ -243,7 +243,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:101](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L101)
+[packages/common/src/logger/logger.ts:101](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L101)
 
 ---
 
@@ -267,7 +267,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:82](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L82)
+[packages/common/src/logger/logger.ts:82](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L82)
 
 ---
 
@@ -292,7 +292,7 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:143](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L143)
+[packages/common/src/logger/logger.ts:143](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L143)
 
 ---
 
@@ -317,4 +317,4 @@ Terminal output formatting with ANSI colors.
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:127](https://github.com/armitjs/armit/blob/d092d77/packages/common/src/logger/logger.ts#L127)
+[packages/common/src/logger/logger.ts:127](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L127)

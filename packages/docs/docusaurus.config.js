@@ -90,6 +90,11 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [
+            require('@sapphire/docusaurus-plugin-npm2yarn2pnpm').npm2yarn2pnpm,
+            // require('remark-github'),
+            // require('mdx-mermaid'),
+          ],
         },
         // Optional: disable the blog plugin
         blog: false,

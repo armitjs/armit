@@ -45,3 +45,4 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 https://docusaurus.io/
 https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
 https://github.com/eclipsesource/jsonforms2-website/
+https://github.com/nextauthjs/next-auth/blob/main/docs/docusaurus.config.js

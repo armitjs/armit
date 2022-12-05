@@ -5,16 +5,10 @@ slug: /getting-started
 
 # Getting Started
 
-## Install
+### Install
 
-```bash
-npm install mui-color-input --save
-```
-
-or you can use **yarn**
-
-```bash
-yarn add mui-color-input
+```bash npm2yarn2pnpm
+npm install mui-color-input
 ```
 
 We have completed installing the package.
@@ -26,7 +20,7 @@ Here is a simple usage for using the component:
 ```jsx import React from 'react'; import {MuiColorInput} from 'mui-color-input';
 const MyComponent = () => {
   const [color, setColor] = React.useState('#ffffff');
-
+  // highlight-next-line
   const handleChange = (color) => {
     setColor(color);
   };

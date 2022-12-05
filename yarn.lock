@@ -274,6 +274,7 @@ __metadata:
     "@docusaurus/module-type-aliases": 2.2.0
     "@docusaurus/preset-classic": 2.2.0
     "@mdx-js/react": ^1.6.22
+    "@sapphire/docusaurus-plugin-npm2yarn2pnpm": 1.1.4
     "@tsconfig/docusaurus": 1.0.6
     clsx: 1.2.1
     docusaurus-plugin-search-local: 0.9.0
@@ -4217,6 +4218,15 @@ __metadata:
   version: 1.2.0
   resolution: "@rushstack/eslint-patch@npm:1.2.0"
   checksum: faa749faae0e83c26ae9eb00ad36a897ac78f3cf27da8e8ff21c00bcf7973b598d823d8f2b3957ef66079288bcf577f94df831eae2d65f3f68d8ca32f18b6aff
+  languageName: node
+  linkType: hard
+
+"@sapphire/docusaurus-plugin-npm2yarn2pnpm@npm:1.1.4":
+  version: 1.1.4
+  resolution: "@sapphire/docusaurus-plugin-npm2yarn2pnpm@npm:1.1.4"
+  dependencies:
+    unist-util-visit: ^2.0.3
+  checksum: 4a468c8459944a9e78dedad59ece7d5b157a8771b6706eb1c328054bf554e0e50843799f78f7c68f25c2daf99ee0fcf62cc72d82b047e097ca3c843eb14fefb9
   languageName: node
   linkType: hard
 
