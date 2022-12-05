@@ -29,7 +29,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:11](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L11)
+[packages/common/src/logger/logger.ts:11](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L11)
 
 ---
 
@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:10](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L10)
+[packages/common/src/logger/logger.ts:10](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L10)
 
 ---
 
@@ -72,7 +72,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:6](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L6)
+[packages/common/src/logger/logger.ts:6](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L6)
 
 ---
 
@@ -93,7 +93,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:8](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L8)
+[packages/common/src/logger/logger.ts:8](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L8)
 
 ---
 
@@ -113,7 +113,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:13](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L13)
+[packages/common/src/logger/logger.ts:13](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L13)
 
 ---
 
@@ -133,7 +133,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:12](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L12)
+[packages/common/src/logger/logger.ts:12](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L12)
 
 ---
 
@@ -154,7 +154,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:9](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L9)
+[packages/common/src/logger/logger.ts:9](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L9)
 
 ---
 
@@ -175,4 +175,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/logger/logger.ts:7](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/logger/logger.ts#L7)
+[packages/common/src/logger/logger.ts:7](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/logger/logger.ts#L7)

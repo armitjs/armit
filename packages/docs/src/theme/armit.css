@@ -15,6 +15,9 @@
   --ifm-background-color: #ffffff;
   --ifm-link-color: #0072e5;
   --custom-ifm-heading-1: #007fff;
+
+  /* highlight-next-line */
+  --docusaurus-highlighted-code-line-bg: rgb(167 167 167);
 }
 
 html[data-theme='dark'] {
@@ -27,6 +30,9 @@ html[data-theme='dark'] {
   --ifm-background-color: #011e3c;
   --ifm-link-color: #66b2ff;
   --custom-ifm-heading-1: #ffffff;
+
+  /* highlight-next-line */
+  --docusaurus-highlighted-code-line-bg: rgb(72 77 91);
 }
 
 h1 {
@@ -48,3 +54,5 @@ h1 {
 [data-theme='dark'] .footer--dark {
   --ifm-footer-background-color: #081a2e;
 }
+
+/* @import './code-block.css' */

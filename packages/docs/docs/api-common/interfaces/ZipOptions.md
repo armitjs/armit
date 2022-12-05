@@ -16,4 +16,4 @@ e.g. `/Users/Documents/xxxx`
 
 #### Defined in
 
-[packages/common/src/file/zip.ts:11](https://github.com/armitjs/armit/blob/204c0a1/packages/common/src/file/zip.ts#L11)
+[packages/common/src/file/zip.ts:11](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/file/zip.ts#L11)
