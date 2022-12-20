@@ -31,10 +31,14 @@ describe('recursive copy basic operation', () => {
   });
 
   it('should copy single files', async () => {
-    await recursiveCopy(
-      getSourcePath('file', SOURCE_PATH),
-      getDestinationPath('file', DESTINATION_PATH)
-    );
+    try {
+      await recursiveCopy(
+        getSourcePath('file', SOURCE_PATH),
+        getDestinationPath('file', DESTINATION_PATH)
+      );
+    } catch (err) {
+      console.log(err);
+    }
     const files = await getOutputFiles(DESTINATION_PATH);
     expect(files).toEqual({
       file: 'Hello, world!\n',

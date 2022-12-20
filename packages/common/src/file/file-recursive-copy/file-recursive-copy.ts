@@ -1,4 +1,4 @@
-import { EventEmitter } from 'node:events';
+import event from 'node:events';
 import type { Stats } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { DefaultLogger, LogLevel } from '../../logger/logger.js';
@@ -217,9 +217,11 @@ function getCopyFunction(stats: Stats, hasFinished: () => boolean, emitEvent) {
 }
 
 function withEventEmitter(target) {
-  for (const key in EventEmitter.prototype) {
-    target[key] = EventEmitter.prototype[key];
+  const eventEmitterPrototype = event.EventEmitter.prototype;
+
+  for (const key in eventEmitterPrototype) {
+    target[key] = eventEmitterPrototype[key];
   }
-  EventEmitter.call(target);
+  event.EventEmitter.call(target);
   return target;
 }
