@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { runTsScript } from '@armit/common';
+import { runTsScript } from '@armit/commander';
 
 export interface CliMockResult {
   stdout: string;

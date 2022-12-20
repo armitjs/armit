@@ -1,4 +1,4 @@
-import { createCommand } from '@armit/common';
+import { createCommand } from '@armit/commander';
 import type { PackCommandArgs } from './handler.js';
 import { PackCommand } from './handler.js';
 

@@ -1,5 +1,6 @@
 import { join } from 'path';
-import { getDirname, getPackageData } from '@armit/common';
+import { getDirname } from '@armit/file-utility';
+import { readPackageData } from '@armit/package';
 import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli info', () => {
@@ -7,7 +8,7 @@ describe('@armit/cli info', () => {
   const program = join(curDirName, 'cli-boot.ts');
 
   // Read cli package json data.
-  const packageJson = getPackageData({
+  const packageJson = readPackageData({
     cwd: curDirName,
   });
 

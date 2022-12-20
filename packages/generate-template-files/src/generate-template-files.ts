@@ -1,5 +1,6 @@
 import { existsSync } from 'fs';
-import { DefaultLogger, LogLevel, recursiveCopy } from '@armit/common';
+import { recursiveCopy } from '@armit/file-recursive-copy';
+import { DefaultLogger, LogLevel } from '@armit/logger';
 import enquirer from 'enquirer';
 import replaceString from 'replace-string';
 import through from 'through2';

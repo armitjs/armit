@@ -1,11 +1,11 @@
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import DocusaurusImageUrl from '@site/static/img/logo.jpg';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import type { MuiColorInputValue } from 'mui-color-input';
 import { MuiColorInput } from 'mui-color-input';
 import React, { useState } from 'react';
-import DocusaurusImageUrl from '@site/static/img/logo.jpg';
 import styles from './index.module.css';
 
 const HomepageHeader = () => {

@@ -1,4 +1,4 @@
-import { createCommand } from '@armit/common';
+import { createCommand } from '@armit/commander';
 import type { InfoCommandArgs } from './handler.js';
 import { InfoCommandHandler } from './handler.js';
 

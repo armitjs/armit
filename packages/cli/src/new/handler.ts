@@ -1,5 +1,5 @@
-import type { CommandArgv } from '@armit/common';
-import { AbstractHandler } from '@armit/common';
+import type { CommandArgv } from '@armit/commander';
+import { AbstractHandler } from '@armit/commander';
 
 export type NewCommandArgs = CommandArgv;
 

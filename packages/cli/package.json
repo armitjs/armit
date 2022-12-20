@@ -45,8 +45,12 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@armit/commander": "workspace:^",
     "@armit/common": "workspace:^",
+    "@armit/file-utility": "workspace:^",
     "@armit/generate-template-files": "workspace:^",
+    "@armit/package": "workspace:^",
+    "@armit/terminal": "workspace:^",
     "import-local": "3.1.0",
     "os-name": "5.1.0"
   },

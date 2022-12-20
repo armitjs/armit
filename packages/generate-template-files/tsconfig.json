@@ -9,7 +9,8 @@
     "incremental": true,
     "paths": {
       "@/test-utils/*": ["./test-utils/*"],
-      "@armit/common": ["../../common/src/index.js"]
+      "@armit/file-recursive-copy": ["../../file-recursive-copy/src/index.js"],
+      "@armit/logger": ["../../logger/src/index.js"]
     },
     "types": ["vitest/globals"]
   },

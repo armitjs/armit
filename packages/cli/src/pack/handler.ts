@@ -1,11 +1,8 @@
 import { join, relative } from 'path';
-import type { CommandArgv } from '@armit/common';
-import {
-  getPackageData,
-  fileWalk,
-  zipFiles,
-  AbstractHandler,
-} from '@armit/common';
+import type { CommandArgv } from '@armit/commander';
+import { AbstractHandler } from '@armit/commander';
+import { fileWalk, zipFiles } from '@armit/file-utility';
+import { readPackageData } from '@armit/package';
 import { normalizeOptionSemicolonParts } from '../utils/index.js';
 
 export type PackCommandArgs = CommandArgv<{
@@ -77,7 +74,7 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
   async toZip(allFiles: string[], fileFromCwd: string): Promise<void> {
     const fileFromTo = join(this.args.cwd, this.args.to);
     // Try to read target project package.json.
-    const targetPackageJson = getPackageData({
+    const targetPackageJson = readPackageData({
       cwd: this.args.cwd,
     });
     const zipFileName = join(

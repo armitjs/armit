@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { getDirname } from '@armit/common';
+import { getDirname } from '@armit/file-utility';
 import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli info', () => {

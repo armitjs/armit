@@ -1,11 +1,14 @@
-import { createCli, getDirname, getPackageData } from '@armit/common';
+import { createCli } from '@armit/commander';
+import { getDirname } from '@armit/file-utility';
+import { readPackageData } from '@armit/package';
+
 import { packCmd } from '../index.js';
 
 // __dirname
 const curDirName = getDirname(import.meta.url);
 
 // Read cli package json data.
-const packageJson = getPackageData({
+const packageJson = readPackageData({
   cwd: curDirName,
 });
 

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { getDirname, rmrfSync, unzip } from '@armit/common';
+import { getDirname, rmrfSync, unzip } from '@armit/file-utility';
 import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli pack', () => {

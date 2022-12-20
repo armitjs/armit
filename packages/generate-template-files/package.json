@@ -41,7 +41,8 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@armit/common": "workspace:^",
+    "@armit/file-recursive-copy": "workspace:^",
+    "@armit/logger": "workspace:^",
     "enquirer": "2.3.6",
     "replace-string": "4.0.0",
     "through2": "4.0.2"

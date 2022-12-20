@@ -4,25 +4,50 @@
       "name": "cli",
       "path": "packages/cli"
     },
+
     {
       "name": "common",
       "path": "packages/common"
+    },
+    {
+      "name": "logger",
+      "path": "packages/logger"
+    },
+    {
+      "name": "terminal",
+      "path": "packages/terminal"
+    },
+    {
+      "name": "package",
+      "path": "packages/package"
+    },
+    {
+      "name": "commander",
+      "path": "packages/commander"
+    },
+    {
+      "name": "file-utility",
+      "path": "packages/file-utility"
+    },
+    {
+      "name": "file-recursive-copy",
+      "path": "packages/file-recursive-copy"
     },
     {
       "name": "docs",
       "path": "packages/docs"
     },
     {
-      "name": "eslint-config-bases",
-      "path": "packages/eslint-config-bases"
+      "name": "scaffold-next",
+      "path": "packages/scaffold-next"
     },
     {
       "name": "generate-template-files",
       "path": "packages/generate-template-files"
     },
     {
-      "name": "scaffold-next",
-      "path": "packages/scaffold-next"
+      "name": "eslint-config-bases",
+      "path": "packages/eslint-config-bases"
     },
     {
       "name": "root",
@@ -52,6 +77,8 @@
       "./packages/cli",
       "./packages/common",
       "./packages/eslint-config-bases",
+      "./packages/file-recursive-copy",
+      "./packages/file-utility",
       "./packages/generate-template-files",
       "./packages/scaffold-next"
     ]

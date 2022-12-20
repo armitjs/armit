@@ -1,4 +1,4 @@
-import { DefaultLogger, LogLevel } from '@armit/common';
+import { DefaultLogger, LogLevel } from '@armit/logger';
 
 describe('displayError', () => {
   const logger = new DefaultLogger({

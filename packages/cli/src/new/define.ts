@@ -1,4 +1,4 @@
-import { createCommand } from '@armit/common';
+import { createCommand } from '@armit/commander';
 import type { NewCommandArgs } from './handler.js';
 import { NewCommandHandler } from './handler.js';
 
