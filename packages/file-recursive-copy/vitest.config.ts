@@ -17,7 +17,7 @@ export default defineConfig({
     environment: 'node',
     passWithNoTests: false,
     cache: {
-      dir: '../../.cache/vitest/common',
+      dir: '../../.cache/vitest/file-recursive-copy',
     },
     coverage: {
       provider: 'istanbul',

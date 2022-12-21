@@ -1,12 +1,23 @@
+import { join } from 'node:path';
+import { getDirname } from '@/test-utils';
 import semver from 'semver';
-import { runCliMock } from './cli-run-mock.js';
+import type { CliMockResult } from '../cli-run-mock.js';
+import { runTsProgram } from '../cli-run-mock.js';
+
+async function runCliMock(...args: string[]): Promise<CliMockResult> {
+  const program = join(
+    getDirname(import.meta.url),
+    'fixtures/cli-boot-sync.ts'
+  );
+  return runTsProgram(program, ...args);
+}
 
 describe('cli basic infrusture with nested command', () => {
   it('Should output correct `help` -h', async () => {
     const { stdout } = await runCliMock('super', '-h');
     expect(stdout).toStrictEqual(expect.stringContaining(`Commands:`));
     expect(stdout).toStrictEqual(
-      expect.stringContaining(`cli-boot.ts super test`)
+      expect.stringContaining(`cli-boot-sync.ts super test`)
     );
   });
 
@@ -29,10 +40,12 @@ describe('cli basic infrusture', () => {
   it('Should output correct `help` -h', async () => {
     const { stdout } = await runCliMock('-h');
     expect(stdout).toStrictEqual(
-      expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
+      expect.stringContaining(`Usage: cli-boot-sync.ts <command> [options]`)
     );
     expect(stdout).toStrictEqual(expect.stringContaining(`Commands:`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`cli-boot.ts test`));
+    expect(stdout).toStrictEqual(
+      expect.stringContaining(`cli-boot-sync.ts test`)
+    );
     expect(stdout).toStrictEqual(expect.stringContaining(`Globals:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
@@ -42,7 +55,9 @@ describe('cli basic infrusture', () => {
   });
   it('Should output correct `test help` -h', async () => {
     const { stdout } = await runCliMock('test', '-h');
-    expect(stdout).toStrictEqual(expect.stringContaining(`cli-boot.ts test`));
+    expect(stdout).toStrictEqual(
+      expect.stringContaining(`cli-boot-sync.ts test`)
+    );
     expect(stdout).toStrictEqual(expect.stringContaining(`Globals:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));

@@ -1,6 +1,6 @@
 import { rmSync } from 'node:fs';
 import { createFixtureFiles } from '@/test-utils';
-import { loadPlugins } from '../index.js';
+import { loadCliPlugins } from '../cli-load-plugins.js';
 
 describe('load cli command plugins', () => {
   let fixtureCwd;
@@ -55,7 +55,7 @@ describe('load cli command plugins', () => {
     });
   });
   it('Should correct load cli commadn plugins', async () => {
-    const result = await loadPlugins(
+    const result = await loadCliPlugins(
       ['other', 'esm', 'esm-2', 'cjs'],
       ['@armit/cli-plugin-*/package.json', 'armit-cli-plugin-*/package.json'],
       [fixtureCwd],

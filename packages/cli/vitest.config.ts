@@ -1,4 +1,3 @@
-import path from 'path';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
@@ -10,10 +9,10 @@ export default defineConfig({
       // handle `@/*.js`
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
       // handle @armit/common
-      {
-        find: '@armit/common',
-        replacement: path.resolve('../common/src/index.ts'),
-      },
+      // {
+      //   find: '@armit/common',
+      //   replacement: path.resolve('../common/src/index.ts'),
+      // },
     ],
   },
   test: {

@@ -37,11 +37,18 @@ module.exports = {
 
   scopes: [
     { name: 'cli' },
-    { name: 'common' },
+    { name: 'git' },
+    { name: 'ldap' },
+    { name: 'logger' },
+    { name: 'terminal' },
+    { name: 'package' },
+    { name: 'commander' },
+    { name: 'file-utility' },
+    { name: 'file-recursive-copy' },
     { name: 'docs' },
-    { name: 'eslint-config-bases' },
-    { name: 'genereate-template-files' },
     { name: 'scaffold-next' },
+    { name: 'genereate-template-files' },
+    { name: 'eslint-config-bases' },
   ],
 
   // scopeOverrides is broken while using gitmoji, cause of `value` is `:bug: fix`

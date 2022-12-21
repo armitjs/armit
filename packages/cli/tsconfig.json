@@ -9,7 +9,6 @@
     "incremental": true,
     "paths": {
       "@/test-utils/*": ["./test-utils/*"],
-      "@armit/common": ["../../common/src/index.js"],
       "@armit/terminal": ["../../terminal/src/index.js"],
       "@armit/commander": ["../../commander/src/index.js"],
       "@armit/file-utility": ["../../file-utility/src/index.js"],

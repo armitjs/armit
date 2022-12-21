@@ -1,7 +1,7 @@
 import { join } from 'path';
+import { runTsProgram } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
 import { readPackageData } from '@armit/package';
-import { runCliMock } from '@/test-utils/cli-run-mock.js';
 
 describe('@armit/cli info', () => {
   const curDirName = getDirname(import.meta.url);
@@ -13,7 +13,7 @@ describe('@armit/cli info', () => {
   });
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runCliMock(program, '-h');
+    const { stdout } = await runTsProgram(program, '-h');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
@@ -27,7 +27,7 @@ describe('@armit/cli info', () => {
   });
 
   it('Should correct print armit cli related information', async () => {
-    const { stdout } = await runCliMock(program, 'info');
+    const { stdout } = await runTsProgram(program, 'info');
     const stdoutStrs: string[] = [
       'CLI tool for armitjs applications',
       '✔ System Information',

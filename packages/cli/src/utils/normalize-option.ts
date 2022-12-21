@@ -1,4 +1,5 @@
-import { arrayUnique, arrayFlatten } from '@armit/common';
+import { arrayFlatten } from './array-flatten.js';
+import { arrayUnique } from './array-unique.js';
 
 /**
  * normalize yargs --filter --modules option into standard globby patterns

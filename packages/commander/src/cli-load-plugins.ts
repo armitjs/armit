@@ -1,13 +1,17 @@
 import { statSync } from 'node:fs';
-import path from 'node:path';
+import path, { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { searchParentDir } from '@armit/package';
 import { globbySync } from 'globby';
 import mem, { memClear } from 'mem';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
-import { findParentDir, getDirname } from '../index.js';
 
 const memoizedLoad = mem(load, { cacheKey: JSON.stringify });
 const memoizedSearch = mem(findPluginsInNodeModules);
+const getDirname = (url: string, subDir = '') => {
+  return join(dirname(fileURLToPath(url)), subDir);
+};
 
 type PluginItem = {
   name: string;
@@ -50,7 +54,7 @@ async function load(
 > {
   // unless pluginSearchDirs are provided, auto-load plugins from node_modules that are parent to Prettier
   if (pluginSearchDirs.length === 0) {
-    const autoLoadDir = findParentDir(
+    const autoLoadDir = searchParentDir(
       getDirname(import.meta.url),
       'node_modules'
     );
@@ -171,4 +175,4 @@ export const clearCache = () => {
   memClear(memoizedSearch);
 };
 
-export const loadPlugins = memoizedLoad;
+export const loadCliPlugins = memoizedLoad;

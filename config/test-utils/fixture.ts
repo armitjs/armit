@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const getDirname = (url: string, subDir = '') => {
+export const getDirname = (url: string, subDir = '') => {
   return join(dirname(fileURLToPath(url)), subDir);
 };
 

@@ -17,7 +17,7 @@ export default defineConfig({
     environment: 'node',
     passWithNoTests: false,
     cache: {
-      dir: '../../.cache/vitest/terminal',
+      dir: '../../.cache/vitest/git',
     },
     coverage: {
       provider: 'istanbul',

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "incremental": false,
+    "paths": {}
+  },
+  "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**"]
+}

@@ -1,11 +1,11 @@
 {
-  "name": "@armit/common",
+  "name": "@armit/git",
   "version": "0.0.11",
   "homepage": "https://github.com/armitjs/armit",
   "repository": {
     "type": "git",
     "url": "https://github.com/armitjs/armit",
-    "directory": "packages/common"
+    "directory": "packages/git"
   },
   "license": "MIT",
   "author": {
@@ -34,7 +34,7 @@
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "dev": "tsup --watch",
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo",
-    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/common.eslintcache",
+    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/git.eslintcache",
     "test": "run-s test-unit",
     "test-unit": "vitest run --passWithNoTests",
     "test-unit-watch": "vitest watch --ui",

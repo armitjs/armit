@@ -4,10 +4,14 @@
       "name": "cli",
       "path": "packages/cli"
     },
+    {
+      "name": "git",
+      "path": "packages/git"
+    },
 
     {
-      "name": "common",
-      "path": "packages/common"
+      "name": "ldap",
+      "path": "packages/ldap"
     },
     {
       "name": "logger",

@@ -1,13 +1,13 @@
 import { join } from 'node:path';
-import type { CliMain, CliOption } from '@armit/common';
+import { loadCliPlugins, createCli } from '@armit/commander';
+import type { CliMain, CliOption } from '@armit/commander';
+import { getDirname } from '@armit/file-utility';
 import {
-  getDirname,
-  createCli,
-  findParentDir,
-  loadPlugins,
+  searchParentDir,
   updateNotifier,
-  getPackageData,
-} from '@armit/common';
+  readPackageData,
+} from '@armit/package';
+
 import { infoCmd } from '../info/define.js';
 import { newCmd } from '../new/define.js';
 import { packCmd } from '../pack/define.js';
@@ -19,7 +19,7 @@ export async function bootstrap(
   const curDirName = getDirname(import.meta.url);
 
   // Read cli package json data.
-  const packageJson = getPackageData({
+  const packageJson = readPackageData({
     cwd: curDirName,
   });
 
@@ -34,10 +34,10 @@ export async function bootstrap(
     });
   }
 
-  const armitDir = findParentDir(curDirName, '@armit') || '';
+  const armitDir = searchParentDir(curDirName, '@armit') || '';
 
   // Load all available cli plugins
-  const externalPlugins = await loadPlugins(
+  const externalPlugins = await loadCliPlugins(
     [],
     ['@armit/cli-plugin-*/package.json', 'armit-cli-plugin-*/package.json'],
     [process.cwd(), join(armitDir, '../')]

@@ -1,8 +1,15 @@
-import { runArgvParseMock } from './cli-run-mock.js';
+import { join } from 'node:path';
+import { getDirname } from '@/test-utils';
+import { runTsProgram } from '../cli-run-mock.js';
 
 describe('parse process arguments using yargs', () => {
   it('Should correct parse process argv', async () => {
-    const { stdout } = await runArgvParseMock(
+    const program = join(
+      getDirname(import.meta.url),
+      'fixtures/cli-argv-parse.ts'
+    );
+    const { stdout } = await runTsProgram(
+      program,
       'create-reduce-action',
       '__store__=some-name',
       '__model__=some-other-name',

@@ -1,4 +1,4 @@
-import { createCli } from '../create-cli.js';
+import { createCli } from '../../create-cli.js';
 import { cmdTest } from './cmd-test-builder.js';
 
 export const waitCliHandler = <T>(...argv: string[]): Promise<T> => {

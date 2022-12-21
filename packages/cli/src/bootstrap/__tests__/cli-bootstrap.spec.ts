@@ -1,6 +1,15 @@
-import { join } from 'path';
-import { getDirname } from '@armit/common';
-import { runCliMock } from '@/test-utils/cli-run-mock.js';
+import { join } from 'node:path';
+import { runTsProgram } from '@armit/commander';
+import type { CliMockResult } from '@armit/commander';
+import { getDirname } from '@armit/file-utility';
+
+async function runCliMock(...args: string[]): Promise<CliMockResult> {
+  const program = join(
+    getDirname(import.meta.url),
+    'fixtures/cli-boot-sync.ts'
+  );
+  return runTsProgram(program, ...args);
+}
 
 describe('@armit/cli bootstrap', () => {
   const curDirName = getDirname(import.meta.url);

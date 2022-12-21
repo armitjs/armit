@@ -1,5 +1,5 @@
-import { join } from 'path';
-import { runTsScript } from '@armit/commander';
+import { join } from 'node:path';
+import { runTsScript } from './run-program.js';
 
 export interface CliMockResult {
   stdout: string;
@@ -7,19 +7,19 @@ export interface CliMockResult {
   exitCode: number;
 }
 
-export async function runCliMock(
-  programPath: string,
+export async function runTsProgram(
+  program,
   ...args: string[]
 ): Promise<CliMockResult> {
   try {
     const tsconfig = join(process.cwd(), './tsconfig.json');
     const result = await runTsScript(
-      programPath,
+      program,
       'esm',
       tsconfig,
       {},
-      '--noColor',
-      ...args
+      ...args,
+      '--noColor'
     );
     return {
       stdout: result.stdout,

@@ -1,11 +1,11 @@
 {
-  "name": "@armit/cli",
+  "name": "@armit/ldap",
   "version": "0.0.11",
   "homepage": "https://github.com/armitjs/armit",
   "repository": {
     "type": "git",
     "url": "https://github.com/armitjs/armit",
-    "directory": "packages/cli"
+    "directory": "packages/ldap"
   },
   "license": "MIT",
   "author": {
@@ -21,11 +21,7 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
-  "bin": {
-    "arm": "./bin/armit.mjs"
-  },
   "files": [
-    "bin/",
     "dist/",
     "index.js",
     "README.md",
@@ -38,20 +34,11 @@
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "dev": "tsup --watch",
     "clean": "rimraf --no-glob ./dist ./coverage ./tsconfig.tsbuildinfo",
-    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/cli.eslintcache",
+    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/ldap.eslintcache",
     "test": "run-s test-unit",
     "test-unit": "vitest run --passWithNoTests",
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
-  },
-  "dependencies": {
-    "@armit/commander": "workspace:^",
-    "@armit/file-utility": "workspace:^",
-    "@armit/generate-template-files": "workspace:^",
-    "@armit/package": "workspace:^",
-    "@armit/terminal": "workspace:^",
-    "import-local": "3.1.0",
-    "os-name": "5.1.0"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",

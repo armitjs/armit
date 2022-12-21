@@ -1,5 +1,5 @@
-import type { CommandArgv } from '../index.js';
-import { createCommand, AbstractHandler } from '../index.js';
+import type { CommandArgv } from '../../create-command.js';
+import { createCommand, AbstractHandler } from '../../create-command.js';
 
 type TestCmdArgs = CommandArgv<{
   test: number;
