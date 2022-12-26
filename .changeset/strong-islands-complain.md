@@ -6,7 +6,6 @@
 "@armit/commander": patch
 "@armit/terminal": patch
 "@armit/package": patch
-"@armit/common": patch
 "@armit/logger": patch
 "@armit/docs": patch
 "@armit/cli": patch
