@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 import type { CommonOptions, ExecaChildProcess, ExecaReturnValue } from 'execa';
 import { execa } from 'execa';
 
@@ -58,7 +59,7 @@ export const runTsScript = (
       ? ['-r', 'ts-node/register', '-r', 'tsconfig-paths/register']
       : // FIXME: Add path mapping support to ESM and CJS loaders https://github.com/TypeStrong/ts-node/pull/1585
         // ['--loader', 'ts-node/esm', '--no-warnings'];
-        ['--loader', '@bleed-believer/path-alias/esm', '--no-warnings'];
+        ['--loader', '@armit/path-alias/esm', '--no-warnings'];
 
   return execa('node', commonjsArgs.concat(program, ...args), {
     env: {
@@ -67,3 +68,33 @@ export const runTsScript = (
     ...options,
   });
 };
+
+export interface CliMockResult {
+  stdout: string;
+  stderr: string;
+  exitCode: number;
+}
+
+export async function runTsCliMock(
+  program,
+  ...args: string[]
+): Promise<CliMockResult> {
+  try {
+    const tsconfig = join(process.cwd(), './tsconfig.json');
+    const result = await runTsScript(
+      program,
+      'esm',
+      tsconfig,
+      {},
+      ...args,
+      '--noColor'
+    );
+    return {
+      stdout: result.stdout,
+      stderr: result.stderr,
+      exitCode: result.exitCode,
+    };
+  } catch (err) {
+    return err as CliMockResult;
+  }
+}

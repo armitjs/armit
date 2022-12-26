@@ -1,12 +1,4 @@
-import type picocolors from 'picocolors';
-
-/**
- * Represents an ANSI color.
- */
-export type Color = Exclude<
-  keyof typeof picocolors,
-  'createColors' | 'isColorSupported'
->;
+import type { Color } from '@armit/terminal';
 
 /**
  * Make every property and sub-property read-only.

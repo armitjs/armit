@@ -1,6 +1,6 @@
 import { terminalColor } from '@armit/terminal';
+import type { Color } from '@armit/terminal';
 import type {
-  Color,
   Level,
   Locked,
   TerminalConstructorData,

@@ -26,6 +26,10 @@
       "path": "packages/package"
     },
     {
+      "name": "path-alias",
+      "path": "packages/path-alias"
+    },
+    {
       "name": "commander",
       "path": "packages/commander"
     },
@@ -79,12 +83,19 @@
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
       "./packages/cli",
-      "./packages/common",
-      "./packages/eslint-config-bases",
-      "./packages/file-recursive-copy",
+      "./packages/git",
+      "./packages/ldap",
+      "./packages/logger",
+      "./packages/terminal",
+      "./packages/package",
+      "./packages/path-alias",
+      "./packages/commander",
       "./packages/file-utility",
+      "./packages/file-recursive-copy",
+      "./packages/docs",
+      "./packages/scaffold-next",
       "./packages/generate-template-files",
-      "./packages/scaffold-next"
+      "./packages/eslint-config-bases"
     ]
   }
 }

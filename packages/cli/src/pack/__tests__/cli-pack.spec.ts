@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { runTsProgram } from '@armit/commander';
+import { runTsCliMock } from '@armit/commander';
 import { getDirname, rmrfSync, unzip } from '@armit/file-utility';
 
 describe('@armit/cli pack', () => {
@@ -16,7 +16,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runTsProgram(program, '-h');
+    const { stdout } = await runTsCliMock(program, '-h');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
@@ -30,7 +30,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should correct handle default options `**`', async () => {
-    const { stdout } = await runTsProgram(program, 'pack', '-c', fixtureCwd);
+    const { stdout } = await runTsCliMock(program, 'pack', '-c', fixtureCwd);
     const matchedStrs: string[] = [
       '✔ All ziped files',
       ' ➩ project/module-a/bundle57ee0d7b872138242b97-a.css',
@@ -47,7 +47,7 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle filter pattern', async () => {
-    const { stdout } = await runTsProgram(
+    const { stdout } = await runTsCliMock(
       program,
       'pack',
       '-f',
@@ -67,7 +67,7 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle semicolon `;` filter', async () => {
-    const { stdout } = await runTsProgram(
+    const { stdout } = await runTsCliMock(
       program,
       'pack',
       '-f',
@@ -92,7 +92,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should default ignore `**/*.{png,jpg,jpeg,gif,svg}`', async () => {
-    const { stdout } = await runTsProgram(program, 'pack', '-c', fixtureCwd);
+    const { stdout } = await runTsCliMock(program, 'pack', '-c', fixtureCwd);
     expect(stdout).toStrictEqual(
       expect.not.stringContaining(
         'project/module-b/assets/module-8ca86e6b-a.jpg'
@@ -106,7 +106,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should allow customized `ignore` pattern', async () => {
-    const { stdout } = await runTsProgram(
+    const { stdout } = await runTsCliMock(
       program,
       'pack',
       '-i',

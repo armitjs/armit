@@ -1,4 +1,4 @@
-import type { Color } from './types.js';
+import type { Color } from '@armit/terminal';
 
 export type LoggerOptions = {
   level?: LogLevel;

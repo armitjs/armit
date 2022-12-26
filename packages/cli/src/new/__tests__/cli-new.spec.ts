@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { runTsProgram } from '@armit/commander';
+import { runTsCliMock } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
 
 describe('@armit/cli info', () => {
@@ -7,7 +7,7 @@ describe('@armit/cli info', () => {
   const program = join(curDirName, 'cli-boot.ts');
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runTsProgram(program, '-h');
+    const { stdout } = await runTsCliMock(program, '-h');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
