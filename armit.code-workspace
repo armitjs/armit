@@ -26,10 +26,6 @@
       "path": "packages/package"
     },
     {
-      "name": "path-alias",
-      "path": "packages/path-alias"
-    },
-    {
       "name": "commander",
       "path": "packages/commander"
     },
@@ -88,7 +84,6 @@
       "./packages/logger",
       "./packages/terminal",
       "./packages/package",
-      "./packages/path-alias",
       "./packages/commander",
       "./packages/file-utility",
       "./packages/file-recursive-copy",
