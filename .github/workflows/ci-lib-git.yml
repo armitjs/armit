@@ -1,4 +1,4 @@
-name: CI-lib-common
+name: CI-lib-git
 
 on:
   push:
@@ -54,21 +54,21 @@ jobs:
         uses: ./.github/actions/yarn-nm-install
 
       - name: Typecheck
-        working-directory: packages/common
+        working-directory: packages/git
         run: |
           yarn typecheck
 
       - name: Linter
-        working-directory: packages/common
+        working-directory: packages/git
         run: |
           yarn lint
 
       - name: Unit tests
-        working-directory: packages/common
+        working-directory: packages/git
         run: |
           yarn test-unit --passWithNoTests
 
-      - name: Build lib-common
-        working-directory: packages/common
+      - name: Build lib-git
+        working-directory: packages/git
         run: |
           yarn build

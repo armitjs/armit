@@ -1,0 +1,74 @@
+name: CI-lib-path-alias
+
+on:
+  push:
+    branches:
+      - main
+      - major
+      - minor
+      - dev
+    # Only consider those paths to trigger the action
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - '*.lock'
+      - '.yarnrc.yml'
+      - 'tsconfig.base.json'
+      - '.prettier*'
+      - '.github/**'
+
+  pull_request:
+    branches:
+      - main
+      - major
+      - minor
+      - dev
+    types:
+      - opened
+      - synchronize
+      - reopened
+    # Only consider those paths to trigger the action
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - '*.lock'
+      - '.yarnrc.yml'
+      - 'tsconfig.base.json'
+      - '.prettier*'
+      - '.github/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/yarn-nm-install
+
+      - name: Typecheck
+        working-directory: packages/path-alias
+        run: |
+          yarn typecheck
+
+      - name: Linter
+        working-directory: packages/path-alias
+        run: |
+          yarn lint
+
+      - name: Unit tests
+        working-directory: packages/path-alias
+        run: |
+          yarn test-unit --passWithNoTests
+
+      - name: Build lib-path-alias
+        working-directory: packages/path-alias
+        run: |
+          yarn build
