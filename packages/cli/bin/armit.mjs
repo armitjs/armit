@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getDirname } from '@armit/package';
+import { getDirname } from '@armit/file-utility';
 import { terminalColor } from '@armit/terminal';
 import importLocal from 'import-local';
 import { bootstrap } from '../index.js';
