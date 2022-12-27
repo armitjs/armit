@@ -68,7 +68,7 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@armit/eslint-config-bases": "0.0.9",
+    "@armit/eslint-config-bases": "workspace:^",
     "@docusaurus/module-type-aliases": "2.2.0",
     "@tsconfig/docusaurus": "1.0.6",
     "eslint": "8.30.0"
