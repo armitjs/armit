@@ -3,7 +3,7 @@ name: Bug report
 about: Something not working as it should
 title: ""
 labels: "type: bug \U0001F41B"
-assignees: michaelbromley
+assignees: tianyingchun
 ---
 
 **Describe the bug**
@@ -22,7 +22,7 @@ A clear and concise description of what you expected to happen.
 
 **Environment (please complete the following information):**
 
-- @armit/core version:
+- @armit/\* version:
 - Nodejs version
 - Database (mysql/postgres etc):
 

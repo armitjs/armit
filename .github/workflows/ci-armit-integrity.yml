@@ -52,6 +52,7 @@ jobs:
         run: |
           yarn constraints
 
+      # https://github.com/sverweij/dependency-cruiser
       # - name: Check monorepo dependency graph
       #   run: |
       #     yarn check:install
