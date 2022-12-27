@@ -8,10 +8,10 @@ export default defineConfig({
     alias: [
       // handle `@/*.js`
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
-      // handle @armit/common
+      // handle @armit/commander
       // {
-      //   find: '@armit/common',
-      //   replacement: path.resolve('../common/src/index.ts'),
+      //   find: '@armit/commander',
+      //   replacement: path.resolve('../commander/src/index.ts'),
       // },
     ],
   },

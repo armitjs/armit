@@ -1,9 +1,17 @@
 {
   "dep": "prod,dev,bundle,peer,optional",
   "reject": [
-    "@armit/core",
-    "@armit/create",
-    "@armit/common",
+    "@armit/cli",
+    "@armit/git",
+    "@armit/ldap",
+    "@armit/terminal",
+    "@armit/package",
+    "@armit/commander",
+    "@armit/file-utility",
+    "@armit/file-recursive-copy",
+    "@armit/docs",
+    "@armit/scaffold-next",
+    "@armit/generate-template-files",
     "@armit/eslint-config-bases"
   ]
 }

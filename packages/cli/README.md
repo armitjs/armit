@@ -39,8 +39,8 @@ bootstrap().then((cli) => {
 - armit-cli-plugin-`test`/src/index.ts
 
 ```ts
-import type { CommandArgv } from "@armit/common";
-import { AbstractHandler, createCommand } from "@armit/common";
+import type { CommandArgv } from "@armit/commander";
+import { AbstractHandler, createCommand } from "@armit/commander";
 
 type TestCmdArgs = CommandArgv<{
   test: number;

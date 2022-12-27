@@ -13,7 +13,7 @@ const DEFAULT_CONTEXT = 'Armitjs';
  *
  * @example
  * ```ts
- * import { DefaultLogger, LogLevel } from '\@armit/common';
+ * import { DefaultLogger, LogLevel } from '\@armit/logger';
  *
  * export const logger =  new DefaultLogger({ level: LogLevel.Debug }),
  * ```

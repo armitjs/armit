@@ -79,8 +79,8 @@ Allow us create an customized command based on yargs
 **`Example`**
 
 ```ts
-import type { CommandArgv } from "@armit/common";
-import { createCommand, AbstractHandler } from "@armit/common";
+import type { CommandArgv } from "@armit/commander";
+import { createCommand, AbstractHandler } from "@armit/commander";
 
 type TestCmdArgs = CommandArgv<{
   test: number;
