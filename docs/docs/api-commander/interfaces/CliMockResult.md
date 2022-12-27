@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:75](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L75)
+[packages/commander/src/run-program.ts:75](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L75)
 
 ---
 
@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:74](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L74)
+[packages/commander/src/run-program.ts:74](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L74)
 
 ---
 
@@ -34,4 +34,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:73](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L73)
+[packages/commander/src/run-program.ts:73](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L73)

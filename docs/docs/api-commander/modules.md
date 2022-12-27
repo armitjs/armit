@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:10](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L10)
+[packages/commander/src/create-command.ts:10](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/create-command.ts#L10)
 
 ## Functions
 
@@ -44,7 +44,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:173](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/cli-load-plugins.ts#L173)
+[packages/commander/src/cli-load-plugins.ts:173](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/cli-load-plugins.ts#L173)
 
 ---
 
@@ -66,7 +66,7 @@ Create cli program
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-cli.ts#L68)
+[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/create-cli.ts#L68)
 
 ---
 
@@ -133,7 +133,7 @@ export const cmdTest = createCommand(
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:126](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L126)
+[packages/commander/src/create-command.ts:126](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/create-command.ts#L126)
 
 ---
 
@@ -156,7 +156,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:145](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L145)
+[packages/commander/src/create-command.ts:145](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/create-command.ts#L145)
 
 ---
 
@@ -176,7 +176,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/commander/src/create-yargs.ts:66](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-yargs.ts#L66)
+[packages/commander/src/create-yargs.ts:66](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/create-yargs.ts#L66)
 
 ---
 
@@ -201,7 +201,7 @@ Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:44](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/cli-load-plugins.ts#L44)
+[packages/commander/src/cli-load-plugins.ts:44](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/cli-load-plugins.ts#L44)
 
 ---
 
@@ -239,7 +239,7 @@ Parse command line script
 
 #### Defined in
 
-[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/parse-argv.ts#L22)
+[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/parse-argv.ts#L22)
 
 ---
 
@@ -264,7 +264,7 @@ Execute cli program
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:32](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L32)
+[packages/commander/src/run-program.ts:32](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L32)
 
 ---
 
@@ -285,7 +285,7 @@ Execute cli program
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:78](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L78)
+[packages/commander/src/run-program.ts:78](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L78)
 
 ---
 
@@ -312,4 +312,4 @@ Please manully install `ts-node`, `tsconfig-paths`
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:50](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/run-program.ts#L50)
+[packages/commander/src/run-program.ts:50](https://github.com/armitjs/armit/blob/f6509f7/packages/commander/src/run-program.ts#L50)

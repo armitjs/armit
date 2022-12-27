@@ -27,6 +27,7 @@
     "url": "https://github.com/tianyingchun"
   },
   "workspaces": [
+    "docs",
     "packages/*"
   ],
   "scripts": {

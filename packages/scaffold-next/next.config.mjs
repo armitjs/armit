@@ -154,24 +154,23 @@ const nextConfig = {
     // @link {https://github.com/vercel/next.js/pull/22867|Original PR}
     // @link {https://github.com/vercel/next.js/discussions/26420|Discussion}
     externalDir: true,
-
-    // https://nextjs.org/docs/advanced-features/compiler#modularize-imports
-    modularizeImports: {
-      '@dimjs/utils': {
-        transform: '@dimjs/utils/cjs/{{kebabCase member}}',
-        preventFullImport: true,
-        skipDefaultConversion: true,
-      },
-      '@dimjs/lang': {
-        transform: '@dimjs/lang/cjs/{{kebabCase member}}',
-        preventFullImport: true,
-        skipDefaultConversion: true,
-      },
-      '@wove/react': {
-        transform: '@wove/react/cjs/{{kebabCase member}}',
-        preventFullImport: true,
-        skipDefaultConversion: true,
-      },
+  },
+  // https://nextjs.org/docs/advanced-features/compiler#modularize-imports
+  modularizeImports: {
+    '@dimjs/utils': {
+      transform: '@dimjs/utils/cjs/{{kebabCase member}}',
+      preventFullImport: true,
+      skipDefaultConversion: true,
+    },
+    '@dimjs/lang': {
+      transform: '@dimjs/lang/cjs/{{kebabCase member}}',
+      preventFullImport: true,
+      skipDefaultConversion: true,
+    },
+    '@wove/react': {
+      transform: '@wove/react/cjs/{{kebabCase member}}',
+      preventFullImport: true,
+      skipDefaultConversion: true,
     },
   },
 
