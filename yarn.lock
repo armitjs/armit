@@ -256,7 +256,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/docs@workspace:docs"
   dependencies:
-    "@armit/eslint-config-bases": 0.0.9
+    "@armit/eslint-config-bases": "workspace:^"
     "@docusaurus/core": 2.2.0
     "@docusaurus/module-type-aliases": 2.2.0
     "@docusaurus/preset-classic": 2.2.0
@@ -280,7 +280,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/eslint-config-bases@0.0.9, @armit/eslint-config-bases@workspace:^, @armit/eslint-config-bases@workspace:packages/eslint-config-bases":
+"@armit/eslint-config-bases@workspace:^, @armit/eslint-config-bases@workspace:packages/eslint-config-bases":
   version: 0.0.0-use.local
   resolution: "@armit/eslint-config-bases@workspace:packages/eslint-config-bases"
   dependencies:
