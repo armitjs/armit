@@ -1,5 +1,11 @@
 # @armit/cli
 
+## 0.0.14
+
+### Patch Changes
+
+- [`53ab0a9`](https://github.com/armitjs/armit/commit/53ab0a94b931493dec520e1ece2fab566798e9bf) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix wrong import modules from armit/package
+
 ## 0.0.13
 
 ### Patch Changes
