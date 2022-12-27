@@ -39,7 +39,7 @@
     },
     {
       "name": "docs",
-      "path": "packages/docs"
+      "path": "docs"
     },
     {
       "name": "scaffold-next",

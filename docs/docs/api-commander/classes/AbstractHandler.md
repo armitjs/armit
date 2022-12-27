@@ -24,9 +24,9 @@ custom_edit_url: null
 
 #### Type parameters
 
-| Name | Type                                                              |
-| :--- | :---------------------------------------------------------------- |
-| `T`  | extends [`CommandArgv`](../modules.md#commandargv)<`ArgvConfig`\> |
+| Name | Type             |
+| :--- | :--------------- |
+| `T`  | extends `Object` |
 
 #### Parameters
 
@@ -36,7 +36,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:53](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L53)
+[packages/commander/src/create-command.ts:57](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L57)
 
 ## Properties
 
@@ -46,17 +46,17 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:53](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L53)
+[packages/commander/src/create-command.ts:57](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L57)
 
 ---
 
 ### logger
 
-• `Protected` **logger**: [`DefaultLogger`](DefaultLogger.md)
+• `Protected` **logger**: `DefaultLogger`
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:45](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L45)
+[packages/commander/src/create-command.ts:49](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L49)
 
 ---
 
@@ -66,7 +66,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:51](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L51)
+[packages/commander/src/create-command.ts:55](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L55)
 
 ---
 
@@ -76,7 +76,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:50](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L50)
+[packages/commander/src/create-command.ts:54](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L54)
 
 ## Accessors
 
@@ -94,7 +94,7 @@ OnCommandHandler.cliPackageJson
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:68](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L68)
+[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L72)
 
 ---
 
@@ -112,7 +112,7 @@ OnCommandHandler.name
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:72](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L72)
+[packages/commander/src/create-command.ts:76](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L76)
 
 ## Methods
 
@@ -130,7 +130,7 @@ OnCommandHandler.handle
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:76](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L76)
+[packages/commander/src/create-command.ts:80](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L80)
 
 ---
 
@@ -154,4 +154,4 @@ OnCommandHandler.initialize
 
 #### Defined in
 
-[packages/common/src/cmd/create-command.ts:59](https://github.com/armitjs/armit/blob/84b6bb8/packages/common/src/cmd/create-command.ts#L59)
+[packages/commander/src/create-command.ts:63](https://github.com/armitjs/armit/blob/18cfa59/packages/commander/src/create-command.ts#L63)
