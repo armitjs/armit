@@ -1,5 +1,11 @@
 # @armit/docs
 
+## 0.0.3
+
+### Patch Changes
+
+- [`38db3e3`](https://github.com/armitjs/armit/commit/38db3e3f95f0d084381b33efb61562b9d496cf10) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix wrong comments & configurations
+
 ## 0.0.2
 
 ### Patch Changes

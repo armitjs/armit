@@ -1,5 +1,20 @@
 # @armit/cli
 
+## 0.0.13
+
+### Patch Changes
+
+- [`38db3e3`](https://github.com/armitjs/armit/commit/38db3e3f95f0d084381b33efb61562b9d496cf10) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix wrong comments & configurations
+
+- [`f6509f7`](https://github.com/armitjs/armit/commit/f6509f784e10ac86597e389f20efe04865ad7d7a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add missed export typings
+
+- Updated dependencies [[`38db3e3`](https://github.com/armitjs/armit/commit/38db3e3f95f0d084381b33efb61562b9d496cf10), [`f6509f7`](https://github.com/armitjs/armit/commit/f6509f784e10ac86597e389f20efe04865ad7d7a)]:
+  - @armit/generate-template-files@0.0.13
+  - @armit/commander@0.0.13
+  - @armit/file-utility@0.0.13
+  - @armit/terminal@0.0.13
+  - @armit/package@0.0.13
+
 ## 0.0.12
 
 ### Patch Changes
