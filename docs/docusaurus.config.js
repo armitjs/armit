@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'MUI color input',
   tagline: 'A color input designed for the React library MUI',
-  url: 'https://viclafouch.github.io',
+  url: 'https://armitjs.github.io',
   baseUrl: '/mui-color-input/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -144,12 +144,12 @@ const config = {
             label: 'API Commander',
           },
           {
-            href: 'https://github.com/viclafouch/mui-color-input',
+            href: 'https://github.com/armitjs/armit',
             label: 'GitHub',
             position: 'right',
           },
           {
-            href: 'https://www.npmjs.com/package/mui-color-input',
+            href: 'https://www.npmjs.com/package/@armit/cli',
             label: 'NPM',
             position: 'right',
           },
