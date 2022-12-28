@@ -1,5 +1,11 @@
 # @armit/generate-template-files
 
+## 0.0.14
+
+### Patch Changes
+
+- [`c8bf37d`](https://github.com/armitjs/armit/commit/c8bf37d7f4a3affaef71aa0cf66e8b9b98d07661) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update generete template file comments
+
 ## 0.0.13
 
 ### Patch Changes
