@@ -7,8 +7,12 @@ export interface Replacer {
    * @example `__description__`
    */
   readonly slot: string;
+
   /**
-   * @example `config.description`
+   * @example
+   * ```ts
+   * require('./package.json').description
+   * ```
    */
   readonly slotValue: string;
 }

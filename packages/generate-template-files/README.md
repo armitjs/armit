@@ -9,7 +9,7 @@ A simple generator that is independent of any language. Create custom boilerplat
 
 ## Module/Programmatic Usage
 
-1. Check out the examples folder or create a file called `generate.ts`. Note that this file name is flexible.
+1. Create a file called `generate.mjs`( Note that this file name is flexible).
 2. In that file, add in the example code below.
 3. Run node generate.js within Terminal (Mac) or Powershell (Win) once you've added your template files.
 

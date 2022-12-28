@@ -140,6 +140,7 @@ export class GenerateTemplateFiles {
       name: 'optionChoice',
       message: 'What do you want to generate?',
       choices: options.map((configItem: ConfigItem) => configItem.option),
+      // attach `autocomplete` customized suggestions.
       suggest(input: string, choices: string[]) {
         return choices.filter((choice) => {
           return choice['message']
@@ -244,6 +245,7 @@ export class GenerateTemplateFiles {
         return [
           ...previousReplacers,
           ...caseTypes.map((caseType: CaseConverterEnum): Replacer => {
+            // caseType: '(camelCase)','CamelCase__',...
             return {
               slot: `${slot}${caseType}`,
               slotValue: StringUtility.toCase(slotValue, caseType),
@@ -297,6 +299,9 @@ export class GenerateTemplateFiles {
   }
 
   /**
+   * Should we need to write files finnaly
+   * @param outputPath The desired output path for generated files.
+   * @param selectedConfigItem The active config item
    */
   private async shouldWriteFiles(
     outputPath: string,
@@ -330,9 +335,9 @@ export class GenerateTemplateFiles {
    * Process and copy files.
    */
   private async createFiles(
-    answeredReplacer: Replacer[],
+    answeredReplacers: Replacer[],
     outputPathReplacers: Replacer[],
-    replacers: Replacer[],
+    contentReplacers: Replacer[],
     outputPath: string,
     entryFolderPath: string
   ): Promise<string[]> {
@@ -344,19 +349,22 @@ export class GenerateTemplateFiles {
       dot: true,
       junk: true,
       rename: (fileFolderPath: string): string => {
-        const fileOrFolder: string = answeredReplacer.reduce((path: string) => {
-          let formattedFilePath: string = path;
+        const fileOrFolder: string = answeredReplacers.reduce(
+          (path: string) => {
+            let formattedFilePath: string = path;
 
-          outputPathReplacers.forEach((replacer: Replacer) => {
-            formattedFilePath = replaceString(
-              formattedFilePath,
-              replacer.slot,
-              replacer.slotValue
-            );
-          });
+            outputPathReplacers.forEach((replacer: Replacer) => {
+              formattedFilePath = replaceString(
+                formattedFilePath,
+                replacer.slot,
+                replacer.slotValue
+              );
+            });
 
-          return formattedFilePath;
-        }, fileFolderPath);
+            return formattedFilePath;
+          },
+          fileFolderPath
+        );
 
         outputtedFilesAndFolders.push(fileOrFolder);
 
@@ -366,7 +374,7 @@ export class GenerateTemplateFiles {
         return through((chunk, enc, done) => {
           let output: string = chunk.toString();
 
-          replacers.forEach((replacer: Replacer) => {
+          contentReplacers.forEach((replacer: Replacer) => {
             output = replaceString(output, replacer.slot, replacer.slotValue);
           });
 
