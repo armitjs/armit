@@ -76,6 +76,9 @@ const Home = () => {
   return (
     <Layout description={siteConfig.tagline}>
       <HomepageHeader />
+      <button className="opacity-2.5 border-2 border-red-100 text-red-600">
+        tailwindcss
+      </button>
     </Layout>
   );
 };

@@ -79,6 +79,7 @@ const config = {
         // When applying `zh` in language, please install `nodejieba` in your project.
       }),
     ],
+    ['docusaurus-tailwindcss', {}],
   ],
   presets: [
     [
