@@ -1,4 +1,4 @@
-import { withSentry } from '@sentry/nextjs';
+import { wrapApiHandlerWithSentry } from '@sentry/nextjs';
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { createRouter, expressWrapper } from 'next-connect';
 import { normalizeVendureApiErrorToClient } from './errors';
@@ -14,7 +14,7 @@ import { fileUploadMiddleware } from './file-upload-middleware';
 export const createApiRouter = (apiHandler: NextApiHandler) => {
   // Force all request is `POST`
   return createRouter<NextApiRequest, NextApiResponse>()
-    .post(withSentry(apiHandler))
+    .post(wrapApiHandlerWithSentry(apiHandler, ''))
     .handler({
       onError(err, req, res: NextApiResponse) {
         normalizeVendureApiErrorToClient(res, err);
@@ -33,7 +33,7 @@ export const createUploadApiRouter = (apiHandler: NextApiHandler) => {
   // Force all request is `POST`
   return createRouter<NextApiRequest, NextApiResponse>()
     .use(expressWrapper(fileUploadMiddleware))
-    .post(withSentry(apiHandler))
+    .post(wrapApiHandlerWithSentry(apiHandler, ''))
     .handler({
       onError(err, req, res: NextApiResponse) {
         normalizeVendureApiErrorToClient(res, err);

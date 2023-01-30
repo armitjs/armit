@@ -1,4 +1,4 @@
-import { withSentry } from '@sentry/nextjs';
+import { wrapApiHandlerWithSentry } from '@sentry/nextjs';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 /**
@@ -12,4 +12,4 @@ async function sentryMonitorApiRoute(
     'Error purposely crafted for monitoring sentry (/pages/api/_monitor/sentry.tsx)'
   );
 }
-export default withSentry(sentryMonitorApiRoute);
+export default wrapApiHandlerWithSentry(sentryMonitorApiRoute, '');
