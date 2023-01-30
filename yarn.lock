@@ -222,7 +222,7 @@ __metadata:
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
-    eslint: 8.32.0
+    eslint: 8.33.0
     import-local: 3.1.0
     npm-run-all: 4.1.5
     os-name: 5.1.0
@@ -252,7 +252,7 @@ __metadata:
     "@types/resolve": 1.20.2
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
-    eslint: 8.32.0
+    eslint: 8.33.0
     execa: 6.1.0
     globby: 13.1.3
     mem: 9.0.2
@@ -295,11 +295,11 @@ __metadata:
     docusaurus-plugin-search-local: 0.9.0
     docusaurus-plugin-typedoc: 0.18.0
     docusaurus-tailwindcss: 0.1.0
-    eslint: 8.32.0
+    eslint: 8.33.0
     mui-color-input: 1.0.4
     postcss: 8.4.21
     postcss-flexbugs-fixes: 5.0.2
-    postcss-preset-env: 8.0.0
+    postcss-preset-env: 8.0.1
     prism-react-renderer: 1.3.5
     react: 17.0.2
     react-dom: 17.0.2
@@ -323,7 +323,7 @@ __metadata:
     "@types/react-dom": 18.0.10
     "@typescript-eslint/eslint-plugin": ^5.49.0
     "@typescript-eslint/parser": ^5.49.0
-    eslint: 8.30.0
+    eslint: 8.33.0
     eslint-config-prettier: ^8.6.0
     eslint-import-resolver-typescript: ^3.5.3
     eslint-plugin-import: ^2.27.5
@@ -332,7 +332,7 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.7.1
     eslint-plugin-playwright: ^0.12.0
     eslint-plugin-prettier: ^4.2.1
-    eslint-plugin-react: ^7.32.1
+    eslint-plugin-react: ^7.32.2
     eslint-plugin-react-hooks: ^4.6.0
     eslint-plugin-regexp: ^1.12.0
     eslint-plugin-sonarjs: ^0.18.0
@@ -372,7 +372,7 @@ __metadata:
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
     errno: 1.0.0
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     prettier: 2.8.3
     read-dir-files: 0.1.1
@@ -398,7 +398,7 @@ __metadata:
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
     adm-zip: 0.5.10
-    eslint: 8.32.0
+    eslint: 8.33.0
     globby: 13.1.3
     image-size: 1.0.2
     junk: 4.0.0
@@ -426,7 +426,7 @@ __metadata:
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
     enquirer: 2.3.6
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     prettier: 2.8.3
     replace-string: 4.0.0
@@ -449,7 +449,7 @@ __metadata:
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     prettier: 2.8.3
     rimraf: 4.1.2
@@ -470,7 +470,7 @@ __metadata:
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     prettier: 2.8.3
     rimraf: 4.1.2
@@ -491,7 +491,7 @@ __metadata:
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     picocolors: 1.0.0
     prettier: 2.8.3
@@ -519,7 +519,7 @@ __metadata:
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
     boxen: 7.0.1
-    eslint: 8.32.0
+    eslint: 8.33.0
     has-yarn: 3.0.0
     is-installed-globally: 0.4.0
     is-npm: 6.0.0
@@ -580,8 +580,8 @@ __metadata:
     "@tailwindcss/forms": 0.5.3
     "@tailwindcss/line-clamp": 0.4.2
     "@tailwindcss/typography": 0.5.9
-    "@tanstack/react-query": 4.23.0
-    "@tanstack/react-query-devtools": 4.23.0
+    "@tanstack/react-query": 4.24.2
+    "@tanstack/react-query-devtools": 4.24.2
     "@testing-library/dom": 8.20.0
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/react": 13.4.0
@@ -596,9 +596,9 @@ __metadata:
     autoprefixer: 10.4.13
     cross-env: 7.0.3
     es-check: 7.1.0
-    eslint: 8.32.0
+    eslint: 8.33.0
     eslint-config-next: 13.1.6
-    happy-dom: 8.1.5
+    happy-dom: 8.2.0
     i18next: 22.4.9
     multiparty: 4.2.3
     next: 13.1.6
@@ -610,7 +610,7 @@ __metadata:
     picocolors: 1.0.0
     postcss: 8.4.21
     postcss-flexbugs-fixes: 5.0.2
-    postcss-preset-env: 8.0.0
+    postcss-preset-env: 8.0.1
     prettier: 2.8.3
     react: 18.2.0
     react-dom: 18.2.0
@@ -637,7 +637,7 @@ __metadata:
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
     cfonts: 3.1.1
-    eslint: 8.32.0
+    eslint: 8.33.0
     npm-run-all: 4.1.5
     picocolors: 1.0.0
     prettier: 2.8.3
@@ -4035,7 +4035,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^1.4.0, @eslint/eslintrc@npm:^1.4.1":
+"@eslint/eslintrc@npm:^1.4.1":
   version: 1.4.1
   resolution: "@eslint/eslintrc@npm:1.4.1"
   dependencies:
@@ -5151,33 +5151,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:4.22.4":
-  version: 4.22.4
-  resolution: "@tanstack/query-core@npm:4.22.4"
-  checksum: 01663a36ad7ed5c43cb7cfa8ffcdf7df4de05cf68e9991bbc339be2a656a1c94f69e0b5405dfa972cf877b09dac3cba4cbdf8c91f5dffabc46ac32ec0ce5f4bb
+"@tanstack/query-core@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@tanstack/query-core@npm:4.24.2"
+  checksum: ee7edf5c6ecc4a0386ee388541c198f77f070a1b5a2a13ebc1a73470c81315ff2594bf485c70552f7822594733ae94bf77217ca9175dc8a073dc5d4e8d92a8ae
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-devtools@npm:4.23.0":
-  version: 4.23.0
-  resolution: "@tanstack/react-query-devtools@npm:4.23.0"
+"@tanstack/react-query-devtools@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@tanstack/react-query-devtools@npm:4.24.2"
   dependencies:
     "@tanstack/match-sorter-utils": ^8.7.0
     superjson: ^1.10.0
     use-sync-external-store: ^1.2.0
   peerDependencies:
-    "@tanstack/react-query": 4.23.0
+    "@tanstack/react-query": 4.24.2
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 6cb4e63d3f1cf5e939b7a8b47707a89841aa31790ba52615554679db383657b8b744a31d432d048f7e4dbce503782d30e181c6ab74b38762658c11263b9d6e8a
+  checksum: 049760bdd5d230bbc66955c42acfd6e1ed3cc58aa807cf873cb3b8043e161213af61af8c03e8294993cf83eed748ef16cf9500e5aa34bda8e9ce1db0da642089
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:4.23.0":
-  version: 4.23.0
-  resolution: "@tanstack/react-query@npm:4.23.0"
+"@tanstack/react-query@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@tanstack/react-query@npm:4.24.2"
   dependencies:
-    "@tanstack/query-core": 4.22.4
+    "@tanstack/query-core": 4.24.2
     use-sync-external-store: ^1.2.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -5188,7 +5188,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 166140855f8806e951e9a4ebccb5ba354eb2abc314e6b6ff696d2a1a8720e9ea868221f62d58004101e44899b61fdf57a40fe286bb13233645e292cd5567545c
+  checksum: 20598f2698f26e161721734eae492d21f0b6337693b79428366bc35c5fa7d684c354e9a1190f2c6dbc45f7baff057ef116e47882875aaaedb63ccef9d00875a6
   languageName: node
   linkType: hard
 
@@ -6685,7 +6685,7 @@ __metadata:
     commitizen: 4.3.0
     cross-env: 7.0.3
     cz-conventional-changelog: 3.3.0
-    eslint: 8.32.0
+    eslint: 8.33.0
     husky: 8.0.3
     is-ci: 3.0.1
     lint-staged: 13.1.0
@@ -7387,14 +7387,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001426":
-  version: 1.0.30001441
-  resolution: "caniuse-lite@npm:1.0.30001441"
-  checksum: 0f5aa8f7ea4d165e88e0d1eaa44564c5bfee66641f265a1fd959e74f0a7e6bc0207db6c28e2fb63dc8b2cd23e0e3cee06c4f372de11c93c57ff5ff4207962c3f
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001252":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001252, caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001406, caniuse-lite@npm:^1.0.30001426":
   version: 1.0.30001449
   resolution: "caniuse-lite@npm:1.0.30001449"
   checksum: f1b395f0a5495c1931c53f58441e0db79b8b0f8ef72bb6d241d13c49b05827630efe6793d540610e0a014d8fdda330dd42f981c82951bd4bdcf635480e1a0102
@@ -9977,9 +9970,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.31.7, eslint-plugin-react@npm:^7.32.1":
-  version: 7.32.1
-  resolution: "eslint-plugin-react@npm:7.32.1"
+"eslint-plugin-react@npm:^7.31.7, eslint-plugin-react@npm:^7.32.2":
+  version: 7.32.2
+  resolution: "eslint-plugin-react@npm:7.32.2"
   dependencies:
     array-includes: ^3.1.6
     array.prototype.flatmap: ^1.3.1
@@ -9998,7 +9991,7 @@ __metadata:
     string.prototype.matchall: ^4.0.8
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
-  checksum: e20eab61161a3db6211c2bd1eb9be3e407fd14e72c06c5f39a078b6ac37427b2af6056ee70e3954249bca0a04088ae797a0c8ba909fb8802e29712de2a41262d
+  checksum: 2232b3b8945aa50b7773919c15cd96892acf35d2f82503667a79e2f55def90f728ed4f0e496f0f157acbe1bd4397c5615b676ae7428fe84488a544ca53feb944
   languageName: node
   linkType: hard
 
@@ -10125,58 +10118,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.30.0":
-  version: 8.30.0
-  resolution: "eslint@npm:8.30.0"
-  dependencies:
-    "@eslint/eslintrc": ^1.4.0
-    "@humanwhocodes/config-array": ^0.11.8
-    "@humanwhocodes/module-importer": ^1.0.1
-    "@nodelib/fs.walk": ^1.2.8
-    ajv: ^6.10.0
-    chalk: ^4.0.0
-    cross-spawn: ^7.0.2
-    debug: ^4.3.2
-    doctrine: ^3.0.0
-    escape-string-regexp: ^4.0.0
-    eslint-scope: ^7.1.1
-    eslint-utils: ^3.0.0
-    eslint-visitor-keys: ^3.3.0
-    espree: ^9.4.0
-    esquery: ^1.4.0
-    esutils: ^2.0.2
-    fast-deep-equal: ^3.1.3
-    file-entry-cache: ^6.0.1
-    find-up: ^5.0.0
-    glob-parent: ^6.0.2
-    globals: ^13.19.0
-    grapheme-splitter: ^1.0.4
-    ignore: ^5.2.0
-    import-fresh: ^3.0.0
-    imurmurhash: ^0.1.4
-    is-glob: ^4.0.0
-    is-path-inside: ^3.0.3
-    js-sdsl: ^4.1.4
-    js-yaml: ^4.1.0
-    json-stable-stringify-without-jsonify: ^1.0.1
-    levn: ^0.4.1
-    lodash.merge: ^4.6.2
-    minimatch: ^3.1.2
-    natural-compare: ^1.4.0
-    optionator: ^0.9.1
-    regexpp: ^3.2.0
-    strip-ansi: ^6.0.1
-    strip-json-comments: ^3.1.0
-    text-table: ^0.2.0
-  bin:
-    eslint: bin/eslint.js
-  checksum: b7525bb465b342665c3b8bab7e114d514ef1bc4e79f211c919863f9c71767e7412ec82383a22614a92d159783f91101018817000f7c61ce69a5e7015280cafaf
-  languageName: node
-  linkType: hard
-
-"eslint@npm:8.32.0":
-  version: 8.32.0
-  resolution: "eslint@npm:8.32.0"
+"eslint@npm:8.33.0":
+  version: 8.33.0
+  resolution: "eslint@npm:8.33.0"
   dependencies:
     "@eslint/eslintrc": ^1.4.1
     "@humanwhocodes/config-array": ^0.11.8
@@ -10219,7 +10163,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: 23c8fb3c57291eecd9c1448faf603226a8f885022a2cd96e303459bf72e39b7f54987c6fb948f0f9eecaf7085600e6eb0663482a35ea83da12e9f9141a22b91e
+  checksum: 727e63ab8b7acf281442323c5971f6afdd5b656fbcebc4476cf54e35af51b2f180617433fc5e1952f0449ca3f43a905527f9407ea4b8a7ea7562fc9c3f278d4c
   languageName: node
   linkType: hard
 
@@ -11382,9 +11326,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:8.1.5":
-  version: 8.1.5
-  resolution: "happy-dom@npm:8.1.5"
+"happy-dom@npm:8.2.0":
+  version: 8.2.0
+  resolution: "happy-dom@npm:8.2.0"
   dependencies:
     css.escape: ^1.5.1
     he: ^1.2.0
@@ -11392,7 +11336,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 10158948a598c3306086e14ec38cb98110ed31ad3c066a533540e89fc80d01cdf377f570081296a12d5cd60dbd0eff23107f2b6a91806113359d70cd6150fdf8
+  checksum: 0800a77febf9f2d2fa1478febf891371b51ff07be2787ee664bc52c9f9521f79a5bae9f137e2b74754fa7e415c6884f1dab8b0463f84c56aff8815a5b6a61041
   languageName: node
   linkType: hard
 
@@ -16101,9 +16045,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-preset-env@npm:8.0.0":
-  version: 8.0.0
-  resolution: "postcss-preset-env@npm:8.0.0"
+"postcss-preset-env@npm:8.0.1":
+  version: 8.0.1
+  resolution: "postcss-preset-env@npm:8.0.1"
   dependencies:
     "@csstools/postcss-cascade-layers": ^3.0.0
     "@csstools/postcss-color-function": ^2.0.0
@@ -16160,7 +16104,7 @@ __metadata:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: a6ba95ae98262bb55fb2293b7721abcdd7ca6aa732b3ca116a5ada7032f84cd6b104fad889828ac1d995d881da3b686070faa28545e7797ffb9bb264b9375bd0
+  checksum: 18326a03dd2bdbe2fa8c39f40ae4ac3a48d7de1deb2a1c51d84c5ed05d5ad8993bb5a50b039e452e26b793cf3cd67facd9cf744d5f3f1bf1a9d5208b2475ced9
   languageName: node
   linkType: hard
 
