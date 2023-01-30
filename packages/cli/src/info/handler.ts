@@ -20,33 +20,49 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
       letterSpacing: 3,
     });
     console.log(
-      terminalColor(['magenta', 'bold'])(`  CLI tool for armitjs applications`)
+      terminalColor(
+        ['magenta', 'bold'],
+        this.args.noColor
+      )(`  CLI tool for armitjs applications`)
     );
     this.displaySystemInformation();
   }
 
   private displaySystemInformation() {
     console.info('');
-    console.info(terminalColor(['green'])('  ✔ System Information'));
+    console.info(
+      terminalColor(['green'], this.args.noColor)('  ✔ System Information')
+    );
     console.info(
       '   OS Version     :',
-      terminalColor(['magenta'])(` ${osName(platform(), release())}`)
+      terminalColor(
+        ['magenta'],
+        this.args.noColor
+      )(` ${osName(platform(), release())}`)
     );
     console.info(
       '   NodeJS Version :',
-      terminalColor(['magenta'])(` ${process.version}`)
+      terminalColor(['magenta'], this.args.noColor)(` ${process.version}`)
     );
     this.displayCliVersion();
     this.displayArmitInformation();
   }
 
   private displayArmitInformation() {
-    console.info(terminalColor(['green'])('  ✔ @armit Platform Information'));
+    console.info(
+      terminalColor(
+        ['green'],
+        this.args.noColor
+      )('  ✔ @armit Platform Information')
+    );
     try {
       this.displayArmitVersions();
     } catch {
       console.error(
-        terminalColor(['red'])(
+        terminalColor(
+          ['red'],
+          this.args.noColor
+        )(
           `  😼  cannot read your project package.json file, are you inside your project directory?`
         )
       );
@@ -65,7 +81,7 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
       this.dependencyformat(armitDependencies).forEach((dependency) =>
         console.info(
           '   ' + dependency.name,
-          terminalColor(['magenta'])(`${dependency.version}`)
+          terminalColor(['magenta'], this.args.noColor)(`${dependency.version}`)
         )
       );
       console.info(' ');
@@ -88,10 +104,15 @@ export class InfoCommandHandler extends AbstractHandler<InfoCommandArgs> {
   private displayCliVersion() {
     if (this.cliPackageJson) {
       console.info('');
-      console.info(terminalColor(['green'])('  ✔ @armit CLI'));
+      console.info(
+        terminalColor(['green'], this.args.noColor)('  ✔ @armit CLI')
+      );
       console.info(
         '   @armit CLI Version :',
-        terminalColor(['magenta'])(`${this.cliPackageJson.version || ''}`),
+        terminalColor(
+          ['magenta'],
+          this.args.noColor
+        )(`${this.cliPackageJson.version || ''}`),
         '\n'
       );
     }

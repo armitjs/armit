@@ -7,7 +7,10 @@ export type NewCommandArgs = CommandArgv;
 export class NewCommandHandler extends AbstractHandler<NewCommandArgs> {
   async handle() {
     console.log(
-      terminalColor(['magenta', 'bold'])(`  CLI tool for armitjs applications`)
+      terminalColor(
+        ['magenta', 'bold'],
+        this.args.noColor
+      )(`  CLI tool for armitjs applications`)
     );
   }
 }

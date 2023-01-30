@@ -58,12 +58,15 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
     if (!allFiles.length) {
       this.logger.warn('No matched files found');
     } else {
-      console.info(terminalColor(['green'])('✔ All ziped files'));
+      console.info(
+        terminalColor(['green'], this.args.noColor)('✔ All ziped files')
+      );
       allFiles.forEach((file) => {
         console.info(
-          `${terminalColor(['cyan'])(' ➩ ')}${terminalColor(['magenta'])(
-            relative(fileFromCwd, file)
-          )}`
+          `${terminalColor(['cyan'], this.args.noColor)(' ➩ ')}${terminalColor(
+            ['magenta'],
+            this.args.noColor
+          )(relative(fileFromCwd, file))}`
         );
       });
       console.info(' ');

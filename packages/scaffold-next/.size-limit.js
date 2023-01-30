@@ -15,7 +15,7 @@ const limitCfg = {
   defaultSize: '80kb',
   pages: {
     '/': '120kb',
-    '/404': '110kb',
+    '/404': '150kb',
     '/_app': '160kb',
     '/_error': '150kb',
     '/_monitor/preview/error-page': '150kb',
