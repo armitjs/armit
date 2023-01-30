@@ -1,5 +1,24 @@
 # @armit/cli
 
+## 0.0.15
+
+### Patch Changes
+
+- [`68e9db6`](https://github.com/armitjs/armit/commit/68e9db6ef5f359d977a98eeb013155dbe773830e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - migrate armit/logger to seperate repo
+
+- [`929bd02`](https://github.com/armitjs/armit/commit/929bd0207ae5d47d39e84f052fe10b848267ea96) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package dependencies
+
+- [`f74db20`](https://github.com/armitjs/armit/commit/f74db2003a2e769f319778008deab5f49044a9dc) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor logger
+
+- [`c10cd76`](https://github.com/armitjs/armit/commit/c10cd76a313a4f0c5386214e86bc2c7efba43039) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- Updated dependencies [[`68e9db6`](https://github.com/armitjs/armit/commit/68e9db6ef5f359d977a98eeb013155dbe773830e), [`c8bf37d`](https://github.com/armitjs/armit/commit/c8bf37d7f4a3affaef71aa0cf66e8b9b98d07661), [`929bd02`](https://github.com/armitjs/armit/commit/929bd0207ae5d47d39e84f052fe10b848267ea96), [`f74db20`](https://github.com/armitjs/armit/commit/f74db2003a2e769f319778008deab5f49044a9dc), [`c10cd76`](https://github.com/armitjs/armit/commit/c10cd76a313a4f0c5386214e86bc2c7efba43039)]:
+  - @armit/generate-template-files@0.0.14
+  - @armit/commander@0.0.14
+  - @armit/file-utility@0.0.14
+  - @armit/terminal@0.0.14
+  - @armit/package@0.0.14
+
 ## 0.0.14
 
 ### Patch Changes
