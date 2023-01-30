@@ -52,6 +52,8 @@ module.exports = {
     'import/no-named-as-default-member': 'off',
     'import/no-named-as-default': 'off',
     'import/no-deprecated': ['warn'],
+    // FIXME: no-unresolved is not aware of exports definition in package.json, https://github.com/import-js/eslint-plugin-import/issues/1810
+    'import/no-unresolved': 'off',
     'import/order': [
       'error',
       {
