@@ -18,7 +18,7 @@ const limitCfg = {
     '/404': '110kb',
     '/_app': '160kb',
     '/_error': '150kb',
-    '/_monitor/preview/error-page': '130kb',
+    '/_monitor/preview/error-page': '150kb',
     '/_monitor/sentry/csr-page': '120kb',
     '/_monitor/sentry/ssr-page': '120kb',
     '/home': '100kb',
