@@ -1,5 +1,17 @@
 # @armit/docs
 
+## 0.0.4
+
+### Patch Changes
+
+- [`929bd02`](https://github.com/armitjs/armit/commit/929bd0207ae5d47d39e84f052fe10b848267ea96) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package dependencies
+
+- [`c10cd76`](https://github.com/armitjs/armit/commit/c10cd76a313a4f0c5386214e86bc2c7efba43039) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`02eb9ec`](https://github.com/armitjs/armit/commit/02eb9ec8fcf9b15e53e8c2dbe53ea6b126f8c429) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update docs sample for using UI components on mdx
+
+- [`1a6558c`](https://github.com/armitjs/armit/commit/1a6558ccf5f1b21c66a6a20f6190f5173efab364) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add doc tailwindcss support
+
 ## 0.0.3
 
 ### Patch Changes
