@@ -44,7 +44,7 @@
   "dependencies": {
     "@armit/logger": "workspace:^",
     "@armit/package": "workspace:^",
-    "@armit/path-alias": "0.0.13",
+    "@armit/path-alias": "0.0.14",
     "@armit/terminal": "workspace:^",
     "execa": "6.1.0",
     "globby": "13.1.3",

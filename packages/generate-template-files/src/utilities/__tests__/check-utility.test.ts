@@ -1,12 +1,15 @@
-import { DefaultLogger, LogLevel } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 
 describe('displayError', () => {
-  const logger = new DefaultLogger({
-    level: LogLevel.Warn,
+  const logger = new Logger({
+    logLevel: LogLevel.Warn,
     noColor: true,
+    context: 'generate-template-files',
+    adapter: new StdoutAdapter({
+      formatStrategy: new TerminalFormatStrategy(),
+    }),
   });
-
-  logger.setDefaultContext('generate-template-files');
 
   let mockStdout;
   let mockStderr;

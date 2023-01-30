@@ -1,4 +1,5 @@
-import { DefaultLogger, LogLevel } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 import { terminalColor, getTerminalLink } from '@armit/terminal';
 import type { Argv } from 'yargs';
 import yargs from 'yargs';
@@ -24,8 +25,11 @@ export interface CliOption {
   exitProcess?: boolean;
 }
 
-const logger = new DefaultLogger({
-  level: LogLevel.Warn,
+const logger = new Logger({
+  logLevel: LogLevel.Warn,
+  adapter: new StdoutAdapter({
+    formatStrategy: new TerminalFormatStrategy(),
+  }),
 });
 
 const errorHandler =

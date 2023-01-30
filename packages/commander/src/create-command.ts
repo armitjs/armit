@@ -1,4 +1,5 @@
-import { LogLevel, DefaultLogger } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 import { terminalColor } from '@armit/terminal';
 import type { PackageJson } from 'type-fest';
 import type { Arguments, Argv, CommandModule } from 'yargs';
@@ -22,7 +23,7 @@ export type CommandArgv<
   packageJson: PackageJson;
   /**
    * The actived logging level
-   * @default 'Info'
+   * @default 'Warn'
    */
   logLevel: keyof typeof LogLevel;
   /**
@@ -46,8 +47,11 @@ interface CommandHandlerCtor<T extends CommandArgv> {
 export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler<T>
 {
-  protected logger: DefaultLogger = new DefaultLogger({
-    level: LogLevel.Warn,
+  protected logger: Logger = new Logger({
+    logLevel: LogLevel.Warn,
+    adapter: new StdoutAdapter({
+      formatStrategy: new TerminalFormatStrategy(),
+    }),
   });
 
   // Actived command name.
@@ -61,12 +65,16 @@ export abstract class AbstractHandler<T extends CommandArgv>
   }
 
   initialize(args: Arguments<T>): void {
-    this.logger.setOptions({
-      level: LogLevel[args.logLevel],
+    console.log('args:', args);
+    this.logger = new Logger({
+      logLevel: LogLevel[args.logLevel],
       noColor: args.noColor,
+      context: args.name,
+      adapter: new StdoutAdapter({
+        formatStrategy: new TerminalFormatStrategy(),
+      }),
     });
     this.logger.debug(args);
-    this.logger.setDefaultContext(args.name);
   }
 
   get cliPackageJson(): PackageJson {

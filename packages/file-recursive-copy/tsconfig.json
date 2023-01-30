@@ -9,7 +9,8 @@
     "incremental": true,
     "paths": {
       "@armit/file-utility": ["../../file-utility/src/index.js"],
-      "@armit/logger": ["../../logger/src/index.js"]
+      "@armit/logger": ["../../logger/src/index.js"],
+      "@armit/logger/node": ["../../logger/src/node/index.js"]
     },
     "types": ["vitest/globals"]
   },

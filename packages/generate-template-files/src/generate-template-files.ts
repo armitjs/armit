@@ -1,6 +1,7 @@
 import { existsSync } from 'fs';
 import { recursiveCopy } from '@armit/file-recursive-copy';
-import { DefaultLogger, LogLevel } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 import enquirer from 'enquirer';
 import replaceString from 'replace-string';
 import through from 'through2';
@@ -19,8 +20,11 @@ import { StringUtility } from './utilities/string-utility.js';
 
 export class GenerateTemplateFiles {
   private isBatch = false;
-  private logger: DefaultLogger = new DefaultLogger({
-    level: LogLevel.Warn,
+  private logger: Logger = new Logger({
+    logLevel: LogLevel.Warn,
+    adapter: new StdoutAdapter({
+      formatStrategy: new TerminalFormatStrategy(),
+    }),
   });
 
   constructor(options?: {
@@ -35,11 +39,14 @@ export class GenerateTemplateFiles {
      */
     noColor?: boolean;
   }) {
-    this.logger.setOptions({
-      level: options?.logLevel ? LogLevel[options.logLevel] : LogLevel.Warn,
+    this.logger = new Logger({
+      logLevel: options?.logLevel ? LogLevel[options.logLevel] : LogLevel.Warn,
       noColor: options?.noColor,
+      context: 'generate-template-files',
+      adapter: new StdoutAdapter({
+        formatStrategy: new TerminalFormatStrategy(),
+      }),
     });
-    this.logger.setDefaultContext('generate-template-files');
   }
 
   /**

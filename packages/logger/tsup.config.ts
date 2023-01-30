@@ -1,8 +1,13 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({
   dts: true,
-  entry: ['src/index.ts'],
+  entry: {
+    index: 'src/index.ts',
+    'web/index': 'src/web/index.ts',
+    'node/index': 'src/node/index.ts',
+  },
   splitting: false,
   sourcemap: !options.watch,
   clean: true,

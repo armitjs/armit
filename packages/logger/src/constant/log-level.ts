@@ -1,26 +1,6 @@
-import type { Color } from '@armit/terminal';
-
-export type LoggerOptions = {
-  level?: LogLevel;
-  noColor?: boolean;
-  context?: string;
-};
-
-export interface ArmitLogger {
-  error(message: string, context?: string, trace?: string): void;
-  warn(message: string, context?: string): void;
-  info(message: string, context?: string): void;
-  verbose(message: string, context?: string): void;
-  debug(message: string, context?: string): void;
-  chalk(colors: readonly Color[], txt: string | object): string;
-  setOptions(options: LoggerOptions): void;
-  setDefaultContext?(defaultContext: string): void;
-}
-
 /**
  * @description
  * An enum of valid logging levels.
- *
  */
 export enum LogLevel {
   /**

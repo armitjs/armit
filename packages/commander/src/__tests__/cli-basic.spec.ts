@@ -20,11 +20,9 @@ describe('cli basic infrusture with nested command', () => {
       expect.stringContaining(`cli-boot-sync.ts super test`)
     );
   });
-
   it('The output should be run handler()', async () => {
     const { stdout } = await runCliMock('super', 'test');
     console.log(stdout);
-
     expect(stdout).toStrictEqual(
       expect.stringContaining(`this is test command handle`)
     );
@@ -36,7 +34,6 @@ describe('cli basic infrusture', () => {
     const { stdout } = await runCliMock('-v');
     expect(semver.valid(stdout)).not.toBeNull();
   });
-
   it('Should output correct `help` -h', async () => {
     const { stdout } = await runCliMock('-h');
     expect(stdout).toStrictEqual(

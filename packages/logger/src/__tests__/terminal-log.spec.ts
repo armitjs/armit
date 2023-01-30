@@ -1,4 +1,4 @@
-import { advancedLevels, TerminalLog } from '../terminal-log.js';
+import { advancedLevels, TerminalLog } from '../terminal/terminal-log.js';
 
 describe('new TerminalLog()', () => {
   let mockStdout;

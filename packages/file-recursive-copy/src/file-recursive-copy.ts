@@ -1,7 +1,8 @@
 import event from 'node:events';
 import type { Stats } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
-import { DefaultLogger, LogLevel } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 import { CopyError, CopyEventType } from './constants.js';
 import { copyDirectory, copyFile, copySymlink } from './copy-task.js';
 import { createCopyFunction } from './create-copy-function.js';
@@ -31,9 +32,12 @@ export const recursiveCopy = (
 ): WithCopyEvents<Promise<CopyOperation[] | undefined>> => {
   const parentDirectory = dirname(dest);
   const shouldExpandSymlinks = Boolean(options.expand);
-  const logger = new DefaultLogger({
-    level: options.debug ? LogLevel.Debug : LogLevel.Warn,
+  const logger = new Logger({
+    logLevel: options.debug ? LogLevel.Debug : LogLevel.Warn,
     context: 'file-recursive-copy',
+    adapter: new StdoutAdapter({
+      formatStrategy: new TerminalFormatStrategy(),
+    }),
   });
 
   let emitter;
@@ -167,7 +171,7 @@ function copy(
   hasFinished: () => boolean,
   emitEvent: EmitEventFn,
   options: RecursiveCopyOptions,
-  logger: DefaultLogger
+  logger: Logger
 ): Promise<CopyOperation> {
   logger.debug('Preparing to copy ' + srcPath + '…');
   return prepareForCopy(srcPath, destPath, options)

@@ -1,11 +1,31 @@
-import { terminalColor } from '@armit/terminal';
-import type { Color } from '@armit/terminal';
+import C from 'picocolors';
 import type {
+  Color,
   Level,
   Locked,
   TerminalConstructorData,
   TerminalData,
 } from './types.js';
+
+/**
+ * Terminal output formatting with ANSI colors
+ * @param colors The colors for the console output
+ * @param noColor Removes colors from the console output
+ * @returns
+ */
+export function terminalColor(colors: readonly Color[], noColor?: boolean) {
+  if (noColor || !colors.length) {
+    // Pure text output.
+    return (x: string) => x;
+  }
+  return (x: string) => {
+    let out: string = x;
+    for (let i = 0; i < colors.length; i++) {
+      out = C[colors[i]](out);
+    }
+    return out;
+  };
+}
 
 export type { Color, Level, Locked, TerminalConstructorData, TerminalData };
 
@@ -51,6 +71,8 @@ export const advancedLevels: Level<
 function ensureString(message): string {
   return typeof message === 'string'
     ? message
+    : message instanceof Error
+    ? message.toString()
     : JSON.stringify(message, null, 2);
 }
 
@@ -192,10 +214,7 @@ export class TerminalLog<L extends string> {
    *
    * Logs "faz" to the `error` level if such a level even exists.
    */
-  readonly log: Record<
-    L,
-    (message: string, context?: string, trace?: string) => void
-  >;
+  readonly log: Record<L, (message: string, context?: string, trace?) => void>;
 
   /**
    * The time when this terminal instance was created.

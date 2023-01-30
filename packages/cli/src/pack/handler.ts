@@ -3,6 +3,7 @@ import type { CommandArgv } from '@armit/commander';
 import { AbstractHandler } from '@armit/commander';
 import { fileWalk, zipFiles } from '@armit/file-utility';
 import { readPackageData } from '@armit/package';
+import { terminalColor } from '@armit/terminal';
 import { normalizeOptionSemicolonParts } from '../utils/index.js';
 
 export type PackCommandArgs = CommandArgv<{
@@ -57,11 +58,10 @@ export class PackCommand extends AbstractHandler<PackCommandArgs> {
     if (!allFiles.length) {
       this.logger.warn('No matched files found');
     } else {
-      console.info(this.logger.chalk(['green'], '✔ All ziped files'));
+      console.info(terminalColor(['green'])('✔ All ziped files'));
       allFiles.forEach((file) => {
         console.info(
-          `${this.logger.chalk(['cyan'], ' ➩ ')}${this.logger.chalk(
-            ['magenta'],
+          `${terminalColor(['cyan'])(' ➩ ')}${terminalColor(['magenta'])(
             relative(fileFromCwd, file)
           )}`
         );

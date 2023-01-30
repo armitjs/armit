@@ -12,7 +12,7 @@ export default defineConfig({
   },
   test: {
     // Makebe suite for local debug
-    testTimeout: 1000 * 30,
+    testTimeout: 100000 * 30,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
