@@ -77,7 +77,6 @@
       "./packages/cli",
       "./packages/git",
       "./packages/ldap",
-      "./packages/logger",
       "./packages/terminal",
       "./packages/package",
       "./packages/commander",
