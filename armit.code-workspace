@@ -14,10 +14,6 @@
       "path": "packages/ldap"
     },
     {
-      "name": "logger",
-      "path": "packages/logger"
-    },
-    {
       "name": "terminal",
       "path": "packages/terminal"
     },

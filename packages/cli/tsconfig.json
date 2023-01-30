@@ -11,8 +11,6 @@
       "@/test-utils/*": ["./test-utils/*"],
       "@armit/terminal": ["../../terminal/src/index.js"],
       "@armit/commander": ["../../commander/src/index.js"],
-      "@armit/logger": ["../../logger/src/index.js"],
-      "@armit/logger/node": ["../../logger/src/node/index.js"],
       "@armit/file-utility": ["../../file-utility/src/index.js"],
       "@armit/package": ["../../package/src/index.js"],
       "@armit/generate-template-files": [

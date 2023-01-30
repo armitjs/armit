@@ -244,7 +244,7 @@ __metadata:
   resolution: "@armit/commander@workspace:packages/commander"
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
-    "@armit/logger": "workspace:^"
+    "@armit/logger": 0.0.14
     "@armit/package": "workspace:^"
     "@armit/path-alias": 0.0.14
     "@armit/terminal": "workspace:^"
@@ -367,7 +367,7 @@ __metadata:
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/file-utility": "workspace:^"
-    "@armit/logger": "workspace:^"
+    "@armit/logger": 0.0.14
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
@@ -421,7 +421,7 @@ __metadata:
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/file-recursive-copy": "workspace:^"
-    "@armit/logger": "workspace:^"
+    "@armit/logger": 0.0.14
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
@@ -483,32 +483,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/logger@workspace:^, @armit/logger@workspace:packages/logger":
-  version: 0.0.0-use.local
-  resolution: "@armit/logger@workspace:packages/logger"
-  dependencies:
-    "@armit/eslint-config-bases": "workspace:^"
-    "@types/node": 18.11.18
-    "@vitest/coverage-istanbul": 0.28.3
-    "@vitest/ui": 0.28.3
-    eslint: 8.33.0
-    npm-run-all: 4.1.5
-    picocolors: 1.0.0
-    prettier: 2.8.3
-    rimraf: 4.1.2
-    ts-node: 10.9.1
-    tsup: 6.5.0
-    typescript: 4.9.4
-    vite: 4.0.4
-    vite-tsconfig-paths: 4.0.5
-    vitest: 0.28.3
+"@armit/logger@npm:0.0.14":
+  version: 0.0.14
+  resolution: "@armit/logger@npm:0.0.14"
   peerDependencies:
     picocolors: 1.0.0
   peerDependenciesMeta:
     picocolors:
       optional: true
-  languageName: unknown
-  linkType: soft
+  checksum: cadbb2934b04d2ea40f1a6f76fbd6b2fa24c0906b123f20ce344078c235dc6358b023f61bd72361025d34b808af34ada101922dce8312d9cfb418d660f055a9e
+  languageName: node
+  linkType: hard
 
 "@armit/package@workspace:^, @armit/package@workspace:packages/package":
   version: 0.0.0-use.local
