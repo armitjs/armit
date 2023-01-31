@@ -171,7 +171,7 @@ function copy(
   hasFinished: () => boolean,
   emitEvent: EmitEventFn,
   options: RecursiveCopyOptions,
-  logger: Logger
+  logger: Logger<string>
 ): Promise<CopyOperation> {
   logger.debug('Preparing to copy ' + srcPath + '…');
   return prepareForCopy(srcPath, destPath, options)

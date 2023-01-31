@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@armit/file-utility": "workspace:^",
-    "@armit/logger": "0.0.14",
+    "@armit/logger": "0.0.15",
     "errno": "1.0.0"
   },
   "devDependencies": {

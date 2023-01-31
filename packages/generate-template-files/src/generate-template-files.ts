@@ -20,7 +20,7 @@ import { StringUtility } from './utilities/string-utility.js';
 
 export class GenerateTemplateFiles {
   private isBatch = false;
-  private logger: Logger = new Logger({
+  private logger = new Logger({
     logLevel: LogLevel.Warn,
     adapter: new StdoutAdapter({
       formatStrategy: new TerminalFormatStrategy(),
@@ -41,10 +41,11 @@ export class GenerateTemplateFiles {
   }) {
     this.logger = new Logger({
       logLevel: options?.logLevel ? LogLevel[options.logLevel] : LogLevel.Warn,
-      noColor: options?.noColor,
       context: 'generate-template-files',
       adapter: new StdoutAdapter({
-        formatStrategy: new TerminalFormatStrategy(),
+        formatStrategy: new TerminalFormatStrategy({
+          noColor: options?.noColor,
+        }),
       }),
     });
   }

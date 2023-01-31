@@ -244,7 +244,7 @@ __metadata:
   resolution: "@armit/commander@workspace:packages/commander"
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
-    "@armit/logger": 0.0.14
+    "@armit/logger": 0.0.15
     "@armit/package": "workspace:^"
     "@armit/path-alias": 0.0.14
     "@armit/terminal": "workspace:^"
@@ -367,7 +367,7 @@ __metadata:
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/file-utility": "workspace:^"
-    "@armit/logger": 0.0.14
+    "@armit/logger": 0.0.15
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
@@ -421,7 +421,7 @@ __metadata:
   dependencies:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/file-recursive-copy": "workspace:^"
-    "@armit/logger": 0.0.14
+    "@armit/logger": 0.0.15
     "@types/node": 18.11.18
     "@vitest/coverage-istanbul": 0.28.3
     "@vitest/ui": 0.28.3
@@ -483,15 +483,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/logger@npm:0.0.14":
-  version: 0.0.14
-  resolution: "@armit/logger@npm:0.0.14"
+"@armit/logger@npm:0.0.15":
+  version: 0.0.15
+  resolution: "@armit/logger@npm:0.0.15"
   peerDependencies:
     picocolors: 1.0.0
   peerDependenciesMeta:
     picocolors:
       optional: true
-  checksum: cadbb2934b04d2ea40f1a6f76fbd6b2fa24c0906b123f20ce344078c235dc6358b023f61bd72361025d34b808af34ada101922dce8312d9cfb418d660f055a9e
+  checksum: 5f22d677bc4a2c6499c8d8be6c60511a9f780e66cca8b49af5163c0ec0e18c194ab507661a0c0ee7d728e0db1b7bb0b7c8f62df4dcd6c111ba7a63794059df5c
   languageName: node
   linkType: hard
 

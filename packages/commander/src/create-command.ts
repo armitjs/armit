@@ -47,7 +47,7 @@ interface CommandHandlerCtor<T extends CommandArgv> {
 export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler<T>
 {
-  protected logger: Logger = new Logger({
+  protected logger = new Logger({
     logLevel: LogLevel.Warn,
     adapter: new StdoutAdapter({
       formatStrategy: new TerminalFormatStrategy(),
@@ -65,13 +65,13 @@ export abstract class AbstractHandler<T extends CommandArgv>
   }
 
   initialize(args: Arguments<T>): void {
-    console.log('args:', args);
     this.logger = new Logger({
       logLevel: LogLevel[args.logLevel],
-      noColor: args.noColor,
       context: args.name,
       adapter: new StdoutAdapter({
-        formatStrategy: new TerminalFormatStrategy(),
+        formatStrategy: new TerminalFormatStrategy({
+          noColor: args.noColor,
+        }),
       }),
     });
     this.logger.debug(args);
