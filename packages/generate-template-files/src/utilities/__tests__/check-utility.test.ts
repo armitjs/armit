@@ -4,10 +4,11 @@ import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
 describe('displayError', () => {
   const logger = new Logger({
     logLevel: LogLevel.Warn,
-    noColor: true,
     context: 'generate-template-files',
     adapter: new StdoutAdapter({
-      formatStrategy: new TerminalFormatStrategy(),
+      formatStrategy: new TerminalFormatStrategy({
+        noColor: true,
+      }),
     }),
   });
 
