@@ -14,3 +14,14 @@
 - https://www.radix-ui.com/docs/primitives/components/accordion
 - https://stitches.dev/docs/styling
 - https://app.daily.dev/
+- https://beta.nextjs.org/docs
+
+## i18n
+
+- https://beta.nextjs.org/docs/guides/internationalization
+- https://locize.com/blog/next-13-app-dir-i18n/
+- https://github.com/i18next/next-13-app-dir-i18next-example
+- https://github.com/vercel/next.js/tree/canary/examples/app-dir-i18n-routing
+- https://next-intl-docs.vercel.app/docs/next-13
+- https://github.com/justincy/nextjs-domain-locales
+- https://github.com/amannn/next-intl-example-next-13

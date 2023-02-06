@@ -86,6 +86,11 @@
       "./packages/scaffold-next",
       "./packages/generate-template-files",
       "./packages/eslint-config-bases"
-    ]
+    ],
+    "commentTranslate.hover.enabled": true,
+    "commentTranslate.hover.concise": true,
+    "commentTranslate.targetLanguage": "zh-CN",
+    "commentTranslate.source": "Bing",
+    "typescript.tsdk": "root/node_modules/typescript/lib"
   }
 }

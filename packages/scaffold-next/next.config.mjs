@@ -4,9 +4,8 @@ import path from 'node:path';
 import url from 'node:url';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { withSentryConfig } from '@sentry/nextjs'; // https://docs.sentry.io/platforms/javascript/guides/nextjs/
-import withNextTranspileModules from 'next-transpile-modules';
+import withNextIntl from 'next-intl/plugin';
 import pc from 'picocolors';
-import nextI18nConfig from './next-i18next.config.js';
 
 const workspaceRoot = path.resolve(
   path.dirname(url.fileURLToPath(import.meta.url)),
@@ -30,12 +29,15 @@ const isCI = trueEnv.includes(process.env?.CI ?? 'false');
 const NEXTJS_IGNORE_ESLINT = trueEnv.includes(
   process.env?.NEXTJS_IGNORE_ESLINT ?? 'false'
 );
+
 const NEXTJS_IGNORE_TYPECHECK = trueEnv.includes(
   process.env?.NEXTJS_IGNORE_TYPECHECK ?? 'false'
 );
+
 const NEXTJS_SENTRY_UPLOAD_DRY_RUN = trueEnv.includes(
   process.env?.NEXTJS_SENTRY_UPLOAD_DRY_RUN ?? 'false'
 );
+
 const NEXTJS_DISABLE_SENTRY = trueEnv.includes(
   process.env?.NEXTJS_DISABLE_SENTRY ?? 'false'
 );
@@ -43,6 +45,7 @@ const NEXTJS_DISABLE_SENTRY = trueEnv.includes(
 const NEXTJS_SENTRY_DEBUG = trueEnv.includes(
   process.env?.NEXTJS_SENTRY_DEBUG ?? 'false'
 );
+
 const NEXTJS_SENTRY_TRACING = trueEnv.includes(
   process.env?.NEXTJS_SENTRY_TRACING ?? 'false'
 );
@@ -64,26 +67,6 @@ if (disableSourceMaps) {
   );
 }
 
-// Tell webpack to compile those packages
-// @link https://www.npmjs.com/package/next-transpile-modules
-const tmModules = [
-  // for legacy browsers support (only in prod)
-  ...(isProd
-    ? [
-        // dist folder contains '??', not es2017 compliant
-      ]
-    : []),
-  // ESM only packages are not yet supported by NextJs if you're not
-  // using experimental esmExternals
-  // @link {https://nextjs.org/blog/next-11-1#es-modules-support|Blog 11.1.0}
-  // @link {https://github.com/vercel/next.js/discussions/27876|Discussion}
-  // @link https://github.com/vercel/next.js/issues/23725
-  // @link https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-  ...[
-    // ie: newer versions of https://github.com/sindresorhus packages
-  ],
-];
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -91,26 +74,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  i18n: {
-    ...nextI18nConfig.i18n,
-    localeDetection: false,
-    domains: [
-      {
-        domain: process.env.NEXT_PUBLIC_EN_DOMAIN || 'www.nailip.com',
-        defaultLocale: 'en',
-        locales: ['en_AU', 'en_CA', 'en_US'],
-      },
-      {
-        domain: 'www.nailip.co.uk',
-        defaultLocale: 'en_GB',
-        // specify other locales that should be redirected
-        // to this domain
-        locales: ['en_GB'],
-      },
-    ],
-  },
   optimizeFonts: true,
-
   httpAgentOptions: {
     // @link https://nextjs.org/blog/next-11-1#builds--data-fetching
     keepAlive: true,
@@ -134,10 +98,6 @@ const nextConfig = {
         }
       : false,
   },
-
-  // Standalone build
-  // @link https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files-experimental
-  output: 'standalone',
 
   experimental: {
     appDir: true,
@@ -180,28 +140,9 @@ const nextConfig = {
 
   eslint: {
     ignoreDuringBuilds: NEXTJS_IGNORE_ESLINT,
-    // dirs: [`${__dirname}/src`],
   },
 
-  // @link https://nextjs.org/docs/api-reference/next.config.js/rewrites
-  async rewrites() {
-    return [
-      /*
-      {
-        source: `/about-us`,
-        destination: '/about',
-      },
-      */
-    ];
-  },
-
-  webpack: (config, { webpack, isServer }) => {
-    if (!isServer) {
-      // Fixes npm packages that depend on `fs` module
-      // @link https://github.com/vercel/next.js/issues/36514#issuecomment-1112074589
-      config.resolve.fallback = { ...config.resolve.fallback, fs: false };
-    }
-
+  webpack: (config, { webpack }) => {
     // https://docs.sentry.io/platforms/javascript/guides/nextjs/configuration/tree-shaking/
     config.plugins.push(
       new webpack.DefinePlugin({
@@ -209,30 +150,6 @@ const nextConfig = {
         __SENTRY_TRACING__: NEXTJS_SENTRY_TRACING,
       })
     );
-
-    config.module.rules.push({
-      test: /\.svg$/,
-      issuer: /\.(js|ts)x?$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          // https://react-svgr.com/docs/webpack/#passing-options
-          options: {
-            svgo: true,
-            // @link https://github.com/svg/svgo#configuration
-            svgoConfig: {
-              multipass: false,
-              datauri: 'base64',
-              js2svg: {
-                indent: 2,
-                pretty: false,
-              },
-            },
-          },
-        },
-      ],
-    });
-
     return config;
   },
   env: {
@@ -277,21 +194,13 @@ if (!NEXTJS_DISABLE_SENTRY) {
   });
 }
 
-if (tmModules.length > 0) {
-  console.info(
-    `${pc.green('notice')}- Will transpile [${tmModules.join(',')}]`
-  );
-
-  config = withNextTranspileModules(tmModules, {
-    resolveSymlinks: true,
-    debug: false,
-  })(config);
-}
-
 if (process.env.ANALYZE === 'true') {
   config = withBundleAnalyzer({
     enabled: true,
   })(config);
 }
 
-export default config;
+export default withNextIntl(
+  // This is the default, also the `src` folder is supported out of the box
+  './src/i18n/index.ts'
+)(config);
