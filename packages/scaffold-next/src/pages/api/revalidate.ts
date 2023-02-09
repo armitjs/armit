@@ -1,7 +1,7 @@
 import { join } from 'path';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createApiRouter } from '@/lib/middlewares';
-import nextI18nextConfig from '../../../next-i18next.config';
+// import nextI18nextConfig from '../../../next-i18next.config';
 
 async function revalidateHandler(req: NextApiRequest, res: NextApiResponse) {
   // Check for secret to confirm this is a valid request
@@ -31,7 +31,7 @@ async function revalidateHandler(req: NextApiRequest, res: NextApiResponse) {
     const locale = jsonBody['locale'];
 
     if (issuePath) {
-      const locales = nextI18nextConfig.i18n.locales;
+      const locales = ['en', 'de']; // nextI18nextConfig.i18n.locales;
       if (locales.includes(locale)) {
         await revalidate(locale, issuePath);
       } else {

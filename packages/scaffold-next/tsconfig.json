@@ -27,8 +27,8 @@
       "@/config/*": ["./config/*"],
       "@/features/*": ["./features/*"],
       "@/lib/*": ["./lib/*"],
-      "@/i18n": ["./i18n/index"],
-      "@/i18n/*": ["./i18n/*"],
+      "@/locales": ["./locales/index"],
+      "@/locales/*": ["./locales/*"],
       "@/app/*": ["./app/*"],
       "@/pages/*": ["./pages/*"],
       "@/utils/*": ["./utils/*"],
@@ -37,6 +37,12 @@
       "@/*": ["../*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-intl.d.ts",
+    "next-pages.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
