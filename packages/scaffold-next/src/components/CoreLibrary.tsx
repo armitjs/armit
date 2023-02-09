@@ -3,6 +3,7 @@ import { createTranslator, createIntl } from 'next-intl';
 export default function CoreLibrary() {
   const t = createTranslator({
     locale: 'en',
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     messages: { Index: { title: 'Relative time:' } } as any,
   });
 

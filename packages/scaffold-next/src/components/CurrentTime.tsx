@@ -7,7 +7,11 @@ export default function CurrentTime() {
 
   return (
     <p data-testid="CurrentTime">
-      {intl.formatDateTime(now, 'medium')} ({timeZone || 'N/A'})
+      {intl.formatDateTime(now, {
+        timeStyle: 'medium',
+        dateStyle: 'medium',
+      })}
+      ({timeZone || 'N/A'})
     </p>
   );
 }

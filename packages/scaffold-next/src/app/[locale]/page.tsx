@@ -21,6 +21,7 @@ export default function Index() {
         data-testid="RawText"
       />
       <p data-testid="GlobalDefaults">{t.rich('globalDefaults')}</p>
+      {/* @ts-expect-error Purposefully trigger an error */}
       <p data-testid="MissingMessage">{t('missing')}</p>
       <CurrentTime />
       <LocaleSwitcher />

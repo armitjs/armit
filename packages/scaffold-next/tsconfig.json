@@ -25,13 +25,10 @@
       "@/test-utils": ["../config/tests/test-utils"],
       "@/components/*": ["./components/*"],
       "@/config/*": ["./config/*"],
-      "@/features/*": ["./features/*"],
-      "@/lib/*": ["./lib/*"],
       "@/locales": ["./locales/index"],
       "@/locales/*": ["./locales/*"],
       "@/app/*": ["./app/*"],
       "@/pages/*": ["./pages/*"],
-      "@/utils/*": ["./utils/*"],
       "@/styles/*": ["./styles/*"],
       "@/public/*": ["../public/*"],
       "@/*": ["../*"]

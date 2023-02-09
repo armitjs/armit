@@ -11,7 +11,7 @@ export default async function Counter() {
       locale={locale}
       messages={
         // Only provide the minimum of messages
-        messages['ClientCounter']
+        { ClientCounter: messages['ClientCounter'] }
       }
     >
       <ClientCounter />
