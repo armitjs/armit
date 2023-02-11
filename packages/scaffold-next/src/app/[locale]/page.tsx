@@ -8,6 +8,13 @@ import LocaleSwitcher from '../../components/LocaleSwitcher';
 import PageLayout from '../../components/PageLayout';
 import styles from './page.module.css';
 
+// Output: <title>Acme</title>
+// https://beta.nextjs.org/docs/api-reference/metadata
+export const metadata = {
+  // Default title is used from the layout
+  description: 'ACME is a...',
+};
+
 export default function Index() {
   const t = useTranslations('Index');
   return (

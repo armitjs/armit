@@ -9,6 +9,19 @@ type Props = {
   params: { locale: string };
 };
 
+export async function generateMetadata() {
+  // For /products/123, params.id is "123"
+  // For /products/123?foo=bar, searchParams.get("foo") is "bar"
+  // The return value is the metadata object
+  // const t = await getTranslations('LocaleLayout');
+
+  // return {
+  //   title: t('title'),
+  //   description: t('description')
+  // };
+  return { title: '...' };
+}
+
 export default async function LocaleLayout({ children, params }: Props) {
   const locale = useLocale();
   // Show a 404 error for unknown locales
