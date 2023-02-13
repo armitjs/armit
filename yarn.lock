@@ -559,6 +559,7 @@ __metadata:
     "@vitest/ui": 0.28.3
     "@wove/react": 1.2.22
     autoprefixer: 10.4.13
+    client-only: 0.0.1
     cross-env: 7.0.3
     es-check: 7.1.0
     eslint: 8.33.0
@@ -567,7 +568,7 @@ __metadata:
     multiparty: 4.2.3
     next: 13.1.6
     next-connect: v1.0.0-next.3
-    next-intl: ^2.11.0-beta.7
+    next-intl: ^2.11.0-beta.8
     next-seo: 5.15.0
     npm-run-all: 4.1.5
     picocolors: 1.0.0
@@ -579,6 +580,7 @@ __metadata:
     react-dom: 18.2.0
     react-i18next: 12.1.5
     rimraf: 4.1.2
+    server-only: 0.0.1
     size-limit: 8.1.2
     symlink-dir: 5.1.1
     sync-directory: 5.1.9
@@ -6317,13 +6319,6 @@ __metadata:
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
-  languageName: node
-  linkType: hard
-
-"accept-language-parser@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "accept-language-parser@npm:1.5.0"
-  checksum: e32124e500f67d30da7dd15462b3ff7a718df327ff8bd1c97ae02d8ee5cf0917a3f600bf3b171965b1f95fef480b96d36752f674eff2cb0069c276d9783d32f6
   languageName: node
   linkType: hard
 
@@ -14361,17 +14356,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^2.11.0-beta.7":
-  version: 2.11.0-beta.7
-  resolution: "next-intl@npm:2.11.0-beta.7"
+"next-intl@npm:^2.11.0-beta.8":
+  version: 2.11.0-beta.8
+  resolution: "next-intl@npm:2.11.0-beta.8"
   dependencies:
-    accept-language-parser: ^1.5.0
+    "@formatjs/intl-localematcher": 0.2.32
+    negotiator: 0.6.3
     server-only: 0.0.1
     use-intl: 2.11.0-alpha.2
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: fd0541da196910e4a2c7a7efd64085a39292e006539f3c16da9d9a0f186fe88becb792bc21e5bc15b923d43d91d0070577171fc4c787a18fd80a65242f674113
+  checksum: 0b87f6b2cb5a3008befd6dde3eae0dc7441f710bebee92a82e0a2f346f7380ae1840a272cbdf0f28ac42365bc44b2daa6df63e22f5d8b19e227291dc52b8f9cc
   languageName: node
   linkType: hard
 

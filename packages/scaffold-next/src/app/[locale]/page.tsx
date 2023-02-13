@@ -1,4 +1,4 @@
-import { LocalizedLink, useTranslations } from 'next-intl';
+import { Link, useTranslations } from 'next-intl';
 import MessagesAsPropsCounter from '../../components/client/01-MessagesAsPropsCounter';
 import MessagesOnClientCounter from '../../components/client/02-MessagesOnClientCounter';
 import ClientRouterWithoutProvider from '../../components/ClientRouterWithoutProvider';
@@ -38,9 +38,9 @@ export default function Index() {
       <CoreLibrary />
       <ClientRouterWithoutProvider />
       <div>
-        <LocalizedLink href={{ pathname: '/', query: { test: true } }}>
+        <Link href={{ pathname: '/', query: { test: true } }}>
           Go to home with query param
-        </LocalizedLink>
+        </Link>
       </div>
     </PageLayout>
   );
