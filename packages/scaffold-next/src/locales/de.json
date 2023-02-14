@@ -9,6 +9,10 @@
     "rich": "Das ist <important>formatierter</important> Test.",
     "globalDefaults": "<highlight>{globalString}</highlight>"
   },
+  "Product": {
+    "title": "Produktseite",
+    "description": "Dies ist die Produktseite."
+  },
   "Client": {
     "title": "Client",
     "description": "Dise Seite wird auf der Client-Seite initialisiert."

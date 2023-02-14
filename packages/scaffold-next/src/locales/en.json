@@ -9,6 +9,10 @@
     "rich": "This is a <important>rich</important> text.",
     "globalDefaults": "<highlight>{globalString}</highlight>"
   },
+  "Product": {
+    "title": "Product page",
+    "description": "This is the product page."
+  },
   "Client": {
     "title": "Client",
     "description": "This page hydrates on the client side."

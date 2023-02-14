@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import { Link, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import MessagesAsPropsCounter from '../../components/client/01-MessagesAsPropsCounter';
 import MessagesOnClientCounter from '../../components/client/02-MessagesOnClientCounter';
 import ClientRouterWithoutProvider from '../../components/ClientRouterWithoutProvider';
@@ -8,12 +10,11 @@ import LocaleSwitcher from '../../components/LocaleSwitcher';
 import PageLayout from '../../components/PageLayout';
 import styles from './page.module.css';
 
-// Output: <title>Acme</title>
-// https://beta.nextjs.org/docs/api-reference/metadata
-export const metadata = {
-  // Default title is used from the layout
-  description: 'ACME is a...',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  // const product = await getProduct(params.id);
+  const t = await getTranslations('Index');
+  return { title: t('title'), description: t('description') };
+}
 
 export default function Index() {
   const t = useTranslations('Index');

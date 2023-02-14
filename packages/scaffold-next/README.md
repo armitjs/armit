@@ -6,6 +6,11 @@
 - yarn dev
 - open chrome: `chrome://inspect`
 
+## yarn build & start
+
+- https://rc.nailip.com (`yarn start-rc`) for locale `de`
+- https://www.nailip.com (`yarn start`) for locale `en`
+
 ## Note debug 不能直接在 root 下面执行 apps:dev
 
 - https://www.vechaiui.com/menu
