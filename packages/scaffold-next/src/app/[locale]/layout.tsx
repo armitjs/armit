@@ -23,9 +23,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'de' }];
-}
+// export const dynamic = 'force-static';
+// https://github.com/amannn/next-intl/pull/149#issuecomment-1431084451
+// export async function generateStaticParams() {
+//   return [{ locale: 'en' }, { locale: 'de' }];
+// }
 
 export default async function LocaleLayout({ children, params }: Props) {
   const locale = useLocale();
