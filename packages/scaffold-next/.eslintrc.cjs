@@ -44,6 +44,18 @@ module.exports = {
       },
     },
     {
+      files: ['src/**/route.ts'],
+      rules: {
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: ['variable'],
+            format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+          },
+        ],
+      },
+    },
+    {
       files: ['src/backend/**/*graphql*schema*.ts'],
       rules: {
         '@typescript-eslint/naming-convention': [
