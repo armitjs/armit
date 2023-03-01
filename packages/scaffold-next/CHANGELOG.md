@@ -1,5 +1,15 @@
 # @armit/scaffold-next
 
+## 0.1.4
+
+### Patch Changes
+
+- [`a8112d2`](https://github.com/armitjs/armit/commit/a8112d250100e67b1a29ebe0205aace5f64b81ae) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`4767be2`](https://github.com/armitjs/armit/commit/4767be207626f68e217294b955e76877404913b5) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`739b09b`](https://github.com/armitjs/armit/commit/739b09b8358fc362a81864b4dc917a328792f59a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update next 14 i18n-next
+
 ## 0.1.3
 
 ### Patch Changes
