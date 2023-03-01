@@ -61,7 +61,9 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll": true,
+      // Using `'@armit/eslint-config-bases/typescript` instead of vscode editor organizeImport
+      "source.organizeImports": false
     },
     "files.associations": {
       "*.css": "tailwindcss"
