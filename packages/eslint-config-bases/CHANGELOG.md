@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.12
+
+### Patch Changes
+
+- [`003c56f`](https://github.com/armitjs/armit/commit/003c56f712fb96a520f1ca60b3b54d3067e70c6b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - revert wrong `import/order`:off configuration
+
 ## 0.0.11
 
 ### Patch Changes
