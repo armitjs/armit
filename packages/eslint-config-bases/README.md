@@ -34,6 +34,7 @@ module.exports = {
   },
   ignorePatterns: ["**/node_modules", "**/.cache", "build", ".next"],
   extends: [
+    // It's better set vscode editor "source.organizeImports": false, because there may be competition between `source.organizeImports` and `import/order`
     "@armit/eslint-config-bases/typescript",
     "@armit/eslint-config-bases/sonar",
     "@armit/eslint-config-bases/regexp",
