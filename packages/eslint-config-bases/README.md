@@ -13,7 +13,7 @@ The composable eslint config bases that can be easily shared and fine-tuned by a
 ## Install
 
 ```bash
-$ yarn add --dev eslint @armit/eslint-config-bases:"workspace:^"
+yarn add --dev eslint @armit/eslint-config-bases:"workspace:^"
 ```
 
 > **Tip** the [workspace:^](https://yarnpkg.com/features/workspaces#workspace-ranges-workspace) is supported by yarn and pnpm.

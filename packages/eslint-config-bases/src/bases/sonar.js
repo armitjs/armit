@@ -1,13 +1,13 @@
 /**
  * Opinionated config base for projects that enable sonarjs
- * @see https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases
+ * @see https://github.com/armitjs/armit/tree/main/packages/eslint-config-bases
  */
 
 const sonarPatterns = {
-  files: ['*.{js,jsx,ts,tsx}'],
+  files: ['*.{js,jsx,ts,tsx,mts,cts,mjs,cjs}'],
   excludedFiles: [
-    '**/?(*.)+(test).{js,jsx,ts,tsx}',
-    '*.stories.{js,ts,jsx,tsx}',
+    '**/?(*.)+(test).{js,jsx,ts,tsx,mts,cts,mjs,cjs}',
+    '*.stories.{js,ts,jsx,tsx,mts,cts,mjs,cjs}',
   ],
 };
 

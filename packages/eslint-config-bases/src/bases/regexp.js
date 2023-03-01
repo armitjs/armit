@@ -1,10 +1,10 @@
 /**
  * Custom config base for projects that wants to enable regexp rules.
- * @see https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases
+ * @see https://github.com/armitjs/armit/tree/main/packages/eslint-config-bases
  */
 
 const regexpPatterns = {
-  files: ['*.{js,jsx,jsx,tsx}'],
+  files: ['*.{js,jsx,jsx,tsx,mts,cts,mjs,cjs}'],
 };
 
 module.exports = {

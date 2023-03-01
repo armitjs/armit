@@ -4,7 +4,7 @@
  */
 
 const storybookPatterns = {
-  files: ['**/*.stories.{ts,tsx,mdx}'],
+  files: ['**/*.stories.{ts,tsx,mdx,mts,cts,mjs,cjs}'],
 };
 
 module.exports = {

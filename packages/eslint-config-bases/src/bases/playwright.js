@@ -1,10 +1,10 @@
 /**
  * Opinionated config base for projects using playwright.
- * @see https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases
+ * @see https://github.com/armitjs/armit/tree/main/packages/eslint-config-bases
  */
 
 const playwrightPatterns = {
-  files: ['**/e2e/**/*.test.{js,ts}'],
+  files: ['**/e2e/**/*.test.{js,ts,mts,cts,cjs,mjs}'],
 };
 
 module.exports = {
