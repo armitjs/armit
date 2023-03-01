@@ -1,5 +1,18 @@
 # @armit/generate-template-files
 
+## 0.0.15
+
+### Patch Changes
+
+- [`a8112d2`](https://github.com/armitjs/armit/commit/a8112d250100e67b1a29ebe0205aace5f64b81ae) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade package deps
+
+- [`4767be2`](https://github.com/armitjs/armit/commit/4767be207626f68e217294b955e76877404913b5) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`eb708b7`](https://github.com/armitjs/armit/commit/eb708b7c8addb03c7fce654b7936c88df7175fab) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor armit logger
+
+- Updated dependencies [[`a8112d2`](https://github.com/armitjs/armit/commit/a8112d250100e67b1a29ebe0205aace5f64b81ae), [`4767be2`](https://github.com/armitjs/armit/commit/4767be207626f68e217294b955e76877404913b5), [`eb708b7`](https://github.com/armitjs/armit/commit/eb708b7c8addb03c7fce654b7936c88df7175fab)]:
+  - @armit/file-recursive-copy@0.0.15
+
 ## 0.0.14
 
 ### Patch Changes
