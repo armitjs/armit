@@ -24,7 +24,7 @@
     "start": "next start -p 8001",
     "start-rc": "next start -p 8002",
     "test": "yarn test-unit",
-    "test-unit": "vitest run",
+    "test-unit": "vitest run --passWithNoTests",
     "test-unit-watch": "vitest watch --ui",
     "test-e2e": "cross-env E2E_WEBSERVER_MODE=DEV playwright test",
     "?share-static-symlink": "echo 'Use this command to link assets... from shared static folder'",
