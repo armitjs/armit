@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
-import { Link, useTranslations } from 'next-intl';
+import Image from 'next/image';
+import {
+  Link,
+  useFormatter,
+  useNow,
+  useTimeZone,
+  useTranslations,
+} from 'next-intl';
 import { getTranslations } from 'next-intl/server';
+import iconImage from '@/public/icon.png';
 import MessagesAsPropsCounter from '../../components/client/01-MessagesAsPropsCounter';
 import MessagesOnClientCounter from '../../components/client/02-MessagesOnClientCounter';
 import ClientRouterWithoutProvider from '../../components/ClientRouterWithoutProvider';
 import CoreLibrary from '../../components/CoreLibrary';
-import CurrentTime from '../../components/CurrentTime';
 import LocaleSwitcher from '../../components/LocaleSwitcher';
 import PageLayout from '../../components/PageLayout';
 import styles from './page.module.css';
@@ -16,10 +23,18 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('title'), description: t('description') };
 }
 
-export default function Index() {
+type Props = {
+  searchParams: Record<string, string>;
+};
+export default function Index({ searchParams }: Props) {
   const t = useTranslations('Index');
+  const format = useFormatter();
+  const now = useNow();
+  const timeZone = useTimeZone();
+
   return (
     <PageLayout title={t('title')}>
+      <div className={styles.main}></div>
       <p className={styles.title}>{t('description')}</p>
       <p data-testid="RichText">
         {t.rich('rich', { important: (chunks) => <b>{chunks}</b> })}
@@ -31,7 +46,13 @@ export default function Index() {
       <p data-testid="GlobalDefaults">{t.rich('globalDefaults')}</p>
       {/* @ts-expect-error Purposefully trigger an error */}
       <p data-testid="MissingMessage">{t('missing')}</p>
-      <CurrentTime />
+      <p data-testid="CurrentTime">
+        {format.dateTime(now, 'medium')} ({timeZone || 'N/A'})
+      </p>
+      <p data-testid="CurrentTimeRelative">{format.relativeTime(now)}</p>
+      <p data-testid="Number">
+        {format.number(23102, { style: 'currency', currency: 'EUR' })}
+      </p>
       <LocaleSwitcher />
       <MessagesAsPropsCounter />
       {/* @ts-expect-error RSC are not supported yet by TypeScript */}
@@ -43,6 +64,8 @@ export default function Index() {
           Go to home with query param
         </Link>
       </div>
+      <p data-testid="SearchParams">{JSON.stringify(searchParams, null, 2)}</p>
+      <Image alt="" height={77} priority src={iconImage} width={128} />
     </PageLayout>
   );
 }

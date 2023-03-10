@@ -7,7 +7,8 @@ export default function NotFound() {
   return (
     <html lang={locale}>
       <body>
-        <h1>{t('title')}</h1>
+        <h1>GLOBAL NOT FOUND </h1>
+        <h2>{t('title')}</h2>
       </body>
     </html>
   );

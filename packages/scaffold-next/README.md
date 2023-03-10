@@ -2,9 +2,10 @@
 
 ## debug server side code
 
-- cd /apps/app-main
-- yarn dev
-- open chrome: `chrome://inspect`
+- cd /scaffold-next
+- .vscode/Next.js: debug server-side
+- 注意服务器端断点可能在对此 run 之后生效, 这个时候刷新浏览器可能无法命中, 可以考虑修改服务端的.tsx 文件代码保存即可.
+- 注意 check vscode 断点小圆点标记是否高亮, 如未高量, 尝试修改.tsx 文件, 保存, 或者重新设置 breakpoint 直到高亮.
 
 ## yarn build & start
 

@@ -42,7 +42,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@armit/logger": "0.0.16",
+    "@armit/logger": "0.0.17",
     "@armit/package": "workspace:^",
     "@armit/path-alias": "0.0.14",
     "@armit/terminal": "workspace:^",
@@ -55,14 +55,14 @@
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
-    "@types/node": "18.14.2",
+    "@types/node": "18.15.0",
     "@types/resolve": "1.20.2",
     "@vitest/coverage-istanbul": "0.29.2",
     "@vitest/ui": "0.29.2",
     "eslint": "8.35.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.4",
-    "rimraf": "4.1.2",
+    "rimraf": "4.4.0",
     "semver": "7.3.8",
     "ts-node": "10.9.1",
     "tsconfig-paths": "4.1.2",

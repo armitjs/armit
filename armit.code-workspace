@@ -73,6 +73,7 @@
     "[javascript]": {
       "editor.formatOnSave": false
     },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
       "./packages/cli",

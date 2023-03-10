@@ -13,6 +13,12 @@
       "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
       "args": ["${relativeFile}"],
       "env": {}
+    },
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "yarn dev-rc"
     }
   ]
 }

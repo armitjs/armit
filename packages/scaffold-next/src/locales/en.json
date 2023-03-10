@@ -1,17 +1,13 @@
 {
-  "Meta": {
-    "title": "next-intl example",
-    "description": "This is an example of using next-intl in the `app` directory."
-  },
   "Index": {
     "title": "Home",
     "description": "This is the home page.",
     "rich": "This is a <important>rich</important> text.",
     "globalDefaults": "<highlight>{globalString}</highlight>"
   },
-  "Product": {
-    "title": "Product page",
-    "description": "This is the product page."
+  "LocaleLayout": {
+    "title": "next-intl example",
+    "description": "This is an example of using next-intl in the `app` directory."
   },
   "Client": {
     "title": "Client",
@@ -39,5 +35,13 @@
   "ClientCounter": {
     "count": "Current count: {count}",
     "increment": "Increment"
+  },
+  "ApiRoute": {
+    "hello": "Hello {name}!"
+  },
+  "useNamedRoute": {
+    "home": "/",
+    "client": "/client",
+    "nested": "/nested"
   }
 }

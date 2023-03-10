@@ -1,9 +1,9 @@
-// @ts-check
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import { withSentryConfig } from '@sentry/nextjs'; // https://docs.sentry.io/platforms/javascript/guides/nextjs/
+import ms from 'ms';
 import withNextIntl from 'next-intl/plugin';
 import pc from 'picocolors';
 
@@ -79,7 +79,6 @@ const nextConfig = {
     // @link https://nextjs.org/blog/next-11-1#builds--data-fetching
     keepAlive: true,
   },
-
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
     maxInactiveAge: (isCI ? 3600 : 25) * 1000,
@@ -157,6 +156,28 @@ const nextConfig = {
     APP_VERSION: packageJson.version ?? 'not-in-package.json',
     BUILD_TIME: new Date().toISOString(),
   },
+  headers() {
+    return [
+      {
+        source: '/((?!_next|assets|favicon.ico).*)',
+        missing: [
+          {
+            type: 'header',
+            key: 'Next-Router-Prefetch',
+          },
+        ],
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: [
+              `s-maxage=` + ms('1d') / 1000,
+              `stale-while-revalidate=` + ms('1y') / 1000,
+            ].join(', '),
+          },
+        ],
+      },
+    ];
+  },
 };
 
 let config = nextConfig;
@@ -200,7 +221,4 @@ if (process.env.ANALYZE === 'true') {
   })(config);
 }
 
-export default withNextIntl(
-  // This is the default, also the `src` folder is supported out of the box
-  './src/i18n.ts'
-)(config);
+export default withNextIntl()(config);
