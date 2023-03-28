@@ -90,8 +90,8 @@ jobs:
           git config --global user.email 'tianyingchun@outlook.com'
           git fetch
           git checkout gb_pages
-          mkdir -p ./docs
-          cp -R ./coverage/* ./docs/cli
-          git add docs/*
+          mkdir -p ./gb_pages
+          cp -R ./coverage/* ./gb_pages/cli
+          git add gb_pages/*
           git commit -m "Update page"
           git push
