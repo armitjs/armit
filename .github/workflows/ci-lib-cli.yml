@@ -98,7 +98,7 @@ jobs:
           git fetch
           git checkout gb_pages
           mkdir -p ./gb_pages
-          cp -R ./packages/cli/coverage/* ./gb_pages/cli
+          cp -R ./packages/cli/coverage/* ./gb_pages/coverage/cli
           git add gb_pages/*
           git commit -m "Update page"
           git push
