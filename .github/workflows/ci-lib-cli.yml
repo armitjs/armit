@@ -83,6 +83,7 @@ jobs:
           node-version: 18
       - run: yarn test-coverage
       - name: Publish github pages
+        working-directory: packages/cli
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git config --global user.name 'tianyingchun'
