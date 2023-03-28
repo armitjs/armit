@@ -37,6 +37,7 @@
     "g:build-release": "yarn workspaces foreach -tv run build-release",
     "g:test-unit": "yarn workspaces foreach -ptv run test-unit",
     "g:test-e2e": "yarn workspaces foreach -tv run test-e2e",
+    "g:test-coverage": "yarn workspaces foreach -tv run test-coverage",
     "g:lint": "yarn workspaces foreach -ptv run lint --color",
     "g:typecheck": "yarn workspaces foreach -ptv run typecheck",
     "g:lint-staged-files": "lint-staged --allow-empty --config=lint-staged.config.cjs",

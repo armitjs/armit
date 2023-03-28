@@ -72,3 +72,25 @@ jobs:
         working-directory: packages/cli
         run: |
           yarn build
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: yarn test-coverage
+      - name: Publish github pages
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git config --global user.name 'tianyingchun'
+          git config --global user.email 'tianyingchun@outlook.com'
+          git fetch
+          git checkout gb_pages
+          mkdir -p ./docs
+          cp -R ./coverage/* ./docs/cli
+          git add docs/*
+          git commit -m "Update page"
+          git push
