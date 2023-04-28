@@ -250,7 +250,6 @@ __metadata:
     semver: 7.5.0
     ts-node: 10.9.1
     tsconfig-paths: 4.2.0
-    tsup: 6.7.0
     type-fest: 3.9.0
     typescript: 5.0.4
     vite: 4.3.3
@@ -393,7 +392,6 @@ __metadata:
     rimraf: 5.0.0
     through2: 4.0.2
     ts-node: 10.9.1
-    tsup: 6.7.0
     typescript: 5.0.4
     vite: 4.3.3
     vite-tsconfig-paths: 4.2.0
@@ -447,7 +445,6 @@ __metadata:
     rimraf: 5.0.0
     through2: 4.0.2
     ts-node: 10.9.1
-    tsup: 6.7.0
     typescript: 5.0.4
     vite: 4.3.3
     vite-tsconfig-paths: 4.2.0
@@ -573,7 +570,6 @@ __metadata:
     semver: 7.5.0
     semver-regex: 4.0.5
     ts-node: 10.9.1
-    tsup: 6.7.0
     type-fest: 3.9.0
     typescript: 5.0.4
     vite: 4.3.3

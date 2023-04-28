@@ -30,7 +30,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "dev": "tsup --watch",
@@ -59,7 +59,6 @@
     "prettier": "2.8.8",
     "rimraf": "5.0.0",
     "ts-node": "10.9.1",
-    "tsup": "6.7.0",
     "typescript": "5.0.4",
     "vite": "4.3.3",
     "vite-tsconfig-paths": "4.2.0",
