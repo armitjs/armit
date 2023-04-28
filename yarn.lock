@@ -575,7 +575,7 @@ __metadata:
     multiparty: 4.2.3
     next: v13.3.1
     next-connect: v1.0.0-next.3
-    next-intl: ^2.13.1
+    next-intl: 2.14.0-beta.3
     npm-run-all: 4.1.5
     picocolors: 1.0.0
     postcss: 8.4.23
@@ -14378,17 +14378,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl@npm:^2.13.1":
-  version: 2.13.1
-  resolution: "next-intl@npm:2.13.1"
+"next-intl@npm:2.14.0-beta.3":
+  version: 2.14.0-beta.3
+  resolution: "next-intl@npm:2.14.0-beta.3"
   dependencies:
     "@formatjs/intl-localematcher": 0.2.32
     negotiator: 0.6.3
+    server-only: 0.0.1
     use-intl: ^2.13.1
   peerDependencies:
     next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: e5238e07d0e0eebb111e6733d5dd22af9b5309ed9383f99cd815746b3ca06a4326074e55bebc140141ebcd27001534df37cd46e12c46b32816d9b4776bd100c6
+  checksum: 69210ff103d1f6031d0d8694c7bfa414646f9faa55c2752cb346d6ebf12042b2957b4359ccf945cb1c58cae624fd7a017d5687c54c261f22c915fdac7e4d5054
   languageName: node
   linkType: hard
 
