@@ -1,5 +1,17 @@
 # @armit/generate-template-files
 
+## 0.0.17
+
+### Patch Changes
+
+- Migrate @armit/logger from mono repo
+
+- [`382ee13`](https://github.com/armitjs/armit/commit/382ee139e7bc40d471fdcd8ca08837e20fef9007) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix tsup build issue using tsc instead while indirect import armit/logger
+
+- Updated dependencies [[`382ee13`](https://github.com/armitjs/armit/commit/382ee139e7bc40d471fdcd8ca08837e20fef9007)]:
+  - @armit/file-recursive-copy@0.0.17
+  - @armit/logger-node@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @armit/ldap
 
+## 0.0.17
+
+### Patch Changes
+
+- [`daa9717`](https://github.com/armitjs/armit/commit/daa97175d655d0c5551c2a9204d19ccb65228786) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Bump version
+
 ## 0.0.16
 
 ### Patch Changes
