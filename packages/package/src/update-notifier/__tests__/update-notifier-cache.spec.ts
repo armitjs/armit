@@ -5,7 +5,7 @@ import {
   getConfigFile,
   getLastUpdate,
   saveLastUpdate,
-} from '../update-notifier/cache.js';
+} from '../cache.js';
 
 describe('UpdateNotifier cache', () => {
   beforeAll(() => {

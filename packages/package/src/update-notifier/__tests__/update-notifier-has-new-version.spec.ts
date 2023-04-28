@@ -1,15 +1,15 @@
 import { vi } from 'vitest';
-import { getLastUpdate } from '../update-notifier/cache.js';
-import { getDistVersion } from '../update-notifier/get-dist-version.js';
-import { hasNewVersion } from '../update-notifier/has-new-version.js';
+import { getLastUpdate } from '../cache.js';
+import { getDistVersion } from '../get-dist-version.js';
+import { hasNewVersion } from '../has-new-version.js';
 
 describe('hasNewVersion', () => {
-  vi.mock('../update-notifier/get-dist-version.js', () => {
+  vi.mock('../get-dist-version.js', () => {
     return {
       getDistVersion: vi.fn(),
     };
   });
-  vi.mock('../update-notifier/cache.js', () => ({
+  vi.mock('../cache.js', () => ({
     getLastUpdate: vi.fn().mockReturnValue(undefined),
     createConfigDir: vi.fn(),
     saveLastUpdate: vi.fn(),

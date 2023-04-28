@@ -8,7 +8,10 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@/test-utils": ["../../../config/test-utils/index.ts"]
+      "@/test-utils": ["../../../config/test-utils/index.ts"],
+      "@armit/file-utility": ["../../file-utility/src/index.js"],
+      "@armit/logger": ["../../logger/src/index.js"],
+      "@armit/logger-node": ["../../logger-node/src/index.js"]
     },
     "types": ["vitest/globals"]
   },

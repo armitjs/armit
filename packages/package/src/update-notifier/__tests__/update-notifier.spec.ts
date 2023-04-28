@@ -1,11 +1,10 @@
 import { vi } from 'vitest';
+import { hasNewVersion } from '../has-new-version.js';
 import { updateNotifier } from '../index.js';
-
-import { hasNewVersion } from '../update-notifier/has-new-version.js';
 
 describe('UpdateNotifier', () => {
   const consoleSpy = vi.spyOn(console, 'log');
-  vi.mock('../update-notifier/has-new-version.js', () => {
+  vi.mock('../has-new-version.js', () => {
     return {
       hasNewVersion: vi.fn(),
     };
