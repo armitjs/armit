@@ -1,5 +1,11 @@
 # @armit/cosmiconfig
 
+## 0.0.18
+
+### Patch Changes
+
+- [`7efb8b5`](https://github.com/armitjs/armit/commit/7efb8b52e5be90cdb3604f6deee1b848e3bbf722) Thanks [@tianyingchun](https://github.com/tianyingchun)! - remove cosmiconfig-typescript-loader
+
 ## 0.0.17
 
 ### Patch Changes
