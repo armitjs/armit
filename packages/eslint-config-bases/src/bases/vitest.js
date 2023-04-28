@@ -20,7 +20,7 @@ module.exports = {
       // extends: ['plugin:vitest/recommended'],
       plugins: ['vitest'],
       rules: {
-        'vitest/no-skipped-tests': 2,
+        'vitest/no-disabled-tests': 2,
         'vitest/max-nested-describe': [
           'error',
           {
