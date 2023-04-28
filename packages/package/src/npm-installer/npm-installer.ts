@@ -1,9 +1,9 @@
 import { join } from 'path';
 import { execa } from 'execa';
-import { uniq } from 'lodash';
 import npmLinked from 'npm-list-linked';
 import ora from 'ora';
 import pic from 'picocolors';
+import { arrayUnique } from '../helpers/array-unique.js';
 import { logger } from '../logger.js';
 import { runingNpmOrYarn } from '../npm-yarn.js';
 
@@ -45,7 +45,7 @@ export const getLocalNpmLinkPackages = (cwds: string[]): string[] => {
     const cwdLinks = npmLinked.getLinked(join(cwd, 'node_modules')) as string[];
     npmLinks = npmLinks.concat(cwdLinks);
   }
-  return uniq(npmLinks);
+  return arrayUnique(npmLinks);
 };
 
 /**
