@@ -1,5 +1,20 @@
 # @armit/commander
 
+## 0.0.17
+
+### Patch Changes
+
+- Migrate @armit/logger from mono repo
+
+- [`382ee13`](https://github.com/armitjs/armit/commit/382ee139e7bc40d471fdcd8ca08837e20fef9007) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix tsup build issue using tsc instead while indirect import armit/logger
+
+- [`daa9717`](https://github.com/armitjs/armit/commit/daa97175d655d0c5551c2a9204d19ccb65228786) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Bump version
+
+- Updated dependencies [[`d2baceb`](https://github.com/armitjs/armit/commit/d2baceb064220d4b8b01ebd3c3ce2cbbb407578b), [`af276fc`](https://github.com/armitjs/armit/commit/af276fc7581e3414ecc7cb4684672517b227e743), [`382ee13`](https://github.com/armitjs/armit/commit/382ee139e7bc40d471fdcd8ca08837e20fef9007), [`daa9717`](https://github.com/armitjs/armit/commit/daa97175d655d0c5551c2a9204d19ccb65228786)]:
+  - @armit/package@0.0.17
+  - @armit/logger-node@0.0.17
+  - @armit/terminal@0.0.17
+
 ## 0.0.16
 
 ### Patch Changes
