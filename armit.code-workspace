@@ -18,6 +18,14 @@
       "path": "packages/terminal"
     },
     {
+      "name": "logger",
+      "path": "packages/logger"
+    },
+    {
+      "name": "logger-node",
+      "path": "packages/logger-node"
+    },
+    {
       "name": "package",
       "path": "packages/package"
     },
@@ -84,6 +92,8 @@
       "./packages/git",
       "./packages/ldap",
       "./packages/terminal",
+      "./packages/logger",
+      "./packages/logger-node",
       "./packages/package",
       "./packages/commander",
       "./packages/cosmiconfig",

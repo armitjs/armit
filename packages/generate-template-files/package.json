@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@armit/file-recursive-copy": "workspace:^",
-    "@armit/logger": "0.0.17",
+    "@armit/logger-node": "workspace:^",
     "enquirer": "2.3.6",
     "replace-string": "4.0.0",
     "through2": "4.0.2"

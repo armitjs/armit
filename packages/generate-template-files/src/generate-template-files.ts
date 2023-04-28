@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import { recursiveCopy } from '@armit/file-recursive-copy';
 import { Logger, LogLevel } from '@armit/logger';
-import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 import enquirer from 'enquirer';
 import replaceString from 'replace-string';
 import through from 'through2';

@@ -2,7 +2,7 @@ import event from 'node:events';
 import type { Stats } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { Logger, LogLevel } from '@armit/logger';
-import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 import { CopyError, CopyEventType } from './constants.js';
 import { copyDirectory, copyFile, copySymlink } from './copy-task.js';
 import { createCopyFunction } from './create-copy-function.js';

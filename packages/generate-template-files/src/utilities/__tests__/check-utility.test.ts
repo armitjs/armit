@@ -1,5 +1,5 @@
 import { Logger, LogLevel } from '@armit/logger';
-import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger/node';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 
 describe('displayError', () => {
   const logger = new Logger({
