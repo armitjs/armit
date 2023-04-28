@@ -1,7 +1,7 @@
-import { run } from 'npm-check-updates';
 import { type Index } from 'npm-check-updates/build/src/types/IndexType.js';
 import { type PackageFile } from 'npm-check-updates/build/src/types/PackageFile.js';
 import { type VersionSpec } from 'npm-check-updates/build/src/types/VersionSpec.js';
+import { run } from 'npm-check-updates';
 
 export interface UpdatePackageOptions {
   /**

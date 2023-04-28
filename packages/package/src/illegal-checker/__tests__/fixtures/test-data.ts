@@ -1,4 +1,5 @@
-//@dimjs/utils
+/* eslint-disable @typescript-eslint/naming-convention */
+// @dimjs/utils
 export const withSameVersion = {
   version: '1.0.0',
   name: '@flatjs/core-repo',
