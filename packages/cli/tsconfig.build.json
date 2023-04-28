@@ -6,5 +6,5 @@
     "moduleResolution": "nodenext",
     "paths": {}
   },
-  "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**"]
+  "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**", "dist"]
 }

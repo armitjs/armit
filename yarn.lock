@@ -233,7 +233,7 @@ __metadata:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/logger-node": "workspace:^"
     "@armit/package": "workspace:^"
-    "@armit/path-alias": 0.0.14
+    "@armit/path-alias": 0.0.15
     "@armit/terminal": "workspace:^"
     "@types/node": 18.16.2
     "@types/resolve": 1.20.2
@@ -572,19 +572,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/path-alias@npm:0.0.14":
-  version: 0.0.14
-  resolution: "@armit/path-alias@npm:0.0.14"
+"@armit/path-alias@npm:0.0.15":
+  version: 0.0.15
+  resolution: "@armit/path-alias@npm:0.0.15"
   dependencies:
-    dotenv: 16.0.3
-    module-alias: 2.2.2
-    pkg-up: 4.0.0
-    tsconfck: 2.0.2
-    tsconfig-paths: 4.1.2
+    dotenv: ^16.0.3
+    module-alias: ^2.2.2
+    pkg-up: ^4.0.0
+    tsconfck: ^2.1.1
+    tsconfig-paths: ^4.2.0
   peerDependencies:
     ts-node: 10.9.1
-    typescript: 4.9.4
-  checksum: 3770d0a13ce17d2a4331fda1ca1e43fee24346a948a826cd926a98e700fdf336361efe631dcc81a4b65940be476c1cb7f289bc2a120ab5fe0af6502f10d49b13
+    typescript: 5.0.4
+  checksum: 1c90b91a50df3ce9b1631d0ba17ccf0e8f8177d00e4639104a780ae39138673c4e985053e45135215911ca670b7028dccc9ed8f5034ec10590dc3eec02c5e05f
   languageName: node
   linkType: hard
 
@@ -9362,7 +9362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:16.0.3":
+"dotenv@npm:^16.0.3":
   version: 16.0.3
   resolution: "dotenv@npm:16.0.3"
   checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
@@ -14346,7 +14346,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"module-alias@npm:2.2.2":
+"module-alias@npm:^2.2.2":
   version: 2.2.2
   resolution: "module-alias@npm:2.2.2"
   checksum: 4b5543f834b484033e5bd184096ca8276b9195e32e88883ee6ea8d3a4789d97c470d26f5fa7271bd7a26588bf67e4d27dbdb594ee327aef1c9619d855dc78342
@@ -15533,7 +15533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-up@npm:4.0.0":
+"pkg-up@npm:4.0.0, pkg-up@npm:^4.0.0":
   version: 4.0.0
   resolution: "pkg-up@npm:4.0.0"
   dependencies:
@@ -19620,21 +19620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfck@npm:2.0.2":
-  version: 2.0.2
-  resolution: "tsconfck@npm:2.0.2"
-  peerDependencies:
-    typescript: ^4.3.5
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  bin:
-    tsconfck: bin/tsconfck.js
-  checksum: bc914042b2f5e1f9d7bbadd05b74031f32e2f1757061743d70d86d17dda0734d838e67abb0105b81db67c30b66496e5d408cbe216bb43b3d567a181b0448ddc1
-  languageName: node
-  linkType: hard
-
-"tsconfck@npm:^2.1.0":
+"tsconfck@npm:^2.1.0, tsconfck@npm:^2.1.1":
   version: 2.1.1
   resolution: "tsconfck@npm:2.1.1"
   peerDependencies:
@@ -19648,18 +19634,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:4.1.2":
-  version: 4.1.2
-  resolution: "tsconfig-paths@npm:4.1.2"
-  dependencies:
-    json5: ^2.2.2
-    minimist: ^1.2.6
-    strip-bom: ^3.0.0
-  checksum: 3d9151ecea139594e25618717de15769ab9f38f8e6d510ac16e592b23e7f7105ea13cec5694c3de7e132c98277b775e18edd1651964164ee6d75737c408494cc
-  languageName: node
-  linkType: hard
-
-"tsconfig-paths@npm:4.2.0":
+"tsconfig-paths@npm:4.2.0, tsconfig-paths@npm:^4.2.0":
   version: 4.2.0
   resolution: "tsconfig-paths@npm:4.2.0"
   dependencies:
