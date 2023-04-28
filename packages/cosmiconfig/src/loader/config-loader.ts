@@ -2,6 +2,7 @@
 import { existsSync } from 'fs';
 import { cosmiconfig } from 'cosmiconfig';
 import { type CosmiconfigResult } from 'cosmiconfig/dist/types.js';
+import { type RegisterOptions } from 'ts-node';
 import { tsLoader } from './loader.js';
 
 type ConfigLoadResult<T> = Omit<CosmiconfigResult, 'config'> & {
@@ -16,7 +17,8 @@ type ConfigLoadResult<T> = Omit<CosmiconfigResult, 'config'> & {
  */
 export const searchConfig = async <T = any>(
   moduleName: string,
-  searchFrom: string = process.cwd()
+  searchFrom: string = process.cwd(),
+  options?: RegisterOptions
 ) => {
   const explorer = cosmiconfig(moduleName, {
     searchPlaces: [
@@ -34,7 +36,7 @@ export const searchConfig = async <T = any>(
     ],
     loaders: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      '.ts': tsLoader(),
+      '.ts': tsLoader(options),
     },
   });
   return explorer.search(searchFrom).then((result) => {
@@ -42,14 +44,17 @@ export const searchConfig = async <T = any>(
   });
 };
 
-export const loadConfig = async <T = any>(configFile: string) => {
+export const loadConfig = async <T = any>(
+  configFile: string,
+  options?: RegisterOptions
+) => {
   if (!existsSync(configFile)) {
     return null;
   }
   const explorer = cosmiconfig('', {
     loaders: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      '.ts': tsLoader(),
+      '.ts': tsLoader(options),
     },
   });
   return explorer.load(configFile).then((result) => {
