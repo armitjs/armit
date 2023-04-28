@@ -1,5 +1,13 @@
 # @armit/eslint-config-bases
 
+## 0.0.13
+
+### Patch Changes
+
+- [`284c3ae`](https://github.com/armitjs/armit/commit/284c3aea137702974ecfdd5ad9e8b992e8628a29) Thanks [@tianyingchun](https://github.com/tianyingchun)! - replace vitest/no-skipped-tests to vitest/no-disabled-tests
+
+- [`39dd73b`](https://github.com/armitjs/armit/commit/39dd73b153e2d2225faad6bb3bae466776036151) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump package dependencies
+
 ## 0.0.12
 
 ### Patch Changes
