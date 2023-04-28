@@ -8,7 +8,8 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@/test-utils": ["../../../config/test-utils/index.js"]
+      "@/test-utils": ["../../../config/test-utils/index.js"],
+      "@armit/file-utility": ["../../file-utility/src/index.js"]
     },
     "types": ["vitest/globals"]
   },
