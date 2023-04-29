@@ -1,22 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { type DeepPartial } from '../types.js';
 import {
   isClassInstance,
   isObject,
   simpleDeepClone,
 } from './simple-deep-clone.js';
-/**
- * A recursive implementation of the Partial<T> type.
- * Source: https://stackoverflow.com/a/49936686/772859
- */
-export type DeepPartial<T> = {
-  [P in keyof T]?:
-    | null
-    | (T[P] extends Array<infer U>
-        ? Array<DeepPartial<U>>
-        : T[P] extends ReadonlyArray<infer U>
-        ? ReadonlyArray<DeepPartial<U>>
-        : DeepPartial<T[P]>);
-};
+
 /**
  * @description
  * Performs a deep merge of two Plugin options merge objects. Unlike `Object.assign()` the `target` object is
