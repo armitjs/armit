@@ -23,6 +23,36 @@ describe('mergeOptions()', () => {
     expect(input).not.toBe(result);
     expect(input.a).not.toBe(result.a);
   });
+
+  it('merge options with nested function', () => {
+    function fn1() {}
+    function fn2() {}
+    const input: any = {
+      b: 2,
+      child: {
+        fn: fn1,
+      },
+    };
+    const result = mergeOptions(input, {
+      b: 2,
+      child: {
+        fn: fn2,
+      },
+    } as any);
+
+    expect(result).toEqual({
+      b: 2,
+      child: {
+        fn: fn2,
+      },
+    });
+
+    expect(input).not.toEqual(result);
+    expect(input.child.fn).not.toBe(result.child.fn);
+    expect(input.child.fn).toBe(fn1);
+    expect(result.child.fn).toBe(fn2);
+  });
+
   it('merges top-level properties', () => {
     const input: any = {
       a: 1,
