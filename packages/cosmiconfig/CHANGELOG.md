@@ -1,5 +1,11 @@
 # @armit/cosmiconfig
 
+## 0.0.20
+
+### Patch Changes
+
+- [`81a2088`](https://github.com/armitjs/armit/commit/81a20880fb1e57316855c384f051330cc916e3e6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Exports DeepRequired, DeepPartial typings
+
 ## 0.0.19
 
 ### Patch Changes
