@@ -56,4 +56,26 @@ describe('ConfigLoader', () => {
       expect(loadedCfg).toBeNull();
     });
   });
+
+  describe('cosmiconfig correct load config file using defineConfig', async () => {
+    it('should correct load `defineConfig` with default input', async () => {
+      const loadedCfg = await loadConfig<{
+        name: string;
+      }>(path.resolve(fixturesPath, 'valid-define-config.config.ts'));
+      expect(typeof loadedCfg?.config).toStrictEqual('object');
+      expect(typeof loadedCfg?.config.name).toStrictEqual('string');
+      expect(loadedCfg?.config.name).toBe('tian');
+    });
+
+    it('should correct load `defineConfig` with funtion input', async () => {
+      const loadedCfg = await loadConfig<
+        () => {
+          name: string;
+        }
+      >(path.resolve(fixturesPath, 'valid-define-config-fn.config.ts'));
+      expect(typeof loadedCfg?.config).toStrictEqual('function');
+      expect(typeof loadedCfg?.config().name).toStrictEqual('string');
+      expect(loadedCfg?.config().name).toBe('tian');
+    });
+  });
 });
