@@ -1,5 +1,11 @@
 # @armit/cosmiconfig
 
+## 0.0.19
+
+### Patch Changes
+
+- [`f4d2516`](https://github.com/armitjs/armit/commit/f4d2516610e0453a3eb95e6cba7286971ea45781) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add defineConfig fn
+
 ## 0.0.18
 
 ### Patch Changes
