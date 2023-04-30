@@ -31,7 +31,7 @@ And customized adapter for web
 
 ```ts
 import { Logger } from "@armit/logger";
-import { ConsoleAdapter } from "@armit/logger/web";
+import { ConsoleAdapter } from "@armit/logger-node";
 
 const logger = new Logger({
   logLevel: LogLevel.Warn,
