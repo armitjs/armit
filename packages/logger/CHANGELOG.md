@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.18
+
+### Patch Changes
+
+- [`ab6e3df`](https://github.com/armitjs/armit/commit/ab6e3dfd0e3dbaacfd442569d67b23009263fa5d) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update readme
+
 ## 0.0.17
 
 ### Patch Changes
