@@ -46,6 +46,11 @@ export class Logger<
     return this;
   }
 
+  reConfig(options?: LoggerOptions<MessageType, OptionExtendType>) {
+    this.context = options?.context || DEFAULT_CONTEXT;
+    this.printer.reConfig(options);
+  }
+
   addLogAdapter(
     adapter: LogAdapter<MessageType>,
     config?: LogAdapterConfig<MessageType> | undefined

@@ -10,5 +10,6 @@ export interface LogPrinter<MessageType> {
     adapter: LogAdapter<MessageType>,
     config?: LogAdapterConfig<MessageType>
   ): LogPrinter<MessageType>;
+  reConfig(config?: LogAdapterConfig<MessageType>): LogPrinter<MessageType>;
   clearLogAdapters(): LogPrinter<MessageType>;
 }

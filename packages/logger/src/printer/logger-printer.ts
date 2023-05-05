@@ -34,6 +34,14 @@ export class LoggerPrinter<MessageType> implements LogPrinter<MessageType> {
     return this;
   }
 
+  reConfig(config?: LogAdapterConfig<MessageType> | undefined) {
+    for (let index = 0; index < this.logAdapters.length; index++) {
+      const adapter = this.logAdapters[index];
+      adapter.config(config);
+    }
+    return this;
+  }
+
   clearLogAdapters() {
     this.logAdapters = [];
     return this;
