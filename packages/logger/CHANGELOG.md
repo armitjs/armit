@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.19
+
+### Patch Changes
+
+- [`a3f52eb`](https://github.com/armitjs/armit/commit/a3f52eb46024e3275f906cb802d541f30506fb88) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add reConfig api allow us to reset log configurations e.g. logLevel
+
 ## 0.0.18
 
 ### Patch Changes
