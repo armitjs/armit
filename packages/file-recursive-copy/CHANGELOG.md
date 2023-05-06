@@ -1,5 +1,12 @@
 # @armit/file-recursive-copy
 
+## 0.0.20
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/logger-node@0.0.20
+
 ## 0.0.19
 
 ### Patch Changes
