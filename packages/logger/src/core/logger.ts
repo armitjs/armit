@@ -46,8 +46,8 @@ export class Logger<
     return this;
   }
 
-  reConfig(options?: LoggerOptions<MessageType, OptionExtendType>) {
-    this.context = options?.context || DEFAULT_CONTEXT;
+  reConfig(options?: Partial<LoggerOptions<MessageType, OptionExtendType>>) {
+    this.context = options?.context || this.context;
     this.printer.reConfig(options);
   }
 
