@@ -21,7 +21,7 @@
     "package.json"
   ],
   "dependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.21.8",
     "@dimjs/request": "^1.3.0",
     "@dimjs/utils": "^1.2.44",
     "@flatjs/common": "^1.5.25",
