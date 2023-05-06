@@ -48,7 +48,7 @@ export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler<T>
 {
   protected logger = new Logger({
-    logLevel: LogLevel.Warn,
+    logLevel: LogLevel.Warn as LogLevel,
     adapter: new StdoutAdapter({
       formatStrategy: new TerminalFormatStrategy(),
     }),
@@ -66,7 +66,7 @@ export abstract class AbstractHandler<T extends CommandArgv>
 
   initialize(args: Arguments<T>): void {
     this.logger = new Logger({
-      logLevel: LogLevel[args.logLevel],
+      logLevel: LogLevel[args.logLevel] as LogLevel,
       context: args.name,
       adapter: new StdoutAdapter({
         formatStrategy: new TerminalFormatStrategy({
