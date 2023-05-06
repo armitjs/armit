@@ -34,8 +34,8 @@
       "path": "packages/commander"
     },
     {
-      "name": "cosmiconfig",
-      "path": "packages/cosmiconfig"
+      "name": "config-loader",
+      "path": "packages/config-loader"
     },
     {
       "name": "file-utility",
