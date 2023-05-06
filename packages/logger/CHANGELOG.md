@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.20
+
+### Patch Changes
+
+- [`0e61197`](https://github.com/armitjs/armit/commit/0e61197abae8518d7bba80f4b2d6fd07c4dbff62) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix logger reConfig APi as partial<T>
+
 ## 0.0.19
 
 ### Patch Changes

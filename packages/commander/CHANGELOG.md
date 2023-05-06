@@ -1,5 +1,13 @@
 # @armit/commander
 
+## 0.0.21
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/logger-node@0.0.20
+  - @armit/package@0.0.20
+
 ## 0.0.20
 
 ### Patch Changes
