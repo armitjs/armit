@@ -1,5 +1,11 @@
 # @armit/generate-template-files
 
+## 0.0.20
+
+### Patch Changes
+
+- [`3211d56`](https://github.com/armitjs/armit/commit/3211d5642d5d8ed60f2268cede4c1bf4cda0ec12) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix typing issue
+
 ## 0.0.19
 
 ### Patch Changes

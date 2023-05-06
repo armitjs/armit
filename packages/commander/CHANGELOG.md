@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.20
+
+### Patch Changes
+
+- [`7b12c0e`](https://github.com/armitjs/armit/commit/7b12c0e07b7d85c367b303e987e16d424e776218) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Fix typing issue
+
 ## 0.0.19
 
 ### Patch Changes
