@@ -1,12 +1,6 @@
 {
   "name": "@armit/config-loader",
   "version": "0.0.22",
-  "homepage": "https://github.com/armitjs/armit",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/armitjs/armit",
-    "directory": "packages/config-loader"
-  },
   "description": "A config loader searches for and loads configuration for your program, support `type:module`, `esm`, `cjs`",
   "keywords": [
     "esm",
@@ -14,6 +8,12 @@
     "cjs",
     "type:module"
   ],
+  "homepage": "https://github.com/armitjs/armit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armitjs/armit",
+    "directory": "packages/config-loader"
+  },
   "license": "MIT",
   "author": {
     "name": "Yingchun Tian",
@@ -37,7 +37,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "dev": "tsup --watch",
@@ -82,7 +82,37 @@
     "vitest": "0.31.0"
   },
   "peerDependencies": {
+    "@babel/plugin-proposal-class-properties": ">=7.18.6",
+    "@babel/plugin-proposal-decorators": ">=7.21.0",
+    "@babel/preset-env": ">=7.21.5",
+    "@babel/preset-typescript": ">=7.21.5",
+    "@rollup/plugin-babel": ">=6.0.3",
+    "@rollup/plugin-commonjs": ">=24.1.0",
+    "@rollup/plugin-node-resolve": ">=15.0.2",
     "ts-node": ">=10.9.1"
+  },
+  "peerDependenciesMeta": {
+    "@babel/plugin-proposal-class-properties": {
+      "optional": true
+    },
+    "@babel/plugin-proposal-decorators": {
+      "optional": true
+    },
+    "@babel/preset-env": {
+      "optional": true
+    },
+    "@babel/preset-typescript": {
+      "optional": true
+    },
+    "@rollup/plugin-babel": {
+      "optional": true
+    },
+    "@rollup/plugin-commonjs": {
+      "optional": true
+    },
+    "@rollup/plugin-node-resolve": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=16.0.0"

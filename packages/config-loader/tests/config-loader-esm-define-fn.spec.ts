@@ -1,11 +1,10 @@
 import path from 'node:path';
 import { getDirname } from '@armit/file-utility';
 import { loadConfig } from '../src/config-loader/config-loader.js';
-import { rollupBundler } from './rollup-bundler.js';
 
 const loaderOptions = {
   esm: {
-    configBundler: rollupBundler,
+    externals: ['vite'],
   },
 };
 

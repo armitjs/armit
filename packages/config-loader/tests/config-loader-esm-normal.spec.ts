@@ -4,11 +4,10 @@ import {
   loadConfig,
   searchConfig,
 } from '../src/config-loader/config-loader.js';
-import { rollupBundler } from './rollup-bundler.js';
 
 const loaderOptions = {
   esm: {
-    configBundler: rollupBundler,
+    externals: ['vite'],
   },
 };
 

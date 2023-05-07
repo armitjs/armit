@@ -1,16 +1,19 @@
 import type { Loader } from 'cosmiconfig';
 import { loadConfigFromFile } from '../../helpers/load-config-from-file.js';
-import { type ConfigBundler } from '../../types.js';
+import { createConfigBundler } from './create-config-bundler.js';
 import { EsmCompileError } from './esm-compile-error.js';
 
 export type EsmLoaderOptions = {
-  configBundler: ConfigBundler;
+  externals: string[];
 };
 
 export function esmLoader(options?: EsmLoaderOptions): Loader {
   return async (path: string) => {
     try {
-      const { config } = await loadConfigFromFile(path, options?.configBundler);
+      const { config } = await loadConfigFromFile(
+        path,
+        createConfigBundler(options?.externals || [])
+      );
       // `default` is used when exporting using export default, some modules
       // may still use `module.exports` or if in TS `export = `
       return config;
