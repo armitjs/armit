@@ -1,5 +1,13 @@
 # @armit/cli
 
+## 0.0.23
+
+### Patch Changes
+
+- Updated dependencies [[`9b71561`](https://github.com/armitjs/armit/commit/9b71561b41e2e139c55e76dcd9f051a43008dfe7)]:
+  - @armit/package@0.0.21
+  - @armit/commander@0.0.22
+
 ## 0.0.22
 
 ### Patch Changes
