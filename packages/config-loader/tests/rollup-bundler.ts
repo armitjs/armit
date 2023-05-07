@@ -1,9 +1,9 @@
+import { builtinModules, isBuiltin } from 'node:module';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 import { type ConfigBundler } from '../src/types.js';
-import { builtinModules, isBuiltin } from 'node:module';
 
 const nodeBabelPreset = {
   presets: [
