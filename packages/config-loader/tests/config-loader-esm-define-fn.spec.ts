@@ -26,17 +26,13 @@ describe('ConfigLoader DefineConfig fn', () => {
     });
 
     it('should correct load `defineConfig` with funtion input', async () => {
-      const loadedCfg = await loadConfig<
-        () => {
-          name: string;
-        }
-      >(
+      const loadedCfg = await loadConfig<{ root: string }>(
         path.resolve(fixturesPath, 'valid-define-config-fn.config.ts'),
         loaderOptions
       );
-      expect(typeof loadedCfg?.config).toStrictEqual('function');
-      expect(typeof loadedCfg?.config().name).toStrictEqual('string');
-      expect(loadedCfg?.config().name).toBe('tian');
+      expect(typeof loadedCfg?.config).toStrictEqual('object');
+      expect(typeof loadedCfg?.config.root).toStrictEqual('string');
+      expect(loadedCfg?.config.root).toBe('tian');
     });
   });
 });

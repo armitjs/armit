@@ -1,6 +1,6 @@
 // it is `esm` module causeof package.json `type:module`
-import { defineConfig } from '../../../src/define-config/define-config.js';
+import { defineConfig } from 'vite';
 
-export default defineConfig<{ name: string }>(() => ({
-  name: 'tian',
-}));
+export default defineConfig({
+  root: 'tian',
+});

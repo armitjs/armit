@@ -3,6 +3,7 @@ import pluginCommonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 import { type ConfigBundler } from '../src/types.js';
+import { builtinModules, isBuiltin } from 'node:module';
 
 const nodeBabelPreset = {
   presets: [
@@ -37,7 +38,21 @@ export const rollupBundler: ConfigBundler = {
   async bundle(fileName: string): Promise<{ code: string }> {
     const bundle = await rollup({
       input: fileName,
-      external: () => false,
+      external: (moduleId) => {
+        const externals = ['vite'];
+        if (!externals.length) {
+          return false;
+        }
+        const isExternal = externals.find((externalModule: string) => {
+          // moduleId: `@dimjs/utils/esm/class-names`
+          return moduleId.startsWith(externalModule);
+        });
+        return (
+          !!isExternal ||
+          builtinModules.includes(moduleId) ||
+          isBuiltin(moduleId)
+        );
+      },
       cache: false,
       plugins: [
         nodeResolve({

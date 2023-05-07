@@ -37,7 +37,8 @@ import { babel } from "@rollup/plugin-babel";
 import pluginCommonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { rollup } from "rollup";
-import { type ConfigBundler } from "../../types.js";
+import { type ConfigBundler } from "../src/types.js";
+import { builtinModules, isBuiltin } from "node:module";
 
 const nodeBabelPreset = {
   presets: [
@@ -52,6 +53,8 @@ const nodeBabelPreset = {
     [
       require.resolve("@babel/preset-typescript"),
       {
+        // https://babeljs.io/docs/en/babel-preset-typescript
+        // https://github.com/babel/babel/blob/main/packages/babel-parser/src/plugins/typescript/index.js#L3133
         isTSX: false,
         allExtensions: false,
       },
@@ -70,7 +73,22 @@ export const rollupBundler: ConfigBundler = {
   async bundle(fileName: string): Promise<{ code: string }> {
     const bundle = await rollup({
       input: fileName,
-      external: () => false,
+      external: (moduleId) => {
+        // `vite` is demo for tests purpose.
+        const externals = ["vite"];
+        if (!externals.length) {
+          return false;
+        }
+        const isExternal = externals.find((externalModule: string) => {
+          // moduleId: `@dimjs/utils/esm/class-names`
+          return moduleId.startsWith(externalModule);
+        });
+        return (
+          !!isExternal ||
+          builtinModules.includes(moduleId) ||
+          isBuiltin(moduleId)
+        );
+      },
       cache: false,
       plugins: [
         nodeResolve({
