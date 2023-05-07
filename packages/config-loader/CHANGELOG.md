@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.23
+
+### Patch Changes
+
+- [`2e4556f`](https://github.com/armitjs/armit/commit/2e4556f8f193eca061067dfa1dfdfc906a3a690a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Improve config loader make config bundler as builtin
+
 ## 0.0.22
 
 ### Patch Changes
