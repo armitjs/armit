@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.24
+
+### Patch Changes
+
+- [`cb15a17`](https://github.com/armitjs/armit/commit/cb15a17602f435fdba138e3cdcb2d1dfb463ef6e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Improve rollup treeshake configuration
+
 ## 0.0.23
 
 ### Patch Changes

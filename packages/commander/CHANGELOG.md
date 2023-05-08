@@ -1,5 +1,15 @@
 # @armit/commander
 
+## 0.0.23
+
+### Patch Changes
+
+- [`a56325f`](https://github.com/armitjs/armit/commit/a56325f9b20bb1c67de4b357e53ca504516a0d74) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update commander terminal format options
+
+- Updated dependencies [[`f4937cb`](https://github.com/armitjs/armit/commit/f4937cb762c0716031c6b68e3b4223629be4594b)]:
+  - @armit/logger-node@0.0.21
+  - @armit/package@0.0.22
+
 ## 0.0.22
 
 ### Patch Changes
