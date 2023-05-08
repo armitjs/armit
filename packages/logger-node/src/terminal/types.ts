@@ -68,6 +68,10 @@ export interface TerminalConstructorData<L extends string> {
    */
   contextColor?: Color[];
   /**
+   * @default true
+   */
+  showContext?: boolean;
+  /**
    * Whether or not to show a cool arrow before a log's message.
    *
    * `>> baz`

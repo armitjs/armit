@@ -1,24 +1,41 @@
 import type { FormatStrategy } from '@armit/logger';
 import { LogLevel } from '@armit/logger';
-import { TerminalLog, advancedLevels } from '../terminal/terminal-log.js';
+import {
+  TerminalLog,
+  advancedLevels,
+  type TerminalData,
+} from '../terminal/terminal-log.js';
 
 export class TerminalFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>
 {
-  private terminal = new TerminalLog({
-    levels: advancedLevels,
-    showLevelName: true,
-    noColor: false,
-  });
+  private terminal: TerminalLog<
+    'error' | 'trace' | 'debug' | 'fatal' | 'info' | 'warn'
+  >;
 
-  constructor(options?: { noColor?: boolean }) {
-    if (options?.noColor) {
-      this.terminal = new TerminalLog({
-        levels: advancedLevels,
-        showLevelName: true,
-        noColor: true,
-      });
-    }
+  constructor(
+    options?: Partial<
+      Pick<
+        TerminalData,
+        | 'noColor'
+        | 'showLevelName'
+        | 'use24HourClock'
+        | 'showTimestamp'
+        | 'showRelativeTimestamp'
+        | 'showTimestampRelativeToLastLog'
+        | 'showContext'
+      >
+    >
+  ) {
+    this.terminal = new TerminalLog({
+      levels: advancedLevels,
+      showLevelName: options?.showLevelName,
+      noColor: options?.noColor,
+      showTimestamp: options?.showTimestamp,
+      showRelativeTimestamp: options?.showRelativeTimestamp,
+      showTimestampRelativeToLastLog: options?.showTimestampRelativeToLastLog,
+      showContext: options?.showContext,
+    });
   }
 
   print(

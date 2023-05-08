@@ -7,6 +7,18 @@ import type {
   TerminalData,
 } from './types.js';
 
+function assignDefined(target, ...sources) {
+  for (const source of sources) {
+    for (const key of Object.keys(source)) {
+      const val = source[key];
+      if (val !== undefined) {
+        target[key] = val;
+      }
+    }
+  }
+  return target;
+}
+
 /**
  * Terminal output formatting with ANSI colors
  * @param colors The colors for the console output
@@ -244,6 +256,7 @@ export class TerminalLog<L extends string> {
       showTimestampRelativeToLastLog,
       use24HourClock,
       contextColor,
+      showContext,
       noColor,
     } = this.data;
 
@@ -255,7 +268,7 @@ export class TerminalLog<L extends string> {
 
     const levelContext: string[] = [];
     // Should add context if we have.
-    if (context) {
+    if (showContext && context) {
       const ctxColor = getColorApplier('COLOR', contextColor, noColor);
       levelContext.push(' ' + ctxColor(context.toUpperCase()) + ' ');
     }
@@ -274,7 +287,7 @@ export class TerminalLog<L extends string> {
     }
 
     if (levelContext.length) {
-      output += '[' + levelContext.join(':') + ']\t';
+      output += '[' + levelContext.join(':') + '] ';
     }
 
     // Should look like: [ 12d/5m/2011y | 13:43:10.23 ] or [ 5m/12d/2011y | 1:43:10.23 PM ]
@@ -323,7 +336,7 @@ export class TerminalLog<L extends string> {
       (showDate || showTimestamp) &&
       (showRelativeTimestamp || showTimestampRelativeToLastLog)
     ) {
-      output += '\t';
+      output += ' ';
     }
 
     // Should look like: [ 5y 1m 15h 51min 7s 300ms | +31min +5s +903ms ]
@@ -349,12 +362,12 @@ export class TerminalLog<L extends string> {
 
     // Should look like: >>
     if (showArrow) {
-      output += ` ${terminalColor(['bold'])('>>')}\t`;
+      output += ` ${terminalColor(['bold'])('>>')} `;
     }
 
     // Should add trace if we have error?
     output +=
-      `\t${message}` +
+      ` ${message}` +
       (level.isError && trace
         ? `\n${terminalColor(['red'])(ensureString(trace))}\n`
         : '\n');
@@ -380,6 +393,7 @@ export class TerminalLog<L extends string> {
       showTimestampRelativeToLastLog: true,
       use24HourClock: false,
       noColor: false,
+      showContext: true,
       contextColor: ['bold', 'magenta'],
     };
 
@@ -388,7 +402,7 @@ export class TerminalLog<L extends string> {
 
     this.startTime = new Date();
     this.timeInLastLog = this.startTime;
-    this.data = Object.assign({}, defaultData, data);
+    this.data = assignDefined({}, defaultData, data);
 
     for (const level of data.levels) {
       if (registeredLevels.some((value) => value === level.name)) {
