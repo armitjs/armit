@@ -72,6 +72,11 @@ export const createConfigBundler: (externals: string[]) => ConfigBundler = (
             isBuiltin(moduleId)
           );
         },
+        treeshake: {
+          annotations: true,
+          moduleSideEffects: false,
+          unknownGlobalSideEffects: false,
+        },
         cache: false,
         plugins: [
           nodeResolvePlugin,
