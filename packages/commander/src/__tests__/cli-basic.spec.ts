@@ -79,11 +79,14 @@ describe('cli basic infrusture', () => {
   });
 
   it('The output should have correct global options', async () => {
-    const { stdout } = await runCliMock('test', '-l=Debug');
+    let { stdout } = await runCliMock('test', '-l=Debug');
     expect(stdout).toStrictEqual(
       expect.stringContaining('this is debug message for test command')
     );
-    expect(stdout).toStrictEqual(expect.stringContaining('DEBUG'));
+    ({ stdout } = await runCliMock('test', '-l=Info'));
+    expect(stdout).not.toStrictEqual(
+      expect.stringContaining('this is debug message for test command')
+    );
   });
 
   it('The output should have correct handle wrong param input', async () => {

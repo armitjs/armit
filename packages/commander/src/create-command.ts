@@ -50,7 +50,14 @@ export abstract class AbstractHandler<T extends CommandArgv>
   protected logger = new Logger({
     logLevel: LogLevel.Warn as LogLevel,
     adapter: new StdoutAdapter({
-      formatStrategy: new TerminalFormatStrategy(),
+      formatStrategy: new TerminalFormatStrategy({
+        showLevelName: true,
+        showTimestamp: true,
+        showRelativeTimestamp: false,
+        showContext: false,
+        showTimestampRelativeToLastLog: false,
+        use24HourClock: true,
+      }),
     }),
   });
 
