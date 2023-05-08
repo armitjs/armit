@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.21
+
+### Patch Changes
+
+- [`f4937cb`](https://github.com/armitjs/armit/commit/f4937cb762c0716031c6b68e3b4223629be4594b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Extends API of terminal format strategy
+
 ## 0.0.20
 
 ### Patch Changes
