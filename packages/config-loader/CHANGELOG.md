@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.25
+
+### Patch Changes
+
+- [`14c437b`](https://github.com/armitjs/armit/commit/14c437b26720530b729e31e0bf54bd9eeee681af) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Make mergeOption do not include undefined default
+
 ## 0.0.24
 
 ### Patch Changes
