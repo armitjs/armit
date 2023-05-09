@@ -6,6 +6,10 @@ import {
   simpleDeepClone,
 } from './simple-deep-clone.js';
 
+const needMerge = (source, mergeUndefined?: boolean) => {
+  return !(typeof source === 'undefined' && !mergeUndefined);
+};
+
 /**
  * @description
  * Performs a deep merge of two Plugin options merge objects. Unlike `Object.assign()` the `target` object is
@@ -32,6 +36,7 @@ import {
 export function mergeOptions<T>(
   target: T,
   source: DeepPartial<T>,
+  mergeUndefined = false,
   depth = 0
 ): T {
   if (!source) {
@@ -49,12 +54,21 @@ export function mergeOptions<T>(
           Object.assign(target, { [key]: {} });
         }
         if (!isClassInstance(source[key])) {
-          mergeOptions((target as any)[key], (source as any)[key], depth + 1);
+          mergeOptions(
+            (target as any)[key],
+            (source as any)[key],
+            mergeUndefined,
+            depth + 1
+          );
         } else {
-          (target as any)[key] = source[key];
+          if (needMerge(source[key], mergeUndefined)) {
+            (target as any)[key] = source[key];
+          }
         }
       } else {
-        Object.assign(target, { [key]: source[key] });
+        if (needMerge(source[key], mergeUndefined)) {
+          Object.assign(target, { [key]: source[key] });
+        }
       }
     }
   }

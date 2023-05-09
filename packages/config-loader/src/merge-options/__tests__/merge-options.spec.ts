@@ -2,7 +2,7 @@ import { mergeOptions } from '../merge-options.js';
 
 describe('mergeOptions()', () => {
   it('creates a new object reference', () => {
-    const nestedObject = { b: 2 };
+    const nestedObject = { b: 2, y: 2 };
     const input: any = {
       a: nestedObject,
       x: 1,
@@ -10,11 +10,46 @@ describe('mergeOptions()', () => {
 
     const result = mergeOptions(input, {
       c: 5,
+      a: {
+        y: undefined,
+      },
       x: undefined,
       d: undefined,
     } as any);
     expect(result).toEqual({
       a: nestedObject,
+      c: 5,
+      x: 1,
+    });
+
+    expect(input).not.toBe(result);
+    expect(input.a).not.toBe(result.a);
+  });
+
+  it('creates a new object reference with undefined', () => {
+    const nestedObject = { b: 2, c: 1 };
+    const input: any = {
+      a: nestedObject,
+      x: 1,
+    };
+
+    const result = mergeOptions(
+      input,
+      {
+        c: 5,
+        a: {
+          b: undefined,
+        },
+        x: undefined,
+        d: undefined,
+      } as any,
+      true
+    );
+    expect(result).toEqual({
+      a: {
+        c: 1,
+        b: undefined,
+      },
       c: 5,
       x: undefined,
       d: undefined,
