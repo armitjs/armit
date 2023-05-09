@@ -50,7 +50,8 @@ export function mergeOptions<T>(
   if (isObject(target) && isObject(source)) {
     for (const key in source) {
       if (isObject(source[key])) {
-        if (!(target as any)[key]) {
+        // `target[key]=true` we also need to assign {} as key
+        if (!isObject((target as any)[key])) {
           Object.assign(target, { [key]: {} });
         }
         if (!isClassInstance(source[key])) {

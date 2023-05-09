@@ -26,6 +26,63 @@ describe('mergeOptions()', () => {
     expect(input.a).not.toBe(result.a);
   });
 
+  it('Should correct merge differenct type fields', () => {
+    const target = {
+      dts: true,
+      input: { index: 'src/index.ts' },
+      logSilent: false,
+      modularImports: [],
+      plugin: {
+        extraPlugins: [],
+        pluginConfigs: {
+          multiInputOptions: { fastGlobOptions: { ignore: [] } },
+          replaceOptions: { 'process.env.NODE_ENV': '"production"' },
+          aliasOptions: { entries: [] },
+          nodeResolveOptions: {
+            extensions: ['.js', '.ts', '.tsx', '.json', '.vue'],
+          },
+          jsonOptions: {},
+          commonjsOptions: {},
+          babelOptions: { usePreset: 'node' },
+          terserOptions: true,
+        },
+      },
+    };
+    const source = {
+      dts: {
+        entryPointOptions: {
+          libraries: { importedLibraries: ['@dimjs/utils'] },
+        },
+      },
+      input: 'src/index.ts',
+      plugin: {
+        extraPlugins: [],
+        pluginConfigs: {
+          terserOptions: {
+            came: 1,
+          },
+        },
+      },
+      output: { format: 'esm' },
+    };
+
+    const result = mergeOptions(target, source as any);
+    expect(result).toMatchObject({
+      dts: {
+        entryPointOptions: {
+          libraries: { importedLibraries: ['@dimjs/utils'] },
+        },
+      },
+      plugin: {
+        pluginConfigs: {
+          terserOptions: {
+            came: 1,
+          },
+        },
+      },
+    });
+  });
+
   it('creates a new object reference with undefined', () => {
     const nestedObject = { b: 2, c: 1 };
     const input: any = {
