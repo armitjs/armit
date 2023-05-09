@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.14
+
+### Patch Changes
+
+- [`f7e2897`](https://github.com/armitjs/armit/commit/f7e2897509fb66b29fb3b52614dbe685d76daf9e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add missed tailwindcss depdencies
+
 ## 0.0.13
 
 ### Patch Changes
