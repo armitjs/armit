@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.26
+
+### Patch Changes
+
+- [`2309811`](https://github.com/armitjs/armit/commit/23098114dab8b4513a94abdc458a7dc25b00ec7b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix mergeOptions merge issue while `target[key]=true`
+
 ## 0.0.25
 
 ### Patch Changes
