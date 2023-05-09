@@ -94,7 +94,8 @@
     "eslint-plugin-tailwindcss": "^3.11.0",
     "eslint-plugin-testing-library": "^5.10.3",
     "eslint-plugin-vitest": "^0.1.5",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "20.1.0",
@@ -112,7 +113,6 @@
     "eslint": "^8.39.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   },
   "peerDependenciesMeta": {
@@ -120,9 +120,6 @@
       "optional": true
     },
     "react-dom": {
-      "optional": true
-    },
-    "tailwindcss": {
       "optional": true
     },
     "typescript": {
