@@ -2,7 +2,7 @@ import { builtinModules, createRequire, isBuiltin } from 'node:module';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginResolve from '@rollup/plugin-node-resolve';
-import { rollup } from 'rollup';
+import { rollup, type Plugin } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
 
 const esmRequire = createRequire(import.meta.url);
@@ -47,9 +47,10 @@ if (classProperties) {
   nodeBabelPreset.plugins.push([classProperties, { loose: true }]);
 }
 
-export const createConfigBundler: (externals: string[]) => ConfigBundler = (
-  externals: string[]
-) => {
+export const createConfigBundler: (
+  externals: string[],
+  plugins?: Plugin[]
+) => ConfigBundler = (externals: string[], plugins: Plugin[] = []) => {
   // node-resolve plugin
   const nodeResolvePlugin = (pluginResolve.default || pluginResolve)({
     extensions: ['.js', '.ts', '.tsx', '.json', '.vue'],
@@ -88,6 +89,7 @@ export const createConfigBundler: (externals: string[]) => ConfigBundler = (
             babelHelpers: 'bundled',
             extensions: ['.js', '.ts', '.tsx', '.json', '.vue'],
           }),
+          ...plugins,
         ],
       });
       const { output } = await bundle.generate({
