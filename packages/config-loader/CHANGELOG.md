@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.27
+
+### Patch Changes
+
+- [`a7d3acd`](https://github.com/armitjs/armit/commit/a7d3acd3db48e065d18fb310e528ace0add8c0dc) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Improve config-loader allow `plugins`
+
 ## 0.0.26
 
 ### Patch Changes
