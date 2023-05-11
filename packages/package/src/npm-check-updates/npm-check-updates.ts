@@ -2,6 +2,7 @@ import { type Index } from 'npm-check-updates/build/src/types/IndexType.js';
 import { type PackageFile } from 'npm-check-updates/build/src/types/PackageFile.js';
 import { type VersionSpec } from 'npm-check-updates/build/src/types/VersionSpec.js';
 import { run } from 'npm-check-updates';
+import { projectHasYarn } from '../npm-yarn.js';
 
 export interface UpdatePackageOptions {
   /**
@@ -51,7 +52,7 @@ export const npmCheckUpdates = (
   return run({
     // Any command-line option can be specified here.
     // These are set by default:
-    dep: 'prod,dev,bundle,peer,optional',
+    dep: 'prod,dev,bundle', // ,peer,optional',
     cwd: options.cwd,
     filter: options.filter,
     timeout: options.timeout || 30000,
@@ -60,7 +61,7 @@ export const npmCheckUpdates = (
     reject: options.reject,
     rejectVersion: options.rejectVersion,
     jsonUpgraded: true,
-    packageManager: 'npm',
+    packageManager: projectHasYarn() ? 'yarn' : 'npm',
     silent: true,
     upgrade: true,
   });
