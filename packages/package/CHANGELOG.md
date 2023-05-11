@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.23
+
+### Patch Changes
+
+- [`4d2d7a8`](https://github.com/armitjs/armit/commit/4d2d7a8ce93e1bb3167c9e7676ac1b0a108af67f) Thanks [@tianyingchun](https://github.com/tianyingchun)! - expose npm-deps-verify `module`
+
 ## 0.0.22
 
 ### Patch Changes
