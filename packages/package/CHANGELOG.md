@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.25
+
+### Patch Changes
+
+- [`65835f7`](https://github.com/armitjs/armit/commit/65835f774eeb4f38b4fea1966dc844a2d9a774a4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor expose some typings of modules
+
 ## 0.0.24
 
 ### Patch Changes
