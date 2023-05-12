@@ -2,10 +2,10 @@ import { exec } from 'child_process';
 import { join } from 'path';
 import { promisify } from 'util';
 import { readJsonFromFile } from '@armit/file-utility';
-import { green, red } from 'chalk';
 import { lt, prerelease, rcompare, satisfies } from 'semver';
 import { type PackageJson } from 'type-fest';
 import validatePackageName from 'validate-npm-package-name';
+import { chalk } from '../helpers/chalk-color.js';
 import { logger } from '../logger.js';
 
 import {
@@ -17,6 +17,9 @@ import {
 export const execAsync = promisify(exec);
 
 export const LOGGER_VERIFY_DEPS_CONTEXT = 'verify-deps';
+
+const red = chalk(['red']);
+const green = chalk(['green']);
 
 /**
  * Validates package name.
