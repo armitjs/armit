@@ -1,5 +1,12 @@
 # @armit/commander
 
+## 0.0.25
+
+### Patch Changes
+
+- Updated dependencies [[`dc5baad`](https://github.com/armitjs/armit/commit/dc5baad89b3757119e092ad5a0ebac94be0ee3fa)]:
+  - @armit/package@0.0.24
+
 ## 0.0.24
 
 ### Patch Changes

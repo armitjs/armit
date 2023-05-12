@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.24
+
+### Patch Changes
+
+- [`dc5baad`](https://github.com/armitjs/armit/commit/dc5baad89b3757119e092ad5a0ebac94be0ee3fa) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix `chalk` import issue
+
 ## 0.0.23
 
 ### Patch Changes
