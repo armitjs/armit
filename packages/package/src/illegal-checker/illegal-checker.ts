@@ -140,17 +140,17 @@ export const illegalPackageChecker = async (
     packageFile?: string;
     cwd?: string;
     throwError?: boolean;
-    showAllinstalledGraph?: boolean;
+    showAllInstalledGraph?: boolean;
   } = {
     modules: [],
     packageFile: 'package.json',
     cwd: process.cwd(),
     throwError: false,
-    showAllinstalledGraph: false,
+    showAllInstalledGraph: false,
   }
 ) => {
   // check illegal Installed VersionOfModules
-  const { modules, packageFile, cwd, throwError, showAllinstalledGraph } =
+  const { modules, packageFile, cwd, throwError, showAllInstalledGraph } =
     options;
   const spinner = ora(`Checking illegal installed modules...`).start();
 
@@ -167,7 +167,7 @@ export const illegalPackageChecker = async (
 
   printUnexpectedModules(illegalModules, 'error');
 
-  if (showAllinstalledGraph) {
+  if (showAllInstalledGraph) {
     logger.info('Extracting local installed module graph...');
     printUnexpectedModules(allInstalledModules, 'warn');
   }
