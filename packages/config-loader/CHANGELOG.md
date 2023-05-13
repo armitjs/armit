@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.28
+
+### Patch Changes
+
+- [`0fcaaab`](https://github.com/armitjs/armit/commit/0fcaaab984d8b237844cb1919ca9382a90115786) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Fix ConfigEnvBase typings constraints issue
+
 ## 0.0.27
 
 ### Patch Changes
