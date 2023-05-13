@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.26
+
+### Patch Changes
+
+- [`45516b8`](https://github.com/armitjs/armit/commit/45516b8b11189075f793b5eb262b522d1069b5c4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - rename typing name showAllInstalledGraph
+
 ## 0.0.25
 
 ### Patch Changes
