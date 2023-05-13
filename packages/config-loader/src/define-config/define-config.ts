@@ -1,7 +1,7 @@
 export type MaybePromise<T> = T | Promise<T>;
 
 export type ConfigEnvBase = {
-  command: 'build' | 'serve';
+  //
 };
 
 export type UserConfigFn<UserConfig, ConfigEnv extends ConfigEnvBase> = (
