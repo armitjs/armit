@@ -393,7 +393,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     rimraf: 5.0.0
-    tailwindcss: 3.3.2
+    tailwindcss: ^3.3.2
     typescript: 5.0.4
   peerDependencies:
     eslint: ^8.39.0
@@ -20410,7 +20410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.3.2":
+"tailwindcss@npm:3.3.2, tailwindcss@npm:^3.3.2":
   version: 3.3.2
   resolution: "tailwindcss@npm:3.3.2"
   dependencies:
