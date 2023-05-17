@@ -33,7 +33,7 @@ export function tsLoader(options?: RegisterOptions): Loader {
           error.code === 'ERR_MODULE_NOT_FOUND'
         ) {
           throw new Error(
-            "@armit/cosmiconfig: 'ts-node' is required for loading TypeScript cosmiconfig configuration files." +
+            "@armit/config-loader: 'ts-node' is required for loading TypeScript cosmiconfig configuration files." +
               `Make sure it is installed\nError: ${error.message}`
           );
         }

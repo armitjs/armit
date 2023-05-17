@@ -1,7 +1,9 @@
 import { builtinModules, createRequire, isBuiltin } from 'node:module';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
+import pluginJson from '@rollup/plugin-json';
 import pluginResolve from '@rollup/plugin-node-resolve';
+
 import { rollup, type Plugin } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
 
@@ -59,6 +61,9 @@ export const createConfigBundler: (
   // commonjs plugin
   const commonjsPlugin = (pluginCommonjs.default || pluginCommonjs)({});
 
+  // Json plugin
+  const jsonPlugin = (pluginJson.default || pluginJson)({});
+
   return {
     async bundle(fileName: string): Promise<{ code: string }> {
       const bundle = await rollup({
@@ -82,6 +87,7 @@ export const createConfigBundler: (
         plugins: [
           nodeResolvePlugin,
           commonjsPlugin,
+          jsonPlugin,
           babel({
             ...nodeBabelPreset,
             babelrc: false,

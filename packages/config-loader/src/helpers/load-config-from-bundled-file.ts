@@ -1,4 +1,4 @@
-import { unlink } from 'fs';
+import { unlink } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 

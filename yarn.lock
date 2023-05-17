@@ -272,6 +272,7 @@ __metadata:
     "@babel/runtime": ^7.21.5
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.1.0
+    "@rollup/plugin-json": ^6.0.0
     "@rollup/plugin-node-resolve": ^15.0.2
     "@types/babel__core": ^7.20.0
     "@types/node": 20.1.0
@@ -297,6 +298,7 @@ __metadata:
     "@babel/preset-typescript": ">=7.21.5"
     "@rollup/plugin-babel": ">=6.0.3"
     "@rollup/plugin-commonjs": ">=24.1.0"
+    "@rollup/plugin-json": ">=6.0.0"
     "@rollup/plugin-node-resolve": ">=15.0.2"
     ts-node: ">=10.9.1"
   peerDependenciesMeta:
@@ -311,6 +313,8 @@ __metadata:
     "@rollup/plugin-babel":
       optional: true
     "@rollup/plugin-commonjs":
+      optional: true
+    "@rollup/plugin-json":
       optional: true
     "@rollup/plugin-node-resolve":
       optional: true
@@ -4800,6 +4804,20 @@ __metadata:
     rollup:
       optional: true
   checksum: 42faafc9bc8e04d75c86bb50d693ebb9c5eee19bf9ab3c09780b872547d12ff5ea85cfec7da75f5176d0aa4b5233101f667f44b85b331450a7bb14c95180852e
+  languageName: node
+  linkType: hard
+
+"@rollup/plugin-json@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@rollup/plugin-json@npm:6.0.0"
+  dependencies:
+    "@rollup/pluginutils": ^5.0.1
+  peerDependencies:
+    rollup: ^1.20.0||^2.0.0||^3.0.0
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 77cfc941edaf77a5307977704ffaba706d83bea66f265b2b68f14be2a0af6d08b0fb1b04fdd773146c84cc70938ff64b00ae946808fd6ac057058af824d78128
   languageName: node
   linkType: hard
 

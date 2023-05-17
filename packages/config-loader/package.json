@@ -63,6 +63,7 @@
     "@babel/runtime": "^7.21.5",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@types/babel__core": "^7.20.0",
     "@types/node": "20.1.0",
@@ -88,6 +89,7 @@
     "@babel/preset-typescript": ">=7.21.5",
     "@rollup/plugin-babel": ">=6.0.3",
     "@rollup/plugin-commonjs": ">=24.1.0",
+    "@rollup/plugin-json": ">=6.0.0",
     "@rollup/plugin-node-resolve": ">=15.0.2",
     "ts-node": ">=10.9.1"
   },
@@ -108,6 +110,9 @@
       "optional": true
     },
     "@rollup/plugin-commonjs": {
+      "optional": true
+    },
+    "@rollup/plugin-json": {
       "optional": true
     },
     "@rollup/plugin-node-resolve": {
