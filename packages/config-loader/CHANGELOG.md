@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.29
+
+### Patch Changes
+
+- [`4efa8b7`](https://github.com/armitjs/armit/commit/4efa8b74224769fc74dc1105d29e6b695fa30cc9) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add rollup/json plugin to config-loader
+
 ## 0.0.28
 
 ### Patch Changes
