@@ -1,5 +1,15 @@
 # @armit/generate-template-files
 
+## 0.0.23
+
+### Patch Changes
+
+- [`7f47d37`](https://github.com/armitjs/armit/commit/7f47d37743c8f010872a91bf9de90ec4c79a2263) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`7f47d37`](https://github.com/armitjs/armit/commit/7f47d37743c8f010872a91bf9de90ec4c79a2263)]:
+  - @armit/file-recursive-copy@0.0.22
+  - @armit/logger-node@0.0.22
+
 ## 0.0.22
 
 ### Patch Changes
