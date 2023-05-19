@@ -1,5 +1,11 @@
 # @armit/terminal
 
+## 0.0.18
+
+### Patch Changes
+
+- [`7f47d37`](https://github.com/armitjs/armit/commit/7f47d37743c8f010872a91bf9de90ec4c79a2263) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.0.17
 
 ### Patch Changes
