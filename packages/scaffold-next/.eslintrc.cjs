@@ -21,6 +21,8 @@ module.exports = {
     '@armit/eslint-config-bases/tailwind',
     // Apply prettier and disable incompatible rules
     '@armit/eslint-config-bases/prettier',
+    // https://nextjs.org/docs/pages/building-your-application/configuring/eslint#migrating-existing-config
+    'next',
   ],
   rules: {
     // https://github.com/vercel/next.js/discussions/16832

@@ -1,5 +1,5 @@
 {
-  "dep": "prod,dev,bundle,peer,optional",
+  "dep": "prod,dev,bundle,optional",
   "reject": [
     "@armit/cli",
     "@armit/git",
