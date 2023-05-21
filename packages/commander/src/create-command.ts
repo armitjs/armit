@@ -23,7 +23,7 @@ export type CommandArgv<
   packageJson: PackageJson;
   /**
    * The actived logging level
-   * @default 'Warn'
+   * @default 'Info'
    */
   logLevel: keyof typeof LogLevel;
   /**
@@ -56,7 +56,7 @@ export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler
 {
   protected logger = new Logger({
-    logLevel: LogLevel.Warn as LogLevel,
+    logLevel: LogLevel.Info as LogLevel,
     adapter: new StdoutAdapter({
       formatStrategy: new TerminalFormatStrategy({
         showLevelName: true,
