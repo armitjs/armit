@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.30
+
+### Patch Changes
+
+- [`80e49e4`](https://github.com/armitjs/armit/commit/80e49e4784eff83fbcfb684a3c3df53daa9fba91) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update loglevel `Info` as default
+
 ## 0.0.29
 
 ### Patch Changes
