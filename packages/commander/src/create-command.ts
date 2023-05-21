@@ -102,7 +102,11 @@ export abstract class AbstractHandler<T extends CommandArgv>
   }
 
   /**
-   * The `CommanderHandler` class should inherit and implment this function
+   * The `CommanderHandler` class should inherit and implment this function,
+   * @example
+   * ```ts
+   * console.log(this.args.logLevel)
+   * ```
    * @override
    */
   initialize(): void {
