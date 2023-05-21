@@ -10,6 +10,9 @@ class CmdTestHandle extends AbstractHandler<TestCmdArgs> {
     console.log('this is test command handle');
     this.logger.debug('this is debug message for test command');
   }
+  initialize(): void {
+    //
+  }
 }
 
 export const cmdTest = createCommand(

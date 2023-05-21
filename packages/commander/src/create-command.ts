@@ -33,9 +33,17 @@ export type CommandArgv<
   noColor: boolean;
 } & T;
 
-interface OnCommandHandler<T extends CommandArgv> {
+interface OnCommandHandler {
+  /**
+   * The `CommanderHandler` class should inherit and implment this function
+   * @override
+   */
   handle(): void | Promise<void>;
-  initialize(args: Arguments<T>): void;
+  /**
+   * The `CommanderHandler` class should inherit and implment this function
+   * @override
+   */
+  initialize(): void;
   get name(): string;
   get cliPackageJson(): PackageJson;
 }
@@ -45,7 +53,7 @@ interface CommandHandlerCtor<T extends CommandArgv> {
 }
 
 export abstract class AbstractHandler<T extends CommandArgv>
-  implements OnCommandHandler<T>
+  implements OnCommandHandler
 {
   protected logger = new Logger({
     logLevel: LogLevel.Warn as LogLevel,
@@ -68,10 +76,11 @@ export abstract class AbstractHandler<T extends CommandArgv>
   constructor(protected args: Arguments<T>) {
     this.pluginName = args.name;
     this.packageJson = args.packageJson;
-    this.initialize(args);
+    this.updateLogger(args);
+    this.initialize();
   }
 
-  initialize(args: Arguments<T>): void {
+  updateLogger(args: Arguments<T>): void {
     this.logger = new Logger({
       logLevel: LogLevel[args.logLevel] as LogLevel,
       context: args.name,
@@ -92,6 +101,17 @@ export abstract class AbstractHandler<T extends CommandArgv>
     return this.pluginName;
   }
 
+  /**
+   * The `CommanderHandler` class should inherit and implment this function
+   * @override
+   */
+  initialize(): void {
+    //
+  }
+  /**
+   * The `CommanderHandler` class should inherit and implment this function
+   * @override
+   */
   handle(): void | Promise<void> {
     throw new Error('Method not implemented.');
   }

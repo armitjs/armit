@@ -15,6 +15,9 @@ class CmdSuperTestHandle extends AbstractHandler<TestSuperCmdArgs> {
     console.log('this is nested test command handle');
     this.logger.debug('this is debug message for nested test command');
   }
+  initialize(): void {
+    //
+  }
 }
 
 export const cmdNestTest = createCommand(
