@@ -19,8 +19,9 @@ export class StdoutAdapter<MessageType> implements LogAdapter<MessageType> {
     if (config?.formatStrategy) {
       this.formatStrategy = config?.formatStrategy;
     }
-    if (config?.logLevel) {
-      this.level = config?.logLevel || this.level;
+    // handle case `Error`===`0`
+    if (typeof config?.logLevel !== 'undefined') {
+      this.level = config?.logLevel;
     }
     return this as LogAdapter<MessageType>;
   }
