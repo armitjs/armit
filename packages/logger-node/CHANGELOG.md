@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.23
+
+### Patch Changes
+
+- [`4f35e58`](https://github.com/armitjs/armit/commit/4f35e58aec4252ad58009a37a8a889f2b0f36c60) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix bug for handle logLevel.Error==0
+
 ## 0.0.22
 
 ### Patch Changes
