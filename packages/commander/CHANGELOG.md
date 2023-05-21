@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.29
+
+### Patch Changes
+
+- [`335a39c`](https://github.com/armitjs/armit/commit/335a39c6bde4c89b104249c5cad1a066815164fa) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add initialize() to children
+
 ## 0.0.28
 
 ### Patch Changes
