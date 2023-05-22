@@ -8,11 +8,7 @@ type ArgvPrimitive = string | number | boolean | PackageJson;
 
 type ArgvConfig = Record<string, ArgvPrimitive | Array<ArgvPrimitive>>;
 
-export type CommandArgv<
-  T extends ArgvConfig = {
-    //
-  }
-> = {
+export type CommandArgv<T extends ArgvConfig = ArgvConfig> = {
   /**
    * The name of runing command
    */
