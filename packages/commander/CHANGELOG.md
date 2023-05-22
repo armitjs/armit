@@ -1,5 +1,18 @@
 # @armit/commander
 
+## 0.0.32
+
+### Patch Changes
+
+- [`191d4c5`](https://github.com/armitjs/armit/commit/191d4c5480f838608b2dac3aee2bfff9235addb2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Fix typings
+
+- [`917e21e`](https://github.com/armitjs/armit/commit/917e21e8948c2926e61d23e77474707aa262e5d1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Bump version
+
+- Updated dependencies [[`917e21e`](https://github.com/armitjs/armit/commit/917e21e8948c2926e61d23e77474707aa262e5d1)]:
+  - @armit/logger-node@0.0.24
+  - @armit/terminal@0.0.19
+  - @armit/package@0.0.29
+
 ## 0.0.31
 
 ### Patch Changes
