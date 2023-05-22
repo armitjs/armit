@@ -287,6 +287,7 @@ __metadata:
     rollup: ^3.22.0
     ts-node: 10.9.1
     tsup: 6.7.0
+    type-fest: ^3.11.0
     typescript: 5.0.4
     vite: 4.3.8
     vite-tsconfig-paths: 4.2.0
@@ -21189,6 +21190,13 @@ __metadata:
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
   checksum: a4ef07ece297c9fba78fc1bd6d85dff4472fe043ede98bd4710d2615d15776902b595abf62bd78339ed6278f021235fb28a96361f8be86ed754f778973a0d278
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "type-fest@npm:3.11.0"
+  checksum: ebd7968301674d8022cd180aa34a685bda5962ad3c98da7280456f97468c1b12984f6a79d4eb4652f10e1f0ab42f7016121fd762068fd6255d4d0ccc069c2566
   languageName: node
   linkType: hard
 
