@@ -6,13 +6,19 @@ import { createConfigBundler } from './create-config-bundler.js';
 export type EsmLoaderOptions = {
   externals: string[];
   plugins?: Plugin[];
+  projectCwd?: string;
 };
 
-export function esmLoader(options?: EsmLoaderOptions): Loader {
+export function esmLoader(
+  options: EsmLoaderOptions = {
+    externals: [],
+    plugins: [],
+  }
+): Loader {
   return async (path: string) => {
     const { config } = await loadConfigFromFile(
       path,
-      createConfigBundler(options?.externals || [], options?.plugins)
+      createConfigBundler(options)
     );
     // `default` is used when exporting using export default, some modules
     // may still use `module.exports` or if in TS `export = `

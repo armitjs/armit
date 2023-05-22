@@ -42,11 +42,11 @@ export const searchConfig = async <T = any>(
     ],
     loaders: {
       // isESM with `type:module`, otherwise `commonjs`
-      '.js': dynamicLoader(options),
+      '.js': dynamicLoader(options, searchFrom),
       // isESM with `type:module`, otherwise `commonjs`
-      '.ts': dynamicLoader(options),
-      '.mts': dynamicLoader(options),
-      '.mjs': dynamicLoader(options),
+      '.ts': dynamicLoader(options, searchFrom),
+      '.mts': dynamicLoader(options, searchFrom),
+      '.mjs': dynamicLoader(options, searchFrom),
     },
   });
   return explorer.search(searchFrom).then((result) => {
@@ -76,11 +76,16 @@ export const loadConfig = async <T = any>(
   });
 };
 
-function dynamicLoader(options?: LoaderOptions): Loader {
+function dynamicLoader(options?: LoaderOptions, searchFrom?: string): Loader {
   return async (path: string, content: string) => {
     const isESM = isEsmMode(path);
     if (isESM) {
-      return esmLoader(options?.esm)(path, content);
+      return esmLoader({
+        externals: [],
+        plugins: [],
+        ...options?.esm,
+        projectCwd: options?.esm?.projectCwd || searchFrom,
+      })(path, content);
     } else {
       return tsLoader(options?.ts)(path, content);
     }

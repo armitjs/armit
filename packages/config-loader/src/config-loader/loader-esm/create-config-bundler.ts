@@ -3,9 +3,9 @@ import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginJson from '@rollup/plugin-json';
 import pluginResolve from '@rollup/plugin-node-resolve';
-
-import { rollup, type Plugin } from 'rollup';
+import { rollup } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
+import { type EsmLoaderOptions } from './esm-loader.js';
 
 const esmRequire = createRequire(import.meta.url);
 
@@ -50,21 +50,22 @@ if (classProperties) {
 }
 
 export const createConfigBundler: (
-  externals: string[],
-  plugins?: Plugin[]
-) => ConfigBundler = (externals: string[], plugins: Plugin[] = []) => {
+  options: EsmLoaderOptions
+) => ConfigBundler = (options) => {
   // node-resolve plugin
+  // FIXME: .mts, .cts, .tsx, .jsx support :https://github.com/rollup/plugins/pull/1498
   const nodeResolvePlugin = (pluginResolve.default || pluginResolve)({
+    rootDir: options.projectCwd,
     extensions: [
       '.js',
       '.ts',
       '.tsx',
+      '.jsx',
       '.mts',
       '.mjs',
       '.cts',
       '.cjs',
       '.json',
-      '.vue',
     ],
   });
 
@@ -79,9 +80,11 @@ export const createConfigBundler: (
       const bundle = await rollup({
         input: fileName,
         external: (moduleId) => {
-          const isExternal = externals.find((externalModule: string) => {
-            return moduleId.startsWith(externalModule);
-          });
+          const isExternal = options.externals.find(
+            (externalModule: string) => {
+              return moduleId.startsWith(externalModule);
+            }
+          );
           return (
             !!isExternal ||
             builtinModules.includes(moduleId) ||
@@ -107,15 +110,15 @@ export const createConfigBundler: (
               '.js',
               '.ts',
               '.tsx',
+              '.jsx',
               '.mts',
               '.mjs',
               '.cts',
               '.cjs',
               '.json',
-              '.vue',
             ],
           }),
-          ...plugins,
+          ...(options.plugins || []),
         ],
       });
       const { output } = await bundle.generate({
