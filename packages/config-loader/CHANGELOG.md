@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.35
+
+### Patch Changes
+
+- [`5f5a042`](https://github.com/armitjs/armit/commit/5f5a042ce3480d18ecd7484ae841292a2fd686d1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor config-loader
+
 ## 0.0.34
 
 ### Patch Changes
