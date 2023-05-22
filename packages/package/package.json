@@ -61,14 +61,14 @@
     "pkg-dir": "7.0.0",
     "pkg-up": "4.0.0",
     "semver": "7.5.1",
-    "type-fest": "3.10.0"
+    "type-fest": "^3.11.0"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
-    "@types/node": "20.2.1",
+    "@types/node": "20.2.3",
     "@vitest/coverage-istanbul": "0.31.1",
     "@vitest/ui": "0.31.1",
-    "eslint": "8.40.0",
+    "eslint": "8.41.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
