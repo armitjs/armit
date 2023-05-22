@@ -55,7 +55,17 @@ export const createConfigBundler: (
 ) => ConfigBundler = (externals: string[], plugins: Plugin[] = []) => {
   // node-resolve plugin
   const nodeResolvePlugin = (pluginResolve.default || pluginResolve)({
-    extensions: ['.js', '.ts', '.tsx', '.json', '.vue'],
+    extensions: [
+      '.js',
+      '.ts',
+      '.tsx',
+      '.mts',
+      '.mjs',
+      '.cts',
+      '.cjs',
+      '.json',
+      '.vue',
+    ],
   });
 
   // commonjs plugin
@@ -93,7 +103,17 @@ export const createConfigBundler: (
             babelrc: false,
             exclude: 'node_modules/**',
             babelHelpers: 'bundled',
-            extensions: ['.js', '.ts', '.tsx', '.json', '.vue'],
+            extensions: [
+              '.js',
+              '.ts',
+              '.tsx',
+              '.mts',
+              '.mjs',
+              '.cts',
+              '.cjs',
+              '.json',
+              '.vue',
+            ],
           }),
           ...plugins,
         ],
