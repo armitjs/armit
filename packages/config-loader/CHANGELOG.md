@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.32
+
+### Patch Changes
+
+- [`89ab399`](https://github.com/armitjs/armit/commit/89ab399cf28b9af0e0d9a93ae3674aa4d3ab737c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - remove type-fest reexport
+
 ## 0.0.31
 
 ### Patch Changes
