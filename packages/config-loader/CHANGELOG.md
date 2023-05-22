@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.34
+
+### Patch Changes
+
+- [`f4e5446`](https://github.com/armitjs/armit/commit/f4e544616b38482a1aa2a7421ddb55da4648cfd5) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add missed `mts, cts, mjs, cjs` extension support
+
 ## 0.0.33
 
 ### Patch Changes
