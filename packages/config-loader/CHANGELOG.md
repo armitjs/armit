@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.31
+
+### Patch Changes
+
+- [`91ae88a`](https://github.com/armitjs/armit/commit/91ae88a18fbb3118d93e4a8437185b90c41a1f71) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Update DeepPartial, DeepRequired using type-fest
+
 ## 0.0.30
 
 ### Patch Changes
