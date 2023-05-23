@@ -1,4 +1,4 @@
-import { getLastCommitHash } from '../commit-hash.js';
+import { getLastCommitHash } from '../get-last-commit-hash.js';
 
 describe('getLastCommitHash', () => {
   it('should correct extract last commit hash', async () => {
