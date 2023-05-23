@@ -1,5 +1,11 @@
 # @armit/cli
 
+## 0.0.34
+
+### Patch Changes
+
+- [`598df67`](https://github.com/armitjs/armit/commit/598df67df8fec4275b9c18689d9c948776ac70ed) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Remove import-local module
+
 ## 0.0.33
 
 ### Patch Changes
