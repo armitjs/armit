@@ -1,7 +1,7 @@
 // @ts-check
 
-const path = require('path');
-const escape = require('shell-quote').quote;
+const { relative } = require('path');
+const { quote } = require('shell-quote');
 
 const isWin = process.platform === 'win32';
 
@@ -59,7 +59,7 @@ const getEslintFixCmd = ({
     cliRules.length > 0 ? `--rule ${cliRules.join('--rule ')}` : '',
     files
       // makes output cleaner by removing absolute paths from filenames
-      .map((f) => `"./${path.relative(cwd, f)}"`)
+      .map((f) => `"./${relative(cwd, f)}"`)
       .join(' '),
   ].join(' ');
   return `eslint ${args}`;
@@ -78,7 +78,7 @@ const getEslintFixCmd = ({
  */
 const concatFilesForPrettier = (filenames) =>
   filenames
-    .map((filename) => `"${isWin ? filename : escape([filename])}"`)
+    .map((filename) => `"${isWin ? filename : quote([filename])}"`)
     .join(' ');
 
 const concatFilesForStylelint = concatFilesForPrettier;

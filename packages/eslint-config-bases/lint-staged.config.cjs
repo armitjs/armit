@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * This files overrides the base lint-staged.config.cjs present in the root directory.
  * It allows to run eslint based the package specific requirements.
@@ -18,6 +16,7 @@ const {
 const rules = {
   '**/*.{js,jsx,ts,tsx,mjs,cjs}': (filenames) => {
     return getEslintFixCmd({
+      // Don`t support `dirname(fileURLToPath(url))` use __dirname directly for `commonjs`
       cwd: __dirname,
       fix: true,
       cache: true,

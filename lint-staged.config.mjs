@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * This is the base lint-staged rules config and just includes prettier by default.
  * A good practice is to override this base configuration in each package and/or application
@@ -9,7 +7,7 @@
  * {@link https://github.com/belgattitude/nextjs-monorepo-example/blob/main/docs/about-lint-staged.md}
  */
 
-const { concatFilesForPrettier } = require('./lint-staged.common.cjs');
+import { concatFilesForPrettier } from './lint-staged.common.cjs';
 
 /**
  * @type {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}
@@ -22,4 +20,4 @@ const rules = {
   },
 };
 
-module.exports = rules;
+export default rules;

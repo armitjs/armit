@@ -2,6 +2,7 @@
   "name": "armit-monorepo",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "description": "armitjs arm to make our development work easier and more comfortable",
   "keywords": [
     "example",
@@ -40,7 +41,7 @@
     "g:test-coverage": "yarn workspaces foreach -tv run test-coverage",
     "g:lint": "yarn workspaces foreach -ptv run lint --color",
     "g:typecheck": "yarn workspaces foreach -ptv run typecheck",
-    "g:lint-staged-files": "lint-staged --allow-empty --config=lint-staged.config.cjs",
+    "g:lint-staged-files": "lint-staged --allow-empty",
     "g:fix-all-files": "yarn workspaces foreach -ptv run fix-all-files",
     "g:changeset": "changeset",
     "g:release": "yarn g:build-release && changeset publish",

@@ -1,16 +1,15 @@
-// @ts-check
-
 /**
  * This files overrides the base lint-staged.config.cjs present in the root directory.
  * It allows to run eslint based the package specific requirements.
  * {@link https://github.com/okonet/lint-staged#how-to-use-lint-staged-in-a-multi-package-monorepo}
  * {@link https://github.com/belgattitude/nextjs-monorepo-example/blob/main/docs/about-lint-staged.md}
  */
-
-const {
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import {
   concatFilesForPrettier,
   getEslintFixCmd,
-} = require('../../lint-staged.common.cjs');
+} from '../../lint-staged.common.cjs';
 
 /**
  * @type {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}
@@ -18,7 +17,7 @@ const {
 const rules = {
   '**/*.{js,jsx,ts,tsx,mjs,cjs}': (filenames) => {
     return getEslintFixCmd({
-      cwd: __dirname,
+      cwd: dirname(fileURLToPath(import.meta.url)),
       fix: true,
       cache: true,
       // when autofixing staged-files a good tip is to disable react-hooks/exhaustive-deps, cause
@@ -33,4 +32,4 @@ const rules = {
   },
 };
 
-module.exports = rules;
+export default rules;
