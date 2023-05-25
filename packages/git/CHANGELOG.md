@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.20
+
+### Patch Changes
+
+- [`1fb8493`](https://github.com/armitjs/armit/commit/1fb84939b349487e0f08695806cd974d7ed1864a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add git commit APi
+
 ## 0.0.19
 
 ### Patch Changes
