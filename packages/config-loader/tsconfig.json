@@ -9,6 +9,7 @@
     "incremental": true,
     "paths": {
       "@/test-utils": ["../../../config/test-utils/index.js"],
+      "@armit/package": ["../../package/src/index.js"],
       "@armit/file-utility": ["../../file-utility/src/index.js"]
     },
     "types": ["vitest/globals"]

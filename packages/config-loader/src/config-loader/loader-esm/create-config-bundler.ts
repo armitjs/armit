@@ -6,6 +6,7 @@ import pluginResolve from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
 import { type EsmLoaderOptions } from './esm-loader.js';
+import { getEsmExternalModules } from './get-external-modules.js';
 
 const esmRequire = createRequire(import.meta.url);
 
@@ -51,7 +52,7 @@ if (classProperties) {
 
 export const createConfigBundler: (
   options: EsmLoaderOptions
-) => ConfigBundler = (options) => {
+) => Promise<ConfigBundler> = async (options) => {
   // node-resolve plugin
   // FIXME: .mts, .cts, .tsx, .jsx support :https://github.com/rollup/plugins/pull/1498
   const nodeResolvePlugin = (pluginResolve.default || pluginResolve)({
@@ -75,12 +76,17 @@ export const createConfigBundler: (
   // Json plugin
   const jsonPlugin = (pluginJson.default || pluginJson)({});
 
+  const repoExternalModules = await getEsmExternalModules(
+    options.projectCwd,
+    options.externals
+  );
+
   return {
     async bundle(fileName: string): Promise<{ code: string }> {
       const bundle = await rollup({
         input: fileName,
         external: (moduleId) => {
-          const isExternal = options.externals.find(
+          const isExternal = repoExternalModules.find(
             (externalModule: string) => {
               return moduleId.startsWith(externalModule);
             }
