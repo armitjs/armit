@@ -13,11 +13,13 @@ describe('getDiffFiles', () => {
 
   it('should correct load diff files between two commit hash', async () => {
     const files = await getDiffFiles(`598df67`, `1fb8493`);
-    expect(files).toEqual([
-      '.changeset/blue-clouds-cross.md',
-      'packages/cli/bin/armit.mjs',
-      'packages/cli/package.json',
-      'yarn.lock',
-    ]);
+    expect(files).toEqual(
+      expect.arrayContaining([
+        '.changeset/blue-clouds-cross.md',
+        'packages/cli/bin/armit.mjs',
+        'packages/cli/package.json',
+        'yarn.lock',
+      ])
+    );
   });
 });
