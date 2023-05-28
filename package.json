@@ -2,7 +2,6 @@
   "name": "armit-monorepo",
   "version": "0.0.1",
   "private": true,
-  "type": "module",
   "description": "armitjs arm to make our development work easier and more comfortable",
   "keywords": [
     "example",
@@ -27,6 +26,7 @@
     "name": "Yingchun Tian",
     "url": "https://github.com/tianyingchun"
   },
+  "type": "module",
   "workspaces": [
     "docs",
     "packages/*"

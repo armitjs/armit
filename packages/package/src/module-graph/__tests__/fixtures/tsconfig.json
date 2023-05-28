@@ -1,0 +1,12 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "paths": {
+      "@/utils": ["./src/react/utils.ts"]
+    }
+  }
+}
