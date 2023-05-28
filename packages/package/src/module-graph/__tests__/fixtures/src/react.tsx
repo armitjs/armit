@@ -1,3 +1,3 @@
-import { Module1, Module2 } from './react/index';
+import { module1, module2 } from './react/index';
 
-console.log(Module1, Module2);
+console.log(module1, module2);
