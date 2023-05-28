@@ -1,5 +1,16 @@
 # @armit/config-loader
 
+## 0.0.36
+
+### Patch Changes
+
+- [`efbc18f`](https://github.com/armitjs/armit/commit/efbc18fb18e171e6408eb010bd7b0c1ef7169b27) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix config bundler async missed `await`
+
+- [`4bb975f`](https://github.com/armitjs/armit/commit/4bb975fa0ea5eef4f4cac099f52ce85fb161a12c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Improve esm-loader externals
+
+- Updated dependencies [[`23c724c`](https://github.com/armitjs/armit/commit/23c724c80470ec8e8260d1ce68af7642807fcd58)]:
+  - @armit/package@0.0.30
+
 ## 0.0.35
 
 ### Patch Changes
