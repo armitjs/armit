@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.21
+
+### Patch Changes
+
+- [`d0a43c6`](https://github.com/armitjs/armit/commit/d0a43c600aab94aa78a3c3172d33af5e5cfda1b8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add method to extract git diff files between two commit hash
+
 ## 0.0.20
 
 ### Patch Changes

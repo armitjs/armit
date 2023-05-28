@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.30
+
+### Patch Changes
+
+- [`23c724c`](https://github.com/armitjs/armit/commit/23c724c80470ec8e8260d1ce68af7642807fcd58) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add dependency-tree to resolve `module-graph`
+
 ## 0.0.29
 
 ### Patch Changes
