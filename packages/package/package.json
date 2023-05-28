@@ -40,7 +40,7 @@
     "test-unit": "vitest run --passWithNoTests",
     "test-coverage": "vitest run --coverage",
     "test-unit-watch": "vitest watch --ui",
-    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+    "typecheck": "tsc --jsx react-jsx --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
     "@armit/file-utility": "workspace:^",
