@@ -1,5 +1,11 @@
 # @armit/eslint-config-bases
 
+## 0.0.17
+
+### Patch Changes
+
+- [`146bdac`](https://github.com/armitjs/armit/commit/146bdacaf202e204e4fe6ff850dc66caafcc627e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.0.16
 
 ### Patch Changes
