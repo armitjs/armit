@@ -1,5 +1,16 @@
 # @armit/commander
 
+## 0.0.34
+
+### Patch Changes
+
+- [`146bdac`](https://github.com/armitjs/armit/commit/146bdacaf202e204e4fe6ff850dc66caafcc627e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`146bdac`](https://github.com/armitjs/armit/commit/146bdacaf202e204e4fe6ff850dc66caafcc627e)]:
+  - @armit/logger-node@0.0.25
+  - @armit/terminal@0.0.20
+  - @armit/package@0.0.31
+
 ## 0.0.33
 
 ### Patch Changes
