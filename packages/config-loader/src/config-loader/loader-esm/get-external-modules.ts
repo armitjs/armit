@@ -14,17 +14,18 @@ export const getEsmExternalModules = async (
   cwd = process.cwd(),
   externals: string[] = []
 ) => {
-  const projectCwd = searchPackageDir({
-    cwd,
-  });
+  const projectCwd =
+    searchPackageDir({
+      cwd,
+    }) || process.cwd();
 
   const allPackageJson: string[] = projectCwd
     ? [join(projectCwd, 'package.json')]
     : [];
 
-  const repoCwd = projectCwd ? join(projectCwd, '../..') : projectCwd;
+  const repoCwd = join(projectCwd, '../..');
   const isMono = await isMonorepo(repoCwd);
-  if (isMono && repoCwd) {
+  if (isMono) {
     const monoCwd = join(repoCwd, './packages/*/package.json');
     const monoPackageJson = await fileWalk(monoCwd);
     allPackageJson.push(...monoPackageJson);
