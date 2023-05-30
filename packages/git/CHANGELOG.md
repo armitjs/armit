@@ -1,5 +1,13 @@
 # @armit/git
 
+## 0.0.24
+
+### Patch Changes
+
+- [`722b874`](https://github.com/armitjs/armit/commit/722b8747a76e30475538cfb0d9d65f063b35bb35) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Get commitid of branch
+
+- [`c2b5acd`](https://github.com/armitjs/armit/commit/c2b5acdc24e0a57204a5c99e5a2512f1106fe166) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.0.23
 
 ### Patch Changes
