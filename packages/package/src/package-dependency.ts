@@ -1,7 +1,8 @@
 import { join } from 'node:path';
 import { fileWalk, readJsonFromFile } from '@armit/file-utility';
-import { isMonorepo, searchPackageDir } from '@armit/package';
 import { type PackageJson } from 'type-fest';
+import { isMonorepo } from './helpers/is-mono-repo.js';
+import { searchPackageDir } from './package-search.js';
 
 function arrayUnique<T>(arr: T[]): T[] {
   function onlyUnique(value, index, self) {
@@ -10,7 +11,7 @@ function arrayUnique<T>(arr: T[]): T[] {
   return arr.filter(onlyUnique);
 }
 
-export const getEsmExternalModules = async (
+export const getPackageDependencyKeys = async (
   cwd = process.cwd(),
   externals: string[] = []
 ) => {

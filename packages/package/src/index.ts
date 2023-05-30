@@ -1,5 +1,6 @@
 export * from './npm-yarn.js';
 export * from './package-data.js';
+export * from './package-dependency.js';
 export * from './package-search.js';
 export * from './package-version.js';
 export * from './illegal-checker/index.js';

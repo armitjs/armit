@@ -1,4 +1,5 @@
 import { builtinModules, createRequire, isBuiltin } from 'node:module';
+import { getPackageDependencyKeys } from '@armit/package';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginJson from '@rollup/plugin-json';
@@ -6,7 +7,6 @@ import pluginResolve from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
 import { type EsmLoaderOptions } from './esm-loader.js';
-import { getEsmExternalModules } from './get-external-modules.js';
 
 const esmRequire = createRequire(import.meta.url);
 
@@ -76,7 +76,7 @@ export const createConfigBundler: (
   // Json plugin
   const jsonPlugin = (pluginJson.default || pluginJson)({});
 
-  const repoExternalModules = await getEsmExternalModules(
+  const repoExternalModules = await getPackageDependencyKeys(
     options.projectCwd,
     options.externals
   );
