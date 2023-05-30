@@ -1,5 +1,15 @@
 # @armit/generate-template-files
 
+## 0.0.27
+
+### Patch Changes
+
+- [`89e1f78`](https://github.com/armitjs/armit/commit/89e1f7804734071648fc8ba044dd4f2b3ce8176a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Change `node-engine to >=18.0.0` with Prefix-Only Core Modules
+
+- Updated dependencies [[`89e1f78`](https://github.com/armitjs/armit/commit/89e1f7804734071648fc8ba044dd4f2b3ce8176a)]:
+  - @armit/file-recursive-copy@0.0.26
+  - @armit/logger-node@0.0.26
+
 ## 0.0.26
 
 ### Patch Changes

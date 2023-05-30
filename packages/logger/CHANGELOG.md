@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.24
+
+### Patch Changes
+
+- [`89e1f78`](https://github.com/armitjs/armit/commit/89e1f7804734071648fc8ba044dd4f2b3ce8176a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Change `node-engine to >=18.0.0` with Prefix-Only Core Modules
+
 ## 0.0.23
 
 ### Patch Changes
