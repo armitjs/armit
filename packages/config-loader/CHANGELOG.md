@@ -1,5 +1,14 @@
 # @armit/config-loader
 
+## 0.0.40
+
+### Patch Changes
+
+- [`3da5824`](https://github.com/armitjs/armit/commit/3da5824ae7df5a9639c4096b5525439936d651ac) Thanks [@tianyingchun](https://github.com/tianyingchun)! - move getExternalModules to `package` renamed to `getPackageDependencyKeys`
+
+- Updated dependencies [[`3da5824`](https://github.com/armitjs/armit/commit/3da5824ae7df5a9639c4096b5525439936d651ac)]:
+  - @armit/package@0.0.34
+
 ## 0.0.39
 
 ### Patch Changes

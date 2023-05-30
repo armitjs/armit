@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.34
+
+### Patch Changes
+
+- [`3da5824`](https://github.com/armitjs/armit/commit/3da5824ae7df5a9639c4096b5525439936d651ac) Thanks [@tianyingchun](https://github.com/tianyingchun)! - move getExternalModules to `package` renamed to `getPackageDependencyKeys`
+
 ## 0.0.33
 
 ### Patch Changes
