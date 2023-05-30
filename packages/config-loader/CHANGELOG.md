@@ -1,5 +1,12 @@
 # @armit/config-loader
 
+## 0.0.39
+
+### Patch Changes
+
+- Updated dependencies [[`47b076b`](https://github.com/armitjs/armit/commit/47b076b6e0a9171cb8e4977692525b0bb0cc5874)]:
+  - @armit/package@0.0.33
+
 ## 0.0.38
 
 ### Patch Changes
