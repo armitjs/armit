@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.33
+
+### Patch Changes
+
+- [`47b076b`](https://github.com/armitjs/armit/commit/47b076b6e0a9171cb8e4977692525b0bb0cc5874) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Change npm check update api
+
 ## 0.0.32
 
 ### Patch Changes
