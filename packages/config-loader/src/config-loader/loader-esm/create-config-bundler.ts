@@ -54,7 +54,7 @@ export const createConfigBundler: (
   options: EsmLoaderOptions
 ) => Promise<ConfigBundler> = async (options) => {
   // node-resolve plugin
-  // FIXME: .mts, .cts, .tsx, .jsx support :https://github.com/rollup/plugins/pull/1498
+  // .mts, .cts, .tsx, .jsx support :https://github.com/rollup/plugins/pull/1498
   const nodeResolvePlugin = (pluginResolve.default || pluginResolve)({
     rootDir: options.projectCwd,
     extensions: [
