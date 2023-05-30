@@ -4,11 +4,9 @@ export interface UpdatePackageOptions {
    */
   cwd: string;
   /**
-   * package file location (default: ./package.json)
-   * @default `./package.json`
+   * Don't output anything. Alias for `--loglevel` silent.
    */
-  packageFile?: string;
-
+  silent?: boolean;
   /**
    * Exclude packages matching the given string, wildcard, glob, comma-or-space-delimited list, or /regex/.
    */
