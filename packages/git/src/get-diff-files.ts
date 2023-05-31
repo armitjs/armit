@@ -10,15 +10,13 @@ import { exec } from 'node:child_process';
  * git --no-pager diff --name-only 2b2ccff 50164ec
  * git --no-pager diff --name-only 1381f5
  * ```
- * @param basedCommitHash The diff based commit hash
- * @param newCommitHash If is omitted, it will have the same effect as using HEAD instead.
+ * @param earlyCommit The diff based earlier commit hash
+ * @param lastCommit If is omitted, it will have the same effect as using HEAD instead.
  * @returns Return files between two commit hash
  */
-export function getDiffFiles(basedCommitHash: string, newCommitHash?: string) {
+export function getDiffFiles(earlyCommit: string, lastCommit?: string) {
   const diff =
-    basedCommitHash && newCommitHash
-      ? `${newCommitHash}..${basedCommitHash}`
-      : basedCommitHash;
+    earlyCommit && lastCommit ? `${lastCommit}..${earlyCommit}` : earlyCommit;
 
   return new Promise<string[]>((resolve) => {
     exec(`git --no-pager diff --name-only ${diff}`, (err, out) => {
