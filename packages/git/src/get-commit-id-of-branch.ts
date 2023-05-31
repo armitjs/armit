@@ -6,13 +6,16 @@ import { exec } from 'node:child_process';
  * @param branchName  e.g. `main`, `workspace`,....
  * @returns The branch commit hash.
  */
-export const getCommitIdOfBranch = (branchName = 'HEAD') => {
+export const getCommitIdOfBranch = (branchName = 'HEAD', short = true) => {
   return new Promise<string | null>((resolve) => {
-    exec(`git rev-parse ${branchName}`, (err, out) => {
-      if (err) {
-        return resolve(null);
+    exec(
+      `git rev-parse ${short ? '--short ' : ''}${branchName}`,
+      (err, out) => {
+        if (err) {
+          return resolve(null);
+        }
+        resolve(out.replace(/\r\n|\n|\r/g, ''));
       }
-      resolve(out.replace(/\r\n|\n|\r/g, ''));
-    });
+    );
   });
 };
