@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.25
+
+### Patch Changes
+
+- [`0402f25`](https://github.com/armitjs/armit/commit/0402f250c9d8d23d9449985310121100c293f5b9) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add short flag to retrive commit id of branch
+
 ## 0.0.24
 
 ### Patch Changes
