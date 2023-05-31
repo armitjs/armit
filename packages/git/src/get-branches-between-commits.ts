@@ -11,7 +11,10 @@ const getBranchesContainCommitHash = (commit: string) => {
       }
       const branches = out
         .split(/[\r\n]/)
-        .filter(String)
+        .filter((branch) => {
+          // Remove `* (HEAD detached at b121521)`
+          return !~branch.toUpperCase().indexOf('(HEAD');
+        })
         .map((s) => s.trim());
 
       resolve(branches);
@@ -21,8 +24,8 @@ const getBranchesContainCommitHash = (commit: string) => {
 
 /**
  * This will list all branches that contain any of the commits between commit1 and commit2
- * @param lastCommit if not will look up to first commit
- * @param earlyCommit The earlier commit
+ * @param lastCommit if not will look up to first commit `HEAD`
+ * @param earlyCommit The earlier commit `master`
  * @returns All commits
  */
 export const getBranchesBetweenCommits = async (
