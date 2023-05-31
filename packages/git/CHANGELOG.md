@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.27
+
+### Patch Changes
+
+- [`530efa8`](https://github.com/armitjs/armit/commit/530efa85828181518043f75e7cfaa67a28b0bdbe) Thanks [@tianyingchun](https://github.com/tianyingchun)! - imporve branches
+
 ## 0.0.26
 
 ### Patch Changes
