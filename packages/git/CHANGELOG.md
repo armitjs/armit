@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.26
+
+### Patch Changes
+
+- [`bd584da`](https://github.com/armitjs/armit/commit/bd584da6106afe91436284ba5c5e1b54dbc7f9fb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add branches fetch api
+
 ## 0.0.25
 
 ### Patch Changes
