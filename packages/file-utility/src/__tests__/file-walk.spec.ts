@@ -8,6 +8,8 @@ describe('fileWalk', () => {
       'a/b/c/text.txt': '',
       'a/b/c/image.jpg': '',
       'a/b/c/image.png': '',
+      'a/b/c/d/e/image.jpg': '',
+      'a/b/c/d/e/image.png': '',
       'a/b/c/style.css': '',
       'a/b/c/.gitignore': '',
       '__MACOSX/test/._demo-8ca86e6b.png': '',
@@ -31,13 +33,23 @@ describe('fileWalk', () => {
       });
       expect(files.length).toBe(3);
       expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
+
+      const files2 = fileWalkSync('**/b/c/**/*.{jpg,png}', {
+        cwd: fixtureCwd,
+      });
+      expect(files2.length).toBe(4);
+
+      const files3 = fileWalkSync('**/a/b/c/**/*.{jpg,png}', {
+        cwd: fixtureCwd,
+      });
+      expect(files3.length).toBe(4);
     });
 
     it('should synchronously currect handle dot files', () => {
       const files = fileWalkSync('**/*.*', {
         cwd: fixtureCwd,
       });
-      expect(files.length).toBe(5);
+      expect(files.length).toBe(7);
       expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
 
@@ -45,7 +57,7 @@ describe('fileWalk', () => {
       const files = fileWalkSync('**/*.*', {
         cwd: fixtureCwd,
       });
-      expect(files.length).toBe(5);
+      expect(files.length).toBe(7);
       expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
   });
@@ -64,7 +76,7 @@ describe('fileWalk', () => {
       const files = await fileWalk('**/*.*', {
         cwd: fixtureCwd,
       });
-      expect(files.length).toBe(5);
+      expect(files.length).toBe(7);
       expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
 
@@ -72,7 +84,7 @@ describe('fileWalk', () => {
       const files = await fileWalk('**/*.*', {
         cwd: fixtureCwd,
       });
-      expect(files.length).toBe(5);
+      expect(files.length).toBe(7);
       expect(files.filter((s) => s.endsWith('.gitignore')).length).toBe(1);
     });
   });
