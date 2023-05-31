@@ -26,7 +26,7 @@ export function getDiffFiles(basedCommitHash: string, newCommitHash?: string) {
         // fatal: ambiguous argument 'df3s053': unknown revision or path not in the working tree.
         return resolve([]);
       }
-      resolve(out.split(/[\r\n|]/).filter(String));
+      resolve(out.split(/[\r\n]/).filter(String));
     });
   });
 }
