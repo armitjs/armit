@@ -46,9 +46,9 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`Globals:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`--noColor`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2022`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`-l, --log-level`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--no-color`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2023`));
   });
   it('Should output correct `test help` -h', async () => {
     const { stdout } = await runCliMock('test', '-h');
@@ -58,8 +58,8 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`Globals:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
-    expect(stdout).toStrictEqual(expect.stringContaining(`--noColor`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`-l, --log-level`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--no-color`));
     expect(stdout).toStrictEqual(expect.stringContaining(`Options:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-t, --test`));
     expect(stdout).toStrictEqual(expect.stringContaining(`test describe`));

@@ -22,8 +22,8 @@ describe('@armit/cli info', () => {
   //   expect(stdout).toStrictEqual(expect.stringContaining(`Globals:`));
   //   expect(stdout).toStrictEqual(expect.stringContaining(`-h, --help`));
   //   expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
-  //   expect(stdout).toStrictEqual(expect.stringContaining(`-l, --logLevel`));
-  //   expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2022`));
+  //   expect(stdout).toStrictEqual(expect.stringContaining(`-l, --log-level`));
+  //   expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2023`));
   // });
 
   it('Should correct print armit cli related information', async () => {

@@ -52,25 +52,24 @@ const errorHandler =
   };
 
 const globalOptions = () => {
-  return yargs().options({
-    logLevel: {
+  return yargs()
+    .option('log-level', {
       type: 'string',
       default: 'Info',
       choices: ['Error', 'Warn', 'Info', 'Verbose', 'Debug'],
       describe: `What level of logs to report. `,
-    },
-    noColor: {
+    })
+    .option('no-color', {
       type: 'boolean',
       default: false,
       describe: `Removes colors from the console output.`,
-    },
-  });
+    });
 };
 
 export const createYargs = (option: CliOption) => {
   return (
     globalOptions()
-      .group(['help', 'version', 'logLevel', 'noColor'], 'Globals: ')
+      .group(['help', 'version', 'log-level', 'no-color'], 'Globals: ')
       .usage(`Usage: $0 <command> [options]`)
       .recommendCommands()
       .demandCommand(
@@ -94,10 +93,10 @@ export const createYargs = (option: CliOption) => {
       })
       .strict()
       .alias('h', 'help')
-      .alias('l', 'logLevel')
+      .alias('l', 'log-level')
       .alias('v', 'version')
       .epilog(
-        `Copyright 2022 ${getTerminalLink(
+        `Copyright 2023 ${getTerminalLink(
           terminalColor(['bold', 'magenta'], false)(option.group),
           'https://github.com/armitjs/armit'
         )} `
