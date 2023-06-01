@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.0.44
+
+### Patch Changes
+
+- [`7a35ab4`](https://github.com/armitjs/armit/commit/7a35ab4d6a26183abe1c2689cdf58327da79f417) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Refactor commander plugins
+
+- Updated dependencies [[`7a35ab4`](https://github.com/armitjs/armit/commit/7a35ab4d6a26183abe1c2689cdf58327da79f417)]:
+  - @armit/commander@0.0.42
+
 ## 0.0.43
 
 ### Patch Changes
