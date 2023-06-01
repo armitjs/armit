@@ -40,7 +40,8 @@ describe('load cli command plugins', () => {
       // `esm-2`
       'node_modules/esm-2/package.json':
         '{"name":"esm-2","version":"0.0.1","main":"index.js","type":"module"}',
-      'node_modules/esm-2/index.js': 'export const command = { data: "esm" };',
+      'node_modules/esm-2/index.js':
+        'export const command = { commandModule: "esm" };',
 
       // `other`
       'node_modules/other/package.json':
@@ -54,24 +55,24 @@ describe('load cli command plugins', () => {
       recursive: true,
     });
   });
-  it('Should correct load cli commadn plugins', async () => {
+  it('Should correct load cli command plugins', async () => {
     const result = await loadCliPlugins(
       ['other', 'esm', 'esm-2', 'cjs'],
       ['@armit/cli-plugin-*/package.json', 'armit-cli-plugin-*/package.json'],
       [fixtureCwd],
       fixtureCwd
     );
-    expect(result.length).toBe(8);
+    expect(result.length).toBe(3);
     expect(
       result.find((s) => !!~s.name.indexOf('@armit/cli-plugin-a'))
-    ).not.toBeUndefined();
+    ).toBeUndefined();
     expect(
       result.find((s) => !!~s.name.indexOf('armit-cli-plugin-b'))
-    ).not.toBeUndefined();
+    ).toBeUndefined();
     const esm2 = result.find((s) => !!~s.name.indexOf('esm-2'));
-    expect(result.find((s) => !!~s.name.indexOf('other'))).not.toBeUndefined();
+    expect(result.find((s) => !!~s.name.indexOf('other'))).toBeUndefined();
     expect(esm2?.name).toBe('esm-2');
-    expect(esm2?.plugin).toMatchObject({ data: 'esm' });
+    expect(esm2?.plugin).toBe('esm');
     expect(esm2).not.toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('esm'))).not.toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('cjs'))).not.toBeUndefined();

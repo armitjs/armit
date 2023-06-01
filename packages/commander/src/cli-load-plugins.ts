@@ -42,6 +42,7 @@ function uniqByKey(array: PluginItem[], key: string) {
  * @param cwd The directory to begin resolving from
  * @returns
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 async function load(
   plugins: string[] = [],
   pluginPackPattern: string[] = [],
@@ -137,11 +138,22 @@ async function load(
   }> = [];
   for (const pluginInfo of externalPlugins) {
     const importModule = await import(pluginInfo.requirePath);
-    const pluginModule = (importModule.default || importModule) as PluginConfig;
-    allPlugins.push({
-      name: pluginModule.name || pluginInfo.name,
-      plugin: pluginModule.command,
-    });
+    const pluginModule = importModule.default || importModule;
+
+    for (const [pluginAlias, plugin] of Object.entries(pluginModule)) {
+      const pluginDefine = plugin as PluginConfig;
+      const pluginName = pluginDefine.name || pluginInfo.name;
+      if (allPlugins.find((s) => s.name === pluginName)) {
+        console.warn(
+          `${pluginAlias}:${pluginName} has been loaded, duplicate plug-ins are defined? `
+        );
+      } else {
+        allPlugins.push({
+          name: pluginDefine.name || pluginInfo.name,
+          plugin: pluginDefine.commandModule,
+        });
+      }
+    }
   }
   return allPlugins;
 }
