@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.41
+
+### Patch Changes
+
+- [`973c6aa`](https://github.com/armitjs/armit/commit/973c6aac77b9e01cdb74feb3cabe1b1ba061cdce) Thanks [@tianyingchun](https://github.com/tianyingchun)! - change typings to any
+
 ## 0.0.40
 
 ### Patch Changes
