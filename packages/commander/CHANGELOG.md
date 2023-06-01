@@ -1,5 +1,13 @@
 # @armit/commander
 
+## 0.0.40
+
+### Patch Changes
+
+- [`fd64719`](https://github.com/armitjs/armit/commit/fd6471982ed29f90c505aca34d10715742e3e346) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add `definePlugin` method for commander
+
+- [`5f5ebd8`](https://github.com/armitjs/armit/commit/5f5ebd888c001bd545fe17ef23d02111d1294d80) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Change typings of `definePlugin`
+
 ## 0.0.39
 
 ### Patch Changes
