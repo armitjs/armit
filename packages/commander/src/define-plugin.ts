@@ -1,7 +1,7 @@
 import { type CommandModule } from 'yargs';
 
 export type PluginConfig = {
-  name: string;
+  name?: string;
   command: CommandModule;
 };
 
