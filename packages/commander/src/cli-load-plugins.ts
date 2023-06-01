@@ -6,6 +6,7 @@ import { globbySync } from 'globby';
 import mem, { memClear } from 'mem';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
+import { type PluginConfig } from './define-plugin.js';
 
 const memoizedLoad = mem(load, { cacheKey: JSON.stringify });
 const memoizedSearch = mem(findPluginsInNodeModules);
@@ -136,9 +137,10 @@ async function load(
   }> = [];
   for (const pluginInfo of externalPlugins) {
     const importModule = await import(pluginInfo.requirePath);
+    const pluginModule = (importModule.default || importModule) as PluginConfig;
     allPlugins.push({
-      name: pluginInfo.name,
-      plugin: importModule.default || importModule,
+      name: pluginModule.name || pluginInfo.name,
+      plugin: pluginModule.command,
     });
   }
   return allPlugins;

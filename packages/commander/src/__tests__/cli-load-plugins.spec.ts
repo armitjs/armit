@@ -40,7 +40,7 @@ describe('load cli command plugins', () => {
       // `esm-2`
       'node_modules/esm-2/package.json':
         '{"name":"esm-2","version":"0.0.1","main":"index.js","type":"module"}',
-      'node_modules/esm-2/index.js': 'export const result = { data: "esm" };',
+      'node_modules/esm-2/index.js': 'export const command = { data: "esm" };',
 
       // `other`
       'node_modules/other/package.json':
@@ -70,7 +70,8 @@ describe('load cli command plugins', () => {
     ).not.toBeUndefined();
     const esm2 = result.find((s) => !!~s.name.indexOf('esm-2'));
     expect(result.find((s) => !!~s.name.indexOf('other'))).not.toBeUndefined();
-    expect(esm2?.plugin['result']).toBeDefined();
+    expect(esm2?.name).toBe('esm-2');
+    expect(esm2?.plugin).toMatchObject({ data: 'esm' });
     expect(esm2).not.toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('esm'))).not.toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('cjs'))).not.toBeUndefined();
