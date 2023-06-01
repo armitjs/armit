@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.0.41
+
+### Patch Changes
+
+- [`66c0b75`](https://github.com/armitjs/armit/commit/66c0b759abde81b2a8d38aeb64241f07c242e3bc) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Improve yargs help camelcase shown with `-`
+
+- Updated dependencies [[`66c0b75`](https://github.com/armitjs/armit/commit/66c0b759abde81b2a8d38aeb64241f07c242e3bc)]:
+  - @armit/commander@0.0.39
+
 ## 0.0.40
 
 ### Patch Changes
