@@ -1,5 +1,13 @@
 # @armit/commander
 
+## 0.0.45
+
+### Patch Changes
+
+- Updated dependencies [[`1a77b92`](https://github.com/armitjs/armit/commit/1a77b928bf16aab6f503eb3e4f2a8c452edef647)]:
+  - @armit/logger-node@0.0.30
+  - @armit/package@0.0.38
+
 ## 0.0.44
 
 ### Patch Changes

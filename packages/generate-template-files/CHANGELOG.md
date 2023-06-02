@@ -1,5 +1,13 @@
 # @armit/generate-template-files
 
+## 0.0.31
+
+### Patch Changes
+
+- Updated dependencies [[`1a77b92`](https://github.com/armitjs/armit/commit/1a77b928bf16aab6f503eb3e4f2a8c452edef647)]:
+  - @armit/logger-node@0.0.30
+  - @armit/file-recursive-copy@0.0.30
+
 ## 0.0.30
 
 ### Patch Changes
