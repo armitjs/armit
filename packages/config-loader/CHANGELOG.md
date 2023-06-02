@@ -1,5 +1,14 @@
 # @armit/config-loader
 
+## 0.0.43
+
+### Patch Changes
+
+- [`fb08206`](https://github.com/armitjs/armit/commit/fb0820633574586cc2181c58425abf0e7bba3505) Thanks [@tianyingchun](https://github.com/tianyingchun)! - change ts-node as optional peer dependencies
+
+- Updated dependencies []:
+  - @armit/package@0.0.37
+
 ## 0.0.42
 
 ### Patch Changes
