@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.0.30
+
+### Patch Changes
+
+- [`1a77b92`](https://github.com/armitjs/armit/commit/1a77b928bf16aab6f503eb3e4f2a8c452edef647) Thanks [@tianyingchun](https://github.com/tianyingchun)! - adjust formatting of terminal logging
+
 ## 0.0.29
 
 ### Patch Changes
