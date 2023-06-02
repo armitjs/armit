@@ -1,4 +1,5 @@
 import C from 'picocolors';
+import { strTimePad } from './str-pad.js';
 import type {
   Color,
   Level,
@@ -319,11 +320,15 @@ export class TerminalLog<L extends string> {
           ' ' +
             decorate(
               `${
-                use24HourClock || !(hours >= 13 || hours === 0)
-                  ? hours
-                  : Math.abs(hours - 12)
+                strTimePad(
+                  use24HourClock || !(hours >= 13 || hours === 0)
+                    ? hours
+                    : Math.abs(hours - 12)
+                )
                 // }:${time.getMinutes()}:${time.getSeconds()}.${time.getMilliseconds()}`
-              }:${time.getMinutes()}:${time.getSeconds()}}`
+              }:${strTimePad(time.getMinutes())}:${strTimePad(
+                time.getSeconds()
+              )}`
             ) +
             ' ' +
             (use24HourClock ? '' : decorate(hours >= 13 ? 'PM' : 'AM') + ' ')

@@ -35,6 +35,7 @@ export class TerminalFormatStrategy<MessageType>
       showRelativeTimestamp: options?.showRelativeTimestamp,
       showTimestampRelativeToLastLog: options?.showTimestampRelativeToLastLog,
       showContext: options?.showContext,
+      use24HourClock: options?.use24HourClock,
     });
   }
 
