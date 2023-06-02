@@ -322,7 +322,8 @@ export class TerminalLog<L extends string> {
                 use24HourClock || !(hours >= 13 || hours === 0)
                   ? hours
                   : Math.abs(hours - 12)
-              }:${time.getMinutes()}:${time.getSeconds()}.${time.getMilliseconds()}`
+                // }:${time.getMinutes()}:${time.getSeconds()}.${time.getMilliseconds()}`
+              }:${time.getMinutes()}:${time.getSeconds()}}`
             ) +
             ' ' +
             (use24HourClock ? '' : decorate(hours >= 13 ? 'PM' : 'AM') + ' ')

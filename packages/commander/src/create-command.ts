@@ -82,6 +82,12 @@ export abstract class AbstractHandler<T extends CommandArgv>
       context: args.name,
       adapter: new StdoutAdapter({
         formatStrategy: new TerminalFormatStrategy({
+          showLevelName: true,
+          showTimestamp: true,
+          showRelativeTimestamp: false,
+          showContext: false,
+          showTimestampRelativeToLastLog: false,
+          use24HourClock: true,
           noColor: args.noColor,
         }),
       }),

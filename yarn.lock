@@ -319,6 +319,8 @@ __metadata:
       optional: true
     "@rollup/plugin-node-resolve":
       optional: true
+    ts-node:
+      optional: true
   languageName: unknown
   linkType: soft
 
