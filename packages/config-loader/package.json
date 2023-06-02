@@ -119,6 +119,9 @@
     },
     "@rollup/plugin-node-resolve": {
       "optional": true
+    },
+    "ts-node": {
+      "optional": true
     }
   },
   "engines": {
