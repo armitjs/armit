@@ -65,7 +65,7 @@
     "react-dom": "18.2.0",
     "typedoc": "0.24.7",
     "typedoc-plugin-markdown": "3.15.3",
-    "typescript": "5.0.4"
+    "typescript": "5.1.3"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
@@ -80,7 +80,7 @@
     "eslint": "8.41.0",
     "postcss": "8.4.24",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-preset-env": "8.4.1",
+    "postcss-preset-env": "8.4.2",
     "tailwindcss": "3.3.2"
   },
   "engines": {
