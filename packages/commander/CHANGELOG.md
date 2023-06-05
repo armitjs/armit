@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.46
+
+### Patch Changes
+
+- [`32218f9`](https://github.com/armitjs/armit/commit/32218f94f352d0c5c96275f96c004316f3769d7c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update logging formats
+
 ## 0.0.45
 
 ### Patch Changes
