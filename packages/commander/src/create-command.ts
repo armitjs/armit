@@ -92,7 +92,7 @@ export abstract class AbstractHandler<T extends CommandArgv>
         }),
       }),
     });
-    this.logger.debug(args);
+    this.logger.debug(`The loaded cli args:\n${JSON.stringify(args, null, 2)}`);
   }
 
   get cliPackageJson(): PackageJson {
