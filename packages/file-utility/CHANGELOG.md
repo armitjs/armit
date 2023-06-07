@@ -1,5 +1,11 @@
 # @armit/file-utility
 
+## 0.0.24
+
+### Patch Changes
+
+- [`d9c5b3f`](https://github.com/armitjs/armit/commit/d9c5b3f6e01ec7ad915d42015edc43cd075df1b4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Allow unzip file from `buffer` data
+
 ## 0.0.23
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @armit/generate-template-files
 
+## 0.0.32
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/file-recursive-copy@0.0.31
+
 ## 0.0.31
 
 ### Patch Changes
