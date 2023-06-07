@@ -1,5 +1,12 @@
 # @armit/package
 
+## 0.0.39
+
+### Patch Changes
+
+- Updated dependencies [[`d9c5b3f`](https://github.com/armitjs/armit/commit/d9c5b3f6e01ec7ad915d42015edc43cd075df1b4)]:
+  - @armit/file-utility@0.0.24
+
 ## 0.0.38
 
 ### Patch Changes

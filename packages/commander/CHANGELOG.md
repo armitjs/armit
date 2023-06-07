@@ -1,5 +1,12 @@
 # @armit/commander
 
+## 0.0.47
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/package@0.0.39
+
 ## 0.0.46
 
 ### Patch Changes
