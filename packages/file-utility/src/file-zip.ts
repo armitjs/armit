@@ -50,17 +50,17 @@ export const zip = async (
 
 /**
  * Decompress zip files directly to disk
- * @param zipFileName The absolute file path for this zip.
+ * @param zipFile The absolute file path for this zip, or zip buffer data.
  * @param extractTo Extracts the specified file to the specified location
  * @param filter Each zip file path should matches all given glob patterns
  */
 export const unzip = (
-  zipFileName: string,
+  zipFile: string | Buffer,
   extractTo: string,
   filter: string[] = ['!**/__MACOSX/**', '!**/*.DS_Store']
 ) => {
   // Reading archives
-  const zip = new AdmZip(zipFileName);
+  const zip = new AdmZip(zipFile);
 
   zip.forEach((zipEntry) => {
     const fileDist = join(extractTo, zipEntry.entryName);

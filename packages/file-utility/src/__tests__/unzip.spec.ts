@@ -1,4 +1,9 @@
-import { existsSync, writeFileSync } from 'node:fs';
+import {
+  type ReadStream,
+  createReadStream,
+  existsSync,
+  writeFileSync,
+} from 'node:fs';
 import { extname, join } from 'node:path';
 import { imageSize } from 'image-size';
 import { rmrfSync } from '../file-rmrf.js';
@@ -18,6 +23,19 @@ function isCorruptedJpeg(filepath) {
   }
 }
 
+function streamToBuffer(stream: ReadStream): Promise<Buffer> {
+  const chunks: Buffer[] = [];
+  return new Promise((resolve, reject) => {
+    stream.on('data', (chunk) => {
+      chunks.push(Buffer.from(chunk));
+    });
+    stream.on('error', (err) => reject(err));
+    stream.on('end', () => {
+      resolve(Buffer.concat(chunks));
+    });
+  });
+}
+
 describe('unzip / unzip', () => {
   const workCwd = getDirname(import.meta.url);
   const unzipCwd = join(workCwd, 'unzip');
@@ -29,6 +47,17 @@ describe('unzip / unzip', () => {
   describe('unzip', () => {
     it('should correct unzip html, css, js, png, jpeg files', () => {
       unzip(join(workCwd, 'unzip-test-asset.zip'), unzipCwd);
+      const imagePath = join(unzipCwd, 'test/assets/demo-8ca86e6b.jpg');
+      expect(existsSync(imagePath)).toBe(true);
+      const corrupted = isCorruptedJpeg(imagePath);
+      expect(corrupted).toBe(false);
+    });
+
+    it('should correct unzip html, css, js, png, jpeg files via buffer', async () => {
+      const zipFile = join(workCwd, 'unzip-test-asset-buffer.zip');
+      const stream = createReadStream(zipFile);
+      const buffer = await streamToBuffer(stream);
+      unzip(buffer, unzipCwd);
       const imagePath = join(unzipCwd, 'test/assets/demo-8ca86e6b.jpg');
       expect(existsSync(imagePath)).toBe(true);
       const corrupted = isCorruptedJpeg(imagePath);
