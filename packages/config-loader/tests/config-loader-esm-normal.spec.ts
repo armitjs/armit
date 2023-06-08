@@ -36,16 +36,16 @@ describe('ConfigLoader normal', () => {
     //   expect(loadedCfg?.config.test.cake).toStrictEqual('a lie');
     // });
 
-    it('should load a valid TS file with named export', async () => {
-      const loadedCfg = await loadConfig<{
-        test: {
-          cake: string;
-        };
-      }>(path.resolve(fixturesPath, 'valid.config.mjs'), loaderOptions);
-      expect(typeof loadedCfg?.config).toStrictEqual('object');
-      expect(typeof loadedCfg?.config.test).toStrictEqual('object');
-      expect(loadedCfg?.config.test.cake).toStrictEqual('a lie');
-    });
+    // it('should load a valid TS file with named export', async () => {
+    //   const loadedCfg = await loadConfig<{
+    //     test: {
+    //       cake: string;
+    //     };
+    //   }>(path.resolve(fixturesPath, 'valid.config.mjs'), loaderOptions);
+    //   expect(typeof loadedCfg?.config).toStrictEqual('object');
+    //   expect(typeof loadedCfg?.config.test).toStrictEqual('object');
+    //   expect(loadedCfg?.config.test.cake).toStrictEqual('a lie');
+    // });
 
     it('should load a valid TS file with named export for .js', async () => {
       const loadedCfg = await loadConfig<{

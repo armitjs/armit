@@ -29,6 +29,7 @@ export default defineConfig({
       reporter: ['json-summary', 'html'],
       extension: ['js', 'jsx', 'ts', 'tsx'],
     },
+    include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
     exclude: [
       '**/node_modules/**',
       'dist/**',

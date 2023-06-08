@@ -24,6 +24,7 @@ export default defineConfig({
       reporter: ['text', 'clover'],
       extension: ['js', 'jsx', 'ts', 'tsx'],
     },
+    include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
     exclude: [
       '**/node_modules/**',
       'dist/**',

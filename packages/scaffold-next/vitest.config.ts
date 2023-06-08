@@ -3,8 +3,6 @@ import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
-const testFiles = ['./src/**/*.test.{js,jsx,ts,tsx}'];
-
 export default defineConfig({
   plugins: [
     react({
@@ -37,7 +35,7 @@ export default defineConfig({
       reporter: ['json-summary', 'html'],
       extension: ['js', 'jsx', 'ts', 'tsx'],
     },
-    include: testFiles,
+    include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
