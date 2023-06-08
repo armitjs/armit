@@ -32,21 +32,25 @@ export const searchConfig = async <T = any>(
       `.${moduleName}rc.yaml`,
       `.${moduleName}rc.yml`,
       `.${moduleName}rc.js`,
-      `.${moduleName}rc.ts`,
+      `.${moduleName}rc.mjs`,
       `.${moduleName}rc.cjs`,
       `${moduleName}.config.js`,
+      `${moduleName}.config.mjs`,
       `${moduleName}.config.cjs`,
+      // TS
+      `.${moduleName}rc.ts`,
       `${moduleName}.config.ts`,
       `${moduleName}.config.mts`,
-      `${moduleName}.config.mjs`,
     ],
     loaders: {
+      // https://github.com/cosmiconfig/cosmiconfig/tree/889d3b491b54babf4d816a10a6c6720df5ccd944
+      // https://github.com/cosmiconfig/cosmiconfig/blob/HEAD/CHANGELOG.md#820
       // isESM with `type:module`, otherwise `commonjs`
-      '.js': dynamicLoader(options, searchFrom),
+      // '.js': dynamicLoader(options, searchFrom),
       // isESM with `type:module`, otherwise `commonjs`
       '.ts': dynamicLoader(options, searchFrom),
       '.mts': dynamicLoader(options, searchFrom),
-      '.mjs': dynamicLoader(options, searchFrom),
+      // '.mjs': dynamicLoader(options, searchFrom),
     },
   });
   return explorer.search(searchFrom).then((result) => {
@@ -64,11 +68,11 @@ export const loadConfig = async <T = any>(
   const explorer = cosmiconfig('', {
     loaders: {
       // isESM with `type:module`, otherwise `commonjs`
-      '.js': dynamicLoader(options),
+      // '.js': dynamicLoader(options),
       // isESM with `type:module`, otherwise `commonjs`
       '.ts': dynamicLoader(options),
       '.mts': dynamicLoader(options),
-      '.mjs': dynamicLoader(options),
+      // '.mjs': dynamicLoader(options),
     },
   });
   return explorer.load(configFile).then((result) => {

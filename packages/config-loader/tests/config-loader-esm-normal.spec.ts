@@ -15,6 +15,27 @@ describe('ConfigLoader normal', () => {
   const fixturesPath = getDirname(import.meta.url, 'fixtures/esm');
 
   describe('cosmiconfig load single config file for .mjs', () => {
+    it('should search a valid TS file with named export for .mjs', async () => {
+      const loadedCfg = await searchConfig<{
+        cake: string;
+      }>('valid-default', fixturesPath, loaderOptions);
+      expect(typeof loadedCfg?.config).toStrictEqual('object');
+      expect(typeof loadedCfg?.config).toStrictEqual('object');
+      expect(loadedCfg?.config.cake).toStrictEqual('a lie');
+    });
+
+    // FIXME:https://github.com/cosmiconfig/cosmiconfig/issues/308
+    // it('should search a valid TS file with default export for .js', async () => {
+    //   const loadedCfg = await searchConfig<{
+    //     test: {
+    //       cake: string;
+    //     };
+    //   }>('valid', fixturesPath, loaderOptions);
+    //   expect(typeof loadedCfg?.config).toStrictEqual('object');
+    //   expect(typeof loadedCfg?.config.test).toStrictEqual('object');
+    //   expect(loadedCfg?.config.test.cake).toStrictEqual('a lie');
+    // });
+
     it('should load a valid TS file with named export', async () => {
       const loadedCfg = await loadConfig<{
         test: {
@@ -25,6 +46,7 @@ describe('ConfigLoader normal', () => {
       expect(typeof loadedCfg?.config.test).toStrictEqual('object');
       expect(loadedCfg?.config.test.cake).toStrictEqual('a lie');
     });
+
     it('should load a valid TS file with named export for .js', async () => {
       const loadedCfg = await loadConfig<{
         test: {
