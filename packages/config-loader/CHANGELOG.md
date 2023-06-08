@@ -1,5 +1,17 @@
 # @armit/config-loader
 
+## 0.0.46
+
+### Patch Changes
+
+- [`d8ea656`](https://github.com/armitjs/armit/commit/d8ea656c07ca01f8e0d2e6efe665b9c85d2252a2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade cosmiconfig to support .mjs
+
+- [`9cea62e`](https://github.com/armitjs/armit/commit/9cea62e85cbc4769d077512a3069a9f3d1c6b644) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`9cea62e`](https://github.com/armitjs/armit/commit/9cea62e85cbc4769d077512a3069a9f3d1c6b644)]:
+  - @armit/file-utility@0.0.25
+  - @armit/package@0.0.40
+
 ## 0.0.45
 
 ### Patch Changes
