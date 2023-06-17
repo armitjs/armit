@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.30
+
+### Patch Changes
+
+- [`67c4f99`](https://github.com/armitjs/armit/commit/67c4f99d4b446c0b1e21a4f43c8a1c7046d85c9e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add `remote` param for check branches contains commithash
+
 ## 0.0.29
 
 ### Patch Changes
