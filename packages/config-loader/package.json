@@ -1,6 +1,6 @@
 {
   "name": "@armit/config-loader",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "A config loader searches for and loads configuration for your program, support `type:module`, `esm`, `cjs`",
   "keywords": [
     "esm",
