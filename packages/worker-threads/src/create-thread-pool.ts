@@ -1,7 +1,10 @@
 import { EventEmitter } from 'node:events';
 import { isMainThread, type WorkerOptions } from 'node:worker_threads';
 import createDebug from 'debug';
-import { RequestQueue } from './components/request-queue.js';
+import {
+  RequestQueue,
+  type ThreadRequest,
+} from './components/request-queue.js';
 import { dynamicExports } from './export-bridge.js';
 import { type ThreadId } from './types/general.js';
 export { withTransfer } from './transferable.js';
@@ -22,11 +25,6 @@ export let debug = debugOut;
 if (!isMainThread) {
   debugOut = createDebug(`armit-worker:parent:${threadId}:master`);
   debug = dynamicDebug;
-}
-
-export interface ThreadRequest {
-  resolve(thread: WorkerThread): void;
-  reject(error: Error): void;
 }
 
 export type ThreadPoolOptions = {

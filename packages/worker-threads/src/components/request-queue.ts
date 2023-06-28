@@ -1,5 +1,10 @@
 import { EventEmitter } from 'node:events';
-import { type ThreadRequest } from '../index.js';
+import { type WorkerThread } from '../worker-thread.js';
+
+export interface ThreadRequest {
+  resolve(thread: WorkerThread): void;
+  reject(error: Error): void;
+}
 
 export class RequestQueue extends EventEmitter {
   private threadRequests: ThreadRequest[] = [];
