@@ -38,6 +38,10 @@
       "path": "packages/config-loader"
     },
     {
+      "name": "worker-threads",
+      "path": "packages/worker-threads"
+    },
+    {
       "name": "file-utility",
       "path": "packages/file-utility"
     },
@@ -98,6 +102,7 @@
       "./packages/commander",
       "./packages/cosmiconfig",
       "./packages/file-utility",
+      "./packages/worker-threads",
       "./packages/file-recursive-copy",
       "./packages/docs",
       "./packages/scaffold-next",
