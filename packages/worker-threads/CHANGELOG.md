@@ -1,5 +1,11 @@
 # @armit/worker-threads
 
+## 0.0.3
+
+### Patch Changes
+
+- [`f1d6127`](https://github.com/armitjs/armit/commit/f1d612752bf46915b5c269c934c6bdb71a62c9c5) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Fix esm worker path to URL type
+
 ## 0.0.2
 
 ### Patch Changes
