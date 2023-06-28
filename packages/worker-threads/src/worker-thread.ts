@@ -1,4 +1,4 @@
-import { EventEmitter } from 'stream';
+import { EventEmitter } from 'node:events';
 import {
   MessageChannel,
   type MessagePort,
@@ -39,7 +39,7 @@ export class WorkerThread extends EventEmitter {
     id: ThreadId,
     parentId: ThreadId,
     private debug: Debugger,
-    workerString: string,
+    workerString: URL,
     resolvedWorkerPath: string,
     workerOptions: WorkerOptions
   ) {
@@ -55,7 +55,7 @@ export class WorkerThread extends EventEmitter {
       }
     );
 
-    const worker = new Worker(workerString, { ...workerOptions, eval: true });
+    const worker = new Worker(workerString, { ...workerOptions, eval: false });
     this.worker = worker;
 
     const { port1, port2 } = new MessageChannel();

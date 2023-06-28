@@ -1,4 +1,4 @@
-import { EventEmitter } from 'node:stream';
+import { EventEmitter } from 'node:events';
 import { type Debugger } from 'debug';
 import { type Transferable, TransferableValue } from '../transferable.js';
 import { type CallableId, type ThreadMethodKey } from '../types/general.js';

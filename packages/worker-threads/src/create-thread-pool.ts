@@ -1,4 +1,5 @@
 import { EventEmitter } from 'node:events';
+import { pathToFileURL } from 'node:url';
 import { isMainThread, type WorkerOptions } from 'node:worker_threads';
 import createDebug from 'debug';
 import {
@@ -103,8 +104,8 @@ export async function createThreadPool<T>(
 
   // Resolve relative worker path
   const resolvedWorkerPath = requireResolve(workerPath);
-
-  const workerString = getDirname(import.meta.url, 'worker.js');
+  // Convert to files:/// protocol for esm
+  const workerString = pathToFileURL(getDirname(import.meta.url, 'worker.js'));
 
   // TODO: Automatically infer types from worker path if not given
   // const implicitWorkerType = await import('./__tests__/workers/basic');
