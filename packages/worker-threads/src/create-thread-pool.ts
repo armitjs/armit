@@ -104,6 +104,7 @@ export async function createThreadPool<T>(
 
   // Resolve relative worker path
   const resolvedWorkerPath = requireResolve(workerPath);
+
   // Convert to files:/// protocol for esm
   const workerString = pathToFileURL(getDirname(import.meta.url, 'worker.js'));
 

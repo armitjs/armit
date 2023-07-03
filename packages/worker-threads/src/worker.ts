@@ -167,5 +167,5 @@ parentPort.once('message', async (msg: InitMessage) => {
     });
   }
 
-  msg.port.postMessage({ action: 'ready' });
+  port.postMessage({ action: 'ready' });
 });

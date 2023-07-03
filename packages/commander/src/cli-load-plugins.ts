@@ -54,7 +54,7 @@ async function load(
     plugin: CommandModule;
   }>
 > {
-  // unless pluginSearchDirs are provided, auto-load plugins from node_modules that are parent to Prettier
+  // unless pluginSearchDirs are provided, auto-load plugins from node_modules that are parent to `commander`
   if (pluginSearchDirs.length === 0) {
     const autoLoadDir = searchParentDir(
       getDirname(import.meta.url),
