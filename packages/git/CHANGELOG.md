@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.33
+
+### Patch Changes
+
+- [`de8fb41`](https://github.com/armitjs/armit/commit/de8fb41ab1d0c1b5a16eb00715c0643be60dd9e0) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix wrong `branch` detect between `commits`
+
 ## 0.0.32
 
 ### Patch Changes
