@@ -8,7 +8,8 @@ import { exec } from 'node:child_process';
  */
 export const getAllCommitsBetween = (
   lastCommit: string,
-  earlyCommit: string
+  earlyCommit: string,
+  remote = true
 ) => {
   // NOTE: The order is from `${earlyCommit} to ${lastComit}`
   const diff =
@@ -17,7 +18,9 @@ export const getAllCommitsBetween = (
   // if only `lastCommit` provider, will list all commits.
   return new Promise<string[]>((resolve) => {
     exec(
-      `git --no-pager log --oneline ${diff} | cut -d " " -f1`,
+      `git --no-pager log ${
+        remote ? '-r' : ''
+      } --oneline ${diff} | cut -d " " -f1`,
       (err, out) => {
         if (err) {
           // fatal: ambiguous argument 'df3s053': unknown revision or path not in the working tree.
