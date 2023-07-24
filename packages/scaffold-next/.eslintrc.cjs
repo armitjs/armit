@@ -22,7 +22,7 @@ module.exports = {
     // Apply prettier and disable incompatible rules
     '@armit/eslint-config-bases/prettier',
     // https://nextjs.org/docs/pages/building-your-application/configuring/eslint#migrating-existing-config
-    'next',
+    'plugin:@next/next/recommended',
   ],
   rules: {
     // https://github.com/vercel/next.js/discussions/16832
