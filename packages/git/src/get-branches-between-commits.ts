@@ -56,7 +56,7 @@ export const getBranchesBetweenCommits = async (
   const finalBranches: string[] = [];
   // re-loop all branches to check it's commit hash between `${allCommits}`
   for (const branch of allBranches) {
-    const branchCommitHash = await getCommitIdOfBranch(branch);
+    const branchCommitHash = await getCommitIdOfBranch(branch, true, remote);
     if (branchCommitHash && allCommits.includes(branchCommitHash)) {
       finalBranches.push(branch);
     }
