@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.34
+
+### Patch Changes
+
+- [`42744cc`](https://github.com/armitjs/armit/commit/42744ccbc10a337acfe9d8fe2810303cb4c11b30) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add `remote` config for `getCommitIdOfBranch`
+
 ## 0.0.33
 
 ### Patch Changes
