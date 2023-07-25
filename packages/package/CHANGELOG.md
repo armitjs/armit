@@ -1,5 +1,14 @@
 # @armit/package
 
+## 0.0.43
+
+### Patch Changes
+
+- [`56382ca`](https://github.com/armitjs/armit/commit/56382ca811f02262bd96999e9f0c79a9b6a09bcd) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor `npm-check-update` module for `mono`
+
+- Updated dependencies []:
+  - @armit/config-loader@0.0.49
+
 ## 0.0.42
 
 ### Patch Changes
