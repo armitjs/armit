@@ -1,5 +1,7 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { searchConfig } from '@armit/config-loader';
+import { fileWalk } from '@armit/file-utility';
 import { type Index } from 'npm-check-updates/build/src/types/IndexType.js';
 import { type PackageFile } from 'npm-check-updates/build/src/types/PackageFile.js';
 import { type VersionSpec } from 'npm-check-updates/build/src/types/VersionSpec.js';
@@ -7,13 +9,12 @@ import { run } from 'npm-check-updates';
 import { projectHasYarn } from '../npm-yarn.js';
 import { getNcuConfigFile } from './cache-file.js';
 import { type UpdatePackageOptions } from './types.js';
-
 /**
  * Upgrading pacakges using npm installer `npm`
  * @param packages [name@version]
  * @param options installation configurations
  */
-export const npmCheckUpdates = (
+export const npmCheckUpdates = async (
   options: UpdatePackageOptions
 ): Promise<PackageFile | Index<VersionSpec> | void> => {
   const cacheFile = getNcuConfigFile();
@@ -23,24 +24,56 @@ export const npmCheckUpdates = (
     });
   }
 
-  return run({
+  const packageFiles = options.packageFiles || [
+    './package.json',
+    './packages/*/package.json',
+  ];
+
+  const rootCwd = options.cwd || process.cwd();
+
+  const rootConfig = await searchConfig('ncu', rootCwd, {});
+  const { dep, reject } = rootConfig?.config || {};
+
+  const projects = await fileWalk(packageFiles, {
+    cwd: rootCwd,
+  });
+
+  for (const project of projects) {
+    const projectCwd = dirname(project);
+    if (existsSync(projectCwd)) {
+      // TODO: need to read project `.ncurc.json`
+      await runNcuUpdate(
+        {
+          ...options,
+          dep: options.dep || dep,
+          reject: options.reject || reject,
+          cwd: projectCwd,
+        },
+        cacheFile
+      );
+    }
+  }
+};
+
+async function runNcuUpdate(options: UpdatePackageOptions, cacheFile: string) {
+  return await run({
     // Any command-line option can be specified here.
     // These are set by default:
-    dep: 'prod,dev,bundle', // ,peer,optional',
+    dep: options.dep || ['prod', 'dev', 'optional'],
     cwd: options.cwd,
     cache: true,
     cacheFile,
-    cacheExpiration: 10,
-    deep: true,
-    mergeConfig: true,
+    cacheExpiration: 20,
+    deep: false,
+    mergeConfig: false,
     filter: options.filter,
     timeout: options.timeout || 30000,
     registry: options.registry,
     reject: options.reject,
     rejectVersion: options.rejectVersion,
-    jsonUpgraded: true,
+    jsonUpgraded: false,
     packageManager: projectHasYarn() ? 'yarn' : 'npm',
     silent: options.silent,
     upgrade: true,
   });
-};
+}
