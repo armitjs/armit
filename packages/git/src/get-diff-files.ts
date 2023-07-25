@@ -2,7 +2,7 @@ import { exec } from 'node:child_process';
 
 /**
  * https://git-scm.com/docs/git-diff#Documentation/git-diff.txt-emgitdiffemltoptionsgtltcommitgtltcommitgt--ltpathgt82308203
- * Viewing the changes between two arbitrary <commit>.
+ * Viewing the changes between two arbitrary <commit>, NOTE: no `-r(remote)` argument if need to `remote` using `commitHash` of `origin/xxx`
  * If <commit> on one side is omitted, it will have the same effect as using HEAD instead.
  * @example
  * ```shell
@@ -14,6 +14,7 @@ import { exec } from 'node:child_process';
  * @param lastCommit If is omitted, it will have the same effect as using HEAD instead.
  * @returns Return files between two commit hash
  */
+
 export function getDiffFiles(earlyCommit: string, lastCommit?: string) {
   const diff =
     earlyCommit && lastCommit ? `${lastCommit}..${earlyCommit}` : earlyCommit;
