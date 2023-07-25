@@ -1,4 +1,4 @@
-import path, { join } from 'node:path';
+import path from 'node:path';
 import { getDirname } from '@armit/file-utility';
 import {
   loadConfig,
