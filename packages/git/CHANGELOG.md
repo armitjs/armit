@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.0.35
+
+### Patch Changes
+
+- [`10f3546`](https://github.com/armitjs/armit/commit/10f3546c2f0295b724dcefee28612745fa9a8388) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Fix git wrong parameters `-r`
+
 ## 0.0.34
 
 ### Patch Changes
