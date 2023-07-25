@@ -264,7 +264,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/config-loader@workspace:^, @armit/config-loader@workspace:packages/config-loader":
+"@armit/config-loader@workspace:packages/config-loader":
   version: 0.0.0-use.local
   resolution: "@armit/config-loader@workspace:packages/config-loader"
   dependencies:
@@ -588,7 +588,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/package@workspace:packages/package"
   dependencies:
-    "@armit/config-loader": "workspace:^"
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/file-utility": "workspace:^"
     "@armit/logger-node": "workspace:^"
@@ -597,6 +596,7 @@ __metadata:
     "@vitest/ui": 0.33.0
     as-table: 1.0.55
     boxen: 7.1.1
+    cosmiconfig: ^8.2.0
     dependency-tree: 10.0.9
     eslint: 8.45.0
     execa: 7.1.1

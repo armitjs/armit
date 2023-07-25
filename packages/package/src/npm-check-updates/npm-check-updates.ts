@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { searchConfig } from '@armit/config-loader';
 import { fileWalk } from '@armit/file-utility';
+import { cosmiconfig } from 'cosmiconfig';
 import { type Index } from 'npm-check-updates/build/src/types/IndexType.js';
 import { type PackageFile } from 'npm-check-updates/build/src/types/PackageFile.js';
 import { type VersionSpec } from 'npm-check-updates/build/src/types/VersionSpec.js';
@@ -9,6 +9,7 @@ import { run } from 'npm-check-updates';
 import { projectHasYarn } from '../npm-yarn.js';
 import { getNcuConfigFile } from './cache-file.js';
 import { type UpdatePackageOptions } from './types.js';
+
 /**
  * Upgrading pacakges using npm installer `npm`
  * @param packages [name@version]
@@ -30,8 +31,14 @@ export const npmCheckUpdates = async (
   ];
 
   const rootCwd = options.cwd || process.cwd();
+  const explorer = cosmiconfig('ncu', {
+    searchPlaces: ['package.json', `.ncurc`, `.ncurc.json`, `.ncurc.yaml`],
+  });
 
-  const rootConfig = await searchConfig('ncu', rootCwd, {});
+  const rootConfig = await explorer.search(rootCwd).then((result) => {
+    return result;
+  });
+
   const { dep, reject } = rootConfig?.config || {};
 
   const projects = await fileWalk(packageFiles, {

@@ -42,11 +42,11 @@
     "typecheck": "tsc --jsx react-jsx --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@armit/config-loader": "workspace:^",
     "@armit/file-utility": "workspace:^",
     "@armit/logger-node": "workspace:^",
     "as-table": "1.0.55",
     "boxen": "7.1.1",
+    "cosmiconfig": "^8.2.0",
     "dependency-tree": "10.0.9",
     "execa": "7.1.1",
     "has-yarn": "3.0.0",
