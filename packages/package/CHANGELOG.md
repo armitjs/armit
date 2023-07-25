@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.0.44
+
+### Patch Changes
+
+- [`fe83d8e`](https://github.com/armitjs/armit/commit/fe83d8ec68950d6c8ebdb5124b5cc0df0452fd14) Thanks [@tianyingchun](https://github.com/tianyingchun)! - using `cosmiconfig` directly avoid circle dependecies
+
 ## 0.0.43
 
 ### Patch Changes
