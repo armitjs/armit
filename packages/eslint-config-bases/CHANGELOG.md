@@ -1,5 +1,13 @@
 # @armit/eslint-config-bases
 
+## 0.0.23
+
+### Patch Changes
+
+- [`c984324`](https://github.com/armitjs/armit/commit/c984324d310a626ce46f8f15a613fe938fc0db07) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`1c3293a`](https://github.com/armitjs/armit/commit/1c3293a96b7a293bd7ec543d181c047946be138b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add `endOfLine` to `auto` avoid conflict of vscode
+
 ## 0.0.22
 
 ### Patch Changes
