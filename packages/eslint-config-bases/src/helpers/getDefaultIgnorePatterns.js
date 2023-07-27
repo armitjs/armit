@@ -3,6 +3,7 @@ const getDefaultIgnorePatterns = () => {
     // Hacky way to silence @yarnpkg/doctor about node_modules detection
     `**/${'node'}_modules`,
     '.cache',
+    '**/_release',
     '**/.cache',
     '**/build',
     '**/dist',
