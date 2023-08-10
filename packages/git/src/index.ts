@@ -5,3 +5,4 @@ export * from './get-file-commit-status.js';
 export * from './get-diff-files.js';
 export * from './get-all-commits-between.js';
 export * from './get-branches-between-commits.js';
+export * from './has-changed-file-pending-to-commit.js';
