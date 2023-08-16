@@ -1,5 +1,11 @@
 # @armit/docs
 
+## 0.0.14
+
+### Patch Changes
+
+- [`becd692`](https://github.com/armitjs/armit/commit/becd692faa1138d797bffc3c50141d79d95d27d8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - adjust scripts `clean`
+
 ## 0.0.13
 
 ### Patch Changes
