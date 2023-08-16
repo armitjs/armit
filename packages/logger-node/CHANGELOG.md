@@ -1,5 +1,16 @@
 # @armit/logger
 
+## 0.0.36
+
+### Patch Changes
+
+- [`8ec7b2f`](https://github.com/armitjs/armit/commit/8ec7b2fabfbccb31b3d0ba2168bb77f86c6a5121) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`becd692`](https://github.com/armitjs/armit/commit/becd692faa1138d797bffc3c50141d79d95d27d8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - adjust scripts `clean`
+
+- Updated dependencies [[`8ec7b2f`](https://github.com/armitjs/armit/commit/8ec7b2fabfbccb31b3d0ba2168bb77f86c6a5121), [`becd692`](https://github.com/armitjs/armit/commit/becd692faa1138d797bffc3c50141d79d95d27d8)]:
+  - @armit/logger@0.0.32
+
 ## 0.0.35
 
 ### Patch Changes
