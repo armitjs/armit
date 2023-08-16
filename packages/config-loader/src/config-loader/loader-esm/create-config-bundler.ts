@@ -1,5 +1,5 @@
-import { builtinModules, createRequire, isBuiltin } from 'node:module';
-import { getPackageDependencyKeys } from '@armit/package';
+import { builtinModules, isBuiltin } from 'node:module';
+import { getPackageDependencyKeys, requireResolve } from '@armit/package';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginJson from '@rollup/plugin-json';
@@ -8,19 +8,10 @@ import { rollup } from 'rollup';
 import { type ConfigBundler } from '../../types.js';
 import { type EsmLoaderOptions } from './esm-loader.js';
 
-const esmRequire = createRequire(import.meta.url);
-
-const resolve = (modulePath: string) => {
-  try {
-    return esmRequire.resolve(modulePath);
-  } catch (err) {
-    return null;
-  }
-};
 const nodeBabelPreset = {
   presets: [
     [
-      esmRequire.resolve('@babel/preset-env'),
+      requireResolve(import.meta.url, '@babel/preset-env'),
       {
         loose: true,
         useBuiltIns: false,
@@ -28,7 +19,7 @@ const nodeBabelPreset = {
       },
     ],
     [
-      esmRequire.resolve('@babel/preset-typescript'),
+      requireResolve(import.meta.url, '@babel/preset-typescript'),
       {
         // https://babeljs.io/docs/en/babel-preset-typescript
         // https://github.com/babel/babel/blob/main/packages/babel-parser/src/plugins/typescript/index.js#L3133
@@ -40,12 +31,18 @@ const nodeBabelPreset = {
   plugins: [] as Array<[string, Record<string, unknown>]>,
 };
 
-const decorators = resolve('@babel/plugin-proposal-decorators');
+const decorators = requireResolve(
+  import.meta.url,
+  '@babel/plugin-proposal-decorators'
+);
 if (decorators) {
   nodeBabelPreset.plugins.push([decorators, { legacy: true }]);
 }
 
-const classProperties = resolve('@babel/plugin-proposal-class-properties');
+const classProperties = requireResolve(
+  import.meta.url,
+  '@babel/plugin-proposal-class-properties'
+);
 if (classProperties) {
   nodeBabelPreset.plugins.push([classProperties, { loose: true }]);
 }

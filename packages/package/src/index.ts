@@ -9,3 +9,4 @@ export * from './npm-deps-verify/index.js';
 export * from './npm-installer/index.js';
 export * from './update-notifier/index.js';
 export * from './helpers/is-mono-repo.js';
+export * from './helpers/require-resolve.js';
