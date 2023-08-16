@@ -60,12 +60,10 @@ export class GenerateTemplateFiles {
       throwErrorIfNoConfigItems(options);
       throwErrorIfNoPromptOrDynamicReplacers(options);
 
-      const selectedConfigItem: ConfigItem = await this.getSelectedItem(
-        options
-      );
-      const answeredReplacers: Replacer[] = await this.getReplacerSlotValues(
-        selectedConfigItem
-      );
+      const selectedConfigItem: ConfigItem =
+        await this.getSelectedItem(options);
+      const answeredReplacers: Replacer[] =
+        await this.getReplacerSlotValues(selectedConfigItem);
 
       await this.outputFiles(selectedConfigItem, answeredReplacers);
     } catch (error) {
@@ -86,9 +84,8 @@ export class GenerateTemplateFiles {
     throwErrorIfPromptReplacersExistOrNoDynamicReplacers(options);
 
     for (const selectedConfigItem of options) {
-      const answeredReplacers = await this.getDynamicReplacerSlotValues(
-        selectedConfigItem
-      );
+      const answeredReplacers =
+        await this.getDynamicReplacerSlotValues(selectedConfigItem);
       await this.outputFiles(selectedConfigItem, answeredReplacers);
     }
   }
@@ -205,9 +202,8 @@ export class GenerateTemplateFiles {
       };
     });
 
-    const answer: { [replacer: string]: string } = await enquirer.prompt(
-      replacerQuestions
-    );
+    const answer: { [replacer: string]: string } =
+      await enquirer.prompt(replacerQuestions);
 
     const replacers: Replacer[] = Object.entries(answer).map(
       ([key, value]: [string, string]): Replacer => {
@@ -217,9 +213,8 @@ export class GenerateTemplateFiles {
         };
       }
     );
-    const dynamicReplacers = await this.getDynamicReplacerSlotValues(
-      selectedConfigItem
-    );
+    const dynamicReplacers =
+      await this.getDynamicReplacerSlotValues(selectedConfigItem);
 
     return [...replacers, ...dynamicReplacers];
   }

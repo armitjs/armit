@@ -1,4 +1,4 @@
-// import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test('keeps route handlers intact', () => {
   // const response = await request.get('/api');
