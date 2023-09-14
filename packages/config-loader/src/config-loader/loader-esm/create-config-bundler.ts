@@ -41,7 +41,7 @@ if (decorators) {
 
 const classProperties = requireResolve(
   import.meta.url,
-  '@babel/plugin-proposal-class-properties'
+  '@babel/plugin-transform-class-properties'
 );
 if (classProperties) {
   nodeBabelPreset.plugins.push([classProperties, { loose: true }]);

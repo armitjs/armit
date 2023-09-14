@@ -13,7 +13,7 @@ describe('Garbage Collections', () => {
   // Note: This might be flaky, as the garbage collection and the finalizer cannot be triggered reliably
   it('cleans up main thread function when garbage collected on thread', async () => {
     const worker = await createThreadPool<WorkerWithCallback>(
-      './__tests__/workers/callback'
+      './__tests__/workers/callback.ts'
     );
     // Need to create a lot of callbacks to trigger the garbage collection
     const callTimes = 50000;
