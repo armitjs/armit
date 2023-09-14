@@ -1,5 +1,11 @@
 # @armit/worker-threads
 
+## 0.0.8
+
+### Patch Changes
+
+- [`4ae3fbc`](https://github.com/armitjs/armit/commit/4ae3fbcee513e9606aef493172fad83d9afc9890) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.0.7
 
 ### Patch Changes
