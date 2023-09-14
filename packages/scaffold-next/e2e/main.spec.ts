@@ -1,4 +1,5 @@
 // import { test, expect } from '@playwright/test';
+import { it, describe, expect } from 'vitest';
 
 // test('keeps route handlers intact', () => {
 //   // const response = await request.get('/api');
@@ -7,3 +8,9 @@
 //   // expect(data).toEqual({ message: 'Hello world' });
 //   expect(true).toBe(true);
 // });
+
+describe('tests', () => {
+  it('should work', () => {
+    expect(true).toBe(true);
+  });
+});

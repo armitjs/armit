@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import type { CommonOptions, ExecaChildProcess, ExecaReturnValue } from 'execa';
+import type { ExecaChildProcess, ExecaReturnValue, Options } from 'execa';
 import { execa } from 'execa';
 
 /**
@@ -8,10 +8,7 @@ import { execa } from 'execa';
  * @param opts overrides execa configuration
  *
  */
-const execaOpts = (
-  workDir = process.cwd(),
-  opts: CommonOptions<string>
-): CommonOptions<string> => {
+const execaOpts = (workDir = process.cwd(), opts: Options): Options => {
   return Object.assign(
     {
       cwd: workDir,
@@ -33,7 +30,7 @@ export const runProgram = (
   program: string,
   cwd: string,
   args: string[],
-  opts: CommonOptions<string>
+  opts: Options
 ): ExecaChildProcess<string> => {
   return execa(program, args, execaOpts(cwd, opts));
 };
@@ -51,7 +48,7 @@ export const runTsScript = (
   program: string,
   mode: 'esm' | 'commonjs',
   tsconfig: string,
-  options: CommonOptions<string>,
+  options: Options,
   ...args
 ): Promise<ExecaReturnValue<string>> => {
   const commonjsArgs =
