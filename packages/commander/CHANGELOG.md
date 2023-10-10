@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.0.58
+
+### Patch Changes
+
+- [`8720c83`](https://github.com/armitjs/armit/commit/8720c832b25e5f8b3609ad04719f0557d4f4869f) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add missed `@types/yargs` dependency
+
 ## 0.0.57
 
 ### Patch Changes
