@@ -1,8 +1,11 @@
-import createIntlMiddleware from 'next-intl/middleware';
+import createMiddleware from 'next-intl/middleware';
+import { locales, pathnames } from './navigation';
 
-export default createIntlMiddleware({
-  locales: ['en', 'de', 'es'],
+export default createMiddleware({
+  locales,
   defaultLocale: 'en',
+  localePrefix: 'as-needed',
+  pathnames,
   domains: [
     {
       domain: 'www.nailip.com',

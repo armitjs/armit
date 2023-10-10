@@ -8,12 +8,12 @@ export default function CoreLibrary() {
   });
 
   const now = new Date(2022, 10, 6, 20, 20, 0, 0);
-  const intl = createFormatter({ locale: 'en', now });
+  const format = createFormatter({ locale: 'en', now });
   const tomorrow = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
   return (
     <p data-testid="CoreLibrary">
-      {t('Index.title')} {intl.relativeTime(tomorrow)}
+      {t('Index.title')} {format.relativeTime(tomorrow)}
     </p>
   );
 }
