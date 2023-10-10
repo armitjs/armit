@@ -46,6 +46,7 @@
     "@armit/package": "workspace:^",
     "@armit/path-alias": "^0.0.16",
     "@armit/terminal": "workspace:^",
+    "@types/yargs": "17.0.28",
     "execa": "8.0.1",
     "globby": "13.2.2",
     "mem": "9.0.2",
