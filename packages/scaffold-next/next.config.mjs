@@ -99,8 +99,6 @@ const nextConfig = {
   },
 
   experimental: {
-    appDir: true,
-
     // @link https://nextjs.org/docs/advanced-features/output-file-tracing#caveats
     outputFileTracingRoot: workspaceRoot,
 
