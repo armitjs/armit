@@ -1,8 +1,12 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { getTranslations } from 'next-intl/server';
-
-export async function GET(request: NextRequest) {
+import { getTranslator } from 'next-intl/server';
+type Props = {
+  params: {
+    locale: string;
+  };
+};
+export async function GET(request: NextRequest, { params: { locale } }: Props) {
   const name = request.nextUrl.searchParams.get('name');
   if (!name) {
     return new Response('Search param `name` was not provided.', {
@@ -10,6 +14,6 @@ export async function GET(request: NextRequest) {
     });
   }
 
-  const t = await getTranslations('ApiRoute');
+  const t = await getTranslator(locale, 'ApiRoute');
   return NextResponse.json({ message: t('hello', { name }) });
 }

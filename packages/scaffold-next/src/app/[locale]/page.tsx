@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { useFormatter, useNow, useTimeZone, useTranslations } from 'next-intl';
 import {
-  Link,
-  useFormatter,
-  useNow,
-  useTimeZone,
-  useTranslations,
-} from 'next-intl';
-import { getTranslations } from 'next-intl/server';
+  getFormatter,
+  getNow,
+  getTimeZone,
+  getTranslator,
+} from 'next-intl/server';
+import { type ReactNode } from 'react';
 import iconImage from '@/public/icon.png';
 import MessagesAsPropsCounter from '../../components/client/01-MessagesAsPropsCounter';
 import MessagesOnClientCounter from '../../components/client/02-MessagesOnClientCounter';
@@ -15,18 +15,35 @@ import ClientRouterWithoutProvider from '../../components/ClientRouterWithoutPro
 import CoreLibrary from '../../components/CoreLibrary';
 import LocaleSwitcher from '../../components/LocaleSwitcher';
 import PageLayout from '../../components/PageLayout';
+import { Link } from '../../navigation';
 import styles from './page.module.css';
 
-export async function generateMetadata(): Promise<Metadata> {
-  // const product = await getProduct(params.id);
-  const t = await getTranslations('Index');
-  return { title: t('title'), description: t('description') };
-}
-
 type Props = {
+  children: ReactNode;
+  params: { locale: string };
+};
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, 'children'>): Promise<Metadata> {
+  const t = await getTranslator(locale, 'LocaleLayout');
+  const formatter = await getFormatter(locale);
+  const now = await getNow(locale);
+  const timeZone = await getTimeZone(locale);
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    other: {
+      currentYear: formatter.dateTime(now, { year: 'numeric' }),
+      timeZone: timeZone || 'N/A',
+    },
+  };
+}
+type PageProps = {
   searchParams: Record<string, string>;
 };
-export default function Index({ searchParams }: Props) {
+
+export default function Index({ searchParams }: PageProps) {
   const t = useTranslations('Index');
   const format = useFormatter();
   const now = useNow();

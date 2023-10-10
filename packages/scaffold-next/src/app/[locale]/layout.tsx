@@ -1,21 +1,35 @@
-import './globals.css';
-import '@/styles/tailwind.css';
+import { type Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
-import type { ReactNode } from 'react';
+import {
+  getFormatter,
+  getNow,
+  getTimeZone,
+  getTranslator,
+} from 'next-intl/server';
+import { type ReactNode } from 'react';
+import Navigation from '../../components/Navigation';
 
 type Props = {
   children: ReactNode;
   params: { locale: string };
 };
 
-export async function generateMetadata() {
-  const t = await getTranslations('LocaleLayout');
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, 'children'>): Promise<Metadata> {
+  const t = await getTranslator(locale, 'LocaleLayout');
+  const formatter = await getFormatter(locale);
+  const now = await getNow(locale);
+  const timeZone = await getTimeZone(locale);
 
   return {
     title: t('title'),
     description: t('description'),
+    other: {
+      currentYear: formatter.dateTime(now, { year: 'numeric' }),
+      timeZone: timeZone || 'N/A',
+    },
   };
 }
 
@@ -29,7 +43,18 @@ export default function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <div
+          style={{
+            padding: 24,
+            fontFamily: 'system-ui, sans-serif',
+            lineHeight: 1.5,
+          }}
+        >
+          <Navigation />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
