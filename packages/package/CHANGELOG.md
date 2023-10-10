@@ -1,5 +1,15 @@
 # @armit/package
 
+## 0.0.49
+
+### Patch Changes
+
+- [`2d06c13`](https://github.com/armitjs/armit/commit/2d06c1375d23a557110306df92510068b8de10d8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`2d06c13`](https://github.com/armitjs/armit/commit/2d06c1375d23a557110306df92510068b8de10d8)]:
+  - @armit/file-utility@0.0.32
+  - @armit/logger-node@0.0.38
+
 ## 0.0.48
 
 ### Patch Changes
