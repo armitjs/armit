@@ -89,12 +89,23 @@ export const installPackages = (
   if (!packages.length) {
     return Promise.resolve(true);
   }
-  const { installer, cwd } = options;
+  const { cwd } = options;
   const { isYarn } = runingNpmOrYarn();
+  const installer = options.installer
+    ? options.installer
+    : isYarn
+    ? 'yarn'
+    : 'npm';
+
+  const useYarn = installer === 'yarn';
+
   logger.info(packages, `installPackages`);
-  const npmArgs = [isYarn ? 'add' : 'install'].concat(packages).filter(Boolean);
+  const npmArgs = [useYarn ? 'add' : 'install']
+    .concat(packages)
+    .filter(Boolean);
+
   const spinner = ora(`Installing using ${pic.green(installer)} ...`).start();
-  return execa(installer ?? isYarn ? 'yarn' : 'npm', npmArgs, { cwd })
+  return execa(installer, npmArgs, { cwd })
     .then((output) => {
       spinner.succeed();
       logger.debug(output.stdout, `installPackages`);
@@ -116,9 +127,10 @@ export const installDependencies = (
   saveDependencies: string[],
   options: InstallPackageOptions
 ): Promise<boolean> => {
-  if (options.noSave === true) {
+  const isNpm = options.installer === 'npm';
+  if (options.noSave === true && isNpm) {
     saveDependencies.unshift('--no-save');
-  } else if (saveDependencies.length) {
+  } else if (saveDependencies.length && isNpm) {
     saveDependencies.unshift('--save');
   }
   return installPackages(saveDependencies, options);
@@ -133,10 +145,11 @@ export const installDevDependencies = (
   saveDevDependencies: string[],
   options: InstallPackageOptions
 ): Promise<boolean> => {
-  if (options.noSave === true) {
+  const isNpm = options.installer === 'npm';
+  if (options.noSave === true && isNpm) {
     saveDevDependencies.unshift('--no-save');
   } else if (saveDevDependencies.length) {
-    saveDevDependencies.unshift('--save-dev');
+    saveDevDependencies.unshift(isNpm ? '--save-dev' : '--dev');
   }
   return installPackages(saveDevDependencies, options);
 };
