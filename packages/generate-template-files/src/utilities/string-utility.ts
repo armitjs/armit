@@ -76,7 +76,7 @@ export class StringUtility {
         // Add a space before any upper case characters.
         .replace(/([a-z](?=[A-Z]))/g, '$1 ')
         // Remove all non-word characters and replace with a single space.
-        .replace(/[^a-zA-Z\d ]/g, ' ')
+        .replace(/[^a-z\d ]/gi, ' ')
         // Replace multiple Spaces with a single space.
         .replace(/\s+/g, ' ')
         // Trim whitespace around the string.
@@ -118,7 +118,7 @@ export class StringUtility {
     return (
       StringUtility.toCamelCase(str)
         // Make first character uppercase.
-        .replace(/^[a-zA-Z]/, (a: string, _b, _c) => {
+        .replace(/^[a-z]/i, (a: string, _b, _c) => {
           return a.toUpperCase();
         })
     );
