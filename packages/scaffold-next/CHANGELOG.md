@@ -1,5 +1,11 @@
 # @armit/scaffold-next
 
+## 0.1.19
+
+### Patch Changes
+
+- [`5418f67`](https://github.com/armitjs/armit/commit/5418f67ed17d3632bbfd8b0312e3ffbb7c134ba7) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.1.18
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @armit/package
 
+## 0.0.50
+
+### Patch Changes
+
+- [`5418f67`](https://github.com/armitjs/armit/commit/5418f67ed17d3632bbfd8b0312e3ffbb7c134ba7) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`d1fc8a2`](https://github.com/armitjs/armit/commit/d1fc8a25e49e86f95ed134af44c5b29b9075e3c1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix npm installer for yarn compatibility
+
+- Updated dependencies [[`5418f67`](https://github.com/armitjs/armit/commit/5418f67ed17d3632bbfd8b0312e3ffbb7c134ba7)]:
+  - @armit/file-utility@0.0.33
+  - @armit/logger-node@0.0.39
+
 ## 0.0.49
 
 ### Patch Changes
