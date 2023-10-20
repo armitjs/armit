@@ -1,5 +1,13 @@
 # @armit/eslint-config-bases
 
+## 0.0.28
+
+### Patch Changes
+
+- [`5418f67`](https://github.com/armitjs/armit/commit/5418f67ed17d3632bbfd8b0312e3ffbb7c134ba7) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`5fabcbf`](https://github.com/armitjs/armit/commit/5fabcbff91f197636f1d6d439279653c44cde841) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add missed dependency declare
+
 ## 0.0.27
 
 ### Patch Changes
