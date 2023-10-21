@@ -315,11 +315,6 @@ __metadata:
     vite: 4.5.0
     vite-tsconfig-paths: 4.2.1
     vitest: 0.34.6
-  peerDependencies:
-    ts-node: ">=10.9.1"
-  peerDependenciesMeta:
-    ts-node:
-      optional: true
   languageName: unknown
   linkType: soft
 

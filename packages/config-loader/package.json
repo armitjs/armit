@@ -62,6 +62,7 @@
     "@rollup/plugin-json": "6.0.1",
     "@rollup/plugin-node-resolve": "15.2.3",
     "cosmiconfig": "^8.3.6",
+    "ts-node": "10.9.1",
     "type-fest": "^4.5.0"
   },
   "devDependencies": {
@@ -76,20 +77,11 @@
     "prettier": "3.0.3",
     "rimraf": "5.0.5",
     "rollup": "^4.1.4",
-    "ts-node": "10.9.1",
     "tsup": "7.2.0",
     "typescript": "5.2.2",
     "vite": "4.5.0",
     "vite-tsconfig-paths": "4.2.1",
     "vitest": "0.34.6"
-  },
-  "peerDependencies": {
-    "ts-node": ">=10.9.1"
-  },
-  "peerDependenciesMeta": {
-    "ts-node": {
-      "optional": true
-    }
   },
   "engines": {
     "node": ">=18.0.0"
