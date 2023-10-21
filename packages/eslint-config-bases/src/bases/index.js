@@ -1,5 +1,5 @@
 module.exports = {
-  jest: require('./jest'),
+  mdx: require('./mdx'),
   playwright: require('./playwright'),
   react: require('./react'),
   regexp: require('./regexp'),

@@ -23,8 +23,8 @@
     "./helpers": {
       "require": "./src/helpers/index.js"
     },
-    "./jest": {
-      "require": "./src/bases/jest.js"
+    "./mdx": {
+      "require": "./src/bases/mdx.js"
     },
     "./playwright": {
       "require": "./src/bases/playwright.js"
@@ -74,15 +74,11 @@
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.5.1",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.0.0",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jest": "^27.4.2",
-    "eslint-plugin-jest-formatting": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-playwright": "^0.17.0",
     "eslint-plugin-prettier": "^5.0.1",
@@ -91,19 +87,21 @@
     "eslint-plugin-regexp": "^2.0.0",
     "eslint-plugin-sonarjs": "^0.21.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-testing-library": "^6.1.0",
     "eslint-plugin-vitest": "^0.3.3",
     "prettier": "^3.0.3",
-    "tailwindcss": "^3.3.3",
     "vitest": "0.34.6"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "20.8.7",
     "@types/prettier": "2.7.3",
     "@types/react": "18.2.30",
     "@types/react-dom": "18.2.14",
     "eslint": "8.51.0",
+    "eslint-plugin-mdx": "2.2.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rimraf": "5.0.5",
@@ -111,11 +109,19 @@
   },
   "peerDependencies": {
     "eslint": "^8.40.0",
+    "eslint-plugin-mdx": "^2.0.5",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
   },
   "peerDependenciesMeta": {
+    "eslint-plugin-mdx": {
+      "optional": true
+    },
+    "eslint-plugin-tailwindcss": {
+      "optional": true
+    },
     "react": {
       "optional": true
     },
