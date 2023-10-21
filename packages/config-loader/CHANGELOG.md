@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.0.57
+
+### Patch Changes
+
+- [`eef87cd`](https://github.com/armitjs/armit/commit/eef87cd1222f0ea45afafc7a020c4a557e909ffe) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Add `ts-node` as dependencies
+
 ## 0.0.56
 
 ### Patch Changes
