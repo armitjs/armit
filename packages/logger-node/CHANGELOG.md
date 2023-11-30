@@ -1,5 +1,16 @@
 # @armit/logger
 
+## 0.1.0
+
+### Minor Changes
+
+- [`081e02d`](https://github.com/armitjs/armit/commit/081e02d1c1659227d94fa567f034699893c11082) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+### Patch Changes
+
+- Updated dependencies [[`081e02d`](https://github.com/armitjs/armit/commit/081e02d1c1659227d94fa567f034699893c11082)]:
+  - @armit/logger@0.1.0
+
 ## 0.0.39
 
 ### Patch Changes
