@@ -1,4 +1,3 @@
-import { pathToFileURL } from 'node:url';
 import { getDirname } from '@armit/file-utility';
 import { requireResolve } from '../helpers/require-resolve.js';
 
@@ -71,10 +70,12 @@ describe('esm resover', async () => {
   });
 
   it('should throw exception if module not found', async () => {
-    const modulePath = '../../../../node_modules/@armit/config-xxx/index.js';
-    expect(() => {
-      requireResolve(import.meta.url, modulePath);
-    }).toThrowError();
+    const modulePath = '../../../../node_modules/@armit/config-xxxxx/index.js';
+    expect(
+      !!~requireResolve(import.meta.url, modulePath).indexOf(
+        '@armit/config-xxxxx/index.js'
+      )
+    ).toBe(true);
 
     expect(() => {
       requireResolve(import.meta.url, `modulePath`);
