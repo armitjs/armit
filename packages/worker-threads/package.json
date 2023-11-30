@@ -1,6 +1,6 @@
 {
   "name": "@armit/worker-threads",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "homepage": "https://github.com/armitjs/armit",
   "repository": {
     "type": "git",
