@@ -94,8 +94,8 @@ export const installPackages = (
   const installer = options.installer
     ? options.installer
     : isYarn
-    ? 'yarn'
-    : 'npm';
+      ? 'yarn'
+      : 'npm';
 
   const useYarn = installer === 'yarn';
 

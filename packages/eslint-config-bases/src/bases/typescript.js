@@ -1,11 +1,12 @@
 /**
  * Custom config base for projects using typescript / javascript.
- * @see https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases
+ * @see https://github.com/armitjs/armit/tree/main/packages/eslint-config-bases
  */
 
 module.exports = {
   env: {
     es6: true,
+    browser: true,
     node: true,
   },
   parser: '@typescript-eslint/parser',
@@ -14,7 +15,7 @@ module.exports = {
       jsx: true,
       globalReturn: false,
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
     project: ['tsconfig.json'],
     sourceType: 'module',
   },
@@ -166,6 +167,7 @@ module.exports = {
   overrides: [
     {
       files: ['*.mjs'],
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -175,14 +177,18 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/consistent-type-exports': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
       },
     },
     {
-      // commonjs or assumed
+      // javascript commonjs
       files: ['*.js', '*.cjs'],
+      extends: ['plugin:@typescript-eslint/disable-type-checked'],
       parser: 'espree',
       parserOptions: {
-        ecmaVersion: 2020,
+        ecmaVersion: 'latest',
       },
       rules: {
         '@typescript-eslint/naming-convention': 'off',

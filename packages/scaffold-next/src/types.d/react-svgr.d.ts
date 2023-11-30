@@ -18,6 +18,7 @@
  */
 
 declare module '*.svg' {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   import type React from 'react';
   const svg: React.VFC<React.SVGProps<SVGSVGElement>>;
   export default svg;

@@ -5,7 +5,7 @@ import {
   getFormatter,
   getNow,
   getTimeZone,
-  getTranslator,
+  getTranslations,
 } from 'next-intl/server';
 import { type ReactNode } from 'react';
 import iconImage from '@/public/icon.png';
@@ -25,10 +25,10 @@ type Props = {
 export async function generateMetadata({
   params: { locale },
 }: Omit<Props, 'children'>): Promise<Metadata> {
-  const t = await getTranslator(locale, 'LocaleLayout');
-  const formatter = await getFormatter(locale);
-  const now = await getNow(locale);
-  const timeZone = await getTimeZone(locale);
+  const t = await getTranslations('LocaleLayout');
+  const formatter = await getFormatter({ locale });
+  const now = await getNow({ locale });
+  const timeZone = await getTimeZone({ locale });
 
   return {
     title: t('title'),

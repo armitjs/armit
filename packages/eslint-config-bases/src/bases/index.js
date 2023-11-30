@@ -1,11 +1,15 @@
 module.exports = {
+  graphqlSchema: require('./graphql-schema'),
   mdx: require('./mdx'),
   playwright: require('./playwright'),
+  prettier: require('./prettier'),
   react: require('./react'),
   regexp: require('./regexp'),
+  reactQuery: require('./react-query'),
   reactTestingLibrary: require('./rtl'),
-  sonar: require('./sonar'),
   storybook: require('./storybook'),
+  sonar: require('./sonar'),
   tailwind: require('./tailwind'),
   typescript: require('./typescript'),
+  vitest: require('./vitest'),
 };

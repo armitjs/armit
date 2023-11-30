@@ -86,7 +86,7 @@ export class StdoutFormatStrategy<MessageType>
     return typeof message === 'string'
       ? message
       : message instanceof Error
-      ? message.toString()
-      : JSON.stringify(message, null, 2);
+        ? message.toString()
+        : JSON.stringify(message, null, 2);
   }
 }

@@ -1,11 +1,20 @@
 /**
  * Opinionated config base for projects using react.
- * @see https://github.com/armitjs/armit/tree/main/packages/eslint-config-bases
+ * @see https://github.com/belgattitude/nextjs-monorepo-example/tree/main/packages/eslint-config-bases
  */
 
 const reactPatterns = {
   files: ['*.{jsx,tsx}'],
 };
+
+const stylesPatterns = {
+  files: ['*.styles.{js,ts}', 'styles.{js,ts}'],
+};
+
+/**
+ * Fine-tune naming convention react typescript jsx (function components)
+ * @link https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/naming-convention.md
+ */
 
 module.exports = {
   env: {
@@ -20,7 +29,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: reactPatterns.files,
+      files: [...reactPatterns.files, ...stylesPatterns.files],
       extends: [
         // @see https://github.com/yannickcr/eslint-plugin-react
         'plugin:react/recommended',

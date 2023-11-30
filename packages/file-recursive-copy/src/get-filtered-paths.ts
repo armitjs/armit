@@ -23,8 +23,8 @@ export function getFilteredPaths(
       (typeof filter === 'function'
         ? filter(slashPath)
         : filter instanceof RegExp
-        ? filter.test(slashPath)
-        : mm.all(slashPath, filter, { strictSlashes: true }));
+          ? filter.test(slashPath)
+          : mm.all(slashPath, filter, { strictSlashes: true }));
 
     return basicFilter && advancedFilter;
   });

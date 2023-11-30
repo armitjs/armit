@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 import C from 'picocolors';
 import { strTimePad } from './str-pad.js';
 import type {
@@ -85,8 +86,8 @@ function ensureString(message): string {
   return typeof message === 'string'
     ? message
     : message instanceof Error
-    ? message.toString()
-    : JSON.stringify(message, null, 2);
+      ? message.toString()
+      : JSON.stringify(message, null, 2);
 }
 
 function getColorApplier(
@@ -119,8 +120,8 @@ function addUnitOfTime(
   return unitCount !== 0
     ? colorFn(prefix + unitCount + unitName) + ' '
     : unitValueInMilliseconds === 1
-    ? colorFn(prefix + '0') + ' '
-    : '';
+      ? colorFn(prefix + '0') + ' '
+      : '';
 }
 
 function formatChangeInTime(

@@ -23,6 +23,9 @@
     "./helpers": {
       "require": "./src/helpers/index.js"
     },
+    "./graphql-schema": {
+      "require": "./src/bases/graphql-schema.js"
+    },
     "./mdx": {
       "require": "./src/bases/mdx.js"
     },
@@ -34,6 +37,9 @@
     },
     "./react": {
       "require": "./src/bases/react.js"
+    },
+    "./react-query": {
+      "require": "./src/bases/react-query.js"
     },
     "./rtl": {
       "require": "./src/bases/rtl.js"
@@ -73,49 +79,54 @@
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@rushstack/eslint-patch": "^1.5.1",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
+    "@rushstack/eslint-patch": "^1.6.0",
+    "@tanstack/eslint-plugin-query": "^5.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-playwright": "^0.17.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-playwright": "^0.18.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-regexp": "^2.0.0",
-    "eslint-plugin-sonarjs": "^0.21.0",
+    "eslint-plugin-regexp": "^2.1.1",
+    "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-storybook": "^0.6.15",
-    "eslint-plugin-testing-library": "^6.1.0",
-    "eslint-plugin-vitest": "^0.3.3",
-    "prettier": "^3.0.3",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "eslint-plugin-vitest": "^0.3.10",
     "vitest": "0.34.6"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.0.0",
-    "@types/node": "20.8.7",
+    "@testing-library/react": "^14.1.2",
+    "@types/node": "20.10.1",
     "@types/prettier": "2.7.3",
-    "@types/react": "18.2.30",
-    "@types/react-dom": "18.2.14",
-    "eslint": "8.51.0",
+    "@types/react": "18.2.39",
+    "@types/react-dom": "18.2.17",
+    "eslint": "8.54.0",
     "eslint-plugin-mdx": "2.2.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rimraf": "5.0.5",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "peerDependencies": {
+    "@graphql-eslint/eslint-plugin": "^3.14.3",
     "eslint": "^8.40.0",
     "eslint-plugin-mdx": "^2.0.5",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.0.4"
   },
   "peerDependenciesMeta": {
+    "@graphql-eslint/eslint-plugin": {
+      "optional": true
+    },
     "eslint-plugin-mdx": {
       "optional": true
     },

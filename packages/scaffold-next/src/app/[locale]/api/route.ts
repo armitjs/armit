@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { getTranslator } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 type Props = {
   params: {
     locale: string;
@@ -14,6 +14,6 @@ export async function GET(request: NextRequest, { params: { locale } }: Props) {
     });
   }
 
-  const t = await getTranslator(locale, 'ApiRoute');
+  const t = await getTranslations('ApiRoute');
   return NextResponse.json({ message: t('hello', { name }) });
 }
