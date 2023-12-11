@@ -8,6 +8,7 @@ export const hasNewVersion = async ({
   updateCheckInterval = 1000 * 60 * 60 * 24,
   distTag = 'latest',
   alwaysRun,
+  registry,
 }: PackageUpdate) => {
   createConfigDir();
   const lastUpdateCheck = getLastUpdate(pkg.name);
@@ -16,7 +17,7 @@ export const hasNewVersion = async ({
     !lastUpdateCheck ||
     lastUpdateCheck < new Date().getTime() - updateCheckInterval
   ) {
-    const latestVersion = await getDistVersion(pkg.name, distTag);
+    const latestVersion = await getDistVersion(pkg.name, distTag, registry);
     saveLastUpdate(pkg.name);
     if (latestVersion && semver.gt(latestVersion, pkg.version)) {
       return latestVersion;

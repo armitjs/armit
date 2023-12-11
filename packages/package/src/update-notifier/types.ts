@@ -25,4 +25,10 @@ export type PackageUpdate = {
    * @default false
    */
   noColor?: boolean;
+
+  /**
+   * update check registry url without ending slash
+   * @default 'https://registry.npmjs.org'
+   */
+  registry?: string;
 };
