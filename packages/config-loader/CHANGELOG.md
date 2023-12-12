@@ -1,5 +1,15 @@
 # @armit/config-loader
 
+## 0.1.2
+
+### Patch Changes
+
+- [`e41a990`](https://github.com/armitjs/armit/commit/e41a99011bf8abb84cb0adf743c622abcfa394de) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies []:
+  - @armit/file-utility@0.1.1
+  - @armit/package@0.1.1
+
 ## 0.1.1
 
 ### Patch Changes
