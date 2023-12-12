@@ -52,7 +52,7 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "7.23.5",
+    "@babel/core": "7.23.6",
     "@dimjs/lang": "1.2.44",
     "@dimjs/model": "1.2.1",
     "@dimjs/model-react": "1.2.1",
@@ -66,7 +66,7 @@
     "multiparty": "4.2.3",
     "next": "14.0.4",
     "next-connect": "1.0.0",
-    "next-intl": "3.3.1",
+    "next-intl": "3.3.2",
     "picocolors": "1.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

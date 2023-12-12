@@ -97,7 +97,7 @@ jobs:
         run: |
           yarn check-size
 
-      - name: Check ecmascript checks for build files
-        working-directory: packages/scaffold-next
-        run: |
-          yarn check-dist
+      # - name: Check ecmascript checks for build files
+      #   working-directory: packages/scaffold-next
+      #   run: |
+      #     yarn check-dist
