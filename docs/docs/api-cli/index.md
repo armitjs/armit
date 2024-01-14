@@ -77,8 +77,18 @@ const cmdTest = createCommand(
   },
   CmdTestHandle
 );
-// As default export
-export default cmdTest;
+
+// As named export `cmdtest`
+export const myPlugin = definePlugin({
+  name:'cmdtest',
+  commandModule: cmdTest;
+});
+
+//  As named export `cmdtest2`
+export const myPlugin = definePlugin({
+  name:'cmdtest2',
+  commandModule: cmdTest;
+});
 ```
 
 ## Contributing

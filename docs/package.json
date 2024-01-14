@@ -48,27 +48,27 @@
     ]
   },
   "dependencies": {
-    "@docusaurus/core": "3.0.1",
-    "@docusaurus/preset-classic": "3.0.1",
-    "@emotion/react": "11.11.1",
+    "@docusaurus/core": "3.1.0",
+    "@docusaurus/preset-classic": "3.1.0",
+    "@emotion/react": "11.11.3",
     "@emotion/styled": "11.11.0",
     "@mdx-js/react": "3.0.0",
-    "@mui/material": "5.14.20",
+    "@mui/material": "5.15.4",
     "@sapphire/docusaurus-plugin-npm2yarn2pnpm": "2.0.1",
-    "clsx": "2.0.0",
+    "clsx": "2.1.0",
     "docusaurus-plugin-search-local": "1.0.1",
-    "docusaurus-plugin-typedoc": "0.21.0",
+    "docusaurus-plugin-typedoc": "0.22.0",
     "mui-color-input": "2.0.1",
-    "prism-react-renderer": "2.3.0",
+    "prism-react-renderer": "2.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typedoc": "0.25.4",
+    "typedoc": "0.25.7",
     "typedoc-plugin-markdown": "3.17.1",
     "typescript": "5.3.3"
   },
   "devDependencies": {
     "@armit/eslint-config-bases": "workspace:^",
-    "@docusaurus/module-type-aliases": "3.0.1",
+    "@docusaurus/module-type-aliases": "3.1.0",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/forms": "0.5.7",
     "@tailwindcss/line-clamp": "0.4.4",
@@ -76,11 +76,11 @@
     "@tsconfig/docusaurus": "2.0.2",
     "autoprefixer": "10.4.16",
     "docusaurus-tailwindcss": "0.1.0",
-    "eslint": "8.55.0",
-    "postcss": "8.4.32",
+    "eslint": "8.56.0",
+    "postcss": "8.4.33",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "9.3.0",
-    "tailwindcss": "3.3.6"
+    "tailwindcss": "3.4.1"
   },
   "engines": {
     "node": ">=16.14"

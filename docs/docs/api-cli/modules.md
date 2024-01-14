@@ -10,18 +10,18 @@ custom_edit_url: null
 
 ### bootstrap
 
-▸ **bootstrap**(`options?`): `Promise`<`CliMain`\>
+▸ **bootstrap**(`options?`): `Promise`\<`CliMain`\>
 
 #### Parameters
 
-| Name      | Type                    |
-| :-------- | :---------------------- |
-| `options` | `Partial`<`CliOption`\> |
+| Name      | Type                     |
+| :-------- | :----------------------- |
+| `options` | `Partial`\<`CliOption`\> |
 
 #### Returns
 
-`Promise`<`CliMain`\>
+`Promise`\<`CliMain`\>
 
 #### Defined in
 
-[bootstrap/bootstrap.ts:15](https://github.com/armitjs/armit/blob/929bd02/packages/cli/src/bootstrap/bootstrap.ts#L15)
+[bootstrap/bootstrap.ts:15](https://github.com/armitjs/armit/blob/bd1948c/packages/cli/src/bootstrap/bootstrap.ts#L15)

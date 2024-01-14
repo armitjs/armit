@@ -14,49 +14,53 @@ custom_edit_url: null
 
 ## Implements
 
-- `OnCommandHandler`<`T`\>
+- `OnCommandHandler`
 
 ## Constructors
 
 ### constructor
 
-• **new AbstractHandler**<`T`\>(`args`)
+• **new AbstractHandler**\<`T`\>(`args`): [`AbstractHandler`](AbstractHandler.md)\<`T`\>
 
 #### Type parameters
 
-| Name | Type             |
-| :--- | :--------------- |
-| `T`  | extends `Object` |
+| Name | Type                                                               |
+| :--- | :----------------------------------------------------------------- |
+| `T`  | extends [`CommandArgv`](../modules.md#commandargv)\<`ArgvConfig`\> |
 
 #### Parameters
 
-| Name   | Type              |
-| :----- | :---------------- |
-| `args` | `Arguments`<`T`\> |
+| Name   | Type               |
+| :----- | :----------------- |
+| `args` | `Arguments`\<`T`\> |
+
+#### Returns
+
+[`AbstractHandler`](AbstractHandler.md)\<`T`\>
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:57](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L57)
+[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L72)
 
 ## Properties
 
 ### args
 
-• `Protected` **args**: `Arguments`<`T`\>
+• `Protected` **args**: `Arguments`\<`T`\>
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:57](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L57)
+[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L72)
 
 ---
 
 ### logger
 
-• `Protected` **logger**: `DefaultLogger`
+• `Protected` **logger**: `Logger`\<`unknown`, \{ `adapter`: `StdoutAdapter`\<`unknown`\> ; `logLevel`: `LogLevel` }\>
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:49](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L49)
+[packages/commander/src/create-command.ts:54](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L54)
 
 ---
 
@@ -66,7 +70,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:55](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L55)
+[packages/commander/src/create-command.ts:70](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L70)
 
 ---
 
@@ -76,7 +80,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:54](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L54)
+[packages/commander/src/create-command.ts:69](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L69)
 
 ## Accessors
 
@@ -94,7 +98,7 @@ OnCommandHandler.cliPackageJson
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L72)
+[packages/commander/src/create-command.ts:98](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L98)
 
 ---
 
@@ -112,17 +116,19 @@ OnCommandHandler.name
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:76](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L76)
+[packages/commander/src/create-command.ts:102](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L102)
 
 ## Methods
 
 ### handle
 
-▸ **handle**(): `void` \| `Promise`<`void`\>
+▸ **handle**(): `void` \| `Promise`\<`void`\>
+
+The `CommanderHandler` class should inherit and implment this function
 
 #### Returns
 
-`void` \| `Promise`<`void`\>
+`void` \| `Promise`\<`void`\>
 
 #### Implementation of
 
@@ -130,23 +136,25 @@ OnCommandHandler.handle
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:80](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L80)
+[packages/commander/src/create-command.ts:121](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L121)
 
 ---
 
 ### initialize
 
-▸ **initialize**(`args`): `void`
+▸ **initialize**(): `void`
 
-#### Parameters
-
-| Name   | Type              |
-| :----- | :---------------- |
-| `args` | `Arguments`<`T`\> |
+The `CommanderHandler` class should inherit and implment this function,
 
 #### Returns
 
 `void`
+
+**`Example`**
+
+```ts
+console.log(this.args.logLevel);
+```
 
 #### Implementation of
 
@@ -154,4 +162,24 @@ OnCommandHandler.initialize
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:63](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L63)
+[packages/commander/src/create-command.ts:114](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L114)
+
+---
+
+### updateLogger
+
+▸ **updateLogger**(`args`): `void`
+
+#### Parameters
+
+| Name   | Type               |
+| :----- | :----------------- |
+| `args` | `Arguments`\<`T`\> |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[packages/commander/src/create-command.ts:79](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L79)

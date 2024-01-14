@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### constructor
 
-• **new CliMain**(`options`)
+• **new CliMain**(`options`): [`CliMain`](CliMain.md)
 
 #### Parameters
 
@@ -18,19 +18,23 @@ custom_edit_url: null
 | :-------- | :---------------------------------------- |
 | `options` | [`CliOption`](../interfaces/CliOption.md) |
 
+#### Returns
+
+[`CliMain`](CliMain.md)
+
 #### Defined in
 
-[packages/commander/src/create-cli.ts:9](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L9)
+[packages/commander/src/create-cli.ts:9](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L9)
 
 ## Properties
 
 ### commands
 
-• `Private` **commands**: `CommandModule`<{}, {}\>[] = `[]`
+• `Private` **commands**: `CommandModule`\<{}, {}\>[] = `[]`
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:7](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L7)
+[packages/commander/src/create-cli.ts:7](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L7)
 
 ---
 
@@ -40,17 +44,17 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:6](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L6)
+[packages/commander/src/create-cli.ts:6](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L6)
 
 ---
 
 ### program
 
-• `Private` **program**: `Argv`<{}\>
+• `Private` **program**: `Argv`\<{}\>
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:8](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L8)
+[packages/commander/src/create-cli.ts:8](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L8)
 
 ## Methods
 
@@ -73,36 +77,36 @@ Manually indicate that the program should exit, and provide context about why we
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:58](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L58)
+[packages/commander/src/create-cli.ts:58](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L58)
 
 ---
 
 ### parse
 
-▸ **parse**(`argv`, `callback?`): { `$0`: `string` ; `_`: (`string` \| `number`)[] } \| `Promise`<{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
+▸ **parse**(`argv`, `callback?`): \{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| `Promise`\<\{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
 
 Parse args instead of process.argv. Returns the argv object. args may either be a pre-processed argv array, or a raw argument string.
 
 #### Parameters
 
-| Name        | Type                 | Description           |
-| :---------- | :------------------- | :-------------------- |
-| `argv`      | `string`[]           | procces.argv.slice(2) |
-| `callback?` | `ParseCallback`<{}\> | -                     |
+| Name        | Type            | Description           |
+| :---------- | :-------------- | :-------------------- |
+| `argv`      | `string`[]      | procces.argv.slice(2) |
+| `callback?` | `ParseCallback` | -                     |
 
 #### Returns
 
-{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| `Promise`<{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
+\{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| `Promise`\<\{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:29](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L29)
+[packages/commander/src/create-cli.ts:29](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L29)
 
 ---
 
 ### parseAsync
 
-▸ **parseAsync**<`T`\>(`argv`, `callback?`): `Promise`<`T`\>
+▸ **parseAsync**\<`T`\>(`argv`, `callback?`): `Promise`\<`T`\>
 
 Identical to .parse() except always returns a promise for a parsed argv object, regardless of whether an async builder, handler, or middleware is used.
 
@@ -114,18 +118,18 @@ Identical to .parse() except always returns a promise for a parsed argv object, 
 
 #### Parameters
 
-| Name        | Type                 | Description           |
-| :---------- | :------------------- | :-------------------- |
-| `argv`      | `string`[]           | procces.argv.slice(2) |
-| `callback?` | `ParseCallback`<{}\> |                       |
+| Name        | Type            | Description           |
+| :---------- | :-------------- | :-------------------- |
+| `argv`      | `string`[]      | procces.argv.slice(2) |
+| `callback?` | `ParseCallback` |                       |
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`\<`T`\>
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:43](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L43)
+[packages/commander/src/create-cli.ts:43](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L43)
 
 ---
 
@@ -138,9 +142,9 @@ Note Normally we can register only one command, because the T maybe different.
 
 #### Parameters
 
-| Name      | Type                             |
-| :-------- | :------------------------------- |
-| `...cmds` | `CommandModule`<`any`, `any`\>[] |
+| Name      | Type                              |
+| :-------- | :-------------------------------- |
+| `...cmds` | `CommandModule`\<`any`, `any`\>[] |
 
 #### Returns
 
@@ -148,4 +152,4 @@ Note Normally we can register only one command, because the T maybe different.
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:19](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L19)
+[packages/commander/src/create-cli.ts:19](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L19)

@@ -20,17 +20,34 @@ custom_edit_url: null
 
 ### CommandArgv
 
-Ƭ **CommandArgv**<`T`\>: { `logLevel`: keyof typeof `LogLevel` ; `name`: `string` ; `noColor`: `boolean` ; `packageJson`: `PackageJson` } & `T`
+Ƭ **CommandArgv**\<`T`\>: \{ `logLevel`: keyof typeof `LogLevel` ; `name`: `string` ; `noColor`: `boolean` ; `packageJson`: `PackageJson` } & `T`
 
 #### Type parameters
 
-| Name | Type                      |
-| :--- | :------------------------ |
-| `T`  | extends `ArgvConfig` = {} |
+| Name | Type                                |
+| :--- | :---------------------------------- |
+| `T`  | extends `ArgvConfig` = `ArgvConfig` |
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:10](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L10)
+[packages/commander/src/create-command.ts:11](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L11)
+
+---
+
+### PluginConfig
+
+Ƭ **PluginConfig**: `Object`
+
+#### Type declaration
+
+| Name            | Type                            | Description                                                 |
+| :-------------- | :------------------------------ | :---------------------------------------------------------- |
+| `commandModule` | `CommandModule`\<`any`, `any`\> | The plugin command definition.                              |
+| `name?`         | `string`                        | The plugin name, Optional, fallback to name of package.json |
+
+#### Defined in
+
+[packages/commander/src/define-plugin.ts:3](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/define-plugin.ts#L3)
 
 ## Functions
 
@@ -44,7 +61,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:173](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/cli-load-plugins.ts#L173)
+[packages/commander/src/cli-load-plugins.ts:187](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/cli-load-plugins.ts#L187)
 
 ---
 
@@ -66,15 +83,33 @@ Create cli program
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-cli.ts#L68)
+[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L68)
 
 ---
 
 ### createCommand
 
-▸ **createCommand**<`T`\>(`name`, `declare`, `ctor`): `CommandModule`<`T`, {}\>
+▸ **createCommand**\<`T`\>(`name`, `declare`, `ctor`): `CommandModule`\<`T`, {}\>
 
 Allow us create an customized command based on yargs
+
+#### Type parameters
+
+| Name | Type                                                            |
+| :--- | :-------------------------------------------------------------- |
+| `T`  | extends [`CommandArgv`](modules.md#commandargv)\<`ArgvConfig`\> |
+
+#### Parameters
+
+| Name      | Type                                              | Description                                 |
+| :-------- | :------------------------------------------------ | :------------------------------------------ |
+| `name`    | `string`                                          | The name of this command plugin             |
+| `declare` | `Omit`\<`CommandModule`\<`T`, {}\>, `"handler"`\> | The definitions of this command using yargs |
+| `ctor`    | `CommandHandlerCtor`\<`T`\>                       | The constraint command handler              |
+
+#### Returns
+
+`CommandModule`\<`T`, {}\>
 
 **`Example`**
 
@@ -113,56 +148,38 @@ export const cmdTest = createCommand(
 );
 ```
 
-#### Type parameters
-
-| Name | Type             |
-| :--- | :--------------- |
-| `T`  | extends `Object` |
-
-#### Parameters
-
-| Name      | Type                                            | Description                                 |
-| :-------- | :---------------------------------------------- | :------------------------------------------ |
-| `name`    | `string`                                        | The name of this command plugin             |
-| `declare` | `Omit`<`CommandModule`<`T`, {}\>, `"handler"`\> | The definitions of this command using yargs |
-| `ctor`    | `CommandHandlerCtor`<`T`\>                      | The constraint command handler              |
-
-#### Returns
-
-`CommandModule`<`T`, {}\>
-
 #### Defined in
 
-[packages/commander/src/create-command.ts:126](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L126)
+[packages/commander/src/create-command.ts:167](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L167)
 
 ---
 
 ### createSubCommands
 
-▸ **createSubCommands**(`program`, `...commands`): `Argv`<{}\>
+▸ **createSubCommands**(`program`, `...commands`): `Argv`\<{}\>
 
 Provides a standard mechanism for creating subcommands
 
 #### Parameters
 
-| Name          | Type                             | Description      |
-| :------------ | :------------------------------- | :--------------- |
-| `program`     | `Argv`<{}\>                      | the main command |
-| `...commands` | `CommandModule`<`any`, `any`\>[] | subcommand list  |
+| Name          | Type                              | Description      |
+| :------------ | :-------------------------------- | :--------------- |
+| `program`     | `Argv`\<{}\>                      | the main command |
+| `...commands` | `CommandModule`\<`any`, `any`\>[] | subcommand list  |
 
 #### Returns
 
-`Argv`<{}\>
+`Argv`\<{}\>
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:145](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-command.ts#L145)
+[packages/commander/src/create-command.ts:186](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L186)
 
 ---
 
 ### createYargs
 
-▸ **createYargs**(`option`): `Argv`<`Omit`<{}, `"logLevel"` \| `"noColor"`\> & `InferredOptionTypes`<{ `logLevel`: { `choices`: `string`[] ; `default`: `string` = 'Info'; `describe`: `string` ; `type`: `"string"` = 'string' } ; `noColor`: { `default`: `boolean` = false; `describe`: `string` ; `type`: `"boolean"` = 'boolean' } }\> & { `l`: `string` }\>
+▸ **createYargs**(`option`): `Argv`\<\{ `log-level`: `string` } & \{ `no-color`: `boolean` } & \{ `l`: `string` }\>
 
 #### Parameters
 
@@ -172,17 +189,51 @@ Provides a standard mechanism for creating subcommands
 
 #### Returns
 
-`Argv`<`Omit`<{}, `"logLevel"` \| `"noColor"`\> & `InferredOptionTypes`<{ `logLevel`: { `choices`: `string`[] ; `default`: `string` = 'Info'; `describe`: `string` ; `type`: `"string"` = 'string' } ; `noColor`: { `default`: `boolean` = false; `describe`: `string` ; `type`: `"boolean"` = 'boolean' } }\> & { `l`: `string` }\>
+`Argv`\<\{ `log-level`: `string` } & \{ `no-color`: `boolean` } & \{ `l`: `string` }\>
 
 #### Defined in
 
-[packages/commander/src/create-yargs.ts:66](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/create-yargs.ts#L66)
+[packages/commander/src/create-yargs.ts:69](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-yargs.ts#L69)
+
+---
+
+### definePlugin
+
+▸ **definePlugin**(`config`): [`PluginConfig`](modules.md#pluginconfig)
+
+For now we could need to AVOID use `export default` to export an plugin
+it seems that using dynamic `import(filename)` will always return `[Module: null prototype] {}` with empty.
+
+```ts
+// below is wrong
+export default definePlugin({});
+// below is correct, `myPlugin` can be any name you want
+// we can also export multi plugin in one module
+export const myPlugin = definePlugin({
+   name:'',
+   commandModule: ?
+});
+```
+
+#### Parameters
+
+| Name     | Type                                      |
+| :------- | :---------------------------------------- |
+| `config` | [`PluginConfig`](modules.md#pluginconfig) |
+
+#### Returns
+
+[`PluginConfig`](modules.md#pluginconfig)
+
+#### Defined in
+
+[packages/commander/src/define-plugin.ts:31](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/define-plugin.ts#L31)
 
 ---
 
 ### loadCliPlugins
 
-▸ **loadCliPlugins**(`plugins?`, `pluginPackPattern?`, `pluginSearchDirs?`, `cwd?`): `Promise`<{ `name`: `string` ; `plugin`: `CommandModule` }[]\>
+▸ **loadCliPlugins**(`plugins?`, `pluginPackPattern?`, `pluginSearchDirs?`, `cwd?`): `Promise`\<\{ `name`: `string` ; `plugin`: `CommandModule` }[]\>
 
 Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
@@ -197,19 +248,29 @@ Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
 #### Returns
 
-`Promise`<{ `name`: `string` ; `plugin`: `CommandModule` }[]\>
+`Promise`\<\{ `name`: `string` ; `plugin`: `CommandModule` }[]\>
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:44](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/cli-load-plugins.ts#L44)
+[packages/commander/src/cli-load-plugins.ts:192](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/cli-load-plugins.ts#L192)
 
 ---
 
 ### parseArgv
 
-▸ **parseArgv**(`cwd?`): `Promise`<{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| { `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
+▸ **parseArgv**(`cwd?`): `Promise`\<\{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| \{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
 
 Parse command line script
+
+#### Parameters
+
+| Name   | Type     |
+| :----- | :------- |
+| `cwd?` | `string` |
+
+#### Returns
+
+`Promise`\<\{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| \{ `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
 
 **`Example`**
 
@@ -227,50 +288,40 @@ Parse command line script
 }
 ```
 
-#### Parameters
-
-| Name   | Type     |
-| :----- | :------- |
-| `cwd?` | `string` |
-
-#### Returns
-
-`Promise`<{ `$0`: `string` ; `_`: (`string` \| `number`)[] } \| { `$0`: `string` ; `_`: (`string` \| `number`)[] }\>
-
 #### Defined in
 
-[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/parse-argv.ts#L22)
+[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/parse-argv.ts#L22)
 
 ---
 
 ### runProgram
 
-▸ **runProgram**(`program`, `cwd`, `args`, `opts`): `ExecaChildProcess`<`string`\>
+▸ **runProgram**(`program`, `cwd`, `args`, `opts`): `ExecaChildProcess`\<`string`\>
 
 Execute cli program
 
 #### Parameters
 
-| Name      | Type                       | Description                        |
-| :-------- | :------------------------- | :--------------------------------- |
-| `program` | `string`                   | the node program path.             |
-| `cwd`     | `string`                   | -                                  |
-| `args`    | `string`[]                 | the program parameters             |
-| `opts`    | `CommonOptions`<`string`\> | the overrides execa configurations |
+| Name      | Type       | Description                        |
+| :-------- | :--------- | :--------------------------------- |
+| `program` | `string`   | the node program path.             |
+| `cwd`     | `string`   | -                                  |
+| `args`    | `string`[] | the program parameters             |
+| `opts`    | `Options`  | the overrides execa configurations |
 
 #### Returns
 
-`ExecaChildProcess`<`string`\>
+`ExecaChildProcess`\<`string`\>
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:32](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/run-program.ts#L32)
+[packages/commander/src/run-program.ts:29](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L29)
 
 ---
 
 ### runTsCliMock
 
-▸ **runTsCliMock**(`program`, `...args`): `Promise`<[`CliMockResult`](interfaces/CliMockResult.md)\>
+▸ **runTsCliMock**(`program`, `...args`): `Promise`\<[`CliMockResult`](interfaces/CliMockResult.md)\>
 
 #### Parameters
 
@@ -281,35 +332,35 @@ Execute cli program
 
 #### Returns
 
-`Promise`<[`CliMockResult`](interfaces/CliMockResult.md)\>
+`Promise`\<[`CliMockResult`](interfaces/CliMockResult.md)\>
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:78](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/run-program.ts#L78)
+[packages/commander/src/run-program.ts:75](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L75)
 
 ---
 
 ### runTsScript
 
-▸ **runTsScript**(`program`, `mode`, `tsconfig`, `options`, `...args`): `Promise`<`ExecaReturnValue`<`string`\>\>
+▸ **runTsScript**(`program`, `mode`, `tsconfig`, `options`, `...args`): `Promise`\<`ExecaReturnValue`\<`string`\>\>
 
 Pipe the child process stdout to the parent, this method only used to `jest test` purpose
 Please manully install `ts-node`, `tsconfig-paths`
 
 #### Parameters
 
-| Name       | Type                       | Description                                                     |
-| :--------- | :------------------------- | :-------------------------------------------------------------- |
-| `program`  | `string`                   | exec node file `join(__dirname, 'cmd-cli.ts')`                  |
-| `mode`     | `"esm"` \| `"commonjs"`    | esm or commonjs                                                 |
-| `tsconfig` | `string`                   | the configuration file `join(process.cwd(), './tsconfig.json')` |
-| `options`  | `CommonOptions`<`string`\> | the configuration of `execa`                                    |
-| `...args`  | `any`[]                    | parameters for program                                          |
+| Name       | Type                    | Description                                                     |
+| :--------- | :---------------------- | :-------------------------------------------------------------- |
+| `program`  | `string`                | exec node file `join(__dirname, 'cmd-cli.ts')`                  |
+| `mode`     | `"commonjs"` \| `"esm"` | esm or commonjs                                                 |
+| `tsconfig` | `string`                | the configuration file `join(process.cwd(), './tsconfig.json')` |
+| `options`  | `Options`               | the configuration of `execa`                                    |
+| `...args`  | `any`[]                 | parameters for program                                          |
 
 #### Returns
 
-`Promise`<`ExecaReturnValue`<`string`\>\>
+`Promise`\<`ExecaReturnValue`\<`string`\>\>
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:50](https://github.com/armitjs/armit/blob/929bd02/packages/commander/src/run-program.ts#L50)
+[packages/commander/src/run-program.ts:47](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L47)
