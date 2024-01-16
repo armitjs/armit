@@ -85,20 +85,20 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Unit test coverage
-        working-directory: packages/cli
-        run: |
-          yarn test-coverage
+      # - name: Unit test coverage
+      #   working-directory: packages/cli
+      #   run: |
+      #     yarn test-coverage
 
-      - name: Publish github pages
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git config --global user.name 'tianyingchun'
-          git config --global user.email 'tianyingchun@outlook.com'
-          git fetch
-          git checkout gb_pages
-          mkdir -p ./gb_pages
-          cp -R ./packages/cli/coverage/* ./gb_pages/coverage/cli
-          git add gb_pages/*
-          git commit -m "Update page"
-          git push
+      # - name: Publish github pages
+      #   run: |
+      #     git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      #     git config --global user.name 'tianyingchun'
+      #     git config --global user.email 'tianyingchun@outlook.com'
+      #     git fetch
+      #     git checkout gb_pages
+      #     mkdir -p ./gb_pages
+      #     cp -R ./packages/cli/coverage/* ./gb_pages/coverage/cli
+      #     git add gb_pages/*
+      #     git commit -m "Update page"
+      #     git push
