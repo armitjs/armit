@@ -2,92 +2,91 @@
   "folders": [
     {
       "name": "cli",
-      "path": "packages/cli"
+      "path": "packages/cli",
     },
     {
       "name": "git",
-      "path": "packages/git"
+      "path": "packages/git",
     },
 
     {
       "name": "ldap",
-      "path": "packages/ldap"
+      "path": "packages/ldap",
     },
     {
       "name": "terminal",
-      "path": "packages/terminal"
+      "path": "packages/terminal",
     },
     {
       "name": "logger",
-      "path": "packages/logger"
+      "path": "packages/logger",
     },
     {
       "name": "logger-node",
-      "path": "packages/logger-node"
+      "path": "packages/logger-node",
     },
     {
       "name": "package",
-      "path": "packages/package"
+      "path": "packages/package",
     },
     {
       "name": "commander",
-      "path": "packages/commander"
+      "path": "packages/commander",
     },
     {
       "name": "config-loader",
-      "path": "packages/config-loader"
+      "path": "packages/config-loader",
     },
     {
       "name": "worker-threads",
-      "path": "packages/worker-threads"
+      "path": "packages/worker-threads",
     },
     {
       "name": "file-utility",
-      "path": "packages/file-utility"
+      "path": "packages/file-utility",
     },
     {
       "name": "file-recursive-copy",
-      "path": "packages/file-recursive-copy"
+      "path": "packages/file-recursive-copy",
     },
     {
       "name": "docs",
-      "path": "docs"
+      "path": "docs",
     },
     {
       "name": "scaffold-next",
-      "path": "packages/scaffold-next"
+      "path": "packages/scaffold-next",
     },
     {
       "name": "generate-template-files",
-      "path": "packages/generate-template-files"
+      "path": "packages/generate-template-files",
     },
     {
       "name": "eslint-config-bases",
-      "path": "packages/eslint-config-bases"
+      "path": "packages/eslint-config-bases",
     },
     {
       "name": "root",
-      "path": "."
-    }
+      "path": ".",
+    },
   ],
   "extensions": {
-    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
   },
   "settings": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll": true,
-      // Using `'@armit/eslint-config-bases/typescript` instead of vscode editor organizeImport
-      "source.organizeImports": false
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never",
     },
     "files.associations": {
-      "*.css": "tailwindcss"
+      "*.css": "tailwindcss",
     },
     // Disable vscode formatting for js,jsx,ts,tsx files
     // to allow dbaeumer.vscode-eslint to format them
     "[javascript]": {
-      "editor.formatOnSave": false
+      "editor.formatOnSave": false,
     },
     "typescript.enablePromptUseWorkspaceTsdk": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
@@ -107,8 +106,8 @@
       "./packages/docs",
       "./packages/scaffold-next",
       "./packages/generate-template-files",
-      "./packages/eslint-config-bases"
+      "./packages/eslint-config-bases",
     ],
-    "typescript.tsdk": "root/node_modules/typescript/lib"
-  }
+    "typescript.tsdk": "root/node_modules/typescript/lib",
+  },
 }
