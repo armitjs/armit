@@ -1,5 +1,14 @@
 # @armit/logger
 
+## 0.1.3
+
+### Patch Changes
+
+- [`4e89f58`](https://github.com/armitjs/armit/commit/4e89f5878f2014e96d4a0787da41c99d3fa0acf1) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bumps version
+
+- Updated dependencies [[`4e89f58`](https://github.com/armitjs/armit/commit/4e89f5878f2014e96d4a0787da41c99d3fa0acf1)]:
+  - @armit/logger@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
