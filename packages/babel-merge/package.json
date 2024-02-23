@@ -1,0 +1,83 @@
+{
+  "name": "@armit/babel-merge",
+  "version": "0.1.3",
+  "homepage": "https://github.com/armitjs/armit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/armitjs/armit",
+    "directory": "packages/babel-merge"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Yingchun Tian",
+    "url": "https://github.com/tianyingchun"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
+    "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
+    "dev": "tsup --watch",
+    "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
+    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/git.eslintcache",
+    "test": "run-s test-unit",
+    "test-unit": "vitest run --passWithNoTests",
+    "test-coverage": "vitest run --coverage",
+    "test-unit-watch": "vitest watch --ui",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "deepmerge": "4.3.1",
+    "object.omit": "3.0.0"
+  },
+  "devDependencies": {
+    "@armit/eslint-config-bases": "workspace:^",
+    "@babel/core": "7.23.9",
+    "@babel/plugin-proposal-class-properties": "7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "7.20.7",
+    "@babel/plugin-syntax-dynamic-import": "7.8.3",
+    "@babel/preset-env": "7.23.9",
+    "@types/babel__core": "7.20.5",
+    "@types/node": "20.11.6",
+    "@vitest/coverage-istanbul": "1.2.1",
+    "@vitest/ui": "1.2.1",
+    "eslint": "8.56.0",
+    "fast-async": "7.0.6",
+    "import-meta-resolve": "4.0.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "3.2.4",
+    "rimraf": "5.0.5",
+    "ts-node": "10.9.2",
+    "tsup": "8.0.1",
+    "typescript": "5.3.3",
+    "vite": "5.0.12",
+    "vite-tsconfig-paths": "4.3.1",
+    "vitest": "1.2.1"
+  },
+  "peerDependencies": {
+    "@babel/core": ">=7.23.9",
+    "@types/babel__core": ">=7.20.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "_release/package"
+  }
+}

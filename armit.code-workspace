@@ -38,6 +38,10 @@
       "path": "packages/config-loader",
     },
     {
+      "name": "babel-merge",
+      "path": "packages/babel-merge",
+    },
+    {
       "name": "worker-threads",
       "path": "packages/worker-threads",
     },
@@ -91,6 +95,7 @@
     "typescript.enablePromptUseWorkspaceTsdk": true,
     // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
     "eslint.workingDirectories": [
+      "./packages/babel-merge",
       "./packages/cli",
       "./packages/git",
       "./packages/ldap",
