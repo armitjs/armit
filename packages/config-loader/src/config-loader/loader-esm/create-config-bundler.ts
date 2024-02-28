@@ -1,10 +1,10 @@
-import { builtinModules, isBuiltin } from 'node:module';
 import { getPackageDependencyKeys, requireResolve } from '@armit/package';
 import { babel } from '@rollup/plugin-babel';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginJson from '@rollup/plugin-json';
 import pluginResolve from '@rollup/plugin-node-resolve';
 import { rollup } from 'rollup';
+import { isExternalModule } from '../../helpers/is-external-module.js';
 import { type ConfigBundler } from '../../types.js';
 import { type EsmLoaderOptions } from './esm-loader.js';
 
@@ -83,16 +83,8 @@ export const createConfigBundler: (
       const bundle = await rollup({
         input: fileName,
         external: (moduleId) => {
-          const isExternal = repoExternalModules.find(
-            (externalModule: string) => {
-              return moduleId.startsWith(externalModule);
-            }
-          );
-          return (
-            !!isExternal ||
-            builtinModules.includes(moduleId) ||
-            isBuiltin(moduleId)
-          );
+          // Indicate which modules should be treated as external
+          return isExternalModule(repoExternalModules, moduleId);
         },
         treeshake: {
           annotations: true,

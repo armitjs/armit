@@ -4,7 +4,7 @@ import { loadConfigFromFile } from '../../helpers/load-config-from-file.js';
 import { createConfigBundler } from './create-config-bundler.js';
 
 export type EsmLoaderOptions = {
-  externals: string[];
+  externals: Array<RegExp | string>;
   plugins?: Plugin[];
   projectCwd?: string;
 };

@@ -13,7 +13,7 @@ function arrayUnique<T>(arr: T[]): T[] {
 
 export const getPackageDependencyKeys = async (
   cwd = process.cwd(),
-  externals: string[] = []
+  externals: Array<RegExp | string> = []
 ) => {
   const projectCwd =
     searchPackageDir({
@@ -31,7 +31,7 @@ export const getPackageDependencyKeys = async (
     const monoPackageJson = await fileWalk(monoCwd);
     allPackageJson.push(...monoPackageJson);
   }
-  const externalModules: string[] = [...externals];
+  const externalModules: Array<RegExp | string> = [...externals];
 
   for (const packageJson of allPackageJson) {
     const pkgJson = readJsonFromFile<PackageJson>(packageJson);
