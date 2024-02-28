@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.1.4
+
+### Patch Changes
+
+- [`bc11476`](https://github.com/armitjs/armit/commit/bc1147659cfb75a30e24bafc78412b20bd78fa98) Thanks [@tianyingchun](https://github.com/tianyingchun)! - Make externals to support Array<RegExp|string>
+
 ## 0.1.3
 
 ### Patch Changes
