@@ -288,7 +288,7 @@ __metadata:
     "@armit/eslint-config-bases": "workspace:^"
     "@armit/logger-node": "workspace:^"
     "@armit/package": "workspace:^"
-    "@armit/path-alias": "npm:^0.0.17"
+    "@armit/path-alias": "npm:^0.0.18"
     "@armit/terminal": "workspace:^"
     "@types/node": "npm:20.11.6"
     "@types/resolve": "npm:1.20.6"
@@ -657,15 +657,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@armit/path-alias@npm:^0.0.17":
-  version: 0.0.17
-  resolution: "@armit/path-alias@npm:0.0.17"
+"@armit/path-alias@npm:^0.0.18":
+  version: 0.0.18
+  resolution: "@armit/path-alias@npm:0.0.18"
   dependencies:
     dotenv: "npm:^16.4.5"
     module-alias: "npm:^2.2.3"
     pkg-up: "npm:^4.0.0"
     tsconfck: "npm:^3.0.2"
-    tsconfig-paths: "npm:^4.2.0"
+    tsconfig-paths: "npm:4.2.0"
   peerDependencies:
     ts-node: ^10.9.2
     typescript: ^5.3.3
@@ -674,7 +674,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10/135728629204f9f48ae3d8b28cc7c768f480358b1ca59cb9fcb52a9b01be09a18d1bd8779d3fb957b989025a15cde5fea2aa85ec13c6cf0f77737d3cd6609c43
+  checksum: 10/3766c87c5f26c1e2f55f17308ad1ce4b323b44e30704f6eda985ae1277a50dc8f223efc10d5e5df92608e692ef16c9f31fa33cfd62a738963f842f3a0079de51
   languageName: node
   linkType: hard
 

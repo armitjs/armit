@@ -35,8 +35,6 @@
     "dev": "tsup --watch",
     "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
     "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../../.cache/eslint/worker-threads.eslintcache",
-    "test": "run-s test-unit",
-    "test-unit": "vitest run --passWithNoTests",
     "test-coverage": "vitest run --coverage",
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"

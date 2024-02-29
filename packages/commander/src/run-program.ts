@@ -56,7 +56,7 @@ export const runTsScript = (
       ? ['-r', 'ts-node/register', '-r', 'tsconfig-paths/register']
       : // FIXME: Add path mapping support to ESM and CJS loaders https://github.com/TypeStrong/ts-node/pull/1585
         // ['--loader', 'ts-node/esm', '--no-warnings'];
-        ['--loader', '@armit/path-alias/esm', '--no-warnings'];
+        ['--import', '@armit/path-alias/register', '--no-warnings'];
 
   return execa('node', commonjsArgs.concat(program, ...args), {
     env: {

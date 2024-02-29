@@ -44,7 +44,7 @@
   "dependencies": {
     "@armit/logger-node": "workspace:^",
     "@armit/package": "workspace:^",
-    "@armit/path-alias": "^0.0.17",
+    "@armit/path-alias": "^0.0.18",
     "@armit/terminal": "workspace:^",
     "@types/yargs": "17.0.32",
     "execa": "8.0.1",
