@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:9](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L9)
+[packages/commander/src/create-cli.ts:9](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L9)
 
 ## Properties
 
@@ -34,7 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:7](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L7)
+[packages/commander/src/create-cli.ts:7](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L7)
 
 ---
 
@@ -44,7 +44,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:6](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L6)
+[packages/commander/src/create-cli.ts:6](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L6)
 
 ---
 
@@ -54,7 +54,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:8](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L8)
+[packages/commander/src/create-cli.ts:8](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L8)
 
 ## Methods
 
@@ -77,7 +77,7 @@ Manually indicate that the program should exit, and provide context about why we
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:58](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L58)
+[packages/commander/src/create-cli.ts:58](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L58)
 
 ---
 
@@ -100,7 +100,7 @@ Parse args instead of process.argv. Returns the argv object. args may either be 
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:29](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L29)
+[packages/commander/src/create-cli.ts:29](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L29)
 
 ---
 
@@ -129,7 +129,7 @@ Identical to .parse() except always returns a promise for a parsed argv object, 
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:43](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L43)
+[packages/commander/src/create-cli.ts:43](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L43)
 
 ---
 
@@ -152,4 +152,4 @@ Note Normally we can register only one command, because the T maybe different.
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:19](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L19)
+[packages/commander/src/create-cli.ts:19](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L19)

@@ -10,15 +10,13 @@ export default defineConfig({
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
     ],
   },
+  cacheDir: '../../.cache/vitest/file-recursive-copy',
   test: {
     // Makebe suite for local debug
     testTimeout: 1000 * 30,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
-    cache: {
-      dir: '../../.cache/vitest/file-recursive-copy',
-    },
     coverage: {
       provider: 'istanbul',
       reporter: ['json-summary', 'html'],

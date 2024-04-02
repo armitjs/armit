@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:11](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L11)
+[packages/commander/src/create-command.ts:11](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L11)
 
 ---
 
@@ -47,7 +47,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/define-plugin.ts:3](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/define-plugin.ts#L3)
+[packages/commander/src/define-plugin.ts:3](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/define-plugin.ts#L3)
 
 ## Functions
 
@@ -61,7 +61,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:187](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/cli-load-plugins.ts#L187)
+[packages/commander/src/cli-load-plugins.ts:187](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/cli-load-plugins.ts#L187)
 
 ---
 
@@ -83,7 +83,7 @@ Create cli program
 
 #### Defined in
 
-[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-cli.ts#L68)
+[packages/commander/src/create-cli.ts:68](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-cli.ts#L68)
 
 ---
 
@@ -150,7 +150,7 @@ export const cmdTest = createCommand(
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:167](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L167)
+[packages/commander/src/create-command.ts:167](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L167)
 
 ---
 
@@ -173,7 +173,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:186](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L186)
+[packages/commander/src/create-command.ts:186](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L186)
 
 ---
 
@@ -193,7 +193,7 @@ Provides a standard mechanism for creating subcommands
 
 #### Defined in
 
-[packages/commander/src/create-yargs.ts:69](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-yargs.ts#L69)
+[packages/commander/src/create-yargs.ts:69](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-yargs.ts#L69)
 
 ---
 
@@ -227,7 +227,7 @@ export const myPlugin = definePlugin({
 
 #### Defined in
 
-[packages/commander/src/define-plugin.ts:31](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/define-plugin.ts#L31)
+[packages/commander/src/define-plugin.ts:31](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/define-plugin.ts#L31)
 
 ---
 
@@ -252,7 +252,7 @@ Load plugin from external specificed or auto searched from `pluginSearchDirs`
 
 #### Defined in
 
-[packages/commander/src/cli-load-plugins.ts:192](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/cli-load-plugins.ts#L192)
+[packages/commander/src/cli-load-plugins.ts:192](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/cli-load-plugins.ts#L192)
 
 ---
 
@@ -290,7 +290,7 @@ Parse command line script
 
 #### Defined in
 
-[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/parse-argv.ts#L22)
+[packages/commander/src/parse-argv.ts:22](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/parse-argv.ts#L22)
 
 ---
 
@@ -315,7 +315,7 @@ Execute cli program
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:29](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L29)
+[packages/commander/src/run-program.ts:29](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/run-program.ts#L29)
 
 ---
 
@@ -336,7 +336,7 @@ Execute cli program
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:75](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L75)
+[packages/commander/src/run-program.ts:75](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/run-program.ts#L75)
 
 ---
 
@@ -352,7 +352,7 @@ Please manully install `ts-node`, `tsconfig-paths`
 | Name       | Type                    | Description                                                     |
 | :--------- | :---------------------- | :-------------------------------------------------------------- |
 | `program`  | `string`                | exec node file `join(__dirname, 'cmd-cli.ts')`                  |
-| `mode`     | `"commonjs"` \| `"esm"` | esm or commonjs                                                 |
+| `mode`     | `"esm"` \| `"commonjs"` | esm or commonjs                                                 |
 | `tsconfig` | `string`                | the configuration file `join(process.cwd(), './tsconfig.json')` |
 | `options`  | `Options`               | the configuration of `execa`                                    |
 | `...args`  | `any`[]                 | parameters for program                                          |
@@ -363,4 +363,4 @@ Please manully install `ts-node`, `tsconfig-paths`
 
 #### Defined in
 
-[packages/commander/src/run-program.ts:47](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/run-program.ts#L47)
+[packages/commander/src/run-program.ts:47](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/run-program.ts#L47)

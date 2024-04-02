@@ -10,15 +10,13 @@ export default defineConfig({
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
     ],
   },
+  cacheDir: '../../.cache/vitest/logger-node',
   test: {
     // Makebe suite for local debug
     testTimeout: 1000 * 30,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
-    cache: {
-      dir: '../../.cache/vitest/logger-node',
-    },
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'clover'],

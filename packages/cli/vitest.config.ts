@@ -15,15 +15,13 @@ export default defineConfig({
       // },
     ],
   },
+  cacheDir: '../../.cache/vitest/cli',
   test: {
     // Makebe suite for local debug
     testTimeout: 1000 * 30,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
-    cache: {
-      dir: '../../.cache/vitest/cli',
-    },
     coverage: {
       provider: 'istanbul',
       reporter: ['json-summary', 'html'],

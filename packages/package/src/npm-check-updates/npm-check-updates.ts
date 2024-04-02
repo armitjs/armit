@@ -2,9 +2,6 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { fileWalk } from '@armit/file-utility';
 import { cosmiconfig } from 'cosmiconfig';
-import { type Index } from 'npm-check-updates/build/src/types/IndexType.js';
-import { type PackageFile } from 'npm-check-updates/build/src/types/PackageFile.js';
-import { type VersionSpec } from 'npm-check-updates/build/src/types/VersionSpec.js';
 import { run } from 'npm-check-updates';
 import { projectHasYarn } from '../npm-yarn.js';
 import { getNcuConfigFile } from './cache-file.js';
@@ -15,9 +12,7 @@ import { type UpdatePackageOptions } from './types.js';
  * @param packages [name@version]
  * @param options installation configurations
  */
-export const npmCheckUpdates = async (
-  options: UpdatePackageOptions
-): Promise<PackageFile | Index<VersionSpec> | void> => {
+export const npmCheckUpdates = async (options: UpdatePackageOptions) => {
   const cacheFile = getNcuConfigFile();
   if (!existsSync(cacheFile)) {
     mkdirSync(dirname(cacheFile), {

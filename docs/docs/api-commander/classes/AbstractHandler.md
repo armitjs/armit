@@ -40,7 +40,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L72)
+[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L72)
 
 ## Properties
 
@@ -50,7 +50,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L72)
+[packages/commander/src/create-command.ts:72](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L72)
 
 ---
 
@@ -60,7 +60,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:54](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L54)
+[packages/commander/src/create-command.ts:54](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L54)
 
 ---
 
@@ -70,7 +70,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:70](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L70)
+[packages/commander/src/create-command.ts:70](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L70)
 
 ---
 
@@ -80,7 +80,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:69](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L69)
+[packages/commander/src/create-command.ts:69](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L69)
 
 ## Accessors
 
@@ -98,7 +98,7 @@ OnCommandHandler.cliPackageJson
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:98](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L98)
+[packages/commander/src/create-command.ts:98](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L98)
 
 ---
 
@@ -116,7 +116,7 @@ OnCommandHandler.name
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:102](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L102)
+[packages/commander/src/create-command.ts:102](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L102)
 
 ## Methods
 
@@ -136,7 +136,7 @@ OnCommandHandler.handle
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:121](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L121)
+[packages/commander/src/create-command.ts:121](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L121)
 
 ---
 
@@ -162,7 +162,7 @@ OnCommandHandler.initialize
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:114](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L114)
+[packages/commander/src/create-command.ts:114](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L114)
 
 ---
 
@@ -182,4 +182,4 @@ OnCommandHandler.initialize
 
 #### Defined in
 
-[packages/commander/src/create-command.ts:79](https://github.com/armitjs/armit/blob/bd1948c/packages/commander/src/create-command.ts#L79)
+[packages/commander/src/create-command.ts:79](https://github.com/armitjs/armit/blob/19f6788/packages/commander/src/create-command.ts#L79)

@@ -18,6 +18,7 @@ export default defineConfig({
       svgrOptions: {},
     }),
   ],
+  cacheDir: '../../.cache/vitest/scaffold-next',
   test: {
     // Makebe suite for local debug
     testTimeout: 1000 * 30,
@@ -25,9 +26,6 @@ export default defineConfig({
     environment: 'happy-dom',
     passWithNoTests: false,
     setupFiles: './config/tests/setupVitest.ts',
-    cache: {
-      dir: '../../.cache/vitest/scaffold-next',
-    },
     coverage: {
       provider: 'istanbul',
       reporter: ['json-summary', 'html'],

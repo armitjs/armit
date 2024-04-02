@@ -10,15 +10,13 @@ export default defineConfig({
       { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
     ],
   },
+  cacheDir: '../../.cache/vitest/cosmiconfig',
   test: {
     // Makebe suite for local debug
     testTimeout: 50000000,
     globals: true,
     environment: 'node',
     passWithNoTests: false,
-    cache: {
-      dir: '../../.cache/vitest/cosmiconfig',
-    },
     coverage: {
       provider: 'istanbul',
       reporter: ['json-summary', 'html'],

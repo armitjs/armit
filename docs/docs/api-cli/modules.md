@@ -24,4 +24,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[bootstrap/bootstrap.ts:15](https://github.com/armitjs/armit/blob/bd1948c/packages/cli/src/bootstrap/bootstrap.ts#L15)
+[bootstrap/bootstrap.ts:15](https://github.com/armitjs/armit/blob/19f6788/packages/cli/src/bootstrap/bootstrap.ts#L15)
