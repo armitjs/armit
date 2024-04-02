@@ -1,5 +1,11 @@
 # @armit/docs
 
+## 0.0.17
+
+### Patch Changes
+
+- [`a643e44`](https://github.com/armitjs/armit/commit/a643e44a51cff31febba27d8108d91dd8d868514) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.0.16
 
 ### Patch Changes
