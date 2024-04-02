@@ -69,7 +69,7 @@ jobs:
       - name: Unit tests
         working-directory: packages/git
         run: |
-          yarn test-unit --passWithNoTests
+          yarn test-unit
 
       - name: Build lib-git
         working-directory: packages/git

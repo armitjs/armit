@@ -66,7 +66,7 @@ jobs:
       - name: Unit tests
         working-directory: packages/logger-node
         run: |
-          yarn test-unit --passWithNoTests
+          yarn test-unit
 
       - name: Build lib-logger-node
         working-directory: packages/logger-node

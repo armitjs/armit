@@ -66,7 +66,7 @@ jobs:
       - name: Unit tests
         working-directory: packages/ldap
         run: |
-          yarn test-unit --passWithNoTests
+          yarn test-unit
 
       - name: Build lib-ldap
         working-directory: packages/ldap

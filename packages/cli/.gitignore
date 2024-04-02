@@ -3,6 +3,8 @@
 # build
 /dist
 /build
+/public
+
 /_release
 /storybook-static
 
