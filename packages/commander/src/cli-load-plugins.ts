@@ -143,15 +143,19 @@ async function load(
     for (const [pluginAlias, plugin] of Object.entries(pluginModule)) {
       const pluginDefine = plugin as PluginConfig;
       const pluginName = pluginDefine.name || pluginInfo.name;
-      if (allPlugins.find((s) => s.name === pluginName)) {
-        console.warn(
-          `${pluginAlias}:${pluginName} has been loaded, duplicate plug-ins are defined? `
-        );
-      } else {
-        allPlugins.push({
-          name: pluginDefine.name || pluginInfo.name,
-          plugin: pluginDefine.commandModule,
-        });
+      const pluginCommandModule = pluginDefine.commandModule;
+      // Make sure that we have a plugin name and command module
+      if (pluginName && pluginCommandModule) {
+        if (allPlugins.find((s) => s.name === pluginName)) {
+          console.warn(
+            `${pluginAlias}:${pluginName} has been loaded, duplicate plug-ins are defined? `
+          );
+        } else {
+          allPlugins.push({
+            name: pluginName,
+            plugin: pluginCommandModule,
+          });
+        }
       }
     }
   }
