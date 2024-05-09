@@ -39,7 +39,10 @@ export const isExternalModule = (
     externalModules.includes(moduleId) ||
     externalModules.find((externalModule) => {
       if (typeof externalModule === 'string') {
-        return externalModule === moduleId;
+        return (
+          externalModule === moduleId ||
+          moduleId.startsWith(ensureSlash(externalModule, true))
+        );
       }
       return externalModule.test(moduleId);
     });
