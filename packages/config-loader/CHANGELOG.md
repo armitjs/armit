@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.1.7
+
+### Patch Changes
+
+- [`4d673d0`](https://github.com/armitjs/armit/commit/4d673d01c6eb37463d28727da36eac974a151e2e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bugfix for external-module check
+
 ## 0.1.6
 
 ### Patch Changes
