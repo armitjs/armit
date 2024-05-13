@@ -12,6 +12,7 @@
     "@armit/docs",
     "@armit/scaffold-next",
     "@armit/generate-template-files",
-    "@armit/eslint-config-bases"
+    "@armit/eslint-config-bases",
+    "eslint"
   ]
 }
