@@ -21,7 +21,7 @@ module.exports = {
     {
       files: sonarPatterns.files,
       excludedFiles: sonarPatterns.excludedFiles,
-      extends: ['plugin:sonarjs/recommended'],
+      extends: ['plugin:sonarjs/recommended-legacy'],
       rules: {
         'sonarjs/no-nested-template-literals': 'off',
         'sonarjs/prefer-single-boolean-return': 'off',
