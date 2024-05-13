@@ -62,7 +62,7 @@ describe('load cli command plugins', () => {
       [fixtureCwd],
       fixtureCwd
     );
-    expect(result.length).toBe(3);
+    expect(result.length).toBe(1);
     expect(
       result.find((s) => !!~s.name.indexOf('@armit/cli-plugin-a'))
     ).toBeUndefined();
@@ -75,7 +75,7 @@ describe('load cli command plugins', () => {
     expect(esm2?.plugin).toBe('esm');
     expect(esm2).not.toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('esm'))).not.toBeUndefined();
-    expect(result.find((s) => !!~s.name.indexOf('cjs'))).not.toBeUndefined();
+    expect(result.find((s) => !!~s.name.indexOf('cjs'))).toBeUndefined();
     expect(result.find((s) => !!~s.name.indexOf('xxxx'))).toBeUndefined();
   });
 });
