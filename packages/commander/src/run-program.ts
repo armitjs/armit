@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import type { ExecaChildProcess, ExecaReturnValue, Options } from 'execa';
+import type { Options } from 'execa';
 import { execa } from 'execa';
 
 /**
@@ -31,7 +31,7 @@ export const runProgram = (
   cwd: string,
   args: string[],
   opts: Options
-): ExecaChildProcess<string> => {
+) => {
   return execa(program, args, execaOpts(cwd, opts));
 };
 
@@ -44,13 +44,13 @@ export const runProgram = (
  * @param options the configuration of `execa`
  * @param args parameters for program
  */
-export const runTsScript = (
+export const runTsScript = <T extends Options>(
   program: string,
   mode: 'esm' | 'commonjs',
   tsconfig: string,
-  options: Options,
-  ...args
-): Promise<ExecaReturnValue<string>> => {
+  options: T,
+  ...args: string[]
+) => {
   const commonjsArgs =
     mode === 'commonjs'
       ? ['-r', 'ts-node/register', '-r', 'tsconfig-paths/register']
@@ -69,7 +69,7 @@ export const runTsScript = (
 export interface CliMockResult {
   stdout: string;
   stderr: string;
-  exitCode: number;
+  exitCode?: number;
 }
 
 export async function runTsCliMock(
