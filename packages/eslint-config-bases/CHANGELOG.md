@@ -1,5 +1,13 @@
 # @armit/eslint-config-bases
 
+## 0.1.6
+
+### Patch Changes
+
+- [`ed101c8`](https://github.com/armitjs/armit/commit/ed101c853edf21d6f7a9b2fb1ff70a059377ba64) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`5c84aac`](https://github.com/armitjs/armit/commit/5c84aac6d0feb1e54d36b487e6f591392e85e845) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix sonar js extends
+
 ## 0.1.5
 
 ### Patch Changes
