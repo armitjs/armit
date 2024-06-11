@@ -1,8 +1,8 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { packageUpSync } from 'package-up';
 import type { Options } from 'pkg-dir';
 import { packageDirectorySync } from 'pkg-dir';
-import { pkgUpSync } from 'pkg-up';
 import type { SetRequired } from 'type-fest';
 
 /**
@@ -20,7 +20,7 @@ export const searchPackageDir = (options: SetRequired<Options, 'cwd'>) => {
 export const searchClosestPackageFile = (
   options: SetRequired<Options, 'cwd'>
 ) => {
-  return pkgUpSync(options);
+  return packageUpSync(options);
 };
 
 /**

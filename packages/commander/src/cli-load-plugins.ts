@@ -3,13 +3,13 @@ import path, { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { searchParentDir } from '@armit/package';
 import { globbySync } from 'globby';
-import mem, { memClear } from 'mem';
+import memoize, { memoizeClear } from 'memoize';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
 import { type PluginConfig } from './define-plugin.js';
 
-const memoizedLoad = mem(load, { cacheKey: JSON.stringify });
-const memoizedSearch = mem(findPluginsInNodeModules);
+const memoizedLoad = memoize(load, { cacheKey: JSON.stringify });
+const memoizedSearch = memoize(findPluginsInNodeModules);
 const getDirname = (url: string, subDir = '') => {
   return join(dirname(fileURLToPath(url)), subDir);
 };
@@ -189,8 +189,8 @@ function isDirectory(dir) {
 }
 
 export const clearCache = () => {
-  memClear(memoizedLoad);
-  memClear(memoizedSearch);
+  memoizeClear(memoizedLoad);
+  memoizeClear(memoizedSearch);
 };
 
 export const loadCliPlugins = memoizedLoad;
