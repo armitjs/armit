@@ -1,5 +1,14 @@
 # @armit/commander
 
+## 0.1.9
+
+### Patch Changes
+
+- [`e0fcf0a`](https://github.com/armitjs/armit/commit/e0fcf0a09345f24c2c92a29a54d758d6970b734d) Thanks [@tianyingchun](https://github.com/tianyingchun)! - migration depreated dependeices
+
+- Updated dependencies [[`e0fcf0a`](https://github.com/armitjs/armit/commit/e0fcf0a09345f24c2c92a29a54d758d6970b734d)]:
+  - @armit/package@0.1.7
+
 ## 0.1.8
 
 ### Patch Changes
