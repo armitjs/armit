@@ -1,5 +1,20 @@
 # @armit/cli
 
+## 0.2.0
+
+### Minor Changes
+
+- [`db4c2eb`](https://github.com/armitjs/armit/commit/db4c2eb6478cf85b2b992c14f80ca65c87cf82cb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade eslint to V9 & fix testcase
+
+### Patch Changes
+
+- Updated dependencies [[`db4c2eb`](https://github.com/armitjs/armit/commit/db4c2eb6478cf85b2b992c14f80ca65c87cf82cb)]:
+  - @armit/generate-template-files@0.2.0
+  - @armit/file-utility@0.2.0
+  - @armit/commander@0.2.0
+  - @armit/terminal@0.2.0
+  - @armit/package@0.2.0
+
 ## 0.1.9
 
 ### Patch Changes
