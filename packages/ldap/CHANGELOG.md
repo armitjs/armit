@@ -1,5 +1,11 @@
 # @armit/ldap
 
+## 0.2.0
+
+### Minor Changes
+
+- [`db4c2eb`](https://github.com/armitjs/armit/commit/db4c2eb6478cf85b2b992c14f80ca65c87cf82cb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - upgrade eslint to V9 & fix testcase
+
 ## 0.1.5
 
 ### Patch Changes
