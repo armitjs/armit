@@ -13,7 +13,7 @@ A tool the modern for rapidly building command line armitjs apps
 Add this package to package dependencies linked to your app, just import them like regular packages:
 
 ```typescript
-import { bootstrap } from "@armit/cli";
+import { bootstrap } from '@armit/cli';
 
 bootstrap().then((cli) => {
   // Register customized plugins chain.

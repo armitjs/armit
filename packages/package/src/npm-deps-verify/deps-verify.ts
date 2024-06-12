@@ -1,14 +1,14 @@
-import { join } from 'path';
-import { readJsonFromFile } from '@armit/file-utility';
 import hasYarn from 'has-yarn';
+import { join } from 'path';
 import { type PackageJson } from 'type-fest';
+import { readJsonFromFile } from '@armit/file-utility';
 import { chalk, groupBy } from '../helpers/index.js';
 import { isMonorepo } from '../helpers/is-mono-repo.js';
 import { logger } from '../logger.js';
 import {
-  LOGGER_VERIFY_DEPS_CONTEXT,
   execAsync,
   getPkgIds,
+  LOGGER_VERIFY_DEPS_CONTEXT,
   pushPkgs,
 } from './deps-verify-helper.js';
 import { type PackageVerifyDeps, type VerifyDepsOption } from './type.js';
@@ -18,7 +18,6 @@ import { type PackageVerifyDeps, type VerifyDepsOption } from './type.js';
  *
  * @param options Optional parameters.
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export async function verifyDeps(options: VerifyDepsOption) {
   const {
     dir = '',

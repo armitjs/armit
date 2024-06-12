@@ -129,7 +129,7 @@ describe('recursive copy events with mock', () => {
           directoryCopyOperation.stats &&
           directoryCopyOperation.stats.isDirectory;
         expected = 'function';
-        expect(actual).to.be.a(expected);
+        expect(actual).toBe(expected);
       })
       .then(() => {
         vi.resetAllMocks();
@@ -142,7 +142,7 @@ describe('recursive copy events with mock', () => {
   it('should emit symlink copy error events', async () => {
     createSymbolicLink('.', getSourcePath('symlink', SOURCE_PATH), 'dir');
 
-    vi.mocked(copySymlink).mockImplementationOnce((_srcPath, _destPath) => {
+    vi.mocked(copySymlink).mockImplementationOnce(() => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           reject(new Error('Test error'));
@@ -218,7 +218,7 @@ describe('recursive copy events with mock', () => {
         actual =
           symlinkCopyOperation.stats && symlinkCopyOperation.stats.isDirectory;
         expected = 'function';
-        expect(actual).to.be.a(expected);
+        expect(actual).toBeTypeOf(expected);
       })
       .then(() => {
         vi.resetAllMocks();

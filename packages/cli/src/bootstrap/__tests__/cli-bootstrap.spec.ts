@@ -1,11 +1,10 @@
 import { join } from 'node:path';
-import { runTsCliMock } from '@armit/commander';
-import type { CliMockResult } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
+import { runTsScript } from '@hyperse/exec-program';
 
-async function runCliMock(...args: string[]): Promise<CliMockResult> {
+async function runCliMock(...args: string[]) {
   const program = join(getDirname(import.meta.url), 'cli-boot.ts');
-  return runTsCliMock(program, ...args);
+  return runTsScript(program, {}, ...args, '--noColor');
 }
 
 describe('@armit/cli bootstrap', () => {

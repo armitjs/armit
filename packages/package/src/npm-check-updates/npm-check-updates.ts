@@ -1,8 +1,8 @@
+import { cosmiconfig } from 'cosmiconfig';
 import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
-import { fileWalk } from '@armit/file-utility';
-import { cosmiconfig } from 'cosmiconfig';
 import { run } from 'npm-check-updates';
+import { fileWalk } from '@armit/file-utility';
 import { projectHasYarn } from '../npm-yarn.js';
 import { getNcuConfigFile } from './cache-file.js';
 import { type UpdatePackageOptions } from './types.js';

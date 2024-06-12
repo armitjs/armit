@@ -1,18 +1,14 @@
-/**
- * This files overrides the base lint-staged.config.cjs present in the root directory.
- * It allows to run eslint based the package specific requirements.
- * {@link https://github.com/okonet/lint-staged#how-to-use-lint-staged-in-a-multi-package-monorepo}
- * {@link https://github.com/belgattitude/nextjs-monorepo-example/blob/main/docs/about-lint-staged.md}
- */
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  concatFilesForPrettier,
-  getEslintFixCmd,
-} from '../../lint-staged.common.cjs';
+/**
+ * This is the base lint-staged rules config and just includes prettier by default.
+ * A good practice is to override this base configuration in each package and/or application
+ * where we are able to add customization depending on the nature of the project (eslint...).
+ */
+import { getEslintFixCmd } from '../../lint-staged.common.mjs';
 
 /**
- * @type {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}
+ * @type  {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}
  */
 const rules = {
   '**/*.{js,jsx,ts,tsx,mjs,cjs}': (filenames) => {
@@ -22,13 +18,10 @@ const rules = {
       cache: true,
       // when autofixing staged-files a good tip is to disable react-hooks/exhaustive-deps, cause
       // a change here can potentially break things without proper visibility.
-      rules: ['react-hooks/exhaustive-deps: off'],
+      rules: [],
       maxWarnings: 25,
       files: filenames,
     });
-  },
-  '**/*.{json,md,mdx,css,html,yml,yaml,scss}': (filenames) => {
-    return [`prettier --write ${concatFilesForPrettier(filenames)}`];
   },
 };
 

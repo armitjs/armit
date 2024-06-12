@@ -1,6 +1,6 @@
-import { loadPartialConfig, type ConfigItem } from '@babel/core';
 import merge, { all } from 'deepmerge';
 import omit from 'object.omit';
+import { type ConfigItem, loadPartialConfig } from '@babel/core';
 import { babelMerge, babelMergeAll } from '../babel-merge.js';
 import { requireResolve } from './require-resolve.js';
 

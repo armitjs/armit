@@ -1,7 +1,7 @@
 import { rmSync, unlinkSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { getDirname, rmrfSyncByPattern } from '@armit/file-utility';
 import through from 'through2';
+import { getDirname, rmrfSyncByPattern } from '@armit/file-utility';
 import { ensureDirectoryExists } from '../ensure-directory-exists.js';
 import { recursiveCopy } from '../file-recursive-copy.js';
 import {
@@ -52,8 +52,8 @@ describe('recursive copy events', () => {
       getSourcePath('file', SOURCE_PATH),
       getDestinationPath('file', DESTINATION_PATH)
     );
-    expect(async () => {
-      return await copier
+    await expect(async () =>
+      copier
         .on('error', () => {})
         .on('complete', () => {})
         .on('createDirectoryStart', () => {})
@@ -66,8 +66,8 @@ describe('recursive copy events', () => {
         .on('copyFileError', () => {})
         .on('copyFileComplete', () => {})
         .then(() => {})
-        .catch(() => {});
-    }).to.not.throw();
+        .catch(() => {})
+    ).not.toThrowError();
 
     return copier;
   });
@@ -229,7 +229,7 @@ describe('recursive copy events', () => {
 
       actual = fileCopyOperation.stats && fileCopyOperation.stats.isDirectory;
       expected = 'function';
-      expect(actual).to.be.a(expected);
+      expect(actual).toBeTypeOf(expected);
     });
   });
 

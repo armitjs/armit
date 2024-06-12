@@ -2,13 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "noImplicitAny": false,
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@/test-utils": ["../../../config/test-utils/index.ts"],
+      "@/test-utils": ["../../config/test-utils/index.ts"],
     },
     "types": ["vitest/globals"],
   },

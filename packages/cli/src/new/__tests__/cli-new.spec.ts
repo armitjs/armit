@@ -1,13 +1,18 @@
 import { join } from 'path';
-import { runTsCliMock } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
+import { runTsScript } from '@hyperse/exec-program';
 
 describe('@armit/cli info', () => {
   const curDirName = getDirname(import.meta.url);
   const program = join(curDirName, 'cli-boot.ts');
 
   it('Should output correct `version` -v', async () => {
-    const { stdout, stderr } = await runTsCliMock(program, '-h');
+    const { stdout, stderr } = await runTsScript(
+      program,
+      {},
+      '-h',
+      '--noColor'
+    );
     expect(stderr).toBe('');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)

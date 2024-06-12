@@ -1,6 +1,6 @@
 import hasYarn from 'has-yarn';
 import installedGlobally from 'is-installed-globally';
-import { isNpmOrYarn, isNpm, isYarn } from 'is-npm';
+import { isNpm, isNpmOrYarn, isYarn } from 'is-npm';
 import yarnGlobal from 'is-yarn-global';
 /**
  * Check if installed by yarn globally without any `fs` calls

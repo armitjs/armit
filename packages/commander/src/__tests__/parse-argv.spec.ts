@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import { getDirname } from '@/test-utils';
-import { runTsCliMock } from '../run-program.js';
+import { runTsScript } from '@hyperse/exec-program';
 
 describe('parse process arguments using yargs', () => {
   it('Should correct parse process argv', async () => {
@@ -8,8 +8,9 @@ describe('parse process arguments using yargs', () => {
       getDirname(import.meta.url),
       'fixtures/cli-argv-parse.ts'
     );
-    const { stdout } = await runTsCliMock(
+    const { stdout } = await runTsScript(
       program,
+      {},
       'create-reduce-action',
       '__store__=some-name',
       '__model__=some-other-name',

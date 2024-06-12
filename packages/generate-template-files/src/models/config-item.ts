@@ -1,6 +1,6 @@
 import type { CaseConverterEnum } from '../constants/case-converter-enum.js';
-import type { QuestionReplacer } from './replacer-slot-question.js';
 import type { Replacer } from './replacer.js';
+import type { QuestionReplacer } from './replacer-slot-question.js';
 import type { Results } from './results.js';
 
 /**

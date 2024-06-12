@@ -166,6 +166,7 @@ describe('package-guarantee.test.ts', () => {
   });
 
   it('printUnexpectedModules', async () => {
+    expect(1).toBe(1);
     makeData();
     const { allInstalledModules } = await illegalInstalledVersionOfModules(
       ['@dimjs/utils'],

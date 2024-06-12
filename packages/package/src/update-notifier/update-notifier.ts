@@ -3,9 +3,9 @@ import boxen from 'boxen';
 import C from 'picocolors';
 import { logger } from '../logger.js';
 import {
-  projectHasYarn,
   isGlobalYarnOrNpm,
   isYarnGlobal,
+  projectHasYarn,
 } from '../npm-yarn.js';
 import { hasNewVersion } from './has-new-version.js';
 import { isNpmOrYarn } from './is-npm-or-yarn.js';

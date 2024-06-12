@@ -1,7 +1,7 @@
-import { join } from 'path';
 import { execa } from 'execa';
 import npmLinked from 'npm-list-linked';
 import ora from 'ora';
+import { join } from 'path';
 import pic from 'picocolors';
 import { arrayUnique } from '../helpers/array-unique.js';
 import { logger } from '../logger.js';

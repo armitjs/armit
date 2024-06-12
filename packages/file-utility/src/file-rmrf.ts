@@ -1,6 +1,6 @@
-import { rmSync } from 'node:fs';
 import type { Options } from 'globby';
 import { globbySync } from 'globby';
+import { rmSync } from 'node:fs';
 
 /**
  * Synchronously removes files and directories (modeled on the standard POSIX `rm`utility).

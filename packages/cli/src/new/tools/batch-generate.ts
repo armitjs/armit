@@ -1,7 +1,7 @@
 // generateTemplateFile.js
 import {
-  generateTemplateFilesBatch,
   CaseConverterEnum,
+  generateTemplateFilesBatch,
 } from '@armit/generate-template-files';
 // Note: In your file it will be like this:
 // const {generateTemplateFilesBatch, CaseConverterEnum} = require('generate-template-files');

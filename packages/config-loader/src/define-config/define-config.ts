@@ -1,8 +1,6 @@
 export type MaybePromise<T> = T | Promise<T>;
 
-export type ConfigEnvBase = {
-  //
-};
+export type ConfigEnvBase = {};
 
 export type UserConfigFn<UserConfig, ConfigEnv extends ConfigEnvBase> = (
   env: ConfigEnv

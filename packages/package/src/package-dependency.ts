@@ -1,6 +1,6 @@
 import { join } from 'node:path';
-import { fileWalk, readJsonFromFile } from '@armit/file-utility';
 import { type PackageJson } from 'type-fest';
+import { fileWalk, readJsonFromFile } from '@armit/file-utility';
 import { isMonorepo } from './helpers/is-mono-repo.js';
 import { searchPackageDir } from './package-search.js';
 

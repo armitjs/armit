@@ -1,9 +1,9 @@
 import type { FormatStrategy } from '@armit/logger';
 import { LogLevel } from '@armit/logger';
 import {
-  TerminalLog,
   advancedLevels,
   type TerminalData,
+  TerminalLog,
 } from '../terminal/terminal-log.js';
 
 export class TerminalFormatStrategy<MessageType>

@@ -1,13 +1,13 @@
+import merge, { type Options } from 'deepmerge';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  resolvePlugin,
-  type TransformOptions,
-  type PluginItem,
-  resolvePreset,
-} from '@babel/core';
-import merge, { type Options } from 'deepmerge';
 import omit from 'object.omit';
+import {
+  type PluginItem,
+  resolvePlugin,
+  resolvePreset,
+  type TransformOptions,
+} from '@babel/core';
 
 function arrayMerge(
   source: Array<PluginItem> = [],

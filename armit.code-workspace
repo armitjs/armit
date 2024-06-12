@@ -42,10 +42,6 @@
       "path": "packages/babel-merge",
     },
     {
-      "name": "worker-threads",
-      "path": "packages/worker-threads",
-    },
-    {
       "name": "file-utility",
       "path": "packages/file-utility",
     },
@@ -54,20 +50,8 @@
       "path": "packages/file-recursive-copy",
     },
     {
-      "name": "docs",
-      "path": "docs",
-    },
-    {
-      "name": "scaffold-next",
-      "path": "packages/scaffold-next",
-    },
-    {
       "name": "generate-template-files",
       "path": "packages/generate-template-files",
-    },
-    {
-      "name": "eslint-config-bases",
-      "path": "packages/eslint-config-bases",
     },
     {
       "name": "root",
@@ -75,11 +59,12 @@
     },
   ],
   "extensions": {
-    "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
+    "recommendations": ["dbaeumer.vscode-eslint"],
   },
   "settings": {
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.experimental.useFlatConfig": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "never",
@@ -106,12 +91,8 @@
       "./packages/commander",
       "./packages/cosmiconfig",
       "./packages/file-utility",
-      "./packages/worker-threads",
       "./packages/file-recursive-copy",
-      "./packages/docs",
-      "./packages/scaffold-next",
-      "./packages/generate-template-files",
-      "./packages/eslint-config-bases",
+      "./packages/generate-template-files"
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib",
   },

@@ -1,8 +1,8 @@
 import { platform, release } from 'os';
+import osName from 'os-name';
 import type { CommandArgv } from '@armit/commander';
 import { AbstractHandler } from '@armit/commander';
 import { showBanner, terminalColor } from '@armit/terminal';
-import osName from 'os-name';
 
 export type InfoCommandArgs = CommandArgv;
 

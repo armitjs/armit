@@ -1,5 +1,5 @@
 import { createFixtureFiles } from '@/test-utils';
-import { rmrfSync, fileWalkSync, fileWalk } from '../index.js';
+import { fileWalk, fileWalkSync, rmrfSync } from '../index.js';
 
 describe('fileWalk', () => {
   let fixtureCwd;

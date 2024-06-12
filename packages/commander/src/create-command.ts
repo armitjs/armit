@@ -1,8 +1,8 @@
+import type { PackageJson } from 'type-fest';
+import type { Arguments, Argv, CommandModule } from 'yargs';
 import { Logger, LogLevel } from '@armit/logger';
 import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 import { terminalColor } from '@armit/terminal';
-import type { PackageJson } from 'type-fest';
-import type { Arguments, Argv, CommandModule } from 'yargs';
 
 type ArgvPrimitive = string | number | boolean | PackageJson;
 

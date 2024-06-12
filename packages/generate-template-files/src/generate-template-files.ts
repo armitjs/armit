@@ -1,15 +1,15 @@
+import enquirer from 'enquirer';
 import { existsSync } from 'fs';
+import replaceString from 'replace-string';
+import through from 'through2';
 import { recursiveCopy } from '@armit/file-recursive-copy';
 import { Logger, LogLevel } from '@armit/logger';
 import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
-import enquirer from 'enquirer';
-import replaceString from 'replace-string';
-import through from 'through2';
 import { CaseConverterEnum } from './constants/case-converter-enum.js';
 import type { ConfigItem } from './models/config-item.js';
 import type { DefaultCaseConverter } from './models/default-case-converter.js';
-import type { QuestionReplacer } from './models/replacer-slot-question.js';
 import type { Replacer } from './models/replacer.js';
+import type { QuestionReplacer } from './models/replacer-slot-question.js';
 import type { Results } from './models/results.js';
 import {
   throwErrorIfNoConfigItems,
@@ -375,7 +375,7 @@ export class GenerateTemplateFiles {
 
         return fileOrFolder;
       },
-      transform: (_src: string, _dest: string, _stats: unknown) => {
+      transform: () => {
         return through((chunk, enc, done) => {
           let output: string = chunk.toString();
 

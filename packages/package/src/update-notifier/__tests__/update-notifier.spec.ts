@@ -14,7 +14,7 @@ describe('UpdateNotifier', () => {
     consoleSpy.mockReset();
   });
 
-  it('it logs message if update is available', async () => {
+  it('logs message if update is available', async () => {
     vi.mocked(hasNewVersion).mockResolvedValueOnce('2.0.0');
 
     await updateNotifier({
@@ -25,7 +25,7 @@ describe('UpdateNotifier', () => {
     expect(consoleSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('it does not log message if update is not available', async () => {
+  it('does not log message if update is not available', async () => {
     vi.mocked(hasNewVersion).mockResolvedValue(false);
     await updateNotifier({
       pkg: { name: 'test', version: '2.0.0' },

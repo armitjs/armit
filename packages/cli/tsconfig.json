@@ -2,21 +2,21 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "noImplicitAny": false,
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
     "paths": {
       "@/test-utils/*": ["./test-utils/*"],
-      "@armit/terminal": ["../../terminal/src/index.js"],
-      "@armit/logger": ["../../logger/src/index.js"],
-      "@armit/logger-node": ["../../logger-node/src/index.js"],
-      "@armit/commander": ["../../commander/src/index.js"],
-      "@armit/file-utility": ["../../file-utility/src/index.js"],
-      "@armit/package": ["../../package/src/index.js"],
+      "@armit/terminal": ["../terminal/src/index.js"],
+      "@armit/logger": ["../logger/src/index.js"],
+      "@armit/logger-node": ["../logger-node/src/index.js"],
+      "@armit/commander": ["../commander/src/index.js"],
+      "@armit/file-utility": ["../file-utility/src/index.js"],
+      "@armit/package": ["../package/src/index.js"],
       "@armit/generate-template-files": [
-        "../../generate-template-files/src/index.js"
+        "../generate-template-files/src/index.js"
       ]
     },
     "types": ["vitest/globals"]

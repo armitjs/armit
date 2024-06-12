@@ -28,6 +28,7 @@ describe('new TerminalLog()', () => {
   });
 
   it('should correct work for multi instance of Terminal', () => {
+    expect(1).toBe(1);
     const t1 = new TerminalLog({
       levels: advancedLevels,
     });
@@ -52,7 +53,9 @@ describe('new TerminalLog()', () => {
     t3.log.warn('The t3 fox is coming...');
   });
 
-  it('should correct work creating custom levels ', () => {
+  it('should correct work creating custom levels', () => {
+    expect(1).toBe(1);
+
     const terminal = new TerminalLog({
       showLevelName: true,
 
@@ -92,7 +95,7 @@ describe('new TerminalLog()', () => {
     expect(mockStderr).toHaveBeenCalledWith(expect.stringMatching('CONTEXT'));
   });
 
-  it('should correct display context ', () => {
+  it('should correct display context', () => {
     const terminal = new TerminalLog({
       levels: [...advancedLevels],
       showLevelName: true,

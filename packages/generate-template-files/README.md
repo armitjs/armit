@@ -14,41 +14,41 @@ A simple generator that is independent of any language. Create custom boilerplat
 3. Run node generate.js within Terminal (Mac) or Powershell (Win) once you've added your template files.
 
 ```typescript
-import { generateTemplateFiles } from "@armit/generate-template-files";
+import { generateTemplateFiles } from '@armit/generate-template-files';
 
-const config = require("../package.json");
+const config = require('../package.json');
 
 generateTemplateFiles([
   {
-    option: "Create Redux Store",
-    defaultCase: "(pascalCase)",
+    option: 'Create Redux Store',
+    defaultCase: '(pascalCase)',
     entry: {
-      folderPath: "./tools/templates/react/redux-store/",
+      folderPath: './tools/templates/react/redux-store/',
     },
     stringReplacers: [
-      "__store__",
-      { question: "Insert model name", slot: "__model__" },
+      '__store__',
+      { question: 'Insert model name', slot: '__model__' },
     ],
     output: {
-      path: "./src/stores/__store__(lowerCase)",
-      pathAndFileNameDefaultCase: "(kebabCase)",
+      path: './src/stores/__store__(lowerCase)',
+      pathAndFileNameDefaultCase: '(kebabCase)',
       overwrite: true,
     },
   },
   {
-    option: "Create Reduce Action",
-    defaultCase: "(pascalCase)",
+    option: 'Create Reduce Action',
+    defaultCase: '(pascalCase)',
     entry: {
-      folderPath: "./tools/templates/react/redux-store/__store__Action.ts",
+      folderPath: './tools/templates/react/redux-store/__store__Action.ts',
     },
-    stringReplacers: ["__store__", "__model__"],
+    stringReplacers: ['__store__', '__model__'],
     dynamicReplacers: [
-      { slot: "__version__", slotValue: config.version },
-      { slot: "__description__", slotValue: config.description },
+      { slot: '__version__', slotValue: config.version },
+      { slot: '__description__', slotValue: config.description },
     ],
     output: {
-      path: "./src/stores/__store__/__store__(lowerCase)/__store__(pascalCase)Action.ts",
-      pathAndFileNameDefaultCase: "(kebabCase)",
+      path: './src/stores/__store__/__store__(lowerCase)/__store__(pascalCase)Action.ts',
+      pathAndFileNameDefaultCase: '(kebabCase)',
     },
     onComplete: (results) => {
       console.log(`results`, results);

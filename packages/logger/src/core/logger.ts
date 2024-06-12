@@ -5,9 +5,7 @@ import type { LogAdapter, LogAdapterConfig } from './adapter.js';
 
 export type LoggerOptions<
   MessageType,
-  OptionExtendType extends Record<string, unknown> = {
-    /** */
-  },
+  OptionExtendType extends Record<string, unknown> = {},
 > = LogAdapterConfig<MessageType> & {
   adapter?: LogAdapter<MessageType>;
   context?: string;

@@ -1,8 +1,8 @@
-import { Logger, LogLevel } from '@armit/logger';
-import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
-import { terminalColor, getTerminalLink } from '@armit/terminal';
 import type { Argv } from 'yargs';
 import yargs from 'yargs';
+import { Logger, LogLevel } from '@armit/logger';
+import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
+import { getTerminalLink, terminalColor } from '@armit/terminal';
 
 /**
  * A context object can optionally be given as the second argument to parse()

@@ -240,7 +240,6 @@ export class TerminalLog<L extends string> {
    */
   timeInLastLog: Date;
 
-  // eslint-disable-next-line sonarjs/cognitive-complexity
   private logMsg(
     level: Level<string>,
     message: string,

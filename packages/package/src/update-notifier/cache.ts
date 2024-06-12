@@ -1,4 +1,4 @@
-import { mkdirSync, existsSync, writeFileSync, readFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path, { dirname } from 'node:path';
 

@@ -1,7 +1,6 @@
 import { createCli } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
 import { readPackageData } from '@armit/package';
-
 import { packCmd } from '../index.js';
 
 // __dirname

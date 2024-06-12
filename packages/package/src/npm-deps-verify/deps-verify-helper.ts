@@ -1,13 +1,12 @@
 import { exec } from 'child_process';
 import { join } from 'path';
-import { promisify } from 'util';
-import { readJsonFromFile } from '@armit/file-utility';
 import { lt, prerelease, rcompare, satisfies } from 'semver';
 import { type PackageJson } from 'type-fest';
+import { promisify } from 'util';
 import validatePackageName from 'validate-npm-package-name';
+import { readJsonFromFile } from '@armit/file-utility';
 import { chalk } from '../helpers/chalk-color.js';
 import { logger } from '../logger.js';
-
 import {
   type PackageStatus,
   type PushPkgsOption,
@@ -202,7 +201,6 @@ export function isPkgNeedToBeVerify(
  * @param options Object with parameters.
  * @returns NPM package state.
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export async function pushPkgs(options: PushPkgsOption) {
   const { dir, deps = {}, type, registry, needVerifyPackages = {} } = options;
   const result: PackageStatus[] = [];

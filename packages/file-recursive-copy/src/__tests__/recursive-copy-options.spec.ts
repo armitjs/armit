@@ -83,7 +83,7 @@ describe('recursive copy options', () => {
       }
     );
     const files = await getOutputFiles(DESTINATION_PATH);
-    expect(files).to.eql({
+    expect(files).toEqual({
       file: 'Hello, world!\n',
     });
   });

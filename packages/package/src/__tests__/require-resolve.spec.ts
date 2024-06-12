@@ -1,7 +1,7 @@
 import { getDirname } from '@armit/file-utility';
 import { requireResolve } from '../helpers/require-resolve.js';
 
-describe('esm resover', async () => {
+describe('esm resover', () => {
   it('should correct resolve node modules for esm modules', async () => {
     const modulePath = requireResolve(import.meta.url, 'execa');
     expect(modulePath).toBeDefined();

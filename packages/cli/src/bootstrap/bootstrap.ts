@@ -1,13 +1,12 @@
 import { join } from 'node:path';
-import { loadCliPlugins, createCli } from '@armit/commander';
 import type { CliMain, CliOption } from '@armit/commander';
+import { createCli, loadCliPlugins } from '@armit/commander';
 import { getDirname } from '@armit/file-utility';
 import {
+  readPackageData,
   searchParentDir,
   updateNotifier,
-  readPackageData,
 } from '@armit/package';
-
 import { infoCmd } from '../info/define.js';
 import { newCmd } from '../new/define.js';
 import { packCmd } from '../pack/define.js';

@@ -1,11 +1,11 @@
+import { imageSize } from 'image-size';
 import {
-  type ReadStream,
   createReadStream,
   existsSync,
+  type ReadStream,
   writeFileSync,
 } from 'node:fs';
 import { extname, join } from 'node:path';
-import { imageSize } from 'image-size';
 import { rmrfSync } from '../file-rmrf.js';
 import { extractFileFromZip, unzip, zip } from '../file-zip.js';
 import { getDirname } from '../get-dir-name.js';
@@ -18,7 +18,7 @@ function isCorruptedJpeg(filepath) {
     // if no error is thrown, it's not corrupted
     imageSize(filepath);
     return false;
-  } catch (err) {
+  } catch {
     return true;
   }
 }

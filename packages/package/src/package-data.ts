@@ -1,6 +1,6 @@
-import { readJsonFromFile } from '@armit/file-utility';
 import type { Options } from 'pkg-dir';
 import type { PackageJson, SetRequired } from 'type-fest';
+import { readJsonFromFile } from '@armit/file-utility';
 import { searchClosestPackageFile } from './package-search.js';
 
 /**

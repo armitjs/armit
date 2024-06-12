@@ -1,15 +1,14 @@
 import { join } from 'node:path';
-import { getDirname } from '@/test-utils';
 import semver from 'semver';
-import type { CliMockResult } from '../run-program.js';
-import { runTsCliMock } from '../run-program.js';
+import { getDirname } from '@/test-utils';
+import { runTsScript } from '@hyperse/exec-program';
 
-async function runCliMock(...args: string[]): Promise<CliMockResult> {
+async function runCliMock(...args: string[]) {
   const program = join(
     getDirname(import.meta.url),
     'fixtures/cli-boot-sync.ts'
   );
-  return runTsCliMock(program, ...args);
+  return runTsScript(program, {}, ...args);
 }
 
 describe('cli basic infrusture with nested command', () => {

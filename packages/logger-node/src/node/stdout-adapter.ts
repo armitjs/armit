@@ -1,9 +1,9 @@
-import { LogLevel } from '@armit/logger';
 import type {
+  FormatStrategy,
   LogAdapter,
   LogAdapterConfig,
-  FormatStrategy,
 } from '@armit/logger';
+import { LogLevel } from '@armit/logger';
 import { StdoutFormatStrategy } from './stdout-format-strategy.js';
 
 export class StdoutAdapter<MessageType> implements LogAdapter<MessageType> {
@@ -26,6 +26,7 @@ export class StdoutAdapter<MessageType> implements LogAdapter<MessageType> {
     return this as LogAdapter<MessageType>;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   isLoggable(priority: LogLevel, context?: string): boolean {
     return this.level >= priority;
   }

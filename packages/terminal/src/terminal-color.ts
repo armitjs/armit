@@ -1,6 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
-import C from 'picocolors';
 import type picocolors from 'picocolors';
+import C from 'picocolors';
 
 /**
  * Represents an ANSI color.

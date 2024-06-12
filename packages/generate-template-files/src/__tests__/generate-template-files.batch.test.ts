@@ -3,13 +3,13 @@ import { GenerateTemplateFiles } from '../generate-template-files.js';
 import type { ConfigItem } from '../models/config-item.js';
 
 describe('GenerateTemplateFiles - Batch', () => {
-  test('should throw an error if no ConfigItem items', () => {
+  test('should throw an error if no ConfigItem items', async () => {
     const items: ConfigItem[] = [];
     const gtf = new GenerateTemplateFiles({
       noColor: true,
     });
 
-    expect(() => gtf.batchGenerate(items)).rejects.toThrowError(
+    await expect(() => gtf.batchGenerate(items)).rejects.toThrowError(
       'There was no ConfigItem items found.'
     );
   });

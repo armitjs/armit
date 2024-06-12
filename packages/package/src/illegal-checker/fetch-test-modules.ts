@@ -1,6 +1,6 @@
 import { resolve } from 'path';
-import { readJsonFromFile } from '@armit/file-utility';
 import { type PackageJson } from 'type-fest';
+import { readJsonFromFile } from '@armit/file-utility';
 import { type PackageItem } from './types.js';
 
 /**

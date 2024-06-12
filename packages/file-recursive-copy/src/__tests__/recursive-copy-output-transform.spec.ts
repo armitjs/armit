@@ -1,8 +1,8 @@
 import type { Stats } from 'node:fs';
 import { rmSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
-import { getDirname, rmrfSyncByPattern } from '@armit/file-utility';
 import through from 'through2';
+import { getDirname, rmrfSyncByPattern } from '@armit/file-utility';
 import { ensureDirectoryExists } from '../ensure-directory-exists.js';
 import { recursiveCopy } from '../file-recursive-copy.js';
 import {
@@ -329,7 +329,7 @@ describe('recursive copy output transformation', () => {
       }
     );
     const files = await getOutputFiles(DESTINATION_PATH);
-    expect(files).to.eql({
+    expect(files).toEqual({
       b: 'a\n',
     });
   });
@@ -353,14 +353,14 @@ describe('recursive copy output transformation', () => {
     expect(files).toEqual({
       file: 'HELLO, WORLD!\n',
     });
-    expect(transformArguments).to.exist;
+    expect(transformArguments).toBeDefined();
     expect(transformArguments!.length).toEqual(3);
-    expect(transformArguments![0]).to.equal(getSourcePath('file', SOURCE_PATH));
-    expect(transformArguments![1]).to.equal(
+    expect(transformArguments![0]).toEqual(getSourcePath('file', SOURCE_PATH));
+    expect(transformArguments![1]).toEqual(
       getDestinationPath('file', DESTINATION_PATH)
     );
-    expect(transformArguments![2]).to.exist;
-    expect(transformArguments![2].isFile).to.exist;
+    expect(transformArguments![2]).toBeDefined();
+    expect(transformArguments![2].isFile).toBeDefined();
     expect(transformArguments![2].isFile()).toBe(true);
   });
 

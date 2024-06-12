@@ -15,7 +15,6 @@ export class CliMain {
    * Note Normally we can register only one command, because the T maybe different.
    * @param command The CommandModule
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public register(...cmds: CommandModule<any, any>[]): CliMain {
     cmds.forEach((cmd) => {
       this.commands.push(cmd);

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type PartialDeep } from 'type-fest';
 import {
   isClassInstance,
@@ -32,7 +31,6 @@ const needMerge = (source, mergeUndefined?: boolean) => {
  * };
  * ```
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export function mergeOptions<T>(
   target: T,
   source: PartialDeep<T>,

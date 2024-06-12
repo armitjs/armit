@@ -1,6 +1,6 @@
+import pic from 'picocolors';
 import type { FormatStrategy } from '@armit/logger';
 import { DEFAULT_CONTEXT, LogLevel } from '@armit/logger';
-import pic from 'picocolors';
 
 export class StdoutFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>

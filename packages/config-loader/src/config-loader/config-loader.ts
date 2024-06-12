@@ -1,18 +1,15 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { existsSync } from 'fs';
-import { type Loader, cosmiconfig } from 'cosmiconfig';
+import { cosmiconfig, type Loader } from 'cosmiconfig';
 import { type CosmiconfigResult } from 'cosmiconfig/dist/types.js';
-import { type RegisterOptions } from 'ts-node';
+import { existsSync } from 'fs';
 import { isEsmMode } from '../helpers/is-esm-mode.js';
-import { type EsmLoaderOptions, esmLoader } from './loader-esm/esm-loader.js';
-import { tsLoader } from './loader-ts-cjs/ts-loader.js';
+import { esmLoader, type EsmLoaderOptions } from './esm-loader.js';
 
 type ConfigLoadResult<T> = Omit<CosmiconfigResult, 'config'> & {
   config: T;
 };
 
-type LoaderOptions = { ts?: RegisterOptions; esm?: EsmLoaderOptions };
+type LoaderOptions = { esm?: EsmLoaderOptions };
+
 /**
  * Search up the directory tree, checking each of these places in each directory, until it finds some acceptable configuration (or hits the home directory).
  * @param moduleName Your module name. This is used to create the default searchPlaces and packageProp.
@@ -83,15 +80,14 @@ export const loadConfig = async <T = any>(
 function dynamicLoader(options?: LoaderOptions, searchFrom?: string): Loader {
   return async (path: string, content: string) => {
     const isESM = isEsmMode(path);
-    if (isESM) {
-      return esmLoader({
-        externals: [],
-        plugins: [],
-        ...options?.esm,
-        projectCwd: options?.esm?.projectCwd || searchFrom,
-      })(path, content);
-    } else {
-      return tsLoader(options?.ts)(path, content);
+    if (!isESM) {
+      throw new Error('Only ESM is supported');
     }
+    return esmLoader({
+      externals: [],
+      plugins: [],
+      ...options?.esm,
+      projectCwd: options?.esm?.projectCwd || searchFrom,
+    })(path, content);
   };
 }

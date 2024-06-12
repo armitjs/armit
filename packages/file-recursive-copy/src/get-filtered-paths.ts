@@ -1,6 +1,6 @@
+import mm from 'micromatch';
 import { basename } from 'node:path';
 import { isNotJunkFile, normalizeSlash } from '@armit/file-utility';
-import mm from 'micromatch';
 import type { RecursiveCopyOptions } from './types.js';
 
 export function getFilteredPaths(

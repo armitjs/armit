@@ -1,11 +1,11 @@
+import { globbySync } from 'globby';
+import memoize, { memoizeClear } from 'memoize';
 import { statSync } from 'node:fs';
 import path, { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { searchParentDir } from '@armit/package';
-import { globbySync } from 'globby';
-import memoize, { memoizeClear } from 'memoize';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
+import { searchParentDir } from '@armit/package';
 import { type PluginConfig } from './define-plugin.js';
 
 const memoizedLoad = memoize(load, { cacheKey: JSON.stringify });
@@ -42,7 +42,6 @@ function uniqByKey(array: PluginItem[], key: string) {
  * @param cwd The directory to begin resolving from
  * @returns
  */
-// eslint-disable-next-line sonarjs/cognitive-complexity
 async function load(
   plugins: string[] = [],
   pluginPackPattern: string[] = [],
@@ -75,11 +74,11 @@ async function load(
       try {
         // try local files
         requirePath = resolve.sync(path.resolve(cwd, pluginName));
-      } catch (err) {
+      } catch {
         try {
           // try node modules
           requirePath = resolve.sync(pluginName, { basedir: cwd });
-        } catch (err) {
+        } catch {
           return undefined;
         }
       }

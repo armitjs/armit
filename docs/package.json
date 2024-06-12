@@ -27,7 +27,8 @@
     "clear": "docusaurus clear",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "lint": "eslint . --ext .ts,.mts,.tsx,.js,.jsx,.cjs,.mjs --cache --cache-location ../.cache/eslint/docs.eslintcache",
+    "lint": "eslint . --cache --cache-location ../.cache/eslint/docs.eslintcache",
+    "fix-all-files": "eslint . --fix",
     "serve": "docusaurus start",
     "start": "docusaurus serve",
     "swizzle": "docusaurus swizzle",
@@ -67,8 +68,8 @@
     "typescript": "5.4.3"
   },
   "devDependencies": {
-    "@armit/eslint-config-bases": "workspace:^",
     "@docusaurus/module-type-aliases": "3.2.0",
+    "@hyperse/eslint-config-hyperse": "^1.0.7",
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/forms": "0.5.7",
     "@tailwindcss/line-clamp": "0.4.4",

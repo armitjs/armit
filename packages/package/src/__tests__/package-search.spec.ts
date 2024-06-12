@@ -1,8 +1,8 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  searchPackageDir,
   searchClosestPackageFile,
+  searchPackageDir,
   searchParentDir,
 } from '../package-search.js';
 

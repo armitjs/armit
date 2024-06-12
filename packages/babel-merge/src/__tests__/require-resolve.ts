@@ -1,5 +1,5 @@
-import { createRequire } from 'node:module';
 import { resolve } from 'import-meta-resolve';
+import { createRequire } from 'node:module';
 
 /**
  * Match `import.meta.resolve` except that `parent` is required (you can pass `import.meta.url`).
@@ -14,7 +14,7 @@ export const requireResolve = (metaUrl: string, specifier: string | URL) => {
   try {
     // 1. first try to resolve `commonjs`
     return createRequire(metaUrl).resolve(specifier);
-  } catch (err) {
+  } catch {
     // 2. first try to resolve `esm`
     return resolve(specifier, metaUrl);
   }

@@ -1,5 +1,5 @@
 import type { Options } from 'globby';
-import { globbySync, globby } from 'globby';
+import { globby, globbySync } from 'globby';
 
 /**
  * Traversing the file system and returning pathnames that matched a defined set of a specified pattern according to the rules

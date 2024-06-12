@@ -1,4 +1,4 @@
-import { LogLevel, Logger } from '@armit/logger';
+import { Logger, LogLevel } from '@armit/logger';
 import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 
 export const logger = new Logger({

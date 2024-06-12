@@ -1,6 +1,6 @@
 import { join } from 'path';
-import { runTsCliMock } from '@armit/commander';
 import { getDirname, rmrfSync, unzip } from '@armit/file-utility';
+import { runTsScript } from '@hyperse/exec-program';
 
 describe('@armit/cli pack', () => {
   const fixtureCwd = getDirname(import.meta.url);
@@ -16,7 +16,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runTsCliMock(program, '-h');
+    const { stdout } = await runTsScript(program, {}, '-h', '--noColor');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
@@ -30,7 +30,14 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should correct handle default options `**`', async () => {
-    const { stdout } = await runTsCliMock(program, 'pack', '-c', fixtureCwd);
+    const { stdout } = await runTsScript(
+      program,
+      {},
+      'pack',
+      '-c',
+      fixtureCwd,
+      '--noColor'
+    );
     const matchedStrs: string[] = [
       '✔ All ziped files',
       ' ➩ project/module-a/bundle57ee0d7b872138242b97-a.css',
@@ -47,13 +54,15 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle filter pattern', async () => {
-    const { stdout } = await runTsCliMock(
+    const { stdout } = await runTsScript(
       program,
+      {},
       'pack',
       '-f',
       'project/module-a/**',
       '-c',
-      fixtureCwd
+      fixtureCwd,
+      '--noColor'
     );
     const matchedStrs: string[] = [
       '✔ All ziped files',
@@ -67,13 +76,15 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle semicolon `;` filter', async () => {
-    const { stdout } = await runTsCliMock(
+    const { stdout } = await runTsScript(
       program,
+      {},
       'pack',
       '-f',
       '**/module-a/**;project/module-b/**',
       '-c',
-      fixtureCwd
+      fixtureCwd,
+      '--noColor'
     );
     const matchedStrs: string[] = [
       '✔ All ziped files',
@@ -92,7 +103,14 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should default ignore `**/*.{png,jpg,jpeg,gif,svg}`', async () => {
-    const { stdout } = await runTsCliMock(program, 'pack', '-c', fixtureCwd);
+    const { stdout } = await runTsScript(
+      program,
+      {},
+      'pack',
+      '-c',
+      fixtureCwd,
+      '--noColor'
+    );
     expect(stdout).toStrictEqual(
       expect.not.stringContaining(
         'project/module-b/assets/module-8ca86e6b-a.jpg'
@@ -106,15 +124,17 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should allow customized `ignore` pattern', async () => {
-    const { stdout } = await runTsCliMock(
+    const { stdout } = await runTsScript(
       program,
+      {},
       'pack',
       '-i',
       '**/*.svg',
       '--ignore',
       '**/*.jpg',
       '-c',
-      fixtureCwd
+      fixtureCwd,
+      '--noColor'
     );
     expect(stdout).toStrictEqual(
       expect.not.stringContaining(

@@ -1,5 +1,5 @@
-import { type Stats, statSync, readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { readFileSync, type Stats, statSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 
 function tryStatSync(file: string): Stats | undefined {
   try {

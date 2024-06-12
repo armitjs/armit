@@ -118,7 +118,7 @@ export class StringUtility {
     return (
       StringUtility.toCamelCase(str)
         // Make first character uppercase.
-        .replace(/^[a-z]/i, (a: string, _b, _c) => {
+        .replace(/^[a-z]/i, (a: string) => {
           return a.toUpperCase();
         })
     );

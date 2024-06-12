@@ -2,17 +2,17 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "noImplicitAny": false,
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@/test-utils": ["../../../config/test-utils/index.ts"],
-      "@armit/terminal": ["../../terminal/src/index.js"],
-      "@armit/package": ["../../package/src/index.js"],
-      "@armit/logger": ["../../logger/src/index.js"],
-      "@armit/logger-node": ["../../logger-node/src/index.js"]
+      "@/test-utils": ["../../config/test-utils/index.ts"],
+      "@armit/terminal": ["../terminal/src/index.js"],
+      "@armit/package": ["../package/src/index.js"],
+      "@armit/logger": ["../logger/src/index.js"],
+      "@armit/logger-node": ["../logger-node/src/index.js"]
     },
     "types": ["vitest/globals"]
   },

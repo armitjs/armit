@@ -1,7 +1,7 @@
 import { GenerateTemplateFiles } from './generate-template-files.js';
 import type { ConfigItem } from './models/config-item.js';
-export * from './models/index.js';
 export * from './constants/index.js';
+export * from './models/index.js';
 
 /**
  * Main method to create your template files. Accepts an array of `IConfigItem` items.

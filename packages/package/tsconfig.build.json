@@ -5,7 +5,7 @@
     "moduleResolution": "nodenext",
     "outDir": "./dist",
     "rootDir": "./src",
-    "baseUrl": "./"
+    "baseUrl": "./src",
   },
   "include": ["./src/index.ts"],
   "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**", "dist"]

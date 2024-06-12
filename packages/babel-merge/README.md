@@ -39,16 +39,16 @@ with how Babel works._
 Where `a`, `b`, `z` are [Babel configuration objects](https://babeljs.io/docs/usage/api/#options) and `options` is a [deepmerge](https://github.com/KyleAMathews/deepmerge#api) options object.
 
 ```js
-import { babelMerge } from "@armit/babel-merge";
+import { babelMerge } from '@armit/babel-merge';
 
 const together = babelMerge(
   {
     presets: [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
           targets: {
-            browsers: ["latest 1 Chrome"],
+            browsers: ['latest 1 Chrome'],
           },
         },
       ],
@@ -57,10 +57,10 @@ const together = babelMerge(
   {
     presets: [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
           targets: {
-            browsers: ["latest 1 Firefox"],
+            browsers: ['latest 1 Firefox'],
           },
         },
       ],
@@ -73,10 +73,10 @@ console.log(together);
 {
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
         targets: {
-          browsers: ["latest 1 Firefox"],
+          browsers: ['latest 1 Firefox'],
         },
       },
     ],
@@ -87,16 +87,16 @@ console.log(together);
 If a pathname was used in an earlier merge, you can still merge by exact name:
 
 ```js
-import { babelMerge } from "@armit/babel-merge";
+import { babelMerge } from '@armit/babel-merge';
 
 const together = babelMerge(
   {
     presets: [
       [
-        require.resolve("@babel/preset-env"),
+        require.resolve('@babel/preset-env'),
         {
           targets: {
-            browsers: ["latest 1 Chrome"],
+            browsers: ['latest 1 Chrome'],
           },
         },
       ],
@@ -105,10 +105,10 @@ const together = babelMerge(
   {
     presets: [
       [
-        "@babel/preset-env",
+        '@babel/preset-env',
         {
           targets: {
-            browsers: ["latest 1 Firefox"],
+            browsers: ['latest 1 Firefox'],
           },
         },
       ],
@@ -121,10 +121,10 @@ console.log(together);
 {
   presets: [
     [
-      "/Users/me/code/app/node_modules/@babel/preset-env/lib/index.js",
+      '/Users/me/code/app/node_modules/@babel/preset-env/lib/index.js',
       {
         targets: {
-          browsers: ["latest 1 Firefox"],
+          browsers: ['latest 1 Firefox'],
         },
       },
     ],
@@ -135,7 +135,7 @@ console.log(together);
 Even works for plugins and presets within environments:
 
 ```js
-import { babelMerge } from "@armit/babel-merge";
+import { babelMerge } from '@armit/babel-merge';
 
 const together = babelMerge(
   {
@@ -143,10 +143,10 @@ const together = babelMerge(
       development: {
         presets: [
           [
-            require.resolve("@babel/preset-env"),
+            require.resolve('@babel/preset-env'),
             {
               targets: {
-                browsers: ["latest 1 Chrome"],
+                browsers: ['latest 1 Chrome'],
               },
             },
           ],
@@ -159,10 +159,10 @@ const together = babelMerge(
       development: {
         presets: [
           [
-            "@babel/preset-env",
+            '@babel/preset-env',
             {
               targets: {
-                browsers: ["latest 1 Firefox"],
+                browsers: ['latest 1 Firefox'],
               },
             },
           ],
@@ -179,10 +179,10 @@ console.log(together);
     development: {
       presets: [
         [
-          "/Users/me/code/app/node_modules/@babel/preset-env/lib/index.js",
+          '/Users/me/code/app/node_modules/@babel/preset-env/lib/index.js',
           {
             targets: {
-              browsers: ["latest 1 Firefox"],
+              browsers: ['latest 1 Firefox'],
             },
           },
         ],
@@ -195,17 +195,17 @@ console.log(together);
 Order is preserved between non-option plugins and presets and ones with options:
 
 ```js
-import { babelMerge } from "@armit/babel-merge";
+import { babelMerge } from '@armit/babel-merge';
 
 const together = babelMerge(
   {
-    plugins: ["module:fast-async", "@babel/plugin-syntax-dynamic-import"],
+    plugins: ['module:fast-async', '@babel/plugin-syntax-dynamic-import'],
   },
   {
     plugins: [
-      "@babel/plugin-proposal-object-rest-spread",
-      ["module:fast-async", { spec: true }],
-      "@babel/plugin-proposal-class-properties",
+      '@babel/plugin-proposal-object-rest-spread',
+      ['module:fast-async', { spec: true }],
+      '@babel/plugin-proposal-class-properties',
     ],
   }
 );
@@ -214,10 +214,10 @@ console.log(together);
 
 {
   plugins: [
-    ["module:fast-async", { spec: true }],
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-proposal-class-properties",
+    ['module:fast-async', { spec: true }],
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-class-properties',
   ];
 }
 ```

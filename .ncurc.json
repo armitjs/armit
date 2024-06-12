@@ -9,10 +9,6 @@
     "@armit/commander",
     "@armit/file-utility",
     "@armit/file-recursive-copy",
-    "@armit/docs",
-    "@armit/scaffold-next",
-    "@armit/generate-template-files",
-    "@armit/eslint-config-bases",
-    "eslint"
+    "@armit/generate-template-files"
   ]
 }
