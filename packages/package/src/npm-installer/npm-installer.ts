@@ -6,7 +6,6 @@ import pic from 'picocolors';
 import { arrayUnique } from '../helpers/array-unique.js';
 import { logger } from '../logger.js';
 import { runingNpmOrYarn } from '../npm-yarn.js';
-
 export interface InstallPackageOptions {
   /**
    * child process work directory.
@@ -71,8 +70,8 @@ export const installPackageLocally = async (
       stdio: 'ignore',
     });
     spinner.succeed();
-  } catch {
-    spinner.fail();
+  } catch (err: any) {
+    spinner.fail(err.message);
   }
   return pkgs.length;
 };

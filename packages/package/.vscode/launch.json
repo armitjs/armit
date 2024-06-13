@@ -10,7 +10,7 @@
       "name": "Debug Test File",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run-script", "test-unit"],
-      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "skipFiles": ["<node_internals>/**"],
       "args": ["${relativeFile}"],
       "env": {}
     }

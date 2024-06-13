@@ -105,7 +105,7 @@
     "@types/prettier": "3.0.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
-    "eslint": "8.57.0",
+    "eslint": "^9.4.0",
     "eslint-plugin-mdx": "3.1.5",
     "eslint-plugin-tailwindcss": "^3.17.3",
     "react": "18.3.1",

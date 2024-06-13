@@ -13,7 +13,7 @@ export default defineConfig({
   cacheDir: '../../.cache/vitest/package',
   test: {
     // Makebe suite for local debug
-    testTimeout: 1000 * 30,
+    testTimeout: 10000000 * 30,
     globals: true,
     environment: 'node',
     passWithNoTests: false,

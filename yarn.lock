@@ -38,13 +38,13 @@ __metadata:
     "@babel/plugin-proposal-object-rest-spread": "npm:7.20.7"
     "@babel/plugin-syntax-dynamic-import": "npm:7.8.3"
     "@babel/preset-env": "npm:7.24.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/babel__core": "npm:7.20.5"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     deepmerge: "npm:^4.3.1"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     fast-async: "npm:7.0.6"
     import-meta-resolve: "npm:4.1.0"
     npm-run-all: "npm:4.1.5"
@@ -70,12 +70,12 @@ __metadata:
     "@armit/generate-template-files": "workspace:^"
     "@armit/package": "workspace:^"
     "@armit/terminal": "workspace:^"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
-    "@hyperse/exec-program": "npm:^1.0.3"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
+    "@hyperse/exec-program": "npm:^1.0.6"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     os-name: "npm:^6.0.0"
     rimraf: "npm:5.0.7"
@@ -96,14 +96,14 @@ __metadata:
     "@armit/logger-node": "workspace:^"
     "@armit/package": "workspace:^"
     "@armit/terminal": "workspace:^"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
-    "@hyperse/exec-program": "npm:^1.0.3"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
+    "@hyperse/exec-program": "npm:^1.0.6"
     "@types/node": "npm:20.14.2"
     "@types/resolve": "npm:1.20.6"
     "@types/yargs": "npm:^17.0.32"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     globby: "npm:^14.0.1"
     memoize: "npm:^10.0.0"
     npm-run-all: "npm:4.1.5"
@@ -131,7 +131,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.24.7"
     "@babel/preset-typescript": "npm:^7.24.7"
     "@babel/runtime": "npm:^7.24.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@rollup/plugin-babel": "npm:^6.0.4"
     "@rollup/plugin-commonjs": "npm:^26.0.1"
     "@rollup/plugin-json": "npm:^6.1.0"
@@ -141,7 +141,7 @@ __metadata:
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     cosmiconfig: "npm:^9.0.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     fast-async: "npm:^7.0.6"
     npm-run-all: "npm:4.1.5"
     rimraf: "npm:5.0.7"
@@ -161,12 +161,12 @@ __metadata:
   dependencies:
     "@armit/file-utility": "workspace:^"
     "@armit/logger-node": "workspace:^"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     errno: "npm:^1.0.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     read-dir-files: "npm:0.1.1"
     rimraf: "npm:5.0.7"
@@ -182,14 +182,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/file-utility@workspace:packages/file-utility"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/adm-zip": "npm:0.5.5"
     "@types/micromatch": "npm:4.0.7"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     adm-zip: "npm:^0.5.14"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     globby: "npm:^14.0.1"
     image-size: "npm:1.1.1"
     junk: "npm:^4.0.1"
@@ -210,12 +210,12 @@ __metadata:
   dependencies:
     "@armit/file-recursive-copy": "workspace:^"
     "@armit/logger-node": "workspace:^"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     enquirer: "npm:^2.4.1"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     replace-string: "npm:^4.0.0"
     rimraf: "npm:5.0.7"
@@ -231,11 +231,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/git@workspace:packages/git"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     rimraf: "npm:5.0.7"
     tsup: "npm:8.1.0"
@@ -250,11 +250,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/ldap@workspace:packages/ldap"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     rimraf: "npm:5.0.7"
     tsup: "npm:8.1.0"
@@ -270,11 +270,11 @@ __metadata:
   resolution: "@armit/logger-node@workspace:packages/logger-node"
   dependencies:
     "@armit/logger": "workspace:^"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     picocolors: "npm:^1.0.1"
     rimraf: "npm:5.0.7"
@@ -290,11 +290,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/logger@workspace:packages/logger"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     rimraf: "npm:5.0.7"
     tsup: "npm:8.1.0"
@@ -312,6 +312,7 @@ __metadata:
     "@armit/file-utility": "workspace:^"
     "@armit/logger-node": "workspace:^"
     "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/install-local": "npm:^1.0.1"
     "@types/node": "npm:20.14.2"
     "@types/react": "npm:^18.3.3"
     "@vitest/coverage-istanbul": "npm:1.6.0"
@@ -320,11 +321,10 @@ __metadata:
     boxen: "npm:^7.1.1"
     cosmiconfig: "npm:^9.0.0"
     dependency-tree: "npm:^11.0.1"
-    eslint: "npm:8.57.0"
+    eslint: "npm:9.4.0"
     execa: "npm:^9.2.0"
     has-yarn: "npm:^3.0.0"
     import-meta-resolve: "npm:^4.1.0"
-    install-local: "npm:^3.0.1"
     is-installed-globally: "npm:^1.0.0"
     is-npm: "npm:^6.0.0"
     is-yarn-global: "npm:^0.4.1"
@@ -353,12 +353,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@armit/terminal@workspace:packages/terminal"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     "@types/node": "npm:20.14.2"
     "@vitest/coverage-istanbul": "npm:1.6.0"
     "@vitest/ui": "npm:1.6.0"
     cfonts: "npm:^3.2.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     npm-run-all: "npm:4.1.5"
     picocolors: "npm:^1.0.1"
     rimraf: "npm:5.0.7"
@@ -2618,45 +2618,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "@eslint/eslintrc@npm:2.1.4"
+"@eslint/config-array@npm:^0.15.1":
+  version: 0.15.1
+  resolution: "@eslint/config-array@npm:0.15.1"
+  dependencies:
+    "@eslint/object-schema": "npm:^2.1.3"
+    debug: "npm:^4.3.1"
+    minimatch: "npm:^3.0.5"
+  checksum: 10/cf8f68a24498531180fad6846cb52dac4e852b0296d2664930bc15d6a2944ad427827bbaebfddf3f87b9c5db0e36c13974d6dc89fff8ba0d3d2b4357b8d52b4e
+  languageName: node
+  linkType: hard
+
+"@eslint/eslintrc@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@eslint/eslintrc@npm:3.1.0"
   dependencies:
     ajv: "npm:^6.12.4"
     debug: "npm:^4.3.2"
-    espree: "npm:^9.6.0"
-    globals: "npm:^13.19.0"
+    espree: "npm:^10.0.1"
+    globals: "npm:^14.0.0"
     ignore: "npm:^5.2.0"
     import-fresh: "npm:^3.2.1"
     js-yaml: "npm:^4.1.0"
     minimatch: "npm:^3.1.2"
     strip-json-comments: "npm:^3.1.1"
-  checksum: 10/7a3b14f4b40fc1a22624c3f84d9f467a3d9ea1ca6e9a372116cb92507e485260359465b58e25bcb6c9981b155416b98c9973ad9b796053fd7b3f776a6946bce8
+  checksum: 10/02bf892d1397e1029209dea685e9f4f87baf643315df2a632b5f121ec7e8548a3b34f428a007234fa82772218fa8a3ac2d10328637b9ce63b7f8344035b74db3
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.57.0":
-  version: 8.57.0
-  resolution: "@eslint/js@npm:8.57.0"
-  checksum: 10/3c501ce8a997cf6cbbaf4ed358af5492875e3550c19b9621413b82caa9ae5382c584b0efa79835639e6e0ddaa568caf3499318e5bdab68643ef4199dce5eb0a0
-  languageName: node
-  linkType: hard
-
-"@eslint/js@npm:^9.4.0":
+"@eslint/js@npm:9.4.0, @eslint/js@npm:^9.4.0":
   version: 9.4.0
   resolution: "@eslint/js@npm:9.4.0"
   checksum: 10/f1fa9acda8bab02dad21e9b7f46c6ba8cb3949979846caf7667f0c682ed0b56d9e8db143b00aab587ef2d02603df202eb5f7017d8f3a98be94be6efa763865ab
   languageName: node
   linkType: hard
 
-"@humanwhocodes/config-array@npm:^0.11.14":
-  version: 0.11.14
-  resolution: "@humanwhocodes/config-array@npm:0.11.14"
-  dependencies:
-    "@humanwhocodes/object-schema": "npm:^2.0.2"
-    debug: "npm:^4.3.1"
-    minimatch: "npm:^3.0.5"
-  checksum: 10/3ffb24ecdfab64014a230e127118d50a1a04d11080cbb748bc21629393d100850496456bbcb4e8c438957fe0934430d731042f1264d6a167b62d32fc2863580a
+"@eslint/object-schema@npm:^2.1.3":
+  version: 2.1.4
+  resolution: "@eslint/object-schema@npm:2.1.4"
+  checksum: 10/221e8d9f281c605948cd6e030874aacce83fe097f8f9c1964787037bccf08e82b7aa9eff1850a30fffac43f1d76555727ec22a2af479d91e268e89d1e035131e
   languageName: node
   linkType: hard
 
@@ -2667,19 +2667,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/object-schema@npm:^2.0.2":
-  version: 2.0.3
-  resolution: "@humanwhocodes/object-schema@npm:2.0.3"
-  checksum: 10/05bb99ed06c16408a45a833f03a732f59bf6184795d4efadd33238ff8699190a8c871ad1121241bb6501589a9598dc83bf25b99dcbcf41e155cdf36e35e937a3
+"@humanwhocodes/retry@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@humanwhocodes/retry@npm:0.3.0"
+  checksum: 10/e574bab58680867414e225c9002e9a97eb396f85871c180fbb1a9bcdf9ded4b4de0b327f7d0c43b775873362b7c92956d4b322e8bc4b90be56077524341f04b2
   languageName: node
   linkType: hard
 
-"@hyperse/eslint-config-hyperse@npm:^1.0.7":
-  version: 1.0.7
-  resolution: "@hyperse/eslint-config-hyperse@npm:1.0.7"
+"@hyperse/eslint-config-hyperse@npm:^1.0.7, @hyperse/eslint-config-hyperse@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "@hyperse/eslint-config-hyperse@npm:1.0.8"
   dependencies:
     "@eslint/js": "npm:^9.4.0"
-    "@next/eslint-plugin-next": "npm:^14.2.3"
+    "@next/eslint-plugin-next": "npm:^14.2.4"
     app-root-path: "npm:^3.1.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-define-config: "npm:^2.1.0"
@@ -2690,27 +2690,41 @@ __metadata:
     eslint-plugin-regexp: "npm:^2.6.0"
     eslint-plugin-simple-import-sort: "npm:^12.1.0"
     eslint-plugin-sonarjs: "npm:^1.0.3"
-    eslint-plugin-tailwindcss: "npm:^3.17.0"
+    eslint-plugin-tailwindcss: "npm:^3.17.3"
     eslint-plugin-vitest: "npm:^0.5.4"
     get-tsconfig: "npm:^4.7.5"
-    globals: "npm:^15.3.0"
-    prettier: "npm:^3.3.1"
-    tailwindcss: "npm:^3.4.3"
+    globals: "npm:^15.4.0"
+    prettier: "npm:^3.3.2"
+    tailwindcss: "npm:^3.4.4"
     typescript-eslint: "npm:^8.0.0-alpha.27"
   peerDependencies:
-    eslint: ^9.3.0
+    eslint: ">=9.3.0"
     typescript: ^5.4.3
-  checksum: 10/2f2e5192fe30feffb22abbeb3dbf1c0675ac6416aa10c40c77f37770432e890d951f9a3c929766d53ea5b88b3db3b07ba6f4d0db947e4211bc5f787dcfc0317c
+  checksum: 10/0bb225c7a1727fed4d3652cd94263e75d28b1ca47b8a82e8877526ed53dbfa2fe3d1389a4fa9f26e9aa39e0631d1a1c042a8d458edb40469ea94a5fe4a5d1ac2
   languageName: node
   linkType: hard
 
-"@hyperse/exec-program@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@hyperse/exec-program@npm:1.0.3"
+"@hyperse/exec-program@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/exec-program@npm:1.0.6"
   dependencies:
     "@hyperse/ts-node-paths": "npm:^1.0.8"
     execa: "npm:^9.2.0"
-  checksum: 10/45c2e3e32b79a4e4508f76f39c5f637433fb738d12ce6e1409364fe820ba1b69553de39916493fbce6497ae53839f86363d5d58c9e02c4f6e6b95787d341b368
+  checksum: 10/3191c18655adec877aea19445280cad1069ee75a407b359f96997a30827cc55c8b3724c61ea643182dfe7301390c1c921bb802813a5b4712b6a43a35bd10a33a
+  languageName: node
+  linkType: hard
+
+"@hyperse/install-local@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@hyperse/install-local@npm:1.0.1"
+  dependencies:
+    "@hyperse/exec-program": "npm:^1.0.6"
+    lodash.flatmap: "npm:^4.5.0"
+    rimraf: "npm:^5.0.7"
+    uniqid: "npm:^5.4.0"
+  bin:
+    install-local: bin/install-local.mjs
+  checksum: 10/0a2e5c9bc81498d930db2d75fe547f944d2fe3b993432b13508b911d5c8cc1d6404df9ab49137bc2975a2e8e5ef3788b066d979fb1a0ba4a6ff578a8d1d0a8ad
   languageName: node
   linkType: hard
 
@@ -2835,7 +2849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^14.2.3":
+"@next/eslint-plugin-next@npm:^14.2.4":
   version: 14.2.4
   resolution: "@next/eslint-plugin-next@npm:14.2.4"
   dependencies:
@@ -3685,7 +3699,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ungap/structured-clone@npm:^1.0.0, @ungap/structured-clone@npm:^1.2.0":
+"@ungap/structured-clone@npm:^1.0.0":
   version: 1.2.0
   resolution: "@ungap/structured-clone@npm:1.2.0"
   checksum: 10/c6fe89a505e513a7592e1438280db1c075764793a2397877ff1351721fe8792a966a5359769e30242b3cd023f2efb9e63ca2ca88019d73b564488cc20e3eab12
@@ -4091,14 +4105,14 @@ __metadata:
     "@changesets/cli": "npm:2.27.5"
     "@commitlint/cli": "npm:19.3.0"
     "@commitlint/config-conventional": "npm:19.2.2"
-    "@hyperse/eslint-config-hyperse": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.0.8"
     commitizen: "npm:4.3.0"
     cross-env: "npm:7.0.3"
     cz-conventional-changelog: "npm:3.3.0"
-    eslint: "npm:8.57.0"
+    eslint: "npm:^9.4.0"
     husky: "npm:9.0.11"
     is-ci: "npm:3.0.1"
-    lint-staged: "npm:15.2.6"
+    lint-staged: "npm:15.2.7"
     npm-run-all: "npm:4.1.5"
     rimraf: "npm:5.0.7"
     typescript: "npm:5.4.5"
@@ -5560,15 +5574,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"doctrine@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "doctrine@npm:3.0.0"
-  dependencies:
-    esutils: "npm:^2.0.2"
-  checksum: 10/b4b28f1df5c563f7d876e7461254a4597b8cabe915abe94d7c5d1633fed263fcf9a85e8d3836591fc2d040108e822b0d32758e5ec1fe31c590dc7e08086e3e48
-  languageName: node
-  linkType: hard
-
 "dot-prop@npm:^5.1.0":
   version: 5.3.0
   resolution: "dot-prop@npm:5.3.0"
@@ -5626,15 +5631,6 @@ __metadata:
   dependencies:
     iconv-lite: "npm:^0.6.2"
   checksum: 10/bb98632f8ffa823996e508ce6a58ffcf5856330fde839ae42c9e1f436cc3b5cc651d4aeae72222916545428e54fd0f6aa8862fd8d25bdbcc4589f1e3f3715e7f
-  languageName: node
-  linkType: hard
-
-"end-of-stream@npm:^1.1.0":
-  version: 1.4.4
-  resolution: "end-of-stream@npm:1.4.4"
-  dependencies:
-    once: "npm:^1.4.0"
-  checksum: 10/530a5a5a1e517e962854a31693dbb5c0b2fc40b46dad2a56a2deec656ca040631124f4795823acc68238147805f8b021abbe221f4afed5ef3c8e8efc2024908b
   languageName: node
   linkType: hard
 
@@ -6200,7 +6196,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tailwindcss@npm:^3.17.0":
+"eslint-plugin-tailwindcss@npm:^3.17.3":
   version: 3.17.3
   resolution: "eslint-plugin-tailwindcss@npm:3.17.3"
   dependencies:
@@ -6229,13 +6225,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-scope@npm:^7.2.2":
-  version: 7.2.2
-  resolution: "eslint-scope@npm:7.2.2"
+"eslint-scope@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "eslint-scope@npm:8.0.1"
   dependencies:
     esrecurse: "npm:^4.3.0"
     estraverse: "npm:^5.2.0"
-  checksum: 10/5c660fb905d5883ad018a6fea2b49f3cb5b1cbf2cd4bd08e98646e9864f9bc2c74c0839bed2d292e90a4a328833accc197c8f0baed89cbe8d605d6f918465491
+  checksum: 10/458513863d3c79005b599f40250437bddba923f18549058ea45820a8d3d4bbc67fe292751d522a0cab69dd01fe211ffde5c1a5fc867e86f2d28727b1d61610da
   languageName: node
   linkType: hard
 
@@ -6246,40 +6242,43 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.57.0":
-  version: 8.57.0
-  resolution: "eslint@npm:8.57.0"
+"eslint-visitor-keys@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "eslint-visitor-keys@npm:4.0.0"
+  checksum: 10/c7617166e6291a15ce2982b5c4b9cdfb6409f5c14562712d12e2584480cdf18609694b21d7dad35b02df0fa2cd037505048ded54d2f405c64f600949564eb334
+  languageName: node
+  linkType: hard
+
+"eslint@npm:9.4.0, eslint@npm:^9.4.0":
+  version: 9.4.0
+  resolution: "eslint@npm:9.4.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.6.1"
-    "@eslint/eslintrc": "npm:^2.1.4"
-    "@eslint/js": "npm:8.57.0"
-    "@humanwhocodes/config-array": "npm:^0.11.14"
+    "@eslint/config-array": "npm:^0.15.1"
+    "@eslint/eslintrc": "npm:^3.1.0"
+    "@eslint/js": "npm:9.4.0"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
+    "@humanwhocodes/retry": "npm:^0.3.0"
     "@nodelib/fs.walk": "npm:^1.2.8"
-    "@ungap/structured-clone": "npm:^1.2.0"
     ajv: "npm:^6.12.4"
     chalk: "npm:^4.0.0"
     cross-spawn: "npm:^7.0.2"
     debug: "npm:^4.3.2"
-    doctrine: "npm:^3.0.0"
     escape-string-regexp: "npm:^4.0.0"
-    eslint-scope: "npm:^7.2.2"
-    eslint-visitor-keys: "npm:^3.4.3"
-    espree: "npm:^9.6.1"
+    eslint-scope: "npm:^8.0.1"
+    eslint-visitor-keys: "npm:^4.0.0"
+    espree: "npm:^10.0.1"
     esquery: "npm:^1.4.2"
     esutils: "npm:^2.0.2"
     fast-deep-equal: "npm:^3.1.3"
-    file-entry-cache: "npm:^6.0.1"
+    file-entry-cache: "npm:^8.0.0"
     find-up: "npm:^5.0.0"
     glob-parent: "npm:^6.0.2"
-    globals: "npm:^13.19.0"
-    graphemer: "npm:^1.4.0"
     ignore: "npm:^5.2.0"
     imurmurhash: "npm:^0.1.4"
     is-glob: "npm:^4.0.0"
     is-path-inside: "npm:^3.0.3"
-    js-yaml: "npm:^4.1.0"
     json-stable-stringify-without-jsonify: "npm:^1.0.1"
     levn: "npm:^0.4.1"
     lodash.merge: "npm:^4.6.2"
@@ -6290,11 +6289,22 @@ __metadata:
     text-table: "npm:^0.2.0"
   bin:
     eslint: bin/eslint.js
-  checksum: 10/00496e218b23747a7a9817bf58b522276d0dc1f2e546dceb4eea49f9871574088f72f1f069a6b560ef537efa3a75261b8ef70e51ef19033da1cc4c86a755ef15
+  checksum: 10/e2eaae18eb79d543a1ca5420495ea9bf1278f9e25bfa6309ec4e4dae981cba4d731a9b857f5e2f8b5e467adaaf871a635a7eb143a749e7cdcdff4716821628d2
   languageName: node
   linkType: hard
 
-"espree@npm:^9.6.0, espree@npm:^9.6.1":
+"espree@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "espree@npm:10.0.1"
+  dependencies:
+    acorn: "npm:^8.11.3"
+    acorn-jsx: "npm:^5.3.2"
+    eslint-visitor-keys: "npm:^4.0.0"
+  checksum: 10/557d6cfb4894b1489effcaed8702682086033f8a2449568933bc59493734733d750f2a87907ba575844d3933340aea2d84288f5e67020c6152f6fd18a86497b2
+  languageName: node
+  linkType: hard
+
+"espree@npm:^9.6.1":
   version: 9.6.1
   resolution: "espree@npm:9.6.1"
   dependencies:
@@ -6384,23 +6394,6 @@ __metadata:
   version: 5.0.1
   resolution: "eventemitter3@npm:5.0.1"
   checksum: 10/ac6423ec31124629c84c7077eed1e6987f6d66c31cf43c6fcbf6c87791d56317ce808d9ead483652436df171b526fc7220eccdc9f3225df334e81582c3cf7dd5
-  languageName: node
-  linkType: hard
-
-"execa@npm:^4.0.3":
-  version: 4.1.0
-  resolution: "execa@npm:4.1.0"
-  dependencies:
-    cross-spawn: "npm:^7.0.0"
-    get-stream: "npm:^5.0.0"
-    human-signals: "npm:^1.1.1"
-    is-stream: "npm:^2.0.0"
-    merge-stream: "npm:^2.0.0"
-    npm-run-path: "npm:^4.0.0"
-    onetime: "npm:^5.1.0"
-    signal-exit: "npm:^3.0.2"
-    strip-final-newline: "npm:^2.0.0"
-  checksum: 10/ed58e41fe424797f3d837c8fb622548eeb72fa03324f2676af95f806568904eb55f196127a097f87d4517cab524c169ece13e6c9e201867de57b089584864b8f
   languageName: node
   linkType: hard
 
@@ -6604,12 +6597,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-entry-cache@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "file-entry-cache@npm:6.0.1"
+"file-entry-cache@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "file-entry-cache@npm:8.0.0"
   dependencies:
-    flat-cache: "npm:^3.0.4"
-  checksum: 10/099bb9d4ab332cb93c48b14807a6918a1da87c45dce91d4b61fd40e6505d56d0697da060cb901c729c90487067d93c9243f5da3dc9c41f0358483bfdebca736b
+    flat-cache: "npm:^4.0.0"
+  checksum: 10/afe55c4de4e0d226a23c1eae62a7219aafb390859122608a89fa4df6addf55c7fd3f1a2da6f5b41e7cdff496e4cf28bbd215d53eab5c817afa96d2b40c81bfb0
   languageName: node
   linkType: hard
 
@@ -6720,14 +6713,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flat-cache@npm:^3.0.4":
-  version: 3.2.0
-  resolution: "flat-cache@npm:3.2.0"
+"flat-cache@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "flat-cache@npm:4.0.1"
   dependencies:
     flatted: "npm:^3.2.9"
-    keyv: "npm:^4.5.3"
-    rimraf: "npm:^3.0.2"
-  checksum: 10/02381c6ece5e9fa5b826c9bbea481d7fd77645d96e4b0b1395238124d581d10e56f17f723d897b6d133970f7a57f0fab9148cbbb67237a0a0ffe794ba60c0c70
+    keyv: "npm:^4.5.4"
+  checksum: 10/58ce851d9045fffc7871ce2bd718bc485ad7e777bf748c054904b87c351ff1080c2c11da00788d78738bfb51b71e4d5ea12d13b98eb36e3358851ffe495b62dc
   languageName: node
   linkType: hard
 
@@ -6930,15 +6922,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-stream@npm:^5.0.0":
-  version: 5.2.0
-  resolution: "get-stream@npm:5.2.0"
-  dependencies:
-    pump: "npm:^3.0.0"
-  checksum: 10/13a73148dca795e41421013da6e3ebff8ccb7fba4d2f023fd0c6da2c166ec4e789bec9774a73a7b49c08daf2cae552f8a3e914042ac23b5f59dd278cc8f9cbfb
-  languageName: node
-  linkType: hard
-
 "get-stream@npm:^6.0.0, get-stream@npm:^6.0.1":
   version: 6.0.1
   resolution: "get-stream@npm:6.0.1"
@@ -7043,7 +7026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:7.2.3, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.2.3":
+"glob@npm:7.2.3, glob@npm:^7.1.2, glob@npm:^7.1.4, glob@npm:^7.2.3":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -7112,16 +7095,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^13.19.0":
-  version: 13.24.0
-  resolution: "globals@npm:13.24.0"
-  dependencies:
-    type-fest: "npm:^0.20.2"
-  checksum: 10/62c5b1997d06674fc7191d3e01e324d3eda4d65ac9cc4e78329fa3b5c4fd42a0e1c8722822497a6964eee075255ce21ccf1eec2d83f92ef3f06653af4d0ee28e
+"globals@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "globals@npm:14.0.0"
+  checksum: 10/03939c8af95c6df5014b137cac83aa909090c3a3985caef06ee9a5a669790877af8698ab38007e4c0186873adc14c0b13764acc754b16a754c216cc56aa5f021
   languageName: node
   linkType: hard
 
-"globals@npm:^15.3.0":
+"globals@npm:^15.4.0":
   version: 15.4.0
   resolution: "globals@npm:15.4.0"
   checksum: 10/886e687466ceee48fe61f1a6c69fb714e79a84b9e11953baa355b94da0d72caf0e8186d64dcf1299d27ef5f231029baadd197593323ccc6617d487216e561c9b
@@ -7353,13 +7334,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"human-signals@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "human-signals@npm:1.1.1"
-  checksum: 10/6a58224dffcef5588910b1028bda8623c9a7053460a1fe3367e61921a6b5f6b93aba30f323868a958f968d7de3f5f78421f11d4d9f7e9563b1bd2b00ed9a4deb
-  languageName: node
-  linkType: hard
-
 "human-signals@npm:^2.1.0":
   version: 2.1.0
   resolution: "human-signals@npm:2.1.0"
@@ -7522,20 +7496,6 @@ __metadata:
     through: "npm:^2.3.6"
     wrap-ansi: "npm:^7.0.0"
   checksum: 10/50a240dfeaca37a14e6a6d11d7d6f7da947be3a9fe1e34ac41db6a49fc27022e7b3875ebe8ccd739497359808694488f3509792cc986f9ac48c43135f4e14172
-  languageName: node
-  linkType: hard
-
-"install-local@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "install-local@npm:3.0.1"
-  dependencies:
-    execa: "npm:^4.0.3"
-    lodash.flatmap: "npm:^4.5.0"
-    rimraf: "npm:^3.0.2"
-    uniqid: "npm:^5.2.0"
-  bin:
-    install-local: bin/install-local
-  checksum: 10/8415c18489a6bd4820f436fe506847d2c38c2a3d3d01ef7af88b1ae6e183866b7c3fe0d0ab67737b60e0402b9249ce4aa2b72f47afd5aba6472a3297e73afaa3
   languageName: node
   linkType: hard
 
@@ -8523,7 +8483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"keyv@npm:^4.5.3":
+"keyv@npm:^4.5.4":
   version: 4.5.4
   resolution: "keyv@npm:4.5.4"
   dependencies:
@@ -8600,9 +8560,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:15.2.6":
-  version: 15.2.6
-  resolution: "lint-staged@npm:15.2.6"
+"lint-staged@npm:15.2.7":
+  version: 15.2.7
+  resolution: "lint-staged@npm:15.2.7"
   dependencies:
     chalk: "npm:~5.3.0"
     commander: "npm:~12.1.0"
@@ -8616,7 +8576,7 @@ __metadata:
     yaml: "npm:~2.4.2"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10/d2e7b610603ace80521d80afa7d355864a0f5f574aa2a2edbf5d96486e99ceeebb4d988e733c0b6ad8bfa899092f1c20db5cb02a0cc3e260919aeb92ef6f2d79
+  checksum: 10/7557bcf4e8dc0555f2c7e6a8ab6f5dfd7faaaed632a5d9e598768c86f786267ca216f8005068796a8118884d322a1c7f8f93e57c01b3e556475b77297ddad34f
   languageName: node
   linkType: hard
 
@@ -9965,7 +9925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-run-path@npm:^4.0.0, npm-run-path@npm:^4.0.1":
+"npm-run-path@npm:^4.0.1":
   version: 4.0.1
   resolution: "npm-run-path@npm:4.0.1"
   dependencies:
@@ -10077,7 +10037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"once@npm:^1.3.0, once@npm:^1.3.1, once@npm:^1.4.0":
+"once@npm:^1.3.0":
   version: 1.4.0
   resolution: "once@npm:1.4.0"
   dependencies:
@@ -10740,7 +10700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.3.1":
+"prettier@npm:^3.3.2":
   version: 3.3.2
   resolution: "prettier@npm:3.3.2"
   bin:
@@ -10822,16 +10782,6 @@ __metadata:
   version: 1.0.2
   resolution: "pseudomap@npm:1.0.2"
   checksum: 10/856c0aae0ff2ad60881168334448e898ad7a0e45fe7386d114b150084254c01e200c957cf378378025df4e052c7890c5bd933939b0e0d2ecfcc1dc2f0b2991f5
-  languageName: node
-  linkType: hard
-
-"pump@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "pump@npm:3.0.0"
-  dependencies:
-    end-of-stream: "npm:^1.1.0"
-    once: "npm:^1.3.1"
-  checksum: 10/e42e9229fba14732593a718b04cb5e1cfef8254544870997e0ecd9732b189a48e1256e4e5478148ecb47c8511dca2b09eae56b4d0aad8009e6fac8072923cfc9
   languageName: node
   linkType: hard
 
@@ -11346,7 +11296,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:5.0.7":
+"rimraf@npm:5.0.7, rimraf@npm:^5.0.7":
   version: 5.0.7
   resolution: "rimraf@npm:5.0.7"
   dependencies:
@@ -11354,17 +11304,6 @@ __metadata:
   bin:
     rimraf: dist/esm/bin.mjs
   checksum: 10/1e3cecfe59ee2383dfd9ba5373caeed48ed941318a0360119419b7dffc63115661408b9427f67e1f66b5bbb8855a3953db09e55a7362b3df904a44453dfa22fb
-  languageName: node
-  linkType: hard
-
-"rimraf@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "rimraf@npm:3.0.2"
-  dependencies:
-    glob: "npm:^7.1.3"
-  bin:
-    rimraf: bin.js
-  checksum: 10/063ffaccaaaca2cfd0ef3beafb12d6a03dd7ff1260d752d62a6077b5dfff6ae81bea571f655bb6b589d366930ec1bdd285d40d560c0dae9b12f125e54eb743d5
   languageName: node
   linkType: hard
 
@@ -12212,7 +12151,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.4.3":
+"tailwindcss@npm:^3.4.4":
   version: 3.4.4
   resolution: "tailwindcss@npm:3.4.4"
   dependencies:
@@ -12603,13 +12542,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^0.20.2":
-  version: 0.20.2
-  resolution: "type-fest@npm:0.20.2"
-  checksum: 10/8907e16284b2d6cfa4f4817e93520121941baba36b39219ea36acfe64c86b9dbc10c9941af450bd60832c8f43464974d51c0957f9858bc66b952b66b6914cbb9
-  languageName: node
-  linkType: hard
-
 "type-fest@npm:^0.21.3":
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
@@ -12860,7 +12792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uniqid@npm:^5.2.0":
+"uniqid@npm:^5.4.0":
   version: 5.4.0
   resolution: "uniqid@npm:5.4.0"
   checksum: 10/69fc28e7b2b5b24227b4295e51aa7c1d4085a60655ad071db8fc350876cc9044d68ee0781c0d27c2c98691380aa418970e0d1b02a1e4564480f9d19b0dc1707b
