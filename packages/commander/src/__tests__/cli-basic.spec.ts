@@ -1,14 +1,14 @@
 import { join } from 'node:path';
 import semver from 'semver';
 import { getDirname } from '@/test-utils';
-import { runTsScript } from '@hyperse/exec-program';
+import { ExecOptions, runTsScript } from '@hyperse/exec-program';
 
-async function runCliMock(...args: string[]) {
+async function runCliMock<T extends ExecOptions>(...args: string[]) {
   const program = join(
     getDirname(import.meta.url),
     'fixtures/cli-boot-sync.ts'
   );
-  return runTsScript(program, {}, ...args);
+  return runTsScript<T>(program, args);
 }
 
 describe('cli basic infrusture with nested command', () => {
@@ -30,7 +30,7 @@ describe('cli basic infrusture with nested command', () => {
 
 describe('cli basic infrusture', () => {
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runCliMock('-v');
+    const { stdout } = await runCliMock<any>('-v');
     expect(semver.valid(stdout)).not.toBeNull();
   });
   it('Should output correct `help` -h', async () => {

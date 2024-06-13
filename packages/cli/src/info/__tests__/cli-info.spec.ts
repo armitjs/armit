@@ -13,7 +13,7 @@ describe('@armit/cli info', () => {
   });
 
   it('Should correct print armit cli related information', async () => {
-    const { stdout } = await runTsScript(program, {}, 'info', '--noColor');
+    const { stdout } = await runTsScript(program, ['info', '--noColor']);
     const stdoutStrs: string[] = [
       'CLI tool for armitjs applications',
       'System Information',

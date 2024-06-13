@@ -8,15 +8,13 @@ describe('parse process arguments using yargs', () => {
       getDirname(import.meta.url),
       'fixtures/cli-argv-parse.ts'
     );
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'create-reduce-action',
       '__store__=some-name',
       '__model__=some-other-name',
       '--outputpath=./src/here',
-      '--overwrite'
-    );
+      '--overwrite',
+    ]);
     // ./tools/generate.js create-reduce-action __store__=some-name __model__=some-other-name --outputpath=./src/here --overwrite
     expect(stdout).toStrictEqual(expect.stringContaining(`_: [`));
     expect(stdout).toStrictEqual(

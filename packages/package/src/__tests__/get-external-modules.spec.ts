@@ -9,9 +9,7 @@ describe('cosmiconfig get external modules', () => {
       expect.arrayContaining([
         '@armit/file-utility',
         '@armit/logger-node',
-        'as-table',
-        'boxen',
-        'dependency-tree',
+        '@hyperse/install-local',
       ])
     );
   });

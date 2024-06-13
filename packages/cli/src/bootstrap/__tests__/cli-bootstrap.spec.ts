@@ -4,7 +4,7 @@ import { runTsScript } from '@hyperse/exec-program';
 
 async function runCliMock(...args: string[]) {
   const program = join(getDirname(import.meta.url), 'cli-boot.ts');
-  return runTsScript(program, {}, ...args, '--noColor');
+  return runTsScript(program, [...args, '--noColor']);
 }
 
 describe('@armit/cli bootstrap', () => {

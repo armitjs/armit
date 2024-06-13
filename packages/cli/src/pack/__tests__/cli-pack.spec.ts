@@ -16,7 +16,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should output correct `version` -v', async () => {
-    const { stdout } = await runTsScript(program, {}, '-h', '--noColor');
+    const { stdout } = await runTsScript(program, ['-h', '--noColor']);
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
     );
@@ -30,14 +30,12 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should correct handle default options `**`', async () => {
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'pack',
       '-c',
       fixtureCwd,
-      '--noColor'
-    );
+      '--noColor',
+    ]);
     const matchedStrs: string[] = [
       '✔ All ziped files',
       ' ➩ project/module-a/bundle57ee0d7b872138242b97-a.css',
@@ -54,16 +52,14 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle filter pattern', async () => {
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'pack',
       '-f',
       'project/module-a/**',
       '-c',
       fixtureCwd,
-      '--noColor'
-    );
+      '--noColor',
+    ]);
     const matchedStrs: string[] = [
       '✔ All ziped files',
       ' ➩ project/module-a/bundle57ee0d7b872138242b97-a.css',
@@ -76,16 +72,14 @@ describe('@armit/cli pack', () => {
     }
   });
   it('Should correct handle semicolon `;` filter', async () => {
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'pack',
       '-f',
       '**/module-a/**;project/module-b/**',
       '-c',
       fixtureCwd,
-      '--noColor'
-    );
+      '--noColor',
+    ]);
     const matchedStrs: string[] = [
       '✔ All ziped files',
       ' ➩ project/module-a/bundle57ee0d7b872138242b97-a.css',
@@ -103,14 +97,12 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should default ignore `**/*.{png,jpg,jpeg,gif,svg}`', async () => {
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'pack',
       '-c',
       fixtureCwd,
-      '--noColor'
-    );
+      '--noColor',
+    ]);
     expect(stdout).toStrictEqual(
       expect.not.stringContaining(
         'project/module-b/assets/module-8ca86e6b-a.jpg'
@@ -124,9 +116,7 @@ describe('@armit/cli pack', () => {
   });
 
   it('Should allow customized `ignore` pattern', async () => {
-    const { stdout } = await runTsScript(
-      program,
-      {},
+    const { stdout } = await runTsScript(program, [
       'pack',
       '-i',
       '**/*.svg',
@@ -134,8 +124,8 @@ describe('@armit/cli pack', () => {
       '**/*.jpg',
       '-c',
       fixtureCwd,
-      '--noColor'
-    );
+      '--noColor',
+    ]);
     expect(stdout).toStrictEqual(
       expect.not.stringContaining(
         'project/module-b/assets/module-8ca86e6b-a.jpg'

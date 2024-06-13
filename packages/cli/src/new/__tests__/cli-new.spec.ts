@@ -7,12 +7,7 @@ describe('@armit/cli info', () => {
   const program = join(curDirName, 'cli-boot.ts');
 
   it('Should output correct `version` -v', async () => {
-    const { stdout, stderr } = await runTsScript(
-      program,
-      {},
-      '-h',
-      '--noColor'
-    );
+    const { stdout, stderr } = await runTsScript(program, ['-h', '--noColor']);
     expect(stderr).toBe('');
     expect(stdout).toStrictEqual(
       expect.stringContaining(`Usage: cli-boot.ts <command> [options]`)
