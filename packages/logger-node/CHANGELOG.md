@@ -1,5 +1,14 @@
 # @armit/logger
 
+## 0.2.1
+
+### Patch Changes
+
+- [`c9b453e`](https://github.com/armitjs/armit/commit/c9b453e35bcc68373a547537e3812539b9079216) Thanks [@tianyingchun](https://github.com/tianyingchun)! - migration `install-local` & bump version
+
+- Updated dependencies [[`c9b453e`](https://github.com/armitjs/armit/commit/c9b453e35bcc68373a547537e3812539b9079216)]:
+  - @armit/logger@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
