@@ -49,19 +49,19 @@
     "micromatch": "^4.0.7"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.0.8",
+    "@hyperse/eslint-config-hyperse": "^1.0.9",
     "@types/adm-zip": "0.5.5",
     "@types/micromatch": "4.0.7",
-    "@types/node": "20.14.2",
+    "@types/node": "20.14.6",
     "@vitest/coverage-istanbul": "1.6.0",
     "@vitest/ui": "1.6.0",
-    "eslint": "^9.4.0",
+    "eslint": "^9.5.0",
     "image-size": "1.1.1",
     "npm-run-all": "4.1.5",
     "rimraf": "5.0.7",
     "tsup": "8.1.0",
     "typescript": "5.4.5",
-    "vite": "5.2.13",
+    "vite": "5.3.1",
     "vite-tsconfig-paths": "4.3.2",
     "vitest": "1.6.0"
   },
