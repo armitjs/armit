@@ -1,5 +1,18 @@
 # @armit/commander
 
+## 0.2.2
+
+### Patch Changes
+
+- [`9d3b89a`](https://github.com/armitjs/armit/commit/9d3b89a44a712d2c1f1c2190f94e873bdbb07b2a) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update `CommandArgv` ArgvConfig typings
+
+- [`1217121`](https://github.com/armitjs/armit/commit/1217121047811ed6d2c4e11c2e40aa6fe59ef1e2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`1217121`](https://github.com/armitjs/armit/commit/1217121047811ed6d2c4e11c2e40aa6fe59ef1e2)]:
+  - @armit/logger-node@0.2.2
+  - @armit/terminal@0.2.2
+  - @armit/package@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
