@@ -4,7 +4,7 @@ import { Logger, LogLevel } from '@armit/logger';
 import { StdoutAdapter, TerminalFormatStrategy } from '@armit/logger-node';
 import { terminalColor } from '@armit/terminal';
 
-type ArgvPrimitive = string | number | boolean | PackageJson;
+type ArgvPrimitive = string | number | boolean | Record<string, unknown>;
 
 type ArgvConfig = Record<string, ArgvPrimitive | Array<ArgvPrimitive>>;
 
@@ -185,7 +185,7 @@ export const createCommand = <T extends CommandArgv>(
  */
 export const createSubCommands = (
   program: Argv,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   ...commands: CommandModule<any, any>[]
 ): Argv => {
   program = commands.reduce((program, cmd) => program.command(cmd), program);
