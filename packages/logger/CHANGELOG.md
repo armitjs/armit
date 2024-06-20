@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.2.2
+
+### Patch Changes
+
+- [`1217121`](https://github.com/armitjs/armit/commit/1217121047811ed6d2c4e11c2e40aa6fe59ef1e2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.2.1
 
 ### Patch Changes
