@@ -1,6 +1,7 @@
 import pic from 'picocolors';
 import type { FormatStrategy } from '@armit/logger';
 import { DEFAULT_CONTEXT, LogLevel } from '@armit/logger';
+import { CustomizedStdWriteStream } from '../types.js';
 
 export class StdoutFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>
@@ -14,7 +15,7 @@ export class StdoutFormatStrategy<MessageType>
   } as const;
 
   private timestamp = true;
-
+  constructor(private options?: CustomizedStdWriteStream) {}
   print(
     priority: LogLevel,
     context: string,
@@ -55,7 +56,12 @@ export class StdoutFormatStrategy<MessageType>
         );
         break;
     }
-    (priority === LogLevel.Error ? process.stderr : process.stdout).write(
+    const stdstream =
+      priority === LogLevel.Error
+        ? this.options?.stderr ?? process.stderr
+        : this.options?.stdout ?? process.stdout;
+
+    stdstream.write(
       [
         prefix,
         this.logTimestamp(),

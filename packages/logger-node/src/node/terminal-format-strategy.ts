@@ -5,6 +5,7 @@ import {
   type TerminalData,
   TerminalLog,
 } from '../terminal/terminal-log.js';
+import { CustomizedStdWriteStream } from '../types.js';
 
 export class TerminalFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>
@@ -25,7 +26,8 @@ export class TerminalFormatStrategy<MessageType>
         | 'showTimestampRelativeToLastLog'
         | 'showContext'
       >
-    >
+    > &
+      CustomizedStdWriteStream
   ) {
     this.terminal = new TerminalLog({
       levels: advancedLevels,
@@ -36,6 +38,8 @@ export class TerminalFormatStrategy<MessageType>
       showTimestampRelativeToLastLog: options?.showTimestampRelativeToLastLog,
       showContext: options?.showContext,
       use24HourClock: options?.use24HourClock,
+      stdout: options?.stdout,
+      stderr: options?.stderr,
     });
   }
 

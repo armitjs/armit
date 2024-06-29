@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { defineConfig } from 'tsup';
 
 export default defineConfig((options) => ({

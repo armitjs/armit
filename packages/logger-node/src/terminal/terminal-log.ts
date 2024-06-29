@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import C from 'picocolors';
+import { CustomizedStdWriteStream } from '../types.js';
 import { strTimePad } from './str-pad.js';
 import type {
   Color,
@@ -207,6 +207,9 @@ function formatMonth(time: Date, monthPositionSwitch: boolean) {
  * Represents the console.
  */
 export class TerminalLog<L extends string> {
+  private stdout: CustomizedStdWriteStream['stdout'];
+  private stderr: CustomizedStdWriteStream['stderr'];
+
   /**
    * Customization options that were inputted when this terminal instance was created.
    */
@@ -246,6 +249,11 @@ export class TerminalLog<L extends string> {
     context?: string,
     trace?
   ) {
+    const output = this.formatMsg(level, message, context, trace);
+    (level.isError ? this.stderr : this.stdout)?.write(output);
+  }
+
+  formatMsg(level: Level<string>, message: string, context?: string, trace?) {
     const {
       capitalizeLevelName,
       showArrow,
@@ -378,17 +386,16 @@ export class TerminalLog<L extends string> {
         ? `\n${terminalColor(['red'])(ensureString(trace))}\n`
         : '\n');
 
-    (level.isError ? process.stderr : process.stdout).write(output);
     this.timeInLastLog = time;
+    return output;
   }
-
   /**
    * Represents the console.
    *
    * @param data Any customization options for the terminal.
    */
-  constructor(data: TerminalConstructorData<L>) {
-    const defaultData: Omit<TerminalData, 'levels'> = {
+  constructor(data: TerminalConstructorData<string>) {
+    const defaultData: Omit<TerminalData, 'levels' | 'stderr' | 'stdout'> = {
       capitalizeLevelName: true,
       showArrow: false,
       showDate: false,
@@ -402,6 +409,9 @@ export class TerminalLog<L extends string> {
       showContext: true,
       contextColor: ['bold', 'magenta'],
     };
+
+    this.stdout = data.stdout ?? process.stdout;
+    this.stderr = data.stderr ?? process.stderr;
 
     let logger: object = {};
     let registeredLevels: string[] = [];
@@ -418,7 +428,6 @@ export class TerminalLog<L extends string> {
 
       logger = {
         ...logger,
-
         [level.name]: (
           message: string,
           context?: string,
