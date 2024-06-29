@@ -1,5 +1,12 @@
 # @armit/config-loader
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/package@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
