@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.2.3
+
+### Patch Changes
+
+- [`ac7d3ab`](https://github.com/armitjs/armit/commit/ac7d3abe129e5ea046ea03f829b0efaf592110a6) Thanks [@tianyingchun](https://github.com/tianyingchun)! - allow customized write steam for logger-node
+
 ## 0.2.2
 
 ### Patch Changes

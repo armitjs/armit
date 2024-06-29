@@ -1,5 +1,14 @@
 # @armit/cli
 
+## 0.2.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @armit/commander@0.2.3
+  - @armit/generate-template-files@0.2.3
+  - @armit/package@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
