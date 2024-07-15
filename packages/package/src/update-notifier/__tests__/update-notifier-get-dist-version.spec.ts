@@ -1,9 +1,11 @@
-import { ClientRequest } from 'node:http';
+import { ClientRequest, RequestOptions } from 'node:http';
 import Stream from 'node:stream';
 import { vi } from 'vitest';
 import { getDistVersion } from '../get-dist-version.js';
 
-async function getMocked(callback: (url: string | URL, cb) => ClientRequest) {
+async function getMocked(
+  callback: (url: string | RequestOptions | URL, cb) => ClientRequest
+) {
   const https = await import('node:https');
   return vi.mocked(https.default).get.mockImplementationOnce(callback);
 }
