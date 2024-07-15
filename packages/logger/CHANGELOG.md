@@ -1,5 +1,11 @@
 # @armit/logger
 
+## 0.2.3
+
+### Patch Changes
+
+- [`14ce887`](https://github.com/armitjs/armit/commit/14ce887ff788adb9637243950168b43ff61de5eb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version & fix eslint issue
+
 ## 0.2.2
 
 ### Patch Changes
