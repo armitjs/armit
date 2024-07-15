@@ -1,5 +1,4 @@
 import boxen from 'boxen';
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import C from 'picocolors';
 import { logger } from '../logger.js';
 import {

@@ -3,6 +3,7 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { run } from 'npm-check-updates';
 import { fileWalk } from '@armit/file-utility';
+import { arrayUnique } from '../helpers/array-unique.js';
 import { projectHasYarn } from '../npm-yarn.js';
 import { getNcuConfigFile } from './cache-file.js';
 import { type UpdatePackageOptions } from './types.js';
@@ -20,10 +21,11 @@ export const npmCheckUpdates = async (options: UpdatePackageOptions) => {
     });
   }
 
-  const packageFiles = options.packageFiles || [
-    './package.json',
-    './packages/*/package.json',
-  ];
+  const packageFiles = arrayUnique(
+    ['./package.json', './packages/*/package.json'].concat(
+      options.packageFiles || []
+    )
+  );
 
   const rootCwd = options.cwd || process.cwd();
   const explorer = cosmiconfig('ncu', {

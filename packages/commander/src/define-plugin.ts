@@ -8,7 +8,7 @@ export type PluginConfig = {
   /**
    * The plugin command definition.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   commandModule: CommandModule<any, any>;
 };
 

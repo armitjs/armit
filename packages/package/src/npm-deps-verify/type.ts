@@ -36,9 +36,8 @@ export type PackageStatus = {
  * The verify package regex pattern definition.
  */
 export type VerifyPackagePattern = Partial<{
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   'https://registry.npmjs.org': RegExp[];
-  // eslint-disable-next-line @typescript-eslint/naming-convention
+
   'https://registry.npm.taobao.org': RegExp[];
   [registry: string]: RegExp[];
 }>;

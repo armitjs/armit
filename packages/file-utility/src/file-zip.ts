@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import AdmZip from 'adm-zip';
 import { readFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';

@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import C from 'picocolors';
 
 export type Color = Exclude<

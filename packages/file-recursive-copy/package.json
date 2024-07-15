@@ -48,19 +48,19 @@
     "errno": "^1.0.0"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.0.9",
-    "@types/node": "20.14.6",
-    "@vitest/coverage-istanbul": "1.6.0",
-    "@vitest/ui": "1.6.0",
-    "eslint": "^9.5.0",
+    "@hyperse/eslint-config-hyperse": "^1.0.10",
+    "@types/node": "20.14.10",
+    "@vitest/coverage-istanbul": "2.0.2",
+    "@vitest/ui": "2.0.2",
+    "eslint": "^9.7.0",
     "npm-run-all": "4.1.5",
     "read-dir-files": "0.1.1",
-    "rimraf": "5.0.7",
+    "rimraf": "6.0.1",
     "through2": "4.0.2",
-    "typescript": "5.4.5",
-    "vite": "5.3.1",
+    "typescript": "5.5.3",
+    "vite": "5.3.3",
     "vite-tsconfig-paths": "4.3.2",
-    "vitest": "1.6.0"
+    "vitest": "2.0.2"
   },
   "engines": {
     "node": ">=18.0.0"

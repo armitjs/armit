@@ -8,7 +8,6 @@
       "name": "git",
       "path": "packages/git",
     },
-
     {
       "name": "ldap",
       "path": "packages/ldap",
@@ -59,11 +58,12 @@
     },
   ],
   "extensions": {
-    "recommendations": ["dbaeumer.vscode-eslint"],
+    "recommendations": [
+      "dbaeumer.vscode-eslint"
+    ],
   },
   "settings": {
     "editor.formatOnSave": true,
-    "eslint.experimental.useFlatConfig": true,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
@@ -95,5 +95,11 @@
       "./packages/generate-template-files"
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib",
+    "[json]": {
+      "editor.formatOnSave": false,
+    },
+    "[jsonc]": {
+      "editor.formatOnSave": false,
+    }
   },
 }

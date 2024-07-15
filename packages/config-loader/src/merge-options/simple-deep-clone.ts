@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Simple object check.
  * From https://stackoverflow.com/a/34749873/772859
