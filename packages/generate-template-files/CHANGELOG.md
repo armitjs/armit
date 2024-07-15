@@ -1,5 +1,15 @@
 # @armit/generate-template-files
 
+## 0.2.4
+
+### Patch Changes
+
+- [`14ce887`](https://github.com/armitjs/armit/commit/14ce887ff788adb9637243950168b43ff61de5eb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version & fix eslint issue
+
+- Updated dependencies [[`14ce887`](https://github.com/armitjs/armit/commit/14ce887ff788adb9637243950168b43ff61de5eb)]:
+  - @armit/file-recursive-copy@0.2.4
+  - @armit/logger-node@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes
