@@ -322,13 +322,13 @@ __metadata:
     cosmiconfig: "npm:^9.0.0"
     eslint: "npm:9.7.0"
     execa: "npm:^9.3.0"
+    glob: "npm:^11.0.0"
     has-yarn: "npm:^3.0.0"
     import-meta-resolve: "npm:^4.1.0"
     is-installed-globally: "npm:^1.0.0"
     is-npm: "npm:^6.0.0"
     is-yarn-global: "npm:^0.4.1"
     npm-check-updates: "npm:^17.0.0-5"
-    npm-list-linked: "npm:^0.1.0"
     npm-run-all: "npm:4.1.5"
     ora: "npm:^8.0.1"
     package-json: "npm:^10.0.1"
@@ -6160,17 +6160,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "fs-extra@npm:3.0.1"
-  dependencies:
-    graceful-fs: "npm:^4.1.2"
-    jsonfile: "npm:^3.0.0"
-    universalify: "npm:^0.1.0"
-  checksum: 10/8e233f6200b8a5e215b4f937353a5ccada2f4b247453f1229917ba46f93190e9f559f255cd3cb9f1f612d855911e7fdc52e5fe9c94f3294ef2b6131ef321250c
-  languageName: node
-  linkType: hard
-
 "fs-extra@npm:^7.0.1":
   version: 7.0.1
   resolution: "fs-extra@npm:7.0.1"
@@ -6408,7 +6397,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:7.2.3, glob@npm:^7.1.2":
+"glob@npm:7.2.3":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -7769,18 +7758,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonfile@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "jsonfile@npm:3.0.1"
-  dependencies:
-    graceful-fs: "npm:^4.1.6"
-  dependenciesMeta:
-    graceful-fs:
-      optional: true
-  checksum: 10/c75a97c2d1a6f78b86c6a57caa47a1efe4f466b09e84ed2664417a397c0482d89828ce60a40053346a11efae16e17e60283f45b0dcb62ebe021150e1f2ea5e1a
-  languageName: node
-  linkType: hard
-
 "jsonfile@npm:^4.0.0":
   version: 4.0.0
   resolution: "jsonfile@npm:4.0.0"
@@ -9125,18 +9102,6 @@ __metadata:
     ncu: build/cli.js
     npm-check-updates: build/cli.js
   checksum: 10/4842c13400f95c0eaae54dc332cb4216cb16548304e152ec04c838228fc4018a82c866052b727ab9be6f63d6e9664ffa40b019755768f803abb1dd141b7f0fbc
-  languageName: node
-  linkType: hard
-
-"npm-list-linked@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "npm-list-linked@npm:0.1.0"
-  dependencies:
-    fs-extra: "npm:^3.0.1"
-    glob: "npm:^7.1.2"
-  bin:
-    npm-list-linked: npm-list-linked.js
-  checksum: 10/853c3cd24d7d0a6df8d9db8bfc253f358fee26aa25fc22cc7c6db0cb1013d7c3077e406dee89af80e51ffcbe6e35c41d197e27979ea3f72229642be61eef2b86
   languageName: node
   linkType: hard
 
