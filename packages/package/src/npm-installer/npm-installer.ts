@@ -1,11 +1,11 @@
 import { execa } from 'execa';
-import npmLinked from 'npm-list-linked';
 import ora from 'ora';
 import { join } from 'path';
 import pic from 'picocolors';
 import { arrayUnique } from '../helpers/array-unique.js';
 import { logger } from '../logger.js';
 import { runingNpmOrYarn } from '../npm-yarn.js';
+import { getNpmLinked } from './get-npm-linked.js';
 export interface InstallPackageOptions {
   /**
    * child process work directory.
@@ -41,7 +41,7 @@ export const getLocalNpmLinkPackages = (cwds: string[]): string[] => {
   let npmLinks: string[] = [];
   for (const cwd of cwds) {
     // For npm@7 maybe it linked packages in process.cwd() while `workspace` configuration
-    const cwdLinks = npmLinked.getLinked(join(cwd, 'node_modules')) as string[];
+    const cwdLinks = getNpmLinked(join(cwd, 'node_modules'));
     npmLinks = npmLinks.concat(cwdLinks);
   }
   return arrayUnique(npmLinks);
