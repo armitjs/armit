@@ -9,7 +9,7 @@ import { type DetectedRiskInstallPackageItem } from './types.js';
 
 /**
  * Detect locally installed dependencies that have correctly installed from `package.json` declared version `dependencies`
- * @param modules The modules we want to detect
+ * @param modules The modules we want to detect, module name, or module expression. [`^babel-`,`@armit/*`]
  * @param packageFile Where we can found the `package.json`
  * @param cwd The workspace default process.cwd()
  */

@@ -1,6 +1,7 @@
 {
   "dep": "prod,dev,bundle,optional",
   "reject": [
+    "boxen",
     "@armit/cli",
     "@armit/git",
     "@armit/ldap",
