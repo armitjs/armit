@@ -1,5 +1,13 @@
 # @armit/package
 
+## 0.2.5
+
+### Patch Changes
+
+- [`9e7ae09`](https://github.com/armitjs/armit/commit/9e7ae095e445fcb357dcd54e696ed7f19e1b2ef8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - replaced deprecated `npm-list-linked`
+
+- [`9518cda`](https://github.com/armitjs/armit/commit/9518cda84bc700a89bf2cfc8726a0d56d9073ae5) Thanks [@tianyingchun](https://github.com/tianyingchun)! - downgrade boxen to 7.x
+
 ## 0.2.4
 
 ### Patch Changes
