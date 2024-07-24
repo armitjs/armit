@@ -58,8 +58,8 @@ export class StdoutFormatStrategy<MessageType>
     }
     const stdstream =
       priority === LogLevel.Error
-        ? this.options?.stderr ?? process.stderr
-        : this.options?.stdout ?? process.stdout;
+        ? (this.options?.stderr ?? process.stderr)
+        : (this.options?.stdout ?? process.stdout);
 
     stdstream.write(
       [

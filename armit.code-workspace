@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "root",
+      "path": ".",
+    },
+    {
       "name": "cli",
       "path": "packages/cli",
     },
@@ -51,10 +55,6 @@
     {
       "name": "generate-template-files",
       "path": "packages/generate-template-files",
-    },
-    {
-      "name": "root",
-      "path": ".",
     },
   ],
   "extensions": {
