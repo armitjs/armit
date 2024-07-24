@@ -10,10 +10,8 @@ const NODE_MODULES = 'node_modules';
  * @param {String} [cwd] Node modules directory - Defaults to process directory
  */
 export function getNpmLinked(cwd = path.join(process.cwd(), NODE_MODULES)) {
-  return globSync(PACKAGES_GLOB, { cwd })
-    .map((match) => match.slice(0, -1))
-    .filter((file) => {
-      const stat = lstatSync(path.join(cwd, file));
-      return stat.isSymbolicLink();
-    });
+  return globSync(PACKAGES_GLOB, { cwd }).filter((file) => {
+    const stat = lstatSync(path.join(cwd, file));
+    return stat.isSymbolicLink();
+  });
 }
