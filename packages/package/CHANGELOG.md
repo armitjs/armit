@@ -1,5 +1,15 @@
 # @armit/package
 
+## 0.2.6
+
+### Patch Changes
+
+- [`578a7c8`](https://github.com/armitjs/armit/commit/578a7c89178272ca2ce7d622305f6983490ec69e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`578a7c8`](https://github.com/armitjs/armit/commit/578a7c89178272ca2ce7d622305f6983490ec69e)]:
+  - @armit/file-utility@0.2.4
+  - @armit/logger-node@0.2.5
+
 ## 0.2.5
 
 ### Patch Changes
