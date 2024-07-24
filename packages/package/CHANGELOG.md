@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.2.7
+
+### Patch Changes
+
+- [`15efbda`](https://github.com/armitjs/armit/commit/15efbdab5e1bfbc19d3dc7eff24587c776e5795e) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix get-npm-linked issue
+
 ## 0.2.6
 
 ### Patch Changes
