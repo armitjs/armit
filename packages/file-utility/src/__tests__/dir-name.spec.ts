@@ -1,4 +1,4 @@
-import { getDirname } from '../get-dir-name.js';
+import { getDirname } from '@/get-dir-name.js';
 
 describe('getDirname', () => {
   it('should correct dynamic determined __dirname', () => {

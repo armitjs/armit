@@ -1,33 +1,11 @@
-import tsConfigPaths from 'vite-tsconfig-paths';
-import { defineConfig } from 'vitest/config';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [tsConfigPaths({})],
-  resolve: {
-    // https://github.com/aleclarson/vite-tsconfig-paths/issues/54
-    alias: [
-      // handle `@/*`
-      { find: /^(@\/.*)\.js$/, replacement: '$1.ts' },
-    ],
-  },
-  cacheDir: '../../.cache/vitest/commander',
+  plugins: [tsconfigPaths()],
   test: {
-    // Makebe suite for local debug
-    testTimeout: 100000 * 30,
     globals: true,
-    environment: 'node',
-    passWithNoTests: false,
-    coverage: {
-      provider: 'istanbul',
-      reporter: ['json-summary', 'html'],
-      extension: ['js', 'jsx', 'ts', 'tsx'],
-    },
+    exclude: [...configDefaults.exclude],
     include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
-    exclude: [
-      '**/node_modules/**',
-      'dist/**',
-      '**/coverage/**',
-      '**/.{idea,git,cache,output,temp}/**',
-    ],
   },
 });
