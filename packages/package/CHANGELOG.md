@@ -1,5 +1,11 @@
 # @armit/package
 
+## 0.2.8
+
+### Patch Changes
+
+- [`c3b4da7`](https://github.com/armitjs/armit/commit/c3b4da739a17ea6a45e58809164087b6d2a39c9b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix dependency issue
+
 ## 0.2.7
 
 ### Patch Changes
