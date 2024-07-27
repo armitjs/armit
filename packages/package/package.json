@@ -45,7 +45,7 @@
   "dependencies": {
     "@armit/file-utility": "workspace:^",
     "@armit/logger-node": "workspace:^",
-    "@hyperse/install-local": "^1.0.1",
+    "@hyperse/install-local": "^1.0.2",
     "as-table": "^1.0.55",
     "boxen": "7.1.1",
     "cosmiconfig": "^9.0.0",
