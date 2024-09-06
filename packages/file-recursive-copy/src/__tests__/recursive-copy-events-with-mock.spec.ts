@@ -48,7 +48,7 @@ describe('recursive copy events with mock', () => {
     errors[getDestinationPath('empty', DESTINATION_PATH)] = new Error(
       'Test error'
     );
-    vi.mocked(copyDirectory).mockImplementationOnce((srcPath, destPath) => {
+    vi.mocked(copyDirectory).mockImplementationOnce((_srcPath, destPath) => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           if (errors && errors[destPath as string]) {
@@ -143,7 +143,7 @@ describe('recursive copy events with mock', () => {
     createSymbolicLink('.', getSourcePath('symlink', SOURCE_PATH), 'dir');
 
     vi.mocked(copySymlink).mockImplementationOnce(() => {
-      return new Promise((resolve, reject) => {
+      return new Promise((_resolve, reject) => {
         setTimeout(() => {
           reject(new Error('Test error'));
         });

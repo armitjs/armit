@@ -5,7 +5,7 @@ import type { FilesystemError } from './constants.js';
 import { ensureDirectoryExists } from './ensure-directory-exists.js';
 import type { CopyTaskFn } from './types.js';
 
-export const copyDirectory: CopyTaskFn = async (srcPath, destPath) => {
+export const copyDirectory: CopyTaskFn = async (_srcPath, destPath) => {
   try {
     await ensureDirectoryExists(destPath);
   } catch (error) {

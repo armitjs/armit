@@ -52,32 +52,32 @@
   "dependencies": {
     "@armit/file-utility": "workspace:^",
     "@armit/package": "workspace:^",
-    "@babel/core": "^7.24.9",
+    "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-decorators": "^7.24.7",
-    "@babel/plugin-transform-class-properties": "^7.24.7",
-    "@babel/preset-env": "^7.25.0",
+    "@babel/plugin-transform-class-properties": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
     "@babel/preset-typescript": "^7.24.7",
-    "@babel/runtime": "^7.25.0",
+    "@babel/runtime": "^7.25.6",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "cosmiconfig": "^9.0.0",
-    "type-fest": "^4.23.0"
+    "type-fest": "^4.26.0"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.0.10",
+    "@hyperse/eslint-config-hyperse": "^1.1.3",
     "@types/babel__core": "^7.20.5",
-    "@types/node": "20.14.12",
-    "eslint": "^9.8.0",
+    "@types/node": "22.5.4",
+    "eslint": "^9.9.1",
     "fast-async": "^7.0.6",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
-    "rollup": "^4.19.0",
-    "tsup": "8.2.3",
+    "rollup": "^4.21.2",
+    "tsup": "8.2.4",
     "typescript": "5.5.4",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "2.0.4"
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "2.0.5"
   },
   "engines": {
     "node": ">=18.0.0"

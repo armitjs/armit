@@ -17,7 +17,7 @@ type CreateCopyFunctionEvents = {
 
 export function createCopyFunction(
   copyFn: CopyTaskFn,
-  stats: Stats,
+  _stats: Stats,
   hasFinished: () => boolean,
   emitEvent: EmitEventFn,
   events: CreateCopyFunctionEvents

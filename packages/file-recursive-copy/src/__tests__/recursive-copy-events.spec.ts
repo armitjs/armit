@@ -161,7 +161,7 @@ describe('recursive copy events', () => {
       getDestinationPath('file', DESTINATION_PATH),
       {
         transform: () => {
-          return through((chunk, enc, done) => {
+          return through((_chunk, _enc, done) => {
             done(new Error('Stream error'));
           });
         },

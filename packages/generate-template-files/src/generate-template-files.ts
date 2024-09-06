@@ -375,7 +375,7 @@ export class GenerateTemplateFiles {
         return fileOrFolder;
       },
       transform: () => {
-        return through((chunk, enc, done) => {
+        return through((chunk, _enc, done) => {
           let output: string = chunk.toString();
 
           contentReplacers.forEach((replacer: Replacer) => {

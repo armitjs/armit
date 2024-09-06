@@ -343,7 +343,7 @@ describe('recursive copy output transformation', () => {
       {
         transform(...args) {
           transformArguments = args;
-          return through((chunk, enc, done) => {
+          return through((chunk, _enc, done) => {
             done(null, chunk.toString().toUpperCase());
           });
         },
@@ -373,7 +373,7 @@ describe('recursive copy output transformation', () => {
           if (basename(src) === 'b') {
             return null;
           }
-          return through((chunk, enc, done) => {
+          return through((chunk, _enc, done) => {
             done(null, chunk.toString().toUpperCase());
           });
         },
@@ -395,7 +395,7 @@ describe('recursive copy output transformation', () => {
       getDestinationPath('file', DESTINATION_PATH),
       {
         transform() {
-          return through(function (chunk, enc, done) {
+          return through(function (_chunk, _enc, done) {
             done(new Error('Stream error'));
           });
         },
@@ -411,7 +411,7 @@ describe('recursive copy output transformation', () => {
         getDestinationPath('nested-directory', DESTINATION_PATH),
         {
           transform(src) {
-            return through((chunk, enc, done) => {
+            return through((chunk, _enc, done) => {
               if (
                 src ===
                 getSourcePath('nested-directory/1/1-1/1-1-a', SOURCE_PATH)
