@@ -51,7 +51,7 @@ interface CommandHandlerCtor<T extends CommandArgv> {
 export abstract class AbstractHandler<T extends CommandArgv>
   implements OnCommandHandler
 {
-  protected logger = new Logger({
+  protected logger: Logger<any> = new Logger({
     logLevel: LogLevel.Info as LogLevel,
     adapter: new StdoutAdapter({
       formatStrategy: new TerminalFormatStrategy({
@@ -93,6 +93,19 @@ export abstract class AbstractHandler<T extends CommandArgv>
       }),
     });
     this.logger.debug(`The loaded cli args:\n${JSON.stringify(args, null, 2)}`);
+  }
+
+  /**
+   * The helper function to ensure the message is a string type
+   * @param message The message to be ensured, error, string, any object
+   * @returns
+   */
+  protected stringifyError(message: any): string {
+    return typeof message === 'string'
+      ? message
+      : message instanceof Error
+        ? message.toString()
+        : JSON.stringify(message, null, 2);
   }
 
   get cliPackageJson(): PackageJson {
