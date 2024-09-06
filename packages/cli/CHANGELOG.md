@@ -1,5 +1,18 @@
 # @armit/cli
 
+## 0.2.9
+
+### Patch Changes
+
+- [`ad16b0c`](https://github.com/armitjs/armit/commit/ad16b0c35c4a90ef92150ef147abcd490ed6f1b2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`ad16b0c`](https://github.com/armitjs/armit/commit/ad16b0c35c4a90ef92150ef147abcd490ed6f1b2), [`a904497`](https://github.com/armitjs/armit/commit/a904497c71626baf0f7ef72677b31a8884c5fb86)]:
+  - @armit/generate-template-files@0.2.6
+  - @armit/file-utility@0.2.5
+  - @armit/commander@0.2.9
+  - @armit/terminal@0.2.5
+  - @armit/package@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @armit/file-utility
 
+## 0.2.5
+
+### Patch Changes
+
+- [`ad16b0c`](https://github.com/armitjs/armit/commit/ad16b0c35c4a90ef92150ef147abcd490ed6f1b2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.2.4
 
 ### Patch Changes
