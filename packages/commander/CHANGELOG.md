@@ -1,5 +1,18 @@
 # @armit/commander
 
+## 0.2.9
+
+### Patch Changes
+
+- [`ad16b0c`](https://github.com/armitjs/armit/commit/ad16b0c35c4a90ef92150ef147abcd490ed6f1b2) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`a904497`](https://github.com/armitjs/armit/commit/a904497c71626baf0f7ef72677b31a8884c5fb86) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix typings cast issue & add `stringifyError` to AbstractHandler
+
+- Updated dependencies [[`ad16b0c`](https://github.com/armitjs/armit/commit/ad16b0c35c4a90ef92150ef147abcd490ed6f1b2)]:
+  - @armit/logger-node@0.2.6
+  - @armit/terminal@0.2.5
+  - @armit/package@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes
