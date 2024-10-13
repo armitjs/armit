@@ -1,5 +1,15 @@
 # @armit/file-recursive-copy
 
+## 0.2.7
+
+### Patch Changes
+
+- [`b1225b2`](https://github.com/armitjs/armit/commit/b1225b2259f98057aa5c2d1fcd182771e1f1e400) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`b1225b2`](https://github.com/armitjs/armit/commit/b1225b2259f98057aa5c2d1fcd182771e1f1e400)]:
+  - @armit/file-utility@0.2.6
+  - @armit/logger-node@0.2.7
+
 ## 0.2.6
 
 ### Patch Changes
