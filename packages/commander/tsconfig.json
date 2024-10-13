@@ -14,7 +14,7 @@
       "@armit/logger": ["../logger/src/index.js"],
       "@armit/logger-node": ["../logger-node/src/index.js"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "node"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }
