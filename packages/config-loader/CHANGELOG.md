@@ -1,5 +1,11 @@
 # @armit/config-loader
 
+## 0.3.0
+
+### Minor Changes
+
+- [`6f2f8f5`](https://github.com/armitjs/armit/commit/6f2f8f5946e63bfd94637fba90c5c56ba1c71581) Thanks [@tianyingchun](https://github.com/tianyingchun)! - change `babel` to `esbuild` transform
+
 ## 0.2.10
 
 ### Patch Changes
