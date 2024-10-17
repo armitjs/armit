@@ -1,51 +1,15 @@
+import { TransformOptions } from 'esbuild';
 import { rollup } from 'rollup';
-import { getPackageDependencyKeys, requireResolve } from '@armit/package';
-import { babel } from '@rollup/plugin-babel';
+import { getPackageDependencyKeys } from '@armit/package';
 import pluginCommonjs from '@rollup/plugin-commonjs';
 import pluginJson from '@rollup/plugin-json';
 import pluginResolve from '@rollup/plugin-node-resolve';
-import { isExternalModule } from '../helpers/is-external-module.js';
+import { getTsconfig } from '../helpers/get-tsconfig.js';
+import { esbuildTransform } from '../plugins/esbuild.js';
+import { externalizeNodeModules } from '../plugins/externalize-node-modules.js';
+import { resolveTsconfigPaths } from '../plugins/resolve-tsconfig-paths.js';
 import { type ConfigBundler } from '../types.js';
 import { type EsmLoaderOptions } from './esm-loader.js';
-
-const nodeBabelPreset = {
-  presets: [
-    [
-      requireResolve(import.meta.url, '@babel/preset-env'),
-      {
-        loose: true,
-        useBuiltIns: false,
-        targets: 'node >= 14.0',
-      },
-    ],
-    [
-      requireResolve(import.meta.url, '@babel/preset-typescript'),
-      {
-        // https://babeljs.io/docs/en/babel-preset-typescript
-        // https://github.com/babel/babel/blob/main/packages/babel-parser/src/plugins/typescript/index.js#L3133
-        isTSX: false,
-        allExtensions: false,
-      },
-    ],
-  ],
-  plugins: [] as Array<[string, Record<string, unknown>]>,
-};
-
-const decorators = requireResolve(
-  import.meta.url,
-  '@babel/plugin-proposal-decorators'
-);
-if (decorators) {
-  nodeBabelPreset.plugins.push([decorators, { legacy: true }]);
-}
-
-const classProperties = requireResolve(
-  import.meta.url,
-  '@babel/plugin-transform-class-properties'
-);
-if (classProperties) {
-  nodeBabelPreset.plugins.push([classProperties, { loose: true }]);
-}
 
 export const createConfigBundler: (
   options: EsmLoaderOptions
@@ -78,14 +42,17 @@ export const createConfigBundler: (
     options.externals
   );
 
+  const tsconfig = getTsconfig(options.tsconfig);
+
+  const esbuildConfig: TransformOptions = {
+    target: options.target || 'node20',
+    tsconfigRaw: tsconfig?.config,
+  };
+
   return {
     async bundle(fileName: string): Promise<{ code: string }> {
       const bundle = await rollup({
         input: fileName,
-        external: (moduleId) => {
-          // Indicate which modules should be treated as external
-          return isExternalModule(repoExternalModules, moduleId);
-        },
         treeshake: {
           annotations: true,
           moduleSideEffects: false,
@@ -93,26 +60,14 @@ export const createConfigBundler: (
         },
         cache: false,
         plugins: [
+          // Keep externalizeNodeModules plugin first, to externalize all external modules.
+          externalizeNodeModules(repoExternalModules),
+          // keep correct order, make tsPaths resolver plugin after externalizeNodeModules plugin
+          ...(tsconfig ? [resolveTsconfigPaths(tsconfig)] : []),
           nodeResolvePlugin,
           commonjsPlugin,
           jsonPlugin,
-          babel({
-            ...nodeBabelPreset,
-            babelrc: false,
-            exclude: 'node_modules/**',
-            babelHelpers: 'bundled',
-            extensions: [
-              '.js',
-              '.ts',
-              '.tsx',
-              '.jsx',
-              '.mts',
-              '.mjs',
-              '.cts',
-              '.cjs',
-              '.json',
-            ],
-          }),
+          esbuildTransform(esbuildConfig),
           ...(options.plugins || []),
         ],
       });

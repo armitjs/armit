@@ -1,8 +1,11 @@
 import path from 'node:path';
 import { getDirname } from '@armit/file-utility';
-import { loadConfig } from '../src/config-loader/config-loader.js';
+import {
+  loadConfig,
+  LoaderOptions,
+} from '../src/config-loader/config-loader.js';
 
-const loaderOptions = {
+const loaderOptions: LoaderOptions = {
   esm: {
     externals: ['vite'],
   },

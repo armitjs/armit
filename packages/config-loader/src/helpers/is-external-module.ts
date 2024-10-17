@@ -37,7 +37,7 @@ export const isExternalModule = (
   // Treat it as external modules when the `moduleId` is defined as dependencies, or it is node builtin modules.
   const isExternal =
     externalModules.includes(moduleId) ||
-    externalModules.find((externalModule) => {
+    !!externalModules.find((externalModule) => {
       if (typeof externalModule === 'string') {
         return (
           externalModule === moduleId ||

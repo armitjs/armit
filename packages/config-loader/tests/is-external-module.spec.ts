@@ -1,9 +1,24 @@
 import { isExternalModule } from '../src/helpers/is-external-module.js';
 
 describe('@flatjs/forge is-external-module.ts', () => {
+  it('Should correct check scoped modules', () => {
+    const tests: Array<[string, boolean]> = [
+      ['@wine/core', true],
+      ['@dimjs/utils', true],
+      ['~/my-module/utils', false],
+      ['@mymouldes/', false],
+    ];
+    for (const [caseItem, result] of tests) {
+      const isScopeModule = /@.+\/.+/.test(caseItem);
+      expect(isScopeModule).toBe(result);
+    }
+  });
+
   it('Should correct resolve external modules', () => {
     const tests: Array<[Array<RegExp | string>, string, boolean]> = [
       [[], 'fs', true],
+      [['vite'], '@wines/core', false],
+      [['vite'], '@/core', false],
       [['@wine/core', '@dimjs/utils'], '@wine/core', true],
       [['@wine/core', '@dimjs/utils'], '@wine/utils', false],
       [['@wine/core', '@dimjs/utils'], '@wine/core/esm/class-names', true],

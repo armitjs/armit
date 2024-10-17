@@ -8,7 +8,7 @@ type ConfigLoadResult<T> = Omit<CosmiconfigResult, 'config'> & {
   config: T;
 };
 
-type LoaderOptions = { esm?: EsmLoaderOptions };
+export type LoaderOptions = { esm?: EsmLoaderOptions };
 
 /**
  * Search up the directory tree, checking each of these places in each directory, until it finds some acceptable configuration (or hits the home directory).
