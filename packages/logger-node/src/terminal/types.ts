@@ -1,5 +1,5 @@
 import type picocolors from 'picocolors';
-import { CustomizedStdWriteStream } from '../types.js';
+import type { CustomizedStdWriteStream } from '../types.js';
 
 /**
  * Represents an ANSI color.

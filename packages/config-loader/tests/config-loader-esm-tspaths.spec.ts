@@ -1,8 +1,8 @@
 import path from 'node:path';
 import { getDirname } from '@armit/file-utility';
+import type { LoaderOptions } from '../src/config-loader/config-loader.js';
 import {
   loadConfig,
-  LoaderOptions,
   searchConfig,
 } from '../src/config-loader/config-loader.js';
 

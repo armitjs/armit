@@ -1,4 +1,4 @@
-import { TransformOptions } from 'esbuild';
+import type { TransformOptions } from 'esbuild';
 import { rollup } from 'rollup';
 import { getPackageDependencyKeys } from '@armit/package';
 import pluginCommonjs from '@rollup/plugin-commonjs';

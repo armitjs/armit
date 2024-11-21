@@ -5,7 +5,7 @@ import {
   type TerminalData,
   TerminalLog,
 } from '../terminal/terminal-log.js';
-import { CustomizedStdWriteStream } from '../types.js';
+import type { CustomizedStdWriteStream } from '../types.js';
 
 export class TerminalFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>

@@ -1,9 +1,7 @@
 import path from 'node:path';
 import { getDirname } from '@armit/file-utility';
-import {
-  loadConfig,
-  LoaderOptions,
-} from '../src/config-loader/config-loader.js';
+import type { LoaderOptions } from '../src/config-loader/config-loader.js';
+import { loadConfig } from '../src/config-loader/config-loader.js';
 
 const loaderOptions: LoaderOptions = {
   esm: {

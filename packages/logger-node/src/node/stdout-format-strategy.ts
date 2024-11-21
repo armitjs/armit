@@ -1,7 +1,7 @@
 import pic from 'picocolors';
 import type { FormatStrategy } from '@armit/logger';
 import { DEFAULT_CONTEXT, LogLevel } from '@armit/logger';
-import { CustomizedStdWriteStream } from '../types.js';
+import type { CustomizedStdWriteStream } from '../types.js';
 
 export class StdoutFormatStrategy<MessageType>
   implements FormatStrategy<MessageType>

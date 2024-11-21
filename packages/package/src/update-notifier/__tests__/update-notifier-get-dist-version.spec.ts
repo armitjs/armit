@@ -1,4 +1,5 @@
-import { ClientRequest, RequestOptions } from 'node:http';
+import type { RequestOptions } from 'node:http';
+import { ClientRequest } from 'node:http';
 import Stream from 'node:stream';
 import { vi } from 'vitest';
 import { getDistVersion } from '../get-dist-version.js';

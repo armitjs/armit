@@ -1,5 +1,5 @@
 import C from 'picocolors';
-import { CustomizedStdWriteStream } from '../types.js';
+import type { CustomizedStdWriteStream } from '../types.js';
 import { strTimePad } from './str-pad.js';
 import type {
   Color,
