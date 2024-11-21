@@ -1,5 +1,18 @@
 # @armit/cli
 
+## 0.2.11
+
+### Patch Changes
+
+- [`3d20f2b`](https://github.com/armitjs/armit/commit/3d20f2ba242c13bf2b2bbfc4fa07fb718e145502) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`3d20f2b`](https://github.com/armitjs/armit/commit/3d20f2ba242c13bf2b2bbfc4fa07fb718e145502)]:
+  - @armit/generate-template-files@0.2.8
+  - @armit/file-utility@0.2.7
+  - @armit/commander@0.2.11
+  - @armit/terminal@0.2.7
+  - @armit/package@0.2.11
+
 ## 0.2.10
 
 ### Patch Changes
