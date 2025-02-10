@@ -47,23 +47,23 @@
     "object.omit": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.26.0",
+    "@babel/core": "7.26.8",
     "@babel/plugin-proposal-class-properties": "7.18.6",
     "@babel/plugin-proposal-object-rest-spread": "7.20.7",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/preset-env": "7.26.0",
-    "@hyperse/eslint-config-hyperse": "^1.2.8",
+    "@babel/preset-env": "7.26.8",
+    "@hyperse/eslint-config-hyperse": "^1.2.10",
     "@types/babel__core": "7.20.5",
-    "@types/node": "22.10.2",
-    "eslint": "^9.17.0",
+    "@types/node": "22.13.1",
+    "eslint": "^9.20.0",
     "fast-async": "7.0.6",
     "import-meta-resolve": "4.1.0",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
-    "tsup": "8.3.5",
-    "typescript": "5.7.2",
+    "tsup": "8.3.6",
+    "typescript": "5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "2.1.8"
+    "vitest": "3.0.5"
   },
   "peerDependencies": {
     "@babel/core": ">=7.23.9",

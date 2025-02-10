@@ -56,22 +56,22 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "cosmiconfig": "^9.0.0",
-    "esbuild": "^0.24.2",
-    "get-tsconfig": "^4.8.1",
-    "type-fest": "^4.30.2"
+    "esbuild": "^0.25.0",
+    "get-tsconfig": "^4.10.0",
+    "type-fest": "^4.34.1"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.2.8",
-    "@types/node": "22.10.2",
-    "eslint": "^9.17.0",
+    "@hyperse/eslint-config-hyperse": "^1.2.10",
+    "@types/node": "22.13.1",
+    "eslint": "^9.20.0",
     "fast-async": "^7.0.6",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
-    "rollup": "^4.29.1",
-    "tsup": "8.3.5",
-    "typescript": "5.7.2",
+    "rollup": "^4.34.6",
+    "tsup": "8.3.6",
+    "typescript": "5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "2.1.8"
+    "vitest": "3.0.5"
   },
   "engines": {
     "node": ">=18.0.0"
