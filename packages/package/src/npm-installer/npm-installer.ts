@@ -2,6 +2,7 @@ import { execa } from 'execa';
 import ora from 'ora';
 import { join } from 'path';
 import pic from 'picocolors';
+import { execute, Options } from '@hyperse/install-local';
 import { arrayUnique } from '../helpers/array-unique.js';
 import { logger } from '../logger.js';
 import { runingNpmOrYarn } from '../npm-yarn.js';
@@ -53,7 +54,7 @@ export const getLocalNpmLinkPackages = (cwds: string[]): string[] => {
  * @param pkgs package dependencies ['../sibling-dependency', '../sibling-dependency2']
  */
 export const installPackageLocally = async (
-  workCwd: string,
+  _workCwd: string,
   pkgs: string[]
 ): Promise<number> => {
   // dargs Reverse minimist. Convert an object of options into an array of command-line arguments.
@@ -63,12 +64,7 @@ export const installPackageLocally = async (
   logger.info(pkgs, `installPackageLocally`);
   const spinner = ora(`Installing packages locally...`).start();
   try {
-    await execa('install-local', pkgs, {
-      cwd: workCwd,
-      localDir: workCwd,
-      preferLocal: true,
-      stdio: 'ignore',
-    });
+    await execute(new Options(['-', ...pkgs]));
     spinner.succeed();
   } catch (err: any) {
     spinner.fail(err.message);
