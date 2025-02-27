@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.2.10
+
+### Patch Changes
+
+- [`fb55499`](https://github.com/armitjs/armit/commit/fb554996f657d8f63c75a2f39dfb3b6f26183ee4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.2.9
 
 ### Patch Changes
