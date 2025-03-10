@@ -2,7 +2,7 @@ import { globbySync } from 'globby';
 import memoize, { memoizeClear } from 'memoize';
 import { statSync } from 'node:fs';
 import path, { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import resolve from 'resolve';
 import type { CommandModule } from 'yargs';
 import { searchParentDir } from '@armit/package';
@@ -136,9 +136,9 @@ async function load(
     plugin: CommandModule;
   }> = [];
   for (const pluginInfo of externalPlugins) {
-    const importModule = await import(pluginInfo.requirePath);
+    const requirePath = pathToFileURL(pluginInfo.requirePath).href;
+    const importModule = await import(requirePath);
     const pluginModule = importModule.default || importModule;
-
     for (const [pluginAlias, plugin] of Object.entries(pluginModule)) {
       const pluginDefine = plugin as PluginConfig;
       const pluginName = pluginDefine.name || pluginInfo.name;
