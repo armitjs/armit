@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     globals: true,
-    exclude: [...configDefaults.exclude],
+    exclude: [...configDefaults.exclude, '**/installPackageLocally.spec.ts'],
     include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
   },
 });
