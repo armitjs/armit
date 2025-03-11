@@ -1,5 +1,19 @@
 # @armit/package
 
+## 0.2.14
+
+### Patch Changes
+
+- [`bbc742c`](https://github.com/armitjs/armit/commit/bbc742c2cac1d2d09baeceb42811b5bc716b4dab) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`fb55499`](https://github.com/armitjs/armit/commit/fb554996f657d8f63c75a2f39dfb3b6f26183ee4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`4cb95e7`](https://github.com/armitjs/armit/commit/4cb95e7140d0ba53717116166685d3a4a6b10dc8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - fix `projectHasYarn` to support mono repo
+
+- Updated dependencies [[`bbc742c`](https://github.com/armitjs/armit/commit/bbc742c2cac1d2d09baeceb42811b5bc716b4dab), [`fb55499`](https://github.com/armitjs/armit/commit/fb554996f657d8f63c75a2f39dfb3b6f26183ee4)]:
+  - @armit/file-utility@0.2.10
+  - @armit/logger-node@0.2.11
+
 ## 0.2.13
 
 ### Patch Changes

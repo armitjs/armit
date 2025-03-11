@@ -1,5 +1,16 @@
 # @armit/logger
 
+## 0.2.11
+
+### Patch Changes
+
+- [`bbc742c`](https://github.com/armitjs/armit/commit/bbc742c2cac1d2d09baeceb42811b5bc716b4dab) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- [`fb55499`](https://github.com/armitjs/armit/commit/fb554996f657d8f63c75a2f39dfb3b6f26183ee4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
+- Updated dependencies [[`bbc742c`](https://github.com/armitjs/armit/commit/bbc742c2cac1d2d09baeceb42811b5bc716b4dab), [`fb55499`](https://github.com/armitjs/armit/commit/fb554996f657d8f63c75a2f39dfb3b6f26183ee4)]:
+  - @armit/logger@0.2.10
+
 ## 0.2.10
 
 ### Patch Changes
