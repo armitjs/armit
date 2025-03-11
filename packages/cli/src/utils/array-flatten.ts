@@ -10,5 +10,5 @@ export function arrayFlatten<T>(arr, depth = 1): T {
   }
   return depth > 0
     ? arr.reduce((acc, val) => acc.concat(arrayFlatten(val, depth - 1)), [])
-    : arr.slice();
+    : (arr.slice() as T);
 }

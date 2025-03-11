@@ -1,4 +1,4 @@
-import { imageSize } from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 import {
   createReadStream,
   existsSync,
@@ -10,13 +10,13 @@ import { rmrfSync } from '../file-rmrf.js';
 import { extractFileFromZip, unzip, zip } from '../file-zip.js';
 import { getDirname } from '../get-dir-name.js';
 
-function isCorruptedJpeg(filepath) {
+function isCorruptedJpeg(filepath: string) {
   if (!/^\.?jpe?g$/i.test(extname(filepath))) {
     return false;
   }
   try {
     // if no error is thrown, it's not corrupted
-    imageSize(filepath);
+    imageSizeFromFile(filepath);
     return false;
   } catch {
     return true;
@@ -27,7 +27,7 @@ function streamToBuffer(stream: ReadStream): Promise<Buffer> {
   const chunks: Buffer[] = [];
   return new Promise((resolve, reject) => {
     stream.on('data', (chunk) => {
-      chunks.push(Buffer.from(chunk));
+      chunks.push(Buffer.from(chunk as Buffer));
     });
     stream.on('error', (err) => reject(err));
     stream.on('end', () => {

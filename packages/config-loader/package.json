@@ -52,26 +52,26 @@
   "dependencies": {
     "@armit/file-utility": "workspace:^",
     "@armit/package": "workspace:^",
-    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "cosmiconfig": "^9.0.0",
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.25.1",
     "get-tsconfig": "^4.10.0",
-    "type-fest": "^4.35.0"
+    "type-fest": "^4.37.0"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.2.10",
-    "@types/node": "22.13.5",
-    "eslint": "^9.21.0",
+    "@hyperse/eslint-config-hyperse": "^1.3.4",
+    "@types/node": "22.13.10",
+    "eslint": "^9.22.0",
     "fast-async": "^7.0.6",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
-    "rollup": "^4.34.8",
+    "rollup": "^4.35.0",
     "tsup": "8.4.0",
-    "typescript": "5.7.3",
+    "typescript": "5.8.2",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "3.0.7"
+    "vitest": "3.0.8"
   },
   "engines": {
     "node": ">=18.0.0"
