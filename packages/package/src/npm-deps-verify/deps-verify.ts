@@ -1,10 +1,10 @@
-import hasYarn from 'has-yarn';
 import { join } from 'path';
 import { type PackageJson } from 'type-fest';
 import { readJsonFromFile } from '@armit/file-utility';
 import { chalk, groupBy } from '../helpers/index.js';
 import { isMonorepo } from '../helpers/is-mono-repo.js';
 import { logger } from '../logger.js';
+import { projectHasYarn } from '../npm-yarn.js';
 import {
   execAsync,
   getPkgIds,
@@ -63,7 +63,7 @@ export async function verifyDeps(options: VerifyDepsOption) {
         ({ type }) => type === 'prod'
       );
       let upgradePackages = '';
-      const cmd = hasYarn(dir) ? 'yarn add' : 'npm i';
+      const cmd = projectHasYarn(dir) ? 'yarn add' : 'npm i';
       if (prodPkgs.length > 0) {
         upgradePackages += `${cmd} ${getPkgIds(
           prodPkgs
