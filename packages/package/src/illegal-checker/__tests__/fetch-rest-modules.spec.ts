@@ -11,7 +11,7 @@ describe('fetch-rest-modules.ts', () => {
     expect(result).toEqual([
       {
         name: '@flatjs/common',
-        version: '^1.5.25',
+        version: '^2.2.3',
       },
     ]);
   });
@@ -26,7 +26,7 @@ describe('fetch-rest-modules.ts', () => {
     expect(result).toEqual([
       {
         name: '@flatjs/common',
-        version: '^1.5.25',
+        version: '^2.2.3',
       },
     ]);
   });
@@ -48,19 +48,19 @@ describe('fetch-rest-modules.ts', () => {
     expect(result).toEqual([
       {
         name: '@flatjs/common',
-        version: '^1.5.25',
+        version: '^2.2.3',
       },
       {
         name: '@flatjs/evolve-preset-babel',
-        version: '^1.5.23',
+        version: '^2.2.3',
       },
       {
         name: '@flatjs/forge-plugin-postcss-pixel',
-        version: '^1.6.0',
+        version: '^1.7.2',
       },
       {
         name: '@flatjs/mock',
-        version: '^1.5.25',
+        version: '^2.4.0',
       },
     ]);
     const result1 = fetchTestModules(
@@ -69,9 +69,9 @@ describe('fetch-rest-modules.ts', () => {
     );
     expect(result1.length).toBe(3);
     expect(result1).toEqual([
-      { name: 'babel-loader', version: '^9.1.2' },
+      { name: 'babel-loader', version: '^10.0.0' },
       { name: 'babel-merge', version: '^3.0.0' },
-      { name: 'babel-plugin-import', version: '^1.13.6' },
+      { name: 'babel-plugin-import', version: '^1.13.8' },
     ]);
   });
 });
