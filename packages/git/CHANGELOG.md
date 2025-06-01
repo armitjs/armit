@@ -1,5 +1,11 @@
 # @armit/git
 
+## 0.3.0
+
+### Minor Changes
+
+- [`611c756`](https://github.com/armitjs/armit/commit/611c75622cf4947d86c598305024ced07176b808) Thanks [@tianyingchun](https://github.com/tianyingchun)! - bump version
+
 ## 0.2.11
 
 ### Patch Changes
