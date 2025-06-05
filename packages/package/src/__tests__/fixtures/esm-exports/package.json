@@ -1,0 +1,8 @@
+{
+  "name": "esm-exports",
+  "type": "module",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./index.js"
+  }
+}

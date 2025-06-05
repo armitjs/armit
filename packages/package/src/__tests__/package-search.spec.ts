@@ -16,6 +16,23 @@ describe('searchPackageDir', () => {
     expect(packageData).toBeDefined();
     expect(packageData).toBe(process.cwd());
   });
+
+  it('Should correct search current package dir with esm exports', () => {
+    const packageRoot = searchPackageDir({
+      cwd: join(currDirname, 'fixtures/esm-exports/dist'),
+    });
+    expect(packageRoot).toBeDefined();
+    expect(packageRoot).toBe(join(currDirname, 'fixtures/esm-exports'));
+  });
+
+  it('Should correct search mono root package dir with tsconfig', () => {
+    const monoRoot = join(currDirname, '../../../../node_modules/vite');
+    const packageRoot = searchPackageDir({
+      cwd: join(monoRoot, 'dist'),
+    });
+    expect(packageRoot).toBeDefined();
+    expect(packageRoot).toBe(monoRoot);
+  });
 });
 
 describe('searchClosestPackageFile', () => {
