@@ -27,3 +27,7 @@ it will search up the directory tree, checking each of these places in each dire
 `${moduleName}.config.mts`,
 `${moduleName}.config.mjs`,
 ```
+
+## Note
+
+This library is deprecated. Please use the SWC version at https://github.com/hyperse-io/config-loader
