@@ -1,5 +1,11 @@
 # @armit/file-utility
 
+## 0.3.1
+
+### Patch Changes
+
+- [`bd1cc3d`](https://github.com/armitjs/armit/commit/bd1cc3d47ec9c13c523bc983f3100495fb5a42f8) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add `default` exports
+
 ## 0.3.0
 
 ### Minor Changes
