@@ -48,6 +48,8 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-l, --log-level`));
     expect(stdout).toStrictEqual(expect.stringContaining(`--no-color`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--app-env`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--env-path`));
     expect(stdout).toStrictEqual(expect.stringContaining(`Copyright 2023`));
   });
   it('Should output correct `test help` -h', async () => {
@@ -60,6 +62,8 @@ describe('cli basic infrusture', () => {
     expect(stdout).toStrictEqual(expect.stringContaining(`-v, --version`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-l, --log-level`));
     expect(stdout).toStrictEqual(expect.stringContaining(`--no-color`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--app-env`));
+    expect(stdout).toStrictEqual(expect.stringContaining(`--env-path`));
     expect(stdout).toStrictEqual(expect.stringContaining(`Options:`));
     expect(stdout).toStrictEqual(expect.stringContaining(`-t, --test`));
     expect(stdout).toStrictEqual(expect.stringContaining(`test describe`));

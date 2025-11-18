@@ -63,13 +63,26 @@ const globalOptions = () => {
       type: 'boolean',
       default: false,
       describe: `Removes colors from the console output.`,
+    })
+    .option('app-env', {
+      type: 'string',
+      default: 'APP_ENV',
+      describe: `Specify the application environment.`,
+    })
+    .option('env-path', {
+      type: 'string',
+      default: undefined,
+      describe: `Specify the path to the environment file.`,
     });
 };
 
 export const createYargs = (option: CliOption) => {
   return (
     globalOptions()
-      .group(['help', 'version', 'log-level', 'no-color'], 'Globals: ')
+      .group(
+        ['help', 'version', 'log-level', 'no-color', 'app-env', 'env-path'],
+        'Globals: '
+      )
       .usage(`Usage: $0 <command> [options]`)
       .recommendCommands()
       .demandCommand(
