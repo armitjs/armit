@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.3.2
+
+### Patch Changes
+
+- [#128](https://github.com/armitjs/armit/pull/128) [`cc52420`](https://github.com/armitjs/armit/commit/cc524204be0c3554f1b10cfbd259523d02c2ee94) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: 🎉 Add global middleware support and enhance CLI functionality
+
 ## 0.3.1
 
 ### Patch Changes
