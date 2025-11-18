@@ -1,5 +1,11 @@
 # @armit/commander
 
+## 0.3.3
+
+### Patch Changes
+
+- [#130](https://github.com/armitjs/armit/pull/130) [`a5db4f9`](https://github.com/armitjs/armit/commit/a5db4f9c8628ab71ede013c5a468d6673cb3323f) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: Add appEnv and envPath to global settings
+
 ## 0.3.2
 
 ### Patch Changes
