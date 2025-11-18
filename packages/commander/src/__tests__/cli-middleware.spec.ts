@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { getDirname } from '@armit/file-utility';
+import { getDirname } from '@/test-utils';
 import type { ExecOptions } from '@hyperse/exec-program';
 import { runTsScript } from '@hyperse/exec-program';
 
