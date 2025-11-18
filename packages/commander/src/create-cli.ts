@@ -1,4 +1,9 @@
-import type { Argv, CommandModule, ParseCallback } from 'yargs';
+import type {
+  Argv,
+  CommandModule,
+  MiddlewareFunction,
+  ParseCallback,
+} from 'yargs';
 import type { CliOption } from './create-yargs.js';
 import { createYargs } from './create-yargs.js';
 
@@ -6,10 +11,31 @@ export class CliMain {
   private options: CliOption;
   private commands: CommandModule[] = [];
   private program: Argv;
+  private middleware: ReadonlyArray<MiddlewareFunction> = [];
+  private applyBeforeValidation?: boolean = false;
   constructor(options: CliOption) {
     this.options = options;
     this.program = createYargs(this.options);
   }
+
+  /**
+   * Define global middleware functions to be called first, in list order, for all cli command.
+   * @param callbacks Can be a function or a list of functions. Each callback gets passed a reference to argv.
+   * @param [applyBeforeValidation] Set to `true` to apply middleware before validation. This will execute the middleware prior to validation checks, but after parsing.
+   */
+  public setupMiddleware(
+    mw?: MiddlewareFunction | Array<MiddlewareFunction>,
+    applyBeforeValidation?: boolean
+  ): Omit<CliMain, 'setupMiddleware'> {
+    if (Array.isArray(mw)) {
+      this.middleware = mw;
+    } else if (mw) {
+      this.middleware = [mw];
+    }
+    this.applyBeforeValidation = applyBeforeValidation;
+    return this;
+  }
+
   /**
    * Register new command module to chain.
    * Note Normally we can register only one command, because the T maybe different.
@@ -30,7 +56,9 @@ export class CliMain {
       (program, cmd) => program.command(cmd),
       this.program
     );
-    return this.program.parse(argv, this.options, callback);
+    return this.program
+      .middleware(this.middleware, this.applyBeforeValidation)
+      .parse(argv, this.options, callback);
   }
 
   /**
@@ -45,6 +73,7 @@ export class CliMain {
       this.program
     );
     return this.program
+      .middleware(this.middleware, this.applyBeforeValidation)
       .parseAsync(argv, this.options, callback)
       .then((result) => {
         return result as unknown as T;
