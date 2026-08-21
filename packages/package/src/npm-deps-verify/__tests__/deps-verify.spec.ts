@@ -85,13 +85,8 @@ describe('@flatjs/common/helper/package/verify-deps', () => {
         },
       ];
       const registries = groupBy(toInstall, (pkg) => pkg.registry);
-      for (const [registry, toInstallOfRegistry] of registries.entries()) {
-        if (registry === 'https://registry.npmjs.org') {
-          expect(toInstallOfRegistry.length).toBe(3);
-        } else {
-          expect(toInstallOfRegistry.length).toBe(3);
-        }
-      }
+      expect(registries.get('https://registry.npmjs.org')).toHaveLength(3);
+      expect(registries.get('https://registry.npm.taobao.org')).toHaveLength(3);
     });
   });
 });

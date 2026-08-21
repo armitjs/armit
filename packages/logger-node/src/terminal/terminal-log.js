@@ -1,0 +1,367 @@
+import C from 'picocolors';
+import { strTimePad } from './str-pad.js';
+function assignDefined(target, ...sources) {
+  for (const source of sources) {
+    for (const key of Object.keys(source)) {
+      const val = source[key];
+      if (val !== undefined) {
+        target[key] = val;
+      }
+    }
+  }
+  return target;
+}
+/**
+ * Terminal output formatting with ANSI colors
+ * @param colors The colors for the console output
+ * @param noColor Removes colors from the console output
+ * @returns
+ */
+export function terminalColor(colors, noColor) {
+  if (noColor || !colors.length) {
+    // Pure text output.
+    return (x) => x;
+  }
+  return (x) => {
+    let out = x;
+    for (let i = 0; i < colors.length; i++) {
+      out = C[colors[i]](out);
+    }
+    return out;
+  };
+}
+/**
+ * A couple of preset levels. This is useful for a basic application.
+ *
+ * ### **Levels include:**
+ *
+ * -   error
+ * -   trace
+ */
+export const basicLevels = [
+  { color: ['red', 'underline'], name: 'error', isError: true },
+  { color: ['gray', 'bold'], name: 'trace', isError: false },
+];
+/**
+ * A list of preset levels that you can use to log messages of various levels of importance.
+ *
+ * ### **Levels include:**
+ *
+ * -   error
+ * -   trace
+ * -   debug
+ * -   fatal
+ * -   info
+ * -   warn
+ */
+export const advancedLevels = [
+  ...basicLevels,
+  {
+    color: ['gray', 'bold', 'italic', 'underline'],
+    isError: false,
+    name: 'debug',
+  },
+  { color: ['bgRed', 'white', 'bold', 'italic'], isError: true, name: 'fatal' },
+  { color: ['blue', 'bold'], isError: false, name: 'info' },
+  { color: ['yellow', 'dim', 'underline'], isError: true, name: 'warn' },
+];
+function ensureString(message) {
+  return typeof message === 'string'
+    ? message
+    : message instanceof Error
+      ? message.toString()
+      : JSON.stringify(message, null, 2);
+}
+function getColorApplier(colorType, levelColors, noColor) {
+  const colors = levelColors.filter((colorName) => {
+    const isDecoration =
+      colorName === 'strikethrough' || colorName === 'underline';
+    return colorType === 'DECORATION' ? isDecoration : !isDecoration;
+  });
+  return terminalColor(colors, noColor);
+}
+function addUnitOfTime(
+  prefix,
+  time,
+  lastTime,
+  colorFn,
+  unitValueInMilliseconds,
+  unitName
+) {
+  let remainder = time.getTime() - lastTime.getTime();
+  const unitCount = Math.floor(remainder / unitValueInMilliseconds);
+  // eslint-disable-next-line no-useless-assignment
+  remainder = remainder % unitValueInMilliseconds;
+  return unitCount !== 0
+    ? colorFn(prefix + unitCount + unitName) + ' '
+    : unitValueInMilliseconds === 1
+      ? colorFn(prefix + '0') + ' '
+      : '';
+}
+function formatChangeInTime(time, lastTime, decorateColorFn, color, prefix) {
+  let formattedChangeInTime = ' ';
+  // YEARS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    31536000000,
+    'y'
+  );
+  // MONTHS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    2592000000,
+    'm'
+  );
+  // DAYS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    86400000,
+    'd'
+  );
+  // HOURS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    3600000,
+    'h'
+  );
+  // MINUTES
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    60000,
+    'min'
+  );
+  // SECONDS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    1000,
+    's'
+  );
+  // MILLISECONDS
+  formattedChangeInTime += addUnitOfTime(
+    prefix,
+    time,
+    lastTime,
+    decorateColorFn,
+    1,
+    'ms'
+  );
+  return color(formattedChangeInTime);
+}
+function formatMonth(time, monthPositionSwitch) {
+  monthPositionSwitch = !monthPositionSwitch;
+  return monthPositionSwitch ? '' : `${time.getMonth() + 1}m/`;
+}
+/**
+ * Represents the console.
+ */
+export class TerminalLog {
+  stdout;
+  stderr;
+  /**
+   * Customization options that were inputted when this terminal instance was created.
+   */
+  data;
+  /**
+   * Represents the logger. Any methods of `log` logs a message to a specific level.
+   *
+   * Note `trace?` is availble only for `Level` with `isError=true`
+   *
+   * @example
+   *
+   * ```
+   * log.error("faz");
+   * log.error("faz", 'context')
+   * log.error("faz", 'context', 'trace');
+   *
+   * ```
+   *
+   * Logs "faz" to the `error` level if such a level even exists.
+   */
+  log;
+  /**
+   * The time when this terminal instance was created.
+   */
+  startTime;
+  /**
+   * The time when the last message was logged to the terminal.
+   */
+  timeInLastLog;
+  logMsg(level, message, context, trace) {
+    const output = this.formatMsg(level, message, context, trace);
+    (level.isError ? this.stderr : this.stdout)?.write(output);
+  }
+  formatMsg(level, message, context, trace) {
+    const {
+      capitalizeLevelName,
+      showArrow,
+      showDate,
+      showLevelName,
+      showMonthBeforeDay,
+      showRelativeTimestamp,
+      showTimestamp,
+      showTimestampRelativeToLastLog,
+      use24HourClock,
+      contextColor,
+      showContext,
+      noColor,
+    } = this.data;
+    const time = new Date();
+    const color = getColorApplier('COLOR', level.color, noColor);
+    const decorate = getColorApplier('DECORATION', level.color, noColor);
+    const monthPositionSwitch = showMonthBeforeDay;
+    let output = '';
+    const levelContext = [];
+    // Should add context if we have.
+    if (showContext && context) {
+      const ctxColor = getColorApplier('COLOR', contextColor, noColor);
+      levelContext.push(' ' + ctxColor(context.toUpperCase()) + ' ');
+    }
+    // Should look like: [ ERROR ] or [ error ]
+    if (showLevelName) {
+      levelContext.push(
+        color(
+          ' ' +
+            decorate(
+              capitalizeLevelName ? level.name.toUpperCase() : level.name
+            ) +
+            ' '
+        )
+      );
+    }
+    if (levelContext.length) {
+      output += '[' + levelContext.join(':') + '] ';
+    }
+    // Should look like: [ 12d/5m/2011y | 13:43:10.23 ] or [ 5m/12d/2011y | 1:43:10.23 PM ]
+    if (showDate || showTimestamp) {
+      output += '[';
+      if (showDate) {
+        output += color(
+          ' ' +
+            decorate(
+              `${formatMonth(time, monthPositionSwitch) + time.getDate()}d/${formatMonth(time, monthPositionSwitch)}${time.getFullYear()}y`
+            ) +
+            ' '
+        );
+      }
+      if (showDate && showTimestamp) {
+        output += '|';
+      }
+      if (showTimestamp) {
+        const hours = time.getHours();
+        output += color(
+          ' ' +
+            decorate(
+              `${
+                strTimePad(
+                  use24HourClock || !(hours >= 13 || hours === 0)
+                    ? hours
+                    : Math.abs(hours - 12)
+                )
+                // }:${time.getMinutes()}:${time.getSeconds()}.${time.getMilliseconds()}`
+              }:${strTimePad(time.getMinutes())}:${strTimePad(time.getSeconds())}`
+            ) +
+            ' ' +
+            (use24HourClock ? '' : decorate(hours >= 13 ? 'PM' : 'AM') + ' ')
+        );
+      }
+      output += ']';
+    }
+    if (
+      (showDate || showTimestamp) &&
+      (showRelativeTimestamp || showTimestampRelativeToLastLog)
+    ) {
+      output += ' ';
+    }
+    // Should look like: [ 5y 1m 15h 51min 7s 300ms | +31min +5s +903ms ]
+    if (showRelativeTimestamp || showTimestampRelativeToLastLog) {
+      output += '[';
+      if (showRelativeTimestamp) {
+        output += formatChangeInTime(time, this.startTime, decorate, color, '');
+      }
+      if (showRelativeTimestamp && showTimestampRelativeToLastLog) {
+        output += '|';
+      }
+      if (showTimestampRelativeToLastLog) {
+        output += formatChangeInTime(
+          time,
+          this.timeInLastLog,
+          decorate,
+          color,
+          '+'
+        );
+      }
+      output += ']';
+    }
+    // Should look like: >>
+    if (showArrow) {
+      output += ` ${terminalColor(['bold'])('>>')} `;
+    }
+    // Should add trace if we have error?
+    output +=
+      ` ${message}` +
+      (level.isError && trace
+        ? `\n${terminalColor(['red'])(ensureString(trace))}\n`
+        : '\n');
+    this.timeInLastLog = time;
+    return output;
+  }
+  /**
+   * Represents the console.
+   *
+   * @param data Any customization options for the terminal.
+   */
+  constructor(data) {
+    const defaultData = {
+      capitalizeLevelName: true,
+      showArrow: false,
+      showDate: false,
+      showLevelName: false,
+      showMonthBeforeDay: false,
+      showRelativeTimestamp: false,
+      showTimestamp: true,
+      showTimestampRelativeToLastLog: true,
+      use24HourClock: false,
+      noColor: false,
+      showContext: true,
+      contextColor: ['bold', 'magenta'],
+    };
+    this.stdout = data.stdout ?? process.stdout;
+    this.stderr = data.stderr ?? process.stderr;
+    let logger = {};
+    let registeredLevels = [];
+    this.startTime = new Date();
+    this.timeInLastLog = this.startTime;
+    this.data = assignDefined({}, defaultData, data);
+    for (const level of data.levels) {
+      if (registeredLevels.some((value) => value === level.name)) {
+        throw new Error(`Duplicate level name "${level.name}".`);
+      }
+      registeredLevels = [...registeredLevels, level.name];
+      logger = {
+        ...logger,
+        [level.name]: (message, context, trace) => {
+          this.logMsg(level, message, context, trace);
+        },
+      };
+    }
+    this.log = logger;
+  }
+}

@@ -44,8 +44,9 @@ export interface Level<L extends string> {
 /**
  * Customization options for how logs are to be displayed in the terminal.
  */
-export interface TerminalConstructorData<L extends string>
-  extends CustomizedStdWriteStream {
+export interface TerminalConstructorData<
+  L extends string,
+> extends CustomizedStdWriteStream {
   /**
    * Whether or not to capitalize the name of a log's corresponding level when it's attached to the log. Keep in mind that you can only see the name of a log's corresponding level when `showLevelName` is also true.
    *

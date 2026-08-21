@@ -5,22 +5,20 @@ describe('esm resover', () => {
   it('should correct resolve node modules for esm modules', async () => {
     const modulePath = requireResolve(import.meta.url, 'execa');
     expect(modulePath).toBeDefined();
-    if (modulePath) {
-      const result = await import(modulePath);
-      expect(typeof result.loadConfig).toBeDefined();
-    }
+
+    const result = await import(modulePath!);
+    expect(typeof result.loadConfig).toBeDefined();
   });
 
   it('should correct resolve node modules for commonjs modules', async () => {
     const modulePath = requireResolve(import.meta.url, 'cosmiconfig');
 
     expect(modulePath).toBeDefined();
-    if (modulePath) {
-      const result = await import(modulePath);
-      expect(result).toHaveProperty('default');
-      expect(typeof result.default.cosmiconfig).toBe('function');
-      expect(typeof result.default.cosmiconfigSync).toBe('function');
-    }
+
+    const result = await import(modulePath!);
+    expect(result).toHaveProperty('default');
+    expect(typeof result.default.cosmiconfig).toBe('function');
+    expect(typeof result.default.cosmiconfigSync).toBe('function');
   });
 
   it('should correct resolve node modules with absolute path for commonjs', async () => {
@@ -33,12 +31,10 @@ describe('esm resover', () => {
     const modulePath2 = requireResolve(import.meta.url, modulePath);
     expect(modulePath2).toBeDefined();
 
-    if (modulePath2) {
-      const result = await import(modulePath);
-      expect(result).toHaveProperty('default');
-      expect(typeof result.default.cosmiconfig).toBe('function');
-      expect(typeof result.default.cosmiconfigSync).toBe('function');
-    }
+    const result = await import(modulePath);
+    expect(result).toHaveProperty('default');
+    expect(typeof result.default.cosmiconfig).toBe('function');
+    expect(typeof result.default.cosmiconfigSync).toBe('function');
   });
 
   it('should correct resolve node modules with absolute path for esm', async () => {
@@ -52,10 +48,8 @@ describe('esm resover', () => {
 
     expect(modulePath2).toBeDefined();
 
-    if (modulePath2) {
-      const result = await import(modulePath2);
-      expect(typeof result.execa).toBe('function');
-    }
+    const result = await import(modulePath2!);
+    expect(typeof result.execa).toBe('function');
   });
 
   it('should correct resolve node modules with relative path for `esm`', async () => {
@@ -63,10 +57,9 @@ describe('esm resover', () => {
     expect(modulePath).toBeDefined();
     const modulePath2 = requireResolve(import.meta.url, modulePath);
     expect(modulePath2).toBeDefined();
-    if (modulePath2) {
-      const result = await import(modulePath2);
-      expect(typeof result.execa).toBe('function');
-    }
+
+    const result = await import(modulePath2!);
+    expect(typeof result.execa).toBe('function');
   });
 
   it('should throw exception if module not found', async () => {
@@ -79,6 +72,6 @@ describe('esm resover', () => {
 
     expect(() => {
       requireResolve(import.meta.url, `modulePath`);
-    }).toThrowError();
+    }).toThrow();
   });
 });

@@ -57,7 +57,7 @@ export async function getLatestVersions(
       err instanceof SyntaxError
         ? `Failed to parse output from NPM view - ${err.toString()}`
         : `Error getting latest versions - ${err}`;
-    throw new Error(message);
+    throw new Error(message, { cause: err });
   }
 }
 
@@ -85,7 +85,7 @@ export async function getLatestTag(
       err instanceof SyntaxError
         ? `Failed to parse output from NPM view - ${err.toString()}`
         : `Error getting latest tag - ${err}`;
-    throw new Error(message);
+    throw new Error(message, { cause: err });
   }
 }
 

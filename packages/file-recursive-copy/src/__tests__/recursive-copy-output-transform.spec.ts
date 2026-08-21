@@ -405,8 +405,8 @@ describe('recursive copy output transformation', () => {
   });
 
   it('should throw the original error on nested file error', async () => {
-    try {
-      await recursiveCopy(
+    await expect(
+      recursiveCopy(
         getSourcePath('nested-directory', SOURCE_PATH),
         getDestinationPath('nested-directory', DESTINATION_PATH),
         {
@@ -423,17 +423,7 @@ describe('recursive copy output transformation', () => {
             });
           },
         }
-      );
-    } catch (error) {
-      let actual, expected;
-
-      actual = (error as Error).name;
-      expected = 'Error';
-      expect(actual).toEqual(expected);
-
-      actual = (error as Error).message;
-      expected = 'Stream error';
-      expect(actual).toEqual(expected);
-    }
+      )
+    ).rejects.toThrow('Stream error');
   });
 });

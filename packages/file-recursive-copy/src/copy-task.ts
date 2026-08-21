@@ -40,7 +40,7 @@ export const copyFile: CopyTaskFn = (srcPath, destPath, stats, options) => {
       });
     });
 
-    let transformStream: Transform | null | undefined = null;
+    let transformStream: Transform | null | undefined;
     if (options.transform) {
       transformStream = options.transform(srcPath, destPath, stats);
       if (transformStream) {

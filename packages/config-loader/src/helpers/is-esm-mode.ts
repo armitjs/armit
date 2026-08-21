@@ -23,7 +23,7 @@ function lookupFile(dir: string, fileNames: string[]): string | undefined {
 }
 
 export const isEsmMode = (resolvedPath: string) => {
-  let isESM = false;
+  let isESM: boolean;
   if (/\.m[jt]s$/.test(resolvedPath)) {
     isESM = true;
   } else if (/\.c[jt]s$/.test(resolvedPath)) {

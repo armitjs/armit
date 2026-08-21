@@ -15,7 +15,6 @@
     "incremental": true,
     "declaration": true,
     "newLine": "lf",
-    "baseUrl": ".",
     "rootDir": ".",
     "outDir": "dist"
   },

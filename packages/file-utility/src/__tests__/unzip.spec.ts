@@ -84,12 +84,10 @@ describe('unzip / unzip', () => {
 
       expect(jpegData).not.toBeNull();
 
-      if (jpegData) {
-        writeFileSync(join(unzipCwd, 'test-new-zip-jpeg.jpg'), jpegData);
-        expect(isCorruptedJpeg(join(unzipCwd, 'test-new-zip-jpeg.jpg'))).toBe(
-          false
-        );
-      }
+      writeFileSync(join(unzipCwd, 'test-new-zip-jpeg.jpg'), jpegData!);
+      expect(isCorruptedJpeg(join(unzipCwd, 'test-new-zip-jpeg.jpg'))).toBe(
+        false
+      );
     });
   });
 });

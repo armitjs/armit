@@ -7,9 +7,9 @@ import {
 } from '../terminal/terminal-log.js';
 import type { CustomizedStdWriteStream } from '../types.js';
 
-export class TerminalFormatStrategy<MessageType>
-  implements FormatStrategy<MessageType>
-{
+export class TerminalFormatStrategy<
+  MessageType,
+> implements FormatStrategy<MessageType> {
   private terminal: TerminalLog<
     'error' | 'trace' | 'debug' | 'fatal' | 'info' | 'warn'
   >;

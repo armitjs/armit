@@ -9,7 +9,7 @@ describe('GenerateTemplateFiles - Batch', () => {
       noColor: true,
     });
 
-    await expect(() => gtf.batchGenerate(items)).rejects.toThrowError(
+    await expect(() => gtf.batchGenerate(items)).rejects.toThrow(
       'There was no ConfigItem items found.'
     );
   });
@@ -31,7 +31,7 @@ describe('GenerateTemplateFiles - Batch', () => {
       noColor: true,
     });
 
-    await expect(() => gtf.batchGenerate(items)).rejects.toThrowError(
+    await expect(() => gtf.batchGenerate(items)).rejects.toThrow(
       'ConfigItem for batchGenerate does not support promptReplacers, and must have dynamicReplacers'
     );
   });
@@ -54,7 +54,7 @@ describe('GenerateTemplateFiles - Batch', () => {
       noColor: true,
     });
 
-    await expect(() => gtf.batchGenerate(items)).rejects.toThrowError(
+    await expect(() => gtf.batchGenerate(items)).rejects.toThrow(
       `ConfigItem for batchGenerate does not support promptReplacers, and must have dynamicReplacers.`
     );
   });

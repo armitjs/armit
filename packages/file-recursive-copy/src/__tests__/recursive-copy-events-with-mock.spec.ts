@@ -11,6 +11,13 @@ import {
   listenTo,
 } from './copy-utils.js';
 
+vi.mock('../copy-task.js', () => {
+  return {
+    copyDirectory: vi.fn(),
+    copySymlink: vi.fn(),
+  };
+});
+
 describe('recursive copy events with mock', () => {
   const testCwd = getDirname(import.meta.url);
   const SOURCE_PATH = resolve(testCwd, './fixtures/source');
@@ -20,12 +27,6 @@ describe('recursive copy events with mock', () => {
   );
   const COPY_EVENTS = Object.keys(recursiveCopy.events).map((key) => {
     return recursiveCopy.events[key];
-  });
-  vi.mock('../copy-task.js', () => {
-    return {
-      copyDirectory: vi.fn(),
-      copySymlink: vi.fn(),
-    };
   });
   beforeEach(async () => {
     await ensureDirectoryExists(DESTINATION_PATH);
@@ -60,87 +61,60 @@ describe('recursive copy events with mock', () => {
       });
     });
 
-    const copier = recursiveCopy(
-      getSourcePath('empty', SOURCE_PATH),
-      getDestinationPath('empty', DESTINATION_PATH)
-    );
-    const events = listenTo(copier, COPY_EVENTS);
-    return copier
-      .catch(() => {
-        let actual, expected;
+    try {
+      const copier = recursiveCopy(
+        getSourcePath('empty', SOURCE_PATH),
+        getDestinationPath('empty', DESTINATION_PATH)
+      );
+      const events = listenTo(copier, COPY_EVENTS);
+      await expect(copier).rejects.toThrow('Test error');
 
-        const eventNames = events.map((event) => {
-          return event.name;
-        });
+      expect(events.map((event) => event.name)).toEqual([
+        'createDirectoryStart',
+        'createDirectoryError',
+        'error',
+      ]);
 
-        actual = eventNames;
-        expected = ['createDirectoryStart', 'createDirectoryError', 'error'];
-        expect(actual).toEqual(expected);
+      const errorEvent = events.filter((event) => {
+        return event.name === 'error';
+      })[0];
+      expect(errorEvent.args).toHaveLength(2);
 
-        const errorEvent = events.filter((event) => {
-          return event.name === 'error';
-        })[0];
-        const eventArgs = errorEvent.args;
+      const error = errorEvent.args[0];
+      const copyOperation = errorEvent.args[1];
 
-        actual = eventArgs.length;
-        expected = 2;
-        expect(actual).toEqual(expected);
+      expect(error.message).toEqual('Test error');
+      expect(copyOperation.src).toEqual(getSourcePath('empty', SOURCE_PATH));
+      expect(copyOperation.dest).toEqual(
+        getDestinationPath('empty', DESTINATION_PATH)
+      );
 
-        const error = eventArgs[0];
-        const copyOperation = eventArgs[1];
+      const directoryErrorEvent = events.filter((event) => {
+        return event.name === 'createDirectoryError';
+      })[0];
+      expect(directoryErrorEvent.args).toHaveLength(2);
 
-        actual = error.message;
-        expected = 'Test error';
-        expect(actual).toEqual(expected);
+      const directoryError = directoryErrorEvent.args[0];
+      const directoryCopyOperation = directoryErrorEvent.args[1];
 
-        actual = copyOperation.src;
-        expected = getSourcePath('empty', SOURCE_PATH);
-        expect(actual).toEqual(expected);
-
-        actual = copyOperation.dest;
-        expected = getDestinationPath('empty', DESTINATION_PATH);
-        expect(actual).toEqual(expected);
-
-        const directoryErrorEvent = events.filter((event) => {
-          return event.name === 'createDirectoryError';
-        })[0];
-        const directoryErrorEventArgs = directoryErrorEvent.args;
-
-        actual = directoryErrorEventArgs.length;
-        expected = 2;
-        expect(actual).toEqual(expected);
-
-        const directoryError = directoryErrorEventArgs[0];
-        const directoryCopyOperation = directoryErrorEventArgs[1];
-
-        actual = directoryError.message;
-        expected = 'Test error';
-        expect(actual).toEqual(expected);
-
-        actual = directoryCopyOperation.src;
-        expected = getSourcePath('empty', SOURCE_PATH);
-        expect(actual).toEqual(expected);
-
-        actual = directoryCopyOperation.dest;
-        expected = getDestinationPath('empty', DESTINATION_PATH);
-        expect(actual).toEqual(expected);
-
-        actual =
-          directoryCopyOperation.stats &&
-          directoryCopyOperation.stats.isDirectory;
-        expected = 'function';
-        expect(actual).toBe(expected);
-      })
-      .then(() => {
-        vi.resetAllMocks();
-      })
-      .catch(() => {
-        vi.resetAllMocks();
-      });
+      expect(directoryError.message).toEqual('Test error');
+      expect(directoryCopyOperation.src).toEqual(
+        getSourcePath('empty', SOURCE_PATH)
+      );
+      expect(directoryCopyOperation.dest).toEqual(
+        getDestinationPath('empty', DESTINATION_PATH)
+      );
+      expect(
+        directoryCopyOperation.stats && directoryCopyOperation.stats.isDirectory
+      ).toBeTypeOf('function');
+    } finally {
+      vi.resetAllMocks();
+    }
   });
 
   it('should emit symlink copy error events', async () => {
-    createSymbolicLink('.', getSourcePath('symlink', SOURCE_PATH), 'dir');
+    const symlinkPath = getSourcePath('symlink', SOURCE_PATH);
+    createSymbolicLink('.', symlinkPath, 'dir');
 
     vi.mocked(copySymlink).mockImplementationOnce(() => {
       return new Promise((_resolve, reject) => {
@@ -150,85 +124,53 @@ describe('recursive copy events with mock', () => {
       });
     });
 
-    const copier = recursiveCopy(
-      getSourcePath('symlink', SOURCE_PATH),
-      getDestinationPath('symlink', DESTINATION_PATH)
-    );
-    const events = listenTo(copier, COPY_EVENTS);
-    return copier
-      .catch(() => {
-        let actual, expected;
+    try {
+      const copier = recursiveCopy(
+        symlinkPath,
+        getDestinationPath('symlink', DESTINATION_PATH)
+      );
+      const events = listenTo(copier, COPY_EVENTS);
+      await expect(copier).rejects.toThrow('Test error');
 
-        const eventNames = events.map((event) => {
-          return event.name;
-        });
+      expect(events.map((event) => event.name)).toEqual([
+        'createSymlinkStart',
+        'createSymlinkError',
+        'error',
+      ]);
 
-        actual = eventNames;
-        expected = ['createSymlinkStart', 'createSymlinkError', 'error'];
-        expect(actual).toEqual(expected);
+      const errorEvent = events.filter((event) => {
+        return event.name === 'error';
+      })[0];
+      expect(errorEvent.args).toHaveLength(2);
 
-        const errorEvent = events.filter((event) => {
-          return event.name === 'error';
-        })[0];
-        const eventArgs = errorEvent.args;
+      const error = errorEvent.args[0];
+      const copyOperation = errorEvent.args[1];
 
-        actual = eventArgs.length;
-        expected = 2;
-        expect(actual).toEqual(expected);
+      expect(error.message).toEqual('Test error');
+      expect(copyOperation.src).toEqual(symlinkPath);
+      expect(copyOperation.dest).toEqual(
+        getDestinationPath('symlink', DESTINATION_PATH)
+      );
 
-        const error = eventArgs[0];
-        const copyOperation = eventArgs[1];
+      const symlinkErrorEvent = events.filter((event) => {
+        return event.name === 'createSymlinkError';
+      })[0];
+      expect(symlinkErrorEvent.args).toHaveLength(2);
 
-        actual = error.message;
-        expected = 'Test error';
-        expect(actual).toEqual(expected);
+      const symlinkError = symlinkErrorEvent.args[0];
+      const symlinkCopyOperation = symlinkErrorEvent.args[1];
 
-        actual = copyOperation.src;
-        expected = getSourcePath('symlink', SOURCE_PATH);
-        expect(actual).toEqual(expected);
-
-        actual = copyOperation.dest;
-        expected = getDestinationPath('symlink', DESTINATION_PATH);
-        expect(actual).toEqual(expected);
-
-        const symlinkErrorEvent = events.filter((event) => {
-          return event.name === 'createSymlinkError';
-        })[0];
-        const symlinkErrorEventArgs = symlinkErrorEvent.args;
-
-        actual = symlinkErrorEventArgs.length;
-        expected = 2;
-        expect(actual).toEqual(expected);
-
-        const symlinkError = symlinkErrorEventArgs[0];
-        const symlinkCopyOperation = symlinkErrorEventArgs[1];
-
-        actual = symlinkError.message;
-        expected = 'Test error';
-        expect(actual).toEqual(expected);
-
-        actual = symlinkCopyOperation.src;
-        expected = getSourcePath('symlink', SOURCE_PATH);
-        expect(actual).toEqual(expected);
-
-        actual = symlinkCopyOperation.dest;
-        expected = getDestinationPath('symlink', DESTINATION_PATH);
-        expect(actual).toEqual(expected);
-
-        actual =
-          symlinkCopyOperation.stats && symlinkCopyOperation.stats.isDirectory;
-        expected = 'function';
-        expect(actual).toBeTypeOf(expected);
-      })
-      .then(() => {
-        vi.resetAllMocks();
-        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
-      })
-      .catch((error) => {
-        vi.resetAllMocks();
-        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
-
-        throw error;
-      });
+      expect(symlinkError.message).toEqual('Test error');
+      expect(symlinkCopyOperation.src).toEqual(symlinkPath);
+      expect(symlinkCopyOperation.dest).toEqual(
+        getDestinationPath('symlink', DESTINATION_PATH)
+      );
+      expect(
+        symlinkCopyOperation.stats && symlinkCopyOperation.stats.isDirectory
+      ).toBeTypeOf('function');
+    } finally {
+      vi.resetAllMocks();
+      unlinkSync(symlinkPath);
+    }
   });
 });

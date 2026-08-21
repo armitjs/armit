@@ -25,9 +25,7 @@ export type LoggerOptions<
  */
 export class Logger<
   MessageType,
-  OptionExtendType extends Record<string, unknown> = {
-    /** */
-  },
+  OptionExtendType extends Record<string, unknown> = {/** */},
 > {
   private printer: LogPrinter<MessageType> = new LoggerPrinter<MessageType>();
   private context = DEFAULT_CONTEXT;

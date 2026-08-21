@@ -67,47 +67,38 @@ describe('recursive copy events', () => {
         .on('copyFileComplete', () => {})
         .then(() => {})
         .catch(() => {})
-    ).not.toThrowError();
+    ).not.toThrow();
 
     return copier;
   });
 
-  it('should emit file copy events', () => {
+  it('should emit file copy events', async () => {
     const copier = recursiveCopy(
       getSourcePath('file', SOURCE_PATH),
       getDestinationPath('file', DESTINATION_PATH)
     );
     const events = listenTo(copier, COPY_EVENTS);
-    return copier.then(() => {
-      let actual, expected;
+    await copier;
 
-      const eventNames = events.map((event) => {
-        return event.name;
-      });
+    expect(events.map((event) => event.name)).toEqual([
+      'copyFileStart',
+      'copyFileComplete',
+      'complete',
+    ]);
 
-      actual = eventNames;
-      expected = ['copyFileStart', 'copyFileComplete', 'complete'];
-      expect(actual).toEqual(expected);
+    const completeEvent = events.filter((event) => {
+      return event.name === 'complete';
+    })[0];
+    expect(completeEvent.args).toHaveLength(1);
 
-      const completeEvent = events.filter((event) => {
-        return event.name === 'complete';
-      })[0];
-      const eventArgs = completeEvent.args;
-
-      actual = eventArgs.length;
-      expected = 1;
-      expect(actual).toEqual(expected);
-
-      const results = eventArgs[0];
-      checkResults(
-        results || [],
-        {
-          file: 'file',
-        },
-        SOURCE_PATH,
-        DESTINATION_PATH
-      );
-    });
+    checkResults(
+      completeEvent.args[0] || [],
+      {
+        file: 'file',
+      },
+      SOURCE_PATH,
+      DESTINATION_PATH
+    );
   });
 
   it('should emit error events', async () => {
@@ -118,44 +109,26 @@ describe('recursive copy events', () => {
       getDestinationPath('file', DESTINATION_PATH)
     );
     const events = listenTo(copier, COPY_EVENTS);
-    return copier.catch(() => {
-      let actual, expected;
+    await expect(copier).rejects.toBeDefined();
 
-      const eventNames = events.map((event) => {
-        return event.name;
-      });
+    expect(events.map((event) => event.name)).toEqual(['error']);
 
-      actual = eventNames;
-      expected = ['error'];
-      expect(actual).toEqual(expected);
+    const errorEvent = events.filter((event) => {
+      return event.name === 'error';
+    })[0];
+    expect(errorEvent.args).toHaveLength(2);
 
-      const errorEvent = events.filter((event) => {
-        return event.name === 'error';
-      })[0];
-      const eventArgs = errorEvent.args;
+    const error = errorEvent.args[0];
+    const copyOperation = errorEvent.args[1];
 
-      actual = eventArgs.length;
-      expected = 2;
-      expect(actual).toEqual(expected);
-
-      const error = eventArgs[0];
-      const copyOperation = eventArgs[1];
-
-      actual = error.code;
-      expected = 'EEXIST';
-      expect(actual).toEqual(expected);
-
-      actual = copyOperation.src;
-      expected = getSourcePath('file', SOURCE_PATH);
-      expect(actual).toEqual(expected);
-
-      actual = copyOperation.dest;
-      expected = getDestinationPath('file', DESTINATION_PATH);
-      expect(actual).toEqual(expected);
-    });
+    expect(error.code).toEqual('EEXIST');
+    expect(copyOperation.src).toEqual(getSourcePath('file', SOURCE_PATH));
+    expect(copyOperation.dest).toEqual(
+      getDestinationPath('file', DESTINATION_PATH)
+    );
   });
 
-  it('should emit file copy error events', () => {
+  it('should emit file copy error events', async () => {
     const copier = recursiveCopy(
       getSourcePath('file', SOURCE_PATH),
       getDestinationPath('file', DESTINATION_PATH),
@@ -168,69 +141,44 @@ describe('recursive copy events', () => {
       }
     );
     const events = listenTo(copier, COPY_EVENTS);
-    return copier.catch(() => {
-      let actual, expected;
+    await expect(copier).rejects.toThrow('Stream error');
 
-      const eventNames = events.map(function (event) {
-        return event.name;
-      });
+    expect(events.map((event) => event.name)).toEqual([
+      'copyFileStart',
+      'copyFileError',
+      'error',
+    ]);
 
-      actual = eventNames;
-      expected = ['copyFileStart', 'copyFileError', 'error'];
-      expect(actual).toEqual(expected);
+    const errorEvent = events.filter((event) => {
+      return event.name === 'error';
+    })[0];
+    expect(errorEvent.args).toHaveLength(2);
 
-      const errorEvent = events.filter((event) => {
-        return event.name === 'error';
-      })[0];
-      const eventArgs = errorEvent.args;
+    const error = errorEvent.args[0];
+    const copyOperation = errorEvent.args[1];
 
-      actual = eventArgs.length;
-      expected = 2;
-      expect(actual).toEqual(expected);
+    expect(error.message).toEqual('Stream error');
+    expect(copyOperation.src).toEqual(getSourcePath('file', SOURCE_PATH));
+    expect(copyOperation.dest).toEqual(
+      getDestinationPath('file', DESTINATION_PATH)
+    );
 
-      const error = eventArgs[0];
-      const copyOperation = eventArgs[1];
+    const fileErrorEvent = events.filter((event) => {
+      return event.name === 'copyFileError';
+    })[0];
+    expect(fileErrorEvent.args).toHaveLength(2);
 
-      actual = error.message;
-      expected = 'Stream error';
-      expect(actual).toEqual(expected);
+    const fileError = fileErrorEvent.args[0];
+    const fileCopyOperation = fileErrorEvent.args[1];
 
-      actual = copyOperation.src;
-      expected = getSourcePath('file', SOURCE_PATH);
-      expect(actual).toEqual(expected);
-
-      actual = copyOperation.dest;
-      expected = getDestinationPath('file', DESTINATION_PATH);
-      expect(actual).toEqual(expected);
-
-      const fileErrorEvent = events.filter((event) => {
-        return event.name === 'copyFileError';
-      })[0];
-      const fileErrorEventArgs = fileErrorEvent.args;
-
-      actual = fileErrorEventArgs.length;
-      expected = 2;
-      expect(actual).toEqual(expected);
-
-      const fileError = fileErrorEventArgs[0];
-      const fileCopyOperation = fileErrorEventArgs[1];
-
-      actual = fileError.message;
-      expected = 'Stream error';
-      expect(actual).toEqual(expected);
-
-      actual = fileCopyOperation.src;
-      expected = getSourcePath('file', SOURCE_PATH);
-      expect(actual).toEqual(expected);
-
-      actual = fileCopyOperation.dest;
-      expected = getDestinationPath('file', DESTINATION_PATH);
-      expect(actual).toEqual(expected);
-
-      actual = fileCopyOperation.stats && fileCopyOperation.stats.isDirectory;
-      expected = 'function';
-      expect(actual).toBeTypeOf(expected);
-    });
+    expect(fileError.message).toEqual('Stream error');
+    expect(fileCopyOperation.src).toEqual(getSourcePath('file', SOURCE_PATH));
+    expect(fileCopyOperation.dest).toEqual(
+      getDestinationPath('file', DESTINATION_PATH)
+    );
+    expect(
+      fileCopyOperation.stats && fileCopyOperation.stats.isDirectory
+    ).toBeTypeOf('function');
   });
 
   it('should emit directory copy events', async () => {
@@ -239,83 +187,62 @@ describe('recursive copy events', () => {
       getDestinationPath('empty', DESTINATION_PATH)
     );
     const events = listenTo(copier, COPY_EVENTS);
-    return copier.then(() => {
-      let actual, expected;
+    await copier;
 
-      const eventNames = events.map((event) => {
-        return event.name;
-      });
+    expect(events.map((event) => event.name)).toEqual([
+      'createDirectoryStart',
+      'createDirectoryComplete',
+      'complete',
+    ]);
 
-      actual = eventNames;
-      expected = [
-        'createDirectoryStart',
-        'createDirectoryComplete',
-        'complete',
-      ];
-      expect(actual).toEqual(expected);
+    const completeEvent = events.filter((event) => {
+      return event.name === 'complete';
+    })[0];
+    expect(completeEvent.args).toHaveLength(1);
 
-      const completeEvent = events.filter((event) => {
-        return event.name === 'complete';
-      })[0];
-      const eventArgs = completeEvent.args;
-
-      actual = eventArgs.length;
-      expected = 1;
-      expect(actual).toEqual(expected);
-
-      const results = eventArgs[0];
-      checkResults(
-        results || [],
-        {
-          empty: 'dir',
-        },
-        SOURCE_PATH,
-        DESTINATION_PATH
-      );
-    });
+    checkResults(
+      completeEvent.args[0] || [],
+      {
+        empty: 'dir',
+      },
+      SOURCE_PATH,
+      DESTINATION_PATH
+    );
   });
 
   it('should emit symlink copy events', async () => {
     createSymbolicLink('.', getSourcePath('symlink', SOURCE_PATH), 'dir');
-    const copier = recursiveCopy(
-      getSourcePath('symlink', SOURCE_PATH),
-      getDestinationPath('symlink', DESTINATION_PATH)
-    );
-    const events = listenTo(copier, COPY_EVENTS);
-    return copier
-      .then(() => {
-        let actual, expected;
+    const symlinkPath = getSourcePath('symlink', SOURCE_PATH);
 
-        const eventNames = events.map((event) => {
-          return event.name;
-        });
+    try {
+      const copier = recursiveCopy(
+        symlinkPath,
+        getDestinationPath('symlink', DESTINATION_PATH)
+      );
+      const events = listenTo(copier, COPY_EVENTS);
+      await copier;
 
-        actual = eventNames;
-        expected = ['createSymlinkStart', 'createSymlinkComplete', 'complete'];
-        expect(actual).toEqual(expected);
+      expect(events.map((event) => event.name)).toEqual([
+        'createSymlinkStart',
+        'createSymlinkComplete',
+        'complete',
+      ]);
 
-        const completeEvent = events.filter((event) => {
-          return event.name === 'complete';
-        })[0];
-        const eventArgs = completeEvent.args;
+      const completeEvent = events.filter((event) => {
+        return event.name === 'complete';
+      })[0];
+      expect(completeEvent.args).toHaveLength(1);
 
-        actual = eventArgs.length;
-        expected = 1;
-        expect(actual).toEqual(expected);
-
-        const results = eventArgs[0];
-        checkResults(
-          results,
-          {
-            symlink: 'symlink',
-          },
-          SOURCE_PATH,
-          DESTINATION_PATH
-        );
-        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
-      })
-      .catch(() => {
-        unlinkSync(getSourcePath('symlink', SOURCE_PATH));
-      });
+      checkResults(
+        completeEvent.args[0],
+        {
+          symlink: 'symlink',
+        },
+        SOURCE_PATH,
+        DESTINATION_PATH
+      );
+    } finally {
+      unlinkSync(symlinkPath);
+    }
   });
 });

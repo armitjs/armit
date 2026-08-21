@@ -48,9 +48,9 @@ interface CommandHandlerCtor<T extends CommandArgv> {
   new (args: Arguments<T>): AbstractHandler<T>;
 }
 
-export abstract class AbstractHandler<T extends CommandArgv>
-  implements OnCommandHandler
-{
+export abstract class AbstractHandler<
+  T extends CommandArgv,
+> implements OnCommandHandler {
   protected logger: Logger<any> = new Logger({
     logLevel: LogLevel.Info as LogLevel,
     adapter: new StdoutAdapter({

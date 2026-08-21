@@ -1,0 +1,9 @@
+{
+  "dep": [
+    "prod",
+    "dev",
+    "optional",
+    "packageManager"
+  ],
+  "reject": []
+}

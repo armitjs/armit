@@ -116,6 +116,7 @@ function addUnitOfTime(
   let remainder = time.getTime() - lastTime.getTime();
   const unitCount = Math.floor(remainder / unitValueInMilliseconds);
 
+  // eslint-disable-next-line no-useless-assignment
   remainder = remainder % unitValueInMilliseconds;
   return unitCount !== 0
     ? colorFn(prefix + unitCount + unitName) + ' '

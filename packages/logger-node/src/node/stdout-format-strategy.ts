@@ -3,9 +3,9 @@ import type { FormatStrategy } from '@armit/logger';
 import { DEFAULT_CONTEXT, LogLevel } from '@armit/logger';
 import type { CustomizedStdWriteStream } from '../types.js';
 
-export class StdoutFormatStrategy<MessageType>
-  implements FormatStrategy<MessageType>
-{
+export class StdoutFormatStrategy<
+  MessageType,
+> implements FormatStrategy<MessageType> {
   private readonly localeStringOptions = {
     year: '2-digit',
     hour: 'numeric',
