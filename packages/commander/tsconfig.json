@@ -4,7 +4,6 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "allowJs": false,
-    "noEmit": false,
     "incremental": true,
     "paths": {
       "@/test-utils": ["../../config/test-utils/index.ts"],

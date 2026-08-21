@@ -4,12 +4,11 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "allowJs": false,
-    "noEmit": false,
     "incremental": true,
     "paths": {
       "@armit/logger": ["../logger/src/index.js"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "node"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }

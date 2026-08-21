@@ -32,7 +32,7 @@
     "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
-    "dev": "tsup --watch",
+    "dev": "tsc -p ./tsconfig.build.json --watch",
     "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
     "lint": "eslint . --cache --cache-location ../../.cache/eslint/commander.eslintcache",
     "fix-all-files": "eslint . --fix",

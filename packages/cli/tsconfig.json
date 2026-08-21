@@ -4,7 +4,6 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "allowJs": false,
-    "noEmit": false,
     "incremental": true,
     "paths": {
       "@/test-utils/*": ["./test-utils/*"],
@@ -18,7 +17,7 @@
         "../generate-template-files/src/index.js"
       ]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "node"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }
